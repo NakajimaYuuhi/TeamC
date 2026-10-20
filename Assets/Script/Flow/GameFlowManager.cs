@@ -8,6 +8,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.Data.Common;
 
 public class GameFlowManager : MonoBehaviour
 {
@@ -61,12 +62,13 @@ public class GameFlowManager : MonoBehaviour
 
     private int _purposeTimes; // 目的の個数
     private int _currentPurposeTimes; // 現在の目的達成数
+    private float _resultTime;
     private bool _isClear;
    
     void Awake()
     {
         // プレイヤー生成
-        _player = _playerPrefab ? Instantiate(_playerPrefab) : null;
+        _player = _playerPrefab ? Instantiate(_playerPrefab,new Vector3(0.0f,2.0f,0.0f),Quaternion.identity) : null;
 
         _ui = _uiPrefab ? Instantiate(_uiPrefab,_canvas.transform) : null;
 
@@ -103,14 +105,28 @@ public class GameFlowManager : MonoBehaviour
         // プレイヤーにデータ配布
         // auto playerComp = _player?.GetComponent<>();
         // playerComp?.Initialize(data.PlayerData);
-
         _stageData = data;
         _purposeTimes = data.ClearCount;
+        _currentPurposeTimes = 0;
+        _resultTime = 0.0f;
         SetPurpose();
 
-       
-
         // 敵生成
+        for(int i = 0;i < _stageData.EnemyCount;++i)
+        {
+            // Mapの生成位置データリストをもとに生成していく
+            // 仮
+            Vector3 SpawnCenter = new Vector3(0.0f, 0.0f, 0.0f);
+            Vector2 SpawnBoxSize = new Vector3(10.0f, 10.0f);
+
+            float posX = Random.Range(SpawnCenter.x - SpawnBoxSize.x, SpawnCenter.x + SpawnBoxSize.x);
+            float posZ = Random.Range(SpawnCenter.z - SpawnBoxSize.y, SpawnCenter.z + SpawnBoxSize.y);
+
+            Vector3 SpawnPos = new Vector3(posX, 2.0f, posZ);
+
+            Instantiate(_enemyPrefab,SpawnPos,Quaternion.identity);
+        }
+
     }
 
     private void PurposeView()
@@ -118,12 +134,13 @@ public class GameFlowManager : MonoBehaviour
         if(_currentTimer > _purposeViewTime)
         {
             _flowState = FlowState.Execution;
+            _currentTimer = 0.0f;
         }
     }
 
     private void Execution()
     {
-        // if(_purposeData.目的地にいるかの判定) CollectPurpose();
+        if(_purposeData.IsWithinAchievementRange(_player.transform.position)) CollectPurpose();
 
         if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
         {
@@ -149,7 +166,7 @@ public class GameFlowManager : MonoBehaviour
 
     private void Track()
     {
-        // if(_purposeData.目的地にいるかの判定) CollectPurpose();
+        if (_purposeData.IsWithinAchievementRange(_player.transform.position)) CollectPurpose();
         _annoyanceLevel -= Time.deltaTime / _annoyanceDecrease;
         if(_annoyanceLevel <= 0.0f)
         {
@@ -167,7 +184,7 @@ public class GameFlowManager : MonoBehaviour
         uiData.nuisance = _annoyanceLevel * 100.0f;
         ingameUI.SetInGameUI_PlayerData(uiData);
 
-        if (_currentTimer < _failedTime)
+        if (_currentTimer > _failedTime)
         {
             ToResult(false);
         }
@@ -178,6 +195,7 @@ public class GameFlowManager : MonoBehaviour
         _purposeData = _stageData.PurposePick();
 
         _failedTime = _stageData.FailedTime;
+        _currentTimer = 0.0f;
         // auto playerComp = _player?.GetComponent<>();
         // playerComp?.SetPurpose(_purposeData.座標のやつ);
 
@@ -191,10 +209,16 @@ public class GameFlowManager : MonoBehaviour
         uiData.identity = "Test";
         uiData.remainingTime = _failedTime;
         ingameUI.SetInGameUIData(uiData);
+
+        // if(_ui.TrygetComponent<XXXX>(out XXXX PurposeUI))
+        // {
+        //      PurposeUi.目標地点を表示するアニメーション開始フック
+        // }
     }
 
     public void CollectPurpose()
     {
+        _resultTime += _currentTimer;
         if (++_currentPurposeTimes >= _purposeTimes)
         {
             ToResult(true);
@@ -222,7 +246,10 @@ public class GameFlowManager : MonoBehaviour
     {
         _flowState = FlowState.ResultView;
         _isClear = clear;
-        
+        GameData.ResultData data = new GameData.ResultData();
+        data.IsClear = clear;
+        data.pastTime = _resultTime;
+        _gameData.ApplyResult(data);
         SceneManager.LoadScene("Result", LoadSceneMode.Additive);
     }
 }

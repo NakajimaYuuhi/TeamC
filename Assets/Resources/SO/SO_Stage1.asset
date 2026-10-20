@@ -16,11 +16,12 @@ MonoBehaviour:
   PlayerData: {fileID: 0}
   EnemyDetas: []
   PurposeDatas:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3f256da694d1e534b8953ecc276d7756, type: 2}
+  - {fileID: 11400000, guid: cdaa4281d79617e499c0920214ccb6a7, type: 2}
   Type: 0
-  FailedTime: 10
+  FailedTime: 30
   _securityCount: 3
-  ClearCount: 1
-  EnemyCount: 1000
+  ClearCount: 5
+  EnemyCount: 10
   DiffMulti: 1
   PhaseMulti: 0
