@@ -6,12 +6,15 @@ public class NPC_Controller : MonoBehaviour
 
     // ===== インスペクターでの設定項目 =====
     [Header("立ち止まっている状態")]
-    private Vector3 _defaultPosition;       // スポーン時の初期位置
-    private Quaternion _defaultRotation;    // スポーン時の初期向き
+    // 初期パラメータ
+    private Vector3 _defaultPosition;       // 初期位置
+    private Quaternion _defaultRotation;    // 初期向き
 
-    [SerializeField] private float _returnSpeed = 3.0f;         // 初期位置に戻る際の最大速度
-    [SerializeField] private float _returnAcceleration = 6.0f;  // 初期位置に戻る際の加速度
+    // 初期位置に戻る際のパラメータ
+    [SerializeField] private float _returnSpeed = 3.0f;         // 最大速度
+    [SerializeField] private float _returnAcceleration = 6.0f;  // 加速度
 
+    // 初期位置に戻る際のデッドゾーン
     [SerializeField] private float _stopDeadZone = 0.25f;       // 初期位置とみなす範囲内
 
     [Header("徘徊状態の設定")]
@@ -154,6 +157,7 @@ public class NPC_Controller : MonoBehaviour
         if (toTarget.sqrMagnitude < 0.01f) return originalTarget;
         toTarget.Normalize();
 
+        // 1. 周囲のNPCを球状コライダーでスキャン
         Collider[] hits = Physics.OverlapSphere(transform.position, _avoidRadius, _npcLayer);
 
         Vector3 separation = Vector3.zero;
@@ -161,41 +165,48 @@ public class NPC_Controller : MonoBehaviour
 
         foreach (var hit in hits)
         {
-            if (hit.gameObject == this.gameObject) continue;
+            if (hit.gameObject == this.gameObject) continue;// 自分自身は除外
 
             Vector3 diff = transform.position - hit.transform.position;
             diff.y = 0;
             float dist = diff.magnitude;
 
+            // 前方の視野（約120度以内）にいる人のみ回避対象にする
             if (Vector3.Dot(toTarget, -diff.normalized) < 0.2f) continue;
 
             if (dist > 0.01f)
             {
+                // 距離に反比例した反発力を決定（近ければ近いほど強く離れる）
                 separation += (diff.normalized / dist);
                 frontObstacleCount++;
             }
         }
 
+        // 周囲に障害物がいない場合：本来の目的地方向へスムーズに戻す
         if (frontObstacleCount == 0)
         {
             _currentAvoidDir = Vector3.RotateTowards(_currentAvoidDir, toTarget, _avoidSmoothing * Time.fixedDeltaTime, 0.0f);
             return originalTarget;
         }
 
+        // [チャタリング・膠着打破]2人の真ん中で左右の反発力が相殺された場合は、強制的に右側へバイアスを加える
         if (frontObstacleCount >= 2 && separation.sqrMagnitude < 0.3f)
         {
             Vector3 rightDir = Vector3.Cross(Vector3.up, toTarget).normalized;
             separation += rightDir * 1.5f;
         }
 
+        // 2. 「前進ベクトル」と「反発ベクトル」の合成
         Vector3 steerDir = toTarget + (separation * _avoidWeight);
 
+        // 【前進成分の保証】反発が強すぎて真横や後ろを向いてしまうのを防ぐ（最低限の前進力を維持）
         if (Vector3.Dot(toTarget, steerDir.normalized) < 0.3f)
         {
             Vector3 sideDir = Vector3.ProjectOnPlane(steerDir, toTarget);
             steerDir = (toTarget * 0.5f + sideDir.normalized * 0.8f).normalized;
         }
 
+        // 3. 回避方向の急激な反転を抑えるため、滑らかに角度補間（ヒステリシス）
         _currentAvoidDir = Vector3.RotateTowards(
             _currentAvoidDir,
             steerDir.normalized,
@@ -203,6 +214,7 @@ public class NPC_Controller : MonoBehaviour
             0.0f
         );
 
+        // 現在位置から回避方向に十分離れた地点（3m先）を目標地点として返す（手前失速の防止）
         Vector3 avoidTarget = transform.position + _currentAvoidDir * 3.0f;
         avoidTarget.y = transform.position.y;
         return avoidTarget;
