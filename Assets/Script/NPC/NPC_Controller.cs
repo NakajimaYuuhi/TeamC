@@ -2,39 +2,43 @@ using UnityEngine;
 
 public class NPC_Controller : MonoBehaviour
 {
-    Vector3 TargetPos = new Vector3(0, 0, 0);
 
     Rigidbody rb;
 
 
     [Header("立ち止まっている状態の設定")]
-    [SerializeField] private float maxSpeed = 4.0f;       // 元の位置に戻る時の最高速度
-    [SerializeField] private float acceleration = 8.0f;   // 戻る時の加速の強さ
-    [SerializeField] private float knockbackPower = 10.0f; // ぶつかられた時に吹っ飛ぶ強さ（物理なので少し高めがおすすめ）
+    Vector3 _defaultPosition = new Vector3(0, 0, 0);
+    [SerializeField] private float _returnSpeed = 4.0f;       // 元の位置に戻る時の最高速度
+    [SerializeField] private float _returnAcceleration = 8.0f;   // 戻る時の加速の強さ
 
     // TaragetPositions
     [Header("徘徊状態の設定")]
 
-    Vector3[] TargetPositions;
-    public int CurrentTargetIndex = 0;
-    public float MoveSpeed = 8f;
-    public float BrowsingAcceleration = 8.0f;
-    public float ArrivalDistance = 0.5f; // 目的地に到着したとみなす距離
+    [SerializeField]
+    private Vector3[] _targetPositions = new Vector3[]
+    {
+        new Vector3(5, 0, 0),
+        new Vector3(-5, 0, 0),
+        new Vector3(0, 0, 5)
+    };
+    [SerializeField] private int _currentTargetIndex = 0;          // 現在の巡回ポイントのリストのインデックス
+    [SerializeField] private float _browseSpeed = 8f;
+    [SerializeField] private float _browseAcceleration = 8.0f;
+    [SerializeField] private float _arrivalDistance = 0.5f;         // 目的地に到着したとみなす距離
 
 
     // ----- 状態 -----
+    [Header("状態の設定")]
     [SerializeField] private string initialState = "Standing"; // 初期状態を指定（"Standing" または "Browsing"）
     private StateMachine<NPC_Controller> _NPCState;      // 運行状態(通常/詰まり
     private NPCStanding _NPCStanding = new NPCStanding(); // 立ち止まり状態
     private NPCBrowsing _NPCBrowsing = new NPCBrowsing(); // 徘徊状態
 
+    public float ArrivalDistance => _arrivalDistance;
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        TargetPos = transform.position;
+        _defaultPosition = transform.position;
 
         rb = GetComponent<Rigidbody>();
 
@@ -44,8 +48,12 @@ public class NPC_Controller : MonoBehaviour
         _NPCState = new StateMachine<NPC_Controller>(this, _NPCStanding);
 
         // 仮データの作成
-        TargetPositions = new Vector3[3] { new Vector3(10, 0, 0), new Vector3(-10, 0, 0), new Vector3(0, 0, 10) };
+        _targetPositions = new Vector3[3] { new Vector3(10, 0, 0), new Vector3(-10, 0, 0), new Vector3(0, 0, 10) };
 
+    }
+
+    void Start()
+    { 
         // 初期状態を設定
         SetState(initialState);
     }
@@ -59,87 +67,63 @@ public class NPC_Controller : MonoBehaviour
         Debug.Log($"NPC Velocity: {rb.linearVelocity}");
     }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     // 次の目的地をセットする関数
     public void AdvanceToNextTarget()
     {
         // 順番に巡回する場合（3つの座標をループ）
-        CurrentTargetIndex = (CurrentTargetIndex + 1) % TargetPositions.Length;
+        _currentTargetIndex = (_currentTargetIndex + 1) % _targetPositions.Length;
 
-        // ランダムにしたい場合はこちら：
+        // ランダムにしたい場合
         // CurrentTargetIndex = UnityEngine.Random.Range(0, TargetPositions.Length);
     }
 
-    public Vector3 GetCurrentTarget()
-    {
-        return TargetPositions[CurrentTargetIndex];
-    }
 
     public Vector3 GetCurrentPatrolPosition()
     {
-        return TargetPositions[CurrentTargetIndex];
+        return _targetPositions[_currentTargetIndex];
     }
 
-    public void MoveToTarget(Vector3 targetPos)
+    
+
+    // --- 物理移動・復帰処理（共通ロジック） ---
+    public void MoveTowardsPatrolPoint(Vector3 targetPos)
     {
-        Vector3 desiredVelocity = Vector3.zero;
+        AccelerateTowards(targetPos, _browseSpeed, _browseAcceleration);
+    }
 
-        // 高さをNPC自身に合わせることで、Y軸の引っ張り合いを防ぐ
-        targetPos.y = transform.position.y;
+    public void ReturnToDefaultPosition()
+    {
+        AccelerateTowards(_defaultPosition, _returnSpeed, _returnAcceleration);
+    }
 
+    private void AccelerateTowards(Vector3 targetPos, float maxSpeed, float accel)
+    {
+        targetPos.y = transform.position.y; // 高さの引っ張り合いを防止
         Vector3 toTarget = targetPos - transform.position;
-        float distance = toTarget.magnitude;
 
-        if (distance > 0.05f)
-        {
-            desiredVelocity = toTarget.normalized * MoveSpeed;
-            desiredVelocity.y = rb.linearVelocity.y; // 重力は維持
-        }
-
-        Vector3 newVelocity = Vector3.MoveTowards(rb.linearVelocity, desiredVelocity, BrowsingAcceleration * Time.fixedDeltaTime);
-        rb.linearVelocity = Vector3.ClampMagnitude(newVelocity, MoveSpeed * 2.0f);
-
-        // 進行方向を向く処理（必要であれば）
-        if (toTarget.magnitude > 0.1f)
-        {
-            Vector3 lookDir = toTarget;
-            lookDir.y = 0;
-            if (lookDir != Vector3.zero) transform.forward = lookDir;
-        }
-    }
-
-    public void ReturnTarget()
-    {
-
-        // 戻る速度
         Vector3 desiredVelocity = Vector3.zero;
-        
-        
-        // --- 最初の位置への方向と距離を計算 ---
-        Vector3 toTarget = TargetPos - transform.position;
-        float distance = toTarget.magnitude;
-        
-
-        // 最初の位置から少しでもズレていたら、戻るための理想の速度を計算
-        if (distance > 0.05f)
+        if (toTarget.magnitude > 0.05f)
         {
-            // 最初の位置に向かう理想の速度（方向 × 最高速度）
             desiredVelocity = toTarget.normalized * maxSpeed;
-            desiredVelocity.y = rb.linearVelocity.y; // 重力（Y軸の落下速度）は維持する
+            desiredVelocity.y = rb.linearVelocity.y; // 重力落下速度は維持
         }
 
-        // 現在の物理的な速度（rb.linearVelocity）を、理想の速度に向けて滑らかに近づける
-        Vector3 newVelocity = Vector3.MoveTowards(rb.linearVelocity, desiredVelocity, acceleration * Time.fixedDeltaTime);
+        // 目標速度に向けて加速度ベースで補間
+        Vector3 newVelocity = Vector3.MoveTowards(
+            rb.linearVelocity,
+            desiredVelocity,
+            accel * Time.fixedDeltaTime
+        );
 
-        // 速度上限（maxSpeed）の適用（Vector3.ClampMagnitude で安全にクランプ）
-        // 吹っ飛んだ直後だけは上限を超えて吹っ飛んでほしいので、少し余裕（2倍）を持たせてクランプします
+        // 押された・吹っ飛んだときの余白を残しつつ上限を設ける
         rb.linearVelocity = Vector3.ClampMagnitude(newVelocity, maxSpeed * 2.0f);
+
+        // 進行方向への旋回
+        toTarget.y = 0;
+        if (toTarget.sqrMagnitude > 0.01f)
+        {
+            transform.forward = toTarget.normalized;
+        }
     }
 
     void SetState(string stateName)

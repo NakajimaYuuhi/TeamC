@@ -1,7 +1,4 @@
 using UnityEngine;
-using static UnityEngine.UI.GridLayoutGroup;
-
-
 
 // ----- 基底クラス -----
 public abstract class NPCState : StateBase<NPC_Controller>
@@ -21,7 +18,7 @@ public class NPCStanding : NPCState
 
     public override void OnUpdate()
     {
-        owner.ReturnTarget();
+        owner.ReturnToDefaultPosition();
     }
 
     public override void OnExit()
@@ -54,7 +51,7 @@ public class NPCBrowsing : NPCState
         }
 
         // 3. 【命令】コントローラーに「ここへ動け」と指示を出す
-        owner.MoveToTarget(targetPos);
+        owner.MoveTowardsPatrolPoint(targetPos);
     }
 
     public override void OnExit()
