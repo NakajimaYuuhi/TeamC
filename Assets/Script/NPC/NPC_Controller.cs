@@ -29,10 +29,10 @@ public class NPC_Controller : MonoBehaviour
 
     // ----- ó‘Ô -----
     [Header("ó‘Ô‚Ìİ’è")]
-    [SerializeField] private string initialState = "Standing"; // ‰Šúó‘Ô‚ğw’èi"Standing" ‚Ü‚½‚Í "Browsing"j
-    private StateMachine<NPC_Controller> _NPCState;      // ‰^só‘Ô(’Êí/‹l‚Ü‚è
-    private NPCStanding _NPCStanding = new NPCStanding(); // —§‚¿~‚Ü‚èó‘Ô
-    private NPCBrowsing _NPCBrowsing = new NPCBrowsing(); // œpœjó‘Ô
+    [SerializeField] private string initialState = "Standing";  // ‰Šúó‘Ô‚ğw’èi"Standing" ‚Ü‚½‚Í "Browsing"j
+    private StateMachine<NPC_Controller> _NPCState;             // ‰^só‘Ô(’Êí/‹l‚Ü‚è
+    private NPCStanding _NPCStanding = new NPCStanding();       // —§‚¿~‚Ü‚èó‘Ô
+    private NPCBrowsing _NPCBrowsing = new NPCBrowsing();          // œpœjó‘Ô
 
     public float ArrivalDistance => _arrivalDistance;
 
