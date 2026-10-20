@@ -1,3 +1,8 @@
+/**
+ * File: StageData.cs
+ * 内容：ステージの情報をまとめているSOData
+ * 作成者：寺田
+ */
 using UnityEngine;
 using System.Collections.Generic;
 
