@@ -12,8 +12,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerBodyTurn : MonoBehaviour
 {
-    [Header("回転移動速度")]
-    [SerializeField] private float leanSpeed = 2.0f;
+    [Header("プレイヤーのデータ")]
+    [SerializeField] private PlayerData playerData; //プレイヤーの設定データ(SO)
 
     [Header("基本回転設定")]
     private readonly Vector3 defaultRotation = new Vector3(0f, 90f, 0f);
@@ -25,21 +25,29 @@ public class PlayerBodyTurn : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        //データが設定されていない場合はエラーを出す
+        if (playerData == null)
+        {
+            Debug.LogError("PlayerDataが設定されていない");
+        }
     }
 
     void Start()
     {
-      
+
     }
 
-    
+
     void Update()
     {
         CheckInput(); //Shift + WASDの入力を受け取る,回転
     }
 
-   　void FixedUpdate()
+    void FixedUpdate()
     {
+        if (playerData == null) return;
+
         LeanMovement();
     }
 
@@ -70,6 +78,8 @@ public class PlayerBodyTurn : MonoBehaviour
     //回転移動処理
     private void LeanMovement()
     {
+        float leanSpeed = playerData.LeanSpeed; //SOから回転移動速度を取得
+
         if (isShiftPressed && leanInput != Vector2.zero)
         {
             //回転を切り替え
@@ -80,10 +90,6 @@ public class PlayerBodyTurn : MonoBehaviour
             rb.linearVelocity = targetVelocity;
             return;
         }
-
-        //押していない・動いていないとき
-        transform.eulerAngles = defaultRotation;
-        rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
     }
 
     //回転の切り替え

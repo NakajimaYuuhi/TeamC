@@ -172,7 +172,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &-4588128254637324184
 MonoBehaviour:
@@ -186,7 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2395c5249db87a48bfb854da7a59979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
-  moveSpeed: 5
+  playerData: {fileID: 0}
+  turnSpeed: 10
 --- !u!114 &4239584754802157450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e99cf68a03f4cf446b8516187c40e89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBodyTurn
-  leanSpeed: 2
+  playerData: {fileID: 0}
 --- !u!1 &8697025608672507559
 GameObject:
   m_ObjectHideFlags: 0
