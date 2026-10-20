@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1711125798097602152}
   - component: {fileID: 4609822401321879913}
   m_Layer: 0
-  m_Name: PFB_NPC_tmp
+  m_Name: PFB_NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
