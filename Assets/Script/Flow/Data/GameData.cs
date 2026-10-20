@@ -5,6 +5,7 @@
  */
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 [CreateAssetMenu(fileName = "GameFloawData", menuName = "Scriptable Objects/GameFloawData")]
 public class GameData : ScriptableObject
@@ -12,6 +13,7 @@ public class GameData : ScriptableObject
     public struct ResultData
     {
         public float pastTime;
+        public bool IsClear;
     };
 
     public enum PlayerType
@@ -32,6 +34,7 @@ public class GameData : ScriptableObject
     private int _playerType = 0;
 
     private ResultData _resultData;
+    public ResultData Result => _resultData;
 
     public void ChangeSelectNo(int val)
     {

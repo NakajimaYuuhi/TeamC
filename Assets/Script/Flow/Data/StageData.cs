@@ -56,9 +56,15 @@ public class StageData : ScriptableObject
     [SerializeField, Tooltip("‰ñ”‚²‚Æ‚Él‚ª‘‚¦‚é”{—¦")]
     [Min(0.0f)] public float PhaseMulti = 0.0f;
 
-
+    private int lastIdx = 0; 
     public DestinationData PurposePick()
     {
-        return PurposeDatas[Random.Range(0,PurposeDatas.Count)];
+        int currentIdx;
+        do
+        {
+            currentIdx = Random.Range(0, PurposeDatas.Count);
+        } while (currentIdx == lastIdx);
+        lastIdx = currentIdx;
+        return PurposeDatas[currentIdx];
     }
 }
