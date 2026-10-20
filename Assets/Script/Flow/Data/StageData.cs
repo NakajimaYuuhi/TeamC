@@ -5,6 +5,7 @@
  */
 using UnityEngine;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 [CreateAssetMenu(fileName = "StageData", menuName = "Scriptable Objects/StageData")]
 public class StageData : ScriptableObject
@@ -28,7 +29,7 @@ public class StageData : ScriptableObject
     public List<ScriptableObject> EnemyDetas = new List<ScriptableObject>();
 
     [SerializeField, Tooltip("ブースステージのマップデータ")]
-    public List<ScriptableObject> PurposeDatas = new List<ScriptableObject>();
+    public List<DestinationData> PurposeDatas = new List<DestinationData>();
 
     [Header("===== ステージの設定 =====")]
     [SerializeField,Tooltip("ステージの種類")]
@@ -56,7 +57,7 @@ public class StageData : ScriptableObject
     [Min(0.0f)] public float PhaseMulti = 0.0f;
 
 
-    public ScriptableObject PurposePick()
+    public DestinationData PurposePick()
     {
         return PurposeDatas[Random.Range(0,PurposeDatas.Count)];
     }

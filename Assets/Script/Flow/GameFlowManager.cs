@@ -35,11 +35,11 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField, Tooltip("警備員のプレハブ")]
     private GameObject _securityPrefab;
 
-    [SerializeField, Tooltip("リザルトデータ")]
-    private ScriptableObject _reusltData;
-
     [SerializeField,Tooltip("ゲームのデータ")]
     private GameData _gameData;
+
+    [SerializeField, Tooltip("Canvass")]
+    private GameObject _canvas;
 
     [Header("===== フロー管理変数 =====")]
     [SerializeField, Tooltip("目的地の名前を表示する時間")]
@@ -48,7 +48,7 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField, Tooltip("迷惑率が減少する速度")]
     private float _annoyanceDecrease = 3.0f;
 
-    private ScriptableObject _purposeData;
+    private DestinationData _purposeData;
     private FlowState _flowState = FlowState.PurposeView;
 
     // 迷惑度
@@ -68,7 +68,7 @@ public class GameFlowManager : MonoBehaviour
         // プレイヤー生成
         _player = _playerPrefab ? Instantiate(_playerPrefab) : null;
 
-        _ui = _uiPrefab ? Instantiate(_uiPrefab) : null;
+        _ui = _uiPrefab ? Instantiate(_uiPrefab,_canvas.transform) : null;
 
         Initialize(_gameData.GetSelectStageData());
     }
@@ -102,11 +102,13 @@ public class GameFlowManager : MonoBehaviour
     {
         // プレイヤーにデータ配布
         // auto playerComp = _player?.GetComponent<>();
-        //playerComp?.Initialize(data.PlayerData);
+        // playerComp?.Initialize(data.PlayerData);
 
         _stageData = data;
         _purposeTimes = data.ClearCount;
         SetPurpose();
+
+       
 
         // 敵生成
     }
@@ -122,6 +124,15 @@ public class GameFlowManager : MonoBehaviour
     private void Execution()
     {
         // if(_purposeData.目的地にいるかの判定) CollectPurpose();
+
+        if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
+        {
+
+        }
+        InGameUI.InGameUI_PlayerData uiData;
+        uiData.stamina = 1.0f;
+        uiData.nuisance = _annoyanceLevel * 100.0f;
+        ingameUI.SetInGameUI_PlayerData(uiData);
 
         if (_annoyanceLevel >= 1.0f)
         {
@@ -147,7 +158,16 @@ public class GameFlowManager : MonoBehaviour
             _flowState = FlowState.Execution;
         }
 
-        if(_currentTimer < _failedTime)
+        if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
+        {
+
+        }
+        InGameUI.InGameUI_PlayerData uiData;
+        uiData.stamina = 1.0f;
+        uiData.nuisance = _annoyanceLevel * 100.0f;
+        ingameUI.SetInGameUI_PlayerData(uiData);
+
+        if (_currentTimer < _failedTime)
         {
             ToResult(false);
         }
@@ -157,8 +177,20 @@ public class GameFlowManager : MonoBehaviour
     {
         _purposeData = _stageData.PurposePick();
 
+        _failedTime = _stageData.FailedTime;
         // auto playerComp = _player?.GetComponent<>();
         // playerComp?.SetPurpose(_purposeData.座標のやつ);
+
+        if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
+        {
+
+        }
+        InGameUI.InGameUIData uiData;
+        uiData.stageNum = 0;
+        uiData.destination = "Test";
+        uiData.identity = "Test";
+        uiData.remainingTime = _failedTime;
+        ingameUI.SetInGameUIData(uiData);
     }
 
     public void CollectPurpose()
