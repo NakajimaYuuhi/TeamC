@@ -1,10 +1,8 @@
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class DestinationEditorWindow : EditorWindow
 {
-    private DestinationManager destinationManager;
     private string destinationName;
     private Transform destinationTransform;
     private Vector3 destinationPosition;
@@ -35,13 +33,6 @@ public class DestinationEditorWindow : EditorWindow
     {
         EditorGUI.BeginChangeCheck();
 
-        destinationManager = (DestinationManager)EditorGUILayout.ObjectField(
-            "目的地マネージャー",
-            destinationManager,
-            typeof(DestinationManager),
-            true);
-
-        EditorGUILayout.Space();
         destinationName = EditorGUILayout.TextField("目的地名", destinationName);
         destinationTransform = (Transform)EditorGUILayout.ObjectField(
             "目的地オブジェクト",
@@ -85,11 +76,7 @@ public class DestinationEditorWindow : EditorWindow
             }
         }
 
-        if (destinationManager == null)
-        {
-            EditorGUILayout.HelpBox("目的地マネージャーを指定してください。", MessageType.Info);
-        }
-        else if (targetTime < 0f || achievementSizeX < 0f || achievementSizeZ < 0f)
+        if (targetTime < 0f || achievementSizeX < 0f || achievementSizeZ < 0f)
         {
             EditorGUILayout.HelpBox("目標時間と達成範囲には0以上の値を指定してください。", MessageType.Error);
         }
@@ -126,8 +113,7 @@ public class DestinationEditorWindow : EditorWindow
 
     private bool CanCreate()
     {
-        return destinationManager != null
-            && targetTime >= 0f
+        return targetTime >= 0f
             && achievementSizeX >= 0f
             && achievementSizeZ >= 0f;
     }
@@ -158,21 +144,6 @@ public class DestinationEditorWindow : EditorWindow
         dataObject.ApplyModifiedPropertiesWithoutUndo();
 
         AssetDatabase.CreateAsset(data, path);
-
-        Undo.RecordObject(destinationManager, "目的地データを登録");
-        var managerObject = new SerializedObject(destinationManager);
-        var destinations = managerObject.FindProperty("destinations");
-        var newIndex = destinations.arraySize;
-        destinations.InsertArrayElementAtIndex(newIndex);
-        destinations.GetArrayElementAtIndex(newIndex).objectReferenceValue = data;
-        managerObject.ApplyModifiedProperties();
-
-        EditorUtility.SetDirty(destinationManager);
-        if (destinationManager.gameObject.scene.IsValid())
-        {
-            EditorSceneManager.MarkSceneDirty(destinationManager.gameObject.scene);
-        }
-
         AssetDatabase.SaveAssets();
         Selection.activeObject = data;
         EditorGUIUtility.PingObject(data);
