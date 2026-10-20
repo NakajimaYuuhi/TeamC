@@ -3,6 +3,10 @@ using UnityEngine;
 public class DestinationData : ScriptableObject
 {
     [Header("目的地設定")]
+    [SerializeField, InspectorName("目的地名")]
+    [Tooltip("目的地を識別するための名前です。")]
+    private string destinationName;
+
     [SerializeField, InspectorName("目的地座標")]
     [Tooltip("目的地のワールド座標です。")]
     private Vector3 destinationPosition;
@@ -27,6 +31,7 @@ public class DestinationData : ScriptableObject
     [Tooltip("XZ平面上で目的地へ到達したとみなす長方形のZ方向の全幅です。")]
     private float achievementSizeZ;
 
+    public string DestinationName => destinationName;
     public Vector3 DestinationPosition => destinationPosition;
     public float AchievementCenterOffsetX => achievementCenterOffsetX;
     public float AchievementCenterOffsetZ => achievementCenterOffsetZ;

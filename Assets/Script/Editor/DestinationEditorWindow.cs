@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestinationEditorWindow : EditorWindow
 {
     private DestinationManager destinationManager;
+    private string destinationName;
     private Transform destinationTransform;
     private Vector3 destinationPosition;
     private float achievementCenterOffsetX;
@@ -24,7 +25,7 @@ public class DestinationEditorWindow : EditorWindow
         SceneView.RepaintAll();
     }
 
-    [MenuItem("ツール/目的地ステージ作成")]
+    [MenuItem("Tools/目的地ステージ作成")]
     private static void Open()
     {
         GetWindow<DestinationEditorWindow>("目的地作成");
@@ -41,6 +42,7 @@ public class DestinationEditorWindow : EditorWindow
             true);
 
         EditorGUILayout.Space();
+        destinationName = EditorGUILayout.TextField("目的地名", destinationName);
         destinationTransform = (Transform)EditorGUILayout.ObjectField(
             "目的地オブジェクト",
             destinationTransform,
@@ -144,6 +146,7 @@ public class DestinationEditorWindow : EditorWindow
 
         var data = CreateInstance<DestinationData>();
         var dataObject = new SerializedObject(data);
+        dataObject.FindProperty("destinationName").stringValue = destinationName;
         dataObject.FindProperty("destinationPosition").vector3Value = destinationTransform != null
             ? destinationTransform.position
             : destinationPosition;
