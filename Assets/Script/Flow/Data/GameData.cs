@@ -23,8 +23,8 @@ public class GameData : ScriptableObject
     [SerializeField, Tooltip("ステージのデータ")]
     public List<StageData> StageDatas = new List<StageData>();
 
-    //[SerializeField, Tooltip("プレイヤーの種類データ")]
-    //public List<PlayerTypeData> playerTypeDatas = new List<PlayerTypeData>();
+    [SerializeField, Tooltip("プレイヤーの種類データ")]
+    public List<ScriptableObject> playerTypeDatas = new List<ScriptableObject>();
 
     private int _selectStageNo;
     public int SelectStageNo => _selectStageNo;
@@ -38,9 +38,15 @@ public class GameData : ScriptableObject
         _selectStageNo += val;
     }
 
+    public void ChangeSelectPlayer(int val)
+    {
+        _playerType += val;
+    }
+
     public StageData GetSelectStageData()
     {
-        return StageDatas[SelectStageNo];
+        StageDatas[_selectStageNo].PlayerData = playerTypeDatas[_playerType];
+        return StageDatas[_selectStageNo];
     }
 
     public void ApplyResult(ResultData data)
