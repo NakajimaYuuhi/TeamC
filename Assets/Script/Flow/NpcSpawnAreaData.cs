@@ -31,6 +31,10 @@ public class NpcSpawnArea
 
 public class NpcSpawnAreaData : ScriptableObject
 {
+    [SerializeField, InspectorName("ステージモデル")]
+    [Tooltip("ステージ本体のプレハブ")]
+    public GameObject MapPrefab;
+
     [SerializeField, InspectorName("NPC配置範囲一覧")]
     [Tooltip("ステージで使用するBoxの一覧です。")]
     private List<NpcSpawnArea> areas = new List<NpcSpawnArea>();

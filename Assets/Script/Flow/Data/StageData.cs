@@ -5,7 +5,6 @@
  */
 using UnityEngine;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 [CreateAssetMenu(fileName = "StageData", menuName = "Scriptable Objects/StageData")]
 public class StageData : ScriptableObject
@@ -20,7 +19,7 @@ public class StageData : ScriptableObject
 
     [Header("====== 参照 ======")]
     [SerializeField, Tooltip("ステージを構成するデータ")]
-    public ScriptableObject MapData;
+    public NpcSpawnAreaData MapData;
 
     [SerializeField, Tooltip("プレイヤーのパラメータ")]
     public ScriptableObject PlayerData;

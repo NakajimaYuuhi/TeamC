@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a4b7af1e8c472f90e2a8f26d2f7b38, type: 3}
   m_Name: NPCWalkArea
   m_EditorClassIdentifier: Assembly-CSharp::NpcSpawnAreaData
+  MapPrefab: {fileID: 3077033770173759229, guid: f82249cb16f72ad42926b82205849b98, type: 3}
   areas:
   - center: {x: 0, y: 0, z: 6.39}
     size: {x: 100, y: 1, z: 5.6}
