@@ -3,6 +3,16 @@ using UnityEngine;
 public class NPC_Controller : MonoBehaviour
 {
     private Rigidbody rb;
+    private bool physicsLodSuspended;
+    private bool controllerEnabledBeforeLod;
+    private bool wasKinematicBeforeLod;
+    private bool detectedCollisionsBeforeLod;
+    private bool wasSleepingBeforeLod;
+    private Vector3 velocityBeforeLod;
+    private Vector3 angularVelocityBeforeLod;
+
+    public bool IsPhysicsLodSuspended => physicsLodSuspended;
+    internal NpcPhysicsLodManager PhysicsLodManager { get; set; }
 
     // ===== インスペクターでの設定項目 =====
     [Header("立ち止まっている状態")]
@@ -71,6 +81,45 @@ public class NPC_Controller : MonoBehaviour
         _NPCState.OnUpdate();
     }
 
+    public void SetPhysicsLodSuspended(bool suspended)
+    {
+        if (physicsLodSuspended == suspended) return;
+
+        if (suspended)
+        {
+            controllerEnabledBeforeLod = enabled;
+            wasKinematicBeforeLod = rb.isKinematic;
+            detectedCollisionsBeforeLod = rb.detectCollisions;
+            wasSleepingBeforeLod = rb.IsSleeping();
+            if (!wasKinematicBeforeLod)
+            {
+                velocityBeforeLod = rb.linearVelocity;
+                angularVelocityBeforeLod = rb.angularVelocity;
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+
+            rb.detectCollisions = false;
+            rb.isKinematic = true;
+            physicsLodSuspended = true;
+            enabled = false;
+            return;
+        }
+
+        rb.isKinematic = wasKinematicBeforeLod;
+        rb.detectCollisions = detectedCollisionsBeforeLod;
+        if (!wasKinematicBeforeLod)
+        {
+            rb.linearVelocity = velocityBeforeLod;
+            rb.angularVelocity = angularVelocityBeforeLod;
+            if (wasSleepingBeforeLod) rb.Sleep();
+            else rb.WakeUp();
+        }
+
+        physicsLodSuspended = false;
+        enabled = controllerEnabledBeforeLod;
+    }
+
     public void AdvanceToNextTarget()
     {
         if (_targetPositions == null || _targetPositions.Length == 0) return;
@@ -94,6 +143,16 @@ public class NPC_Controller : MonoBehaviour
     // --- 立ち止まり時の復帰 ---
     public void ReturnToDefaultPosition()
     {
+        var position = transform.position;
+        var offset = new Vector2(position.x - _defaultPosition.x, position.z - _defaultPosition.z);
+        if (offset.sqrMagnitude <= _stopDeadZone * _stopDeadZone && transform.rotation == _defaultRotation)
+        {
+            if (rb.IsSleeping()) return;
+
+            var velocity = rb.linearVelocity;
+            if (velocity.x == 0f && velocity.z == 0f) return;
+        }
+
         // [改善]_stopDeadZone を渡し、かつ初期の向きを保たせるフラグ(isStanding=true)を立てる
         AccelerateTowards(_defaultPosition, _returnSpeed, _returnAcceleration, _stopDeadZone, true);
     }

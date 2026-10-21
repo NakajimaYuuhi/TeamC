@@ -9,8 +9,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(NpcPhysicsLodManager))]
 public class GameFlowManager : MonoBehaviour
 {
+    private NpcPhysicsLodManager _npcPhysicsLodManager;
     enum FlowState
     {
         PurposeView, // 目的提示
@@ -70,6 +72,9 @@ public class GameFlowManager : MonoBehaviour
         // プレイヤー生成
         _player = _playerPrefab ? Instantiate(_playerPrefab,new Vector3(0.0f,2.0f,0.0f),Quaternion.identity) : null;
 
+        _npcPhysicsLodManager = GetComponent<NpcPhysicsLodManager>();
+        _npcPhysicsLodManager.SetTarget(_player.GetComponentInChildren<PlayerMove>().transform);
+
         _ui = _uiPrefab ? Instantiate(_uiPrefab) : null;
 
         Initialize(_gameData.GetSelectStageData());
@@ -128,6 +133,7 @@ public class GameFlowManager : MonoBehaviour
 
             var npc = Instantiate(_enemyPrefab,SpawnPos,Quaternion.identity);
             var npcCtrl = npc.GetComponentInChildren<NPC_Controller>();
+            if (npcCtrl != null) _npcPhysicsLodManager.Register(npcCtrl);
             string state = area.Tag == NpcSpawnAreaTag.WalkArea ? "Browsing" : area.Tag == NpcSpawnAreaTag.StandArea ? "Standing" : "Grouping";
             // npcCtrl?.SetState(state);
         }
