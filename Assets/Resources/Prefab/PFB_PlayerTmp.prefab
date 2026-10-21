@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7331648953850641038}
   m_Layer: 0
-  m_Name: PFB_tmp
+  m_Name: PFB_PlayerTmp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4239584754802157450, guid: 35601183ca4193249a1f48278e83fcec, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
