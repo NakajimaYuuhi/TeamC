@@ -127,7 +127,9 @@ public class GameFlowManager : MonoBehaviour
 
             Vector3 SpawnPos = new Vector3(posX, 1.2f, posZ);
 
-            var npc = Instantiate(_enemyPrefab,SpawnPos,Quaternion.identity);
+            Quaternion rot = Random.rotation;
+            rot.x = rot.z = 0.0f;
+            var npc = Instantiate(_enemyPrefab,SpawnPos,rot);
             var npcCtrl = npc.GetComponentInChildren<NPC_Controller>();
             string state = area.Tag == NpcSpawnAreaTag.WalkArea ? "Browsing" : area.Tag == NpcSpawnAreaTag.StandArea ? "Standing" : "Grouping";
             npcCtrl?.SetState(state);
