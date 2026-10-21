@@ -24,10 +24,10 @@ Shader "Custom/Player/SH_PlayerOccludedHighlight"
             ZTest Greater
             Stencil
             {
-                Ref 128
-                ReadMask 128
-                WriteMask 128
-                Comp NotEqual
+                Ref 1
+                ReadMask 3
+                WriteMask 0
+                Comp Equal
                 Pass Keep
             }
 
@@ -85,10 +85,10 @@ Shader "Custom/Player/SH_PlayerOccludedHighlight"
             ZTest Greater
             Stencil
             {
-                Ref 128
-                ReadMask 128
-                WriteMask 128
-                Comp NotEqual
+                Ref 1
+                ReadMask 3
+                WriteMask 0
+                Comp Equal
                 Pass Keep
             }
 
@@ -133,9 +133,57 @@ Shader "Custom/Player/SH_PlayerOccludedHighlight"
             ZTest LEqual
             Stencil
             {
-                Ref 128
-                ReadMask 128
-                WriteMask 128
+                Ref 2
+                ReadMask 2
+                WriteMask 2
+                Comp Always
+                Pass Replace
+            }
+
+            HLSLPROGRAM
+            #pragma vertex MaskVertex
+            #pragma fragment MaskFragment
+
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+
+            struct Attributes
+            {
+                float4 positionOS : POSITION;
+            };
+
+            struct Varyings
+            {
+                float4 positionHCS : SV_POSITION;
+            };
+
+            Varyings MaskVertex(Attributes input)
+            {
+                Varyings output;
+                output.positionHCS = TransformObjectToHClip(input.positionOS.xyz);
+                return output;
+            }
+
+            half4 MaskFragment(Varyings input) : SV_Target
+            {
+                return 0;
+            }
+            ENDHLSL
+        }
+
+        Pass
+        {
+            Name "ShopOccluderMask"
+            Tags { "LightMode" = "SRPDefaultUnlit" }
+
+            Cull Back
+            ColorMask 0
+            ZWrite Off
+            ZTest LEqual
+            Stencil
+            {
+                Ref 1
+                ReadMask 1
+                WriteMask 1
                 Comp Always
                 Pass Replace
             }

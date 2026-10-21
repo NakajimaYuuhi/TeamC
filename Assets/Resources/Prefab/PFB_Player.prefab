@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1988095339005662579}
   - component: {fileID: -5826572509243765267}
   - component: {fileID: -4588128254637324184}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PFB_Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 71603353536818984}
   - component: {fileID: 7657666081078888172}
   - component: {fileID: 8707900955422829908}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
