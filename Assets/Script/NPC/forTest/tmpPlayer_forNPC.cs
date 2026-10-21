@@ -31,8 +31,9 @@ public class tmpPlayer_forNPC : MonoBehaviour
         Debug.Log($"Move Input: {_moveInput}");
         // ˆÚ“®ˆ—
         //transform.Translate(new Vector3(_moveInput.x * moveSpeed, 0, _moveInput.y * moveSpeed) * Time.deltaTime);
-        //transform.position = new Vector3(transform.position.x + _moveInput.x * moveSpeed * Time.deltaTime, 0, transform.position.z + _moveInput.y * moveSpeed * Time.deltaTime); // ‚‚³‚ðŒÅ’è
-        rb.linearVelocity = new Vector3(_moveInput.x * moveSpeed, 0, _moveInput.y * moveSpeed); // Rigidbody‚Ì‘¬“x‚ðÝ’è
+        transform.position = new Vector3(transform.position.x + _moveInput.x * moveSpeed * Time.deltaTime, 0, transform.position.z + _moveInput.y * moveSpeed * Time.deltaTime); // ‚‚³‚ðŒÅ’è
+        //rb.linearVelocity = new Vector3(_moveInput.x * moveSpeed, 0, _moveInput.y * moveSpeed); // Rigidbody‚Ì‘¬“x‚ðÝ’è
+
 
         Vector3 moveDirection = new Vector3(_moveInput.x, 0, _moveInput.y);
         if (moveDirection.sqrMagnitude > 0.01f)
