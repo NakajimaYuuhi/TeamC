@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8665c5fc24fbdd045b463237a9836604, type: 3}
   m_Name: SO_forCullingTest_Stage1
   m_EditorClassIdentifier: Assembly-CSharp::StageData
-  MapData: {fileID: 0}
+  MapData: {fileID: 11400000, guid: 0ba83d9bd05fc6a4da52eb96a51a088d, type: 2}
   PlayerData: {fileID: 0}
-  EnemyDetas: []
+  EnemyDetas:
+  - {fileID: 0}
   PurposeDatas:
   - {fileID: 11400000, guid: bdab98d226695b24389c78e197c1f536, type: 2}
   - {fileID: 11400000, guid: c5e8434c089f26b4895773d34a6368f5, type: 2}
