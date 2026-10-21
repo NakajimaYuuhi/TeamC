@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88e21cbf8dd50e47877fe3cd7f955bf, type: 3}
   m_Name: SO_PlayerTest
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
-  MoveSpeed: 5
-  LeanSpeed: 2
+  MoveSpeed: 2
+  TurnSpeed: 2
   PlayerSize: {x: 1, y: 1, z: 1}
   VoiceVolume: 1
-  PlayerPushPower: 0.3
-  PlayerNuisance: 0.5
+  PlayerPushPower: 25
+  PlayerNuisance: 0
