@@ -27,7 +27,7 @@ public class InGameUIAnimationSample : MonoBehaviour
         _inGamePopup = instance.GetComponentInChildren<InGameUIPopup>();
 
 		InGameUI.InGameUIData data;
-		data.destination = "testName";
+		data.destination = "óFíB100êlÇ≈Ç´ÇÈÇ©Ç»";
 		data.identity = "00-24";
 		data.remainingTime = 50f;
 		data.stageNum = 8;
@@ -44,9 +44,9 @@ public class InGameUIAnimationSample : MonoBehaviour
     void Update()
     {
 		/*
-        if (Keyboard.current != null &&
-            Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
+		if (Keyboard.current != null &&
+			Keyboard.current.spaceKey.wasPressedThisFrame)
+		{
 			if (_inGamePopup == null)
 			{
 				Debug.LogError(
@@ -54,7 +54,7 @@ public class InGameUIAnimationSample : MonoBehaviour
 				return;
 			}
 
-            Debug.Log("play");	
+			Debug.Log("play");
 			_inGamePopup.Play();	// Ç±Ç±Ç≈é¿çs
 
 		}

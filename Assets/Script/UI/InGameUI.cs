@@ -161,7 +161,7 @@ public class InGameUI : MonoBehaviour
 	public void SetRemainingTime(float seconds)
 	{
 		_remainingTime = Mathf.Max(0f, seconds);
-		_remainingTimeText.text = $"{_remainingTime:F1} s";
+		_remainingTimeText.text = $"{_remainingTime:F1}";
 	}
 
 	public void SetStageNum(int value)

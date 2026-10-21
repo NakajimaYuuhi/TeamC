@@ -151,7 +151,8 @@ public class InGameUIPopup : MonoBehaviour
 
         // 表示テキストを設定
 		InGameUI.InGameUIData data = _inGameUi.GetInGameUIData();
-		_porposeText.text = $"Reach {data.identity} [{data.destination}] within {data.remainingTime:F0} seconds!!";
+//		_porposeText.text = $"Reach {data.identity} [{data.destination}] within {data.remainingTime:F0} seconds!!";
+		_porposeText.text = $"{data.remainingTime:F0}秒で {data.identity} 「{data.destination}」を目指せ！";
 
 		// Boardの出現が終わるまで、この先の処理を待つ
 		yield return FadeIn(_boardGroup, _fadeInDuration);
