@@ -115,14 +115,15 @@ public class GameFlowManager : MonoBehaviour
         for(int i = 0;i < _stageData.EnemyCount;++i)
         {
             // Mapの生成位置データリストをもとに生成していく
-            // 仮
-            Vector3 SpawnCenter = new Vector3(0.0f, 0.0f, 0.0f);
-            Vector2 SpawnBoxSize = new Vector3(10.0f, 10.0f);
+            var area = _stageData.MapData.GetArea(Random.Range(0, _stageData.MapData.Areas.Count));
+            
+            Vector3 SpawnCenter = area.Center;
+            Vector2 SpawnBoxSize = area.Size;
 
-            float posX = Random.Range(SpawnCenter.x - SpawnBoxSize.x, SpawnCenter.x + SpawnBoxSize.x);
-            float posZ = Random.Range(SpawnCenter.z - SpawnBoxSize.y, SpawnCenter.z + SpawnBoxSize.y);
+            float posX = Random.Range(SpawnCenter.x - (SpawnBoxSize.x * 0.5f), SpawnCenter.x + (SpawnBoxSize.x * 0.5f));
+            float posZ = Random.Range(SpawnCenter.z - (SpawnBoxSize.y * 0.5f), SpawnCenter.z + (SpawnBoxSize.y * 0.5f));
 
-            Vector3 SpawnPos = new Vector3(posX, 2.0f, posZ);
+            Vector3 SpawnPos = new Vector3(posX, 1.2f, posZ);
 
             Instantiate(_enemyPrefab,SpawnPos,Quaternion.identity);
         }

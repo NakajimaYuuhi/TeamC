@@ -20,7 +20,7 @@ public class StageData : ScriptableObject
 
     [Header("====== 参照 ======")]
     [SerializeField, Tooltip("ステージを構成するデータ")]
-    public ScriptableObject MapData;
+    public NpcSpawnAreaData MapData;
 
     [SerializeField, Tooltip("プレイヤーのパラメータ")]
     public ScriptableObject PlayerData;
