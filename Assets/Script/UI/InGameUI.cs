@@ -181,4 +181,21 @@ public class InGameUI : MonoBehaviour
 		_identity = value;
 		_identityText.text = _identity;
 	}
+
+
+
+	//____________________________________
+	// getter
+
+	public InGameUIData GetInGameUIData()
+	{
+		return new InGameUIData
+		{
+			stageNum = _stageNum,
+			destination = _destination,
+			identity = _identity,
+			remainingTime = _remainingTime
+		};
+	}
+
 }
