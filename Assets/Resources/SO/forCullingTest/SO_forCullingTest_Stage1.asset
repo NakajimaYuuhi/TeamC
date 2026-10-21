@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StageData
   MapData: {fileID: 0}
   PlayerData: {fileID: 0}
-  EnemyDetas:
-  - {fileID: 0}
+  EnemyDetas: []
   PurposeDatas:
   - {fileID: 11400000, guid: bdab98d226695b24389c78e197c1f536, type: 2}
   - {fileID: 11400000, guid: c5e8434c089f26b4895773d34a6368f5, type: 2}

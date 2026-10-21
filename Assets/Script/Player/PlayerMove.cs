@@ -1,12 +1,12 @@
 /////////////////////////////////////////
 /// PlayerMove.cs
-/// 2026/10/20 ä½œè€…ï¼šä½è—¤è’¼ä¹Ÿ
+/// 2026/10/20 ìÒF²“¡‘“–ç
 /// 
-/// ãƒ­ã‚°
-/// 2026/10/20 ä½è—¤è’¼ä¹Ÿï¼šãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç§»å‹•å‡¦ç†å®Ÿè£…
-/// 2026/10/20 ä½è—¤è’¼ä¹Ÿï¼šShiftä¸­ã®æ¨ªæ­©ãå‡¦ç†å®Ÿè£…
-/// 2026/10/21 ä½è—¤è’¼ä¹Ÿï¼šPlayerBodyTurnã®å‡¦ç†ã‚’çµ±åˆ
-/// 2026/10/21 ä½è—¤è’¼ä¹Ÿï¼šé€²è¡Œæ–¹å‘ã¸ã®å›è»¢ã¨å·¦å‘ãã¸ã®å›è»¢ã®é€Ÿåº¦ã‚’åˆ†é›¢
+/// ƒƒO
+/// 2026/10/20 ²“¡‘“–çFƒvƒŒƒCƒ„[ˆÚ“®ˆ—À‘•
+/// 2026/10/20 ²“¡‘“–çFShift’†‚Ì‰¡•à‚«ˆ—À‘•
+/// 2026/10/21 ²“¡‘“–çFPlayerBodyTurn‚Ìˆ—‚ğ“‡
+/// 2026/10/21 ²“¡‘“–çFis•ûŒü‚Ö‚Ì‰ñ“]‚Æ¶Œü‚«‚Ö‚Ì‰ñ“]‚Ì‘¬“x‚ğ•ª—£
 /// 
 /////////////////////////////////////////
 
@@ -18,22 +18,22 @@ using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
-    [Header("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒ‡ãƒ¼ã‚¿")]
+    [Header("ƒvƒŒƒCƒ„[‚Ìƒf[ƒ^")]
     [SerializeField] private PlayerData playerData;
 
 
 
-    [Header("æ¨ªæ­©ãã®è¨­å®š,é€šå¸¸æ™‚ã«å¯¾ã™ã‚‹é€Ÿåº¦ã®å‰²åˆ")]
-    [SerializeField, Range(0.1f, 1f)] private float sideStepSpeedRate = 0.5f; //é€šå¸¸æ™‚ã«å¯¾ã™ã‚‹é€Ÿåº¦ã®å‰²åˆ
+    [Header("‰¡•à‚«‚Ìİ’è,’Êí‚É‘Î‚·‚é‘¬“x‚ÌŠ„‡")]
+    [SerializeField, Range(0.1f, 1f)] private float sideStepSpeedRate = 0.5f; //’Êí‚É‘Î‚·‚é‘¬“x‚ÌŠ„‡
 
     Rigidbody rb;
-    private Vector2 moveInput; //ç§»å‹•ã®å…¥åŠ›ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
-    private float moveSpeed; //ç§»å‹•é€Ÿåº¦ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
-    private float turnSpeed; //é€²è¡Œæ–¹å‘ã¸ä½“ã‚’å‘ã‘ã‚‹å›è»¢é€Ÿåº¦
-    private float faceLeftTurnSpeed = 5f; //Shift+W/Sã§ä½“ã®æ­£é¢ã‚’å·¦ã«å‘ã‘ã‚‹å›è»¢é€Ÿåº¦
-    private Vector3 playerSize; //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚µã‚¤ã‚ºã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
-    private CameraController cameraController; //ç§»å‹•æ–¹å‘ã®åŸºæº–ã«ã™ã‚‹ã‚«ãƒ¡ãƒ©
-    private float modelYawOffset = 90f; //ãƒ¢ãƒ‡ãƒ«ã®æ­£é¢ã®ãšã‚Œè£œæ­£
+    private Vector2 moveInput; //ˆÚ“®‚Ì“ü—Í‚ğŠi”[‚·‚é•Ï”
+    private float moveSpeed; //ˆÚ“®‘¬“x‚ğŠi”[‚·‚é•Ï”
+    private float turnSpeed; //is•ûŒü‚Ö‘Ì‚ğŒü‚¯‚é‰ñ“]‘¬“x
+    private float faceLeftTurnSpeed = 5f; //Shift+W/S‚Å‘Ì‚Ì³–Ê‚ğ¶‚ÉŒü‚¯‚é‰ñ“]‘¬“x
+    private Vector3 playerSize; //ƒvƒŒƒCƒ„[‚ÌƒTƒCƒY‚ğŠi”[‚·‚é•Ï”
+    private CameraController cameraController; //ˆÚ“®•ûŒü‚ÌŠî€‚É‚·‚éƒJƒƒ‰
+    private float modelYawOffset = 90f; //ƒ‚ƒfƒ‹‚Ì³–Ê‚Ì‚¸‚ê•â³
 
     void Awake()
     {
@@ -42,11 +42,11 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-        moveSpeed = playerData.MoveSpeed; //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç§»å‹•é€Ÿåº¦ã‚’å–å¾—
-        playerSize = playerData.PlayerSize; //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚µã‚¤ã‚ºã‚’å–å¾—
-        turnSpeed = playerData.TurnSpeed; //é€²è¡Œæ–¹å‘ã¸ã®å›è»¢é€Ÿåº¦ã‚’å–å¾—
+        moveSpeed = playerData.MoveSpeed; //ƒvƒŒƒCƒ„[‚ÌˆÚ“®‘¬“x‚ğæ“¾
+        playerSize = playerData.PlayerSize; //ƒvƒŒƒCƒ„[‚ÌƒTƒCƒY‚ğæ“¾
+        turnSpeed = playerData.TurnSpeed; //is•ûŒü‚Ö‚Ì‰ñ“]‘¬“x‚ğæ“¾
 
-        //è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚µã‚¤ã‚ºã‚’è¨­å®š
+        //eƒIƒuƒWƒFƒNƒg‚ÌƒTƒCƒY‚ğİ’è
         if (transform.parent != null)
         {
             transform.parent.localScale = playerSize;
@@ -56,7 +56,7 @@ public class PlayerMove : MonoBehaviour
             transform.localScale = playerSize;
         }
 
-        //MainCameraã‚¿ã‚°ã®ã¤ã„ãŸã‚«ãƒ¡ãƒ©ã‹ã‚‰CameraControllerã‚’å–å¾—
+        //MainCameraƒ^ƒO‚Ì‚Â‚¢‚½ƒJƒƒ‰‚©‚çCameraController‚ğæ“¾
         if (Camera.main != null)
         {
             cameraController = Camera.main.GetComponent<CameraController>();
@@ -64,7 +64,7 @@ public class PlayerMove : MonoBehaviour
 
         if (cameraController == null)
         {
-            Debug.LogError("CameraControllerã®ã¤ã„ãŸMainCameraãŒãªã„");
+            Debug.LogError("CameraController‚Ì‚Â‚¢‚½MainCamera‚ª‚È‚¢");
         }
     }
 
@@ -75,36 +75,36 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        //ShiftãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹
+        //Shift‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©
         bool isSideStep = Keyboard.current != null && Keyboard.current.leftShiftKey.isPressed;
 
-        Move(isSideStep);//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç§»å‹•å‡¦ç†
+        Move(isSideStep);//ƒvƒŒƒCƒ„[ˆÚ“®ˆ—
     }
 
-    //ç§»å‹•ã®å…¥åŠ›ã‚’å—ã‘å–ã‚‹é–¢æ•° WASD
+    //ˆÚ“®‚Ì“ü—Í‚ğó‚¯æ‚éŠÖ” WASD
     void OnMove(InputValue value)
     {
-        moveInput = value.Get<Vector2>();//å…¥åŠ›ã‚’å–å¾— 
+        moveInput = value.Get<Vector2>();//“ü—Í‚ğæ“¾ 
     }
 
-    //ç§»å‹•å‡¦ç†
+    //ˆÚ“®ˆ—
     private void Move(bool isSideStep)
     {
         if (cameraController == null) return;
 
         moveSpeed = playerData.MoveSpeed;
 
-        //æ¨ªæ­©ãä¸­ã¯é€Ÿåº¦ã‚’è½ã¨ã™
+        //‰¡•à‚«’†‚Í‘¬“x‚ğ—‚Æ‚·
         if (isSideStep)
         {
             moveSpeed *= sideStepSpeedRate;
         }
 
-        //ã‚«ãƒ¡ãƒ©ã®å›è»¢è§’åº¦ã‹ã‚‰æ°´å¹³ãªå‰æ–¹å‘ãƒ»å³æ–¹å‘ã‚’å–å¾—
+        //ƒJƒƒ‰‚Ì‰ñ“]Šp“x‚©‚ç…•½‚È‘O•ûŒüE‰E•ûŒü‚ğæ“¾
         Vector3 forward = cameraController.FlatForward;
         Vector3 right = cameraController.FlatRight;
 
-        //W/Sã§ã‚«ãƒ¡ãƒ©ã®å¥¥ãƒ»æ‰‹å‰ã€A/Dã§ç”»é¢ã®å·¦å³ã«ç§»å‹•
+        //W/S‚ÅƒJƒƒ‰‚Ì‰œEè‘OAA/D‚Å‰æ–Ê‚Ì¶‰E‚ÉˆÚ“®
         Vector3 moveDirection = forward * moveInput.y + right * moveInput.x;
         Vector3 horizontalVelocity = moveDirection * moveSpeed;
 
@@ -112,9 +112,9 @@ public class PlayerMove : MonoBehaviour
 
         if (isSideStep)
         {
-            //æ¨ªæ­©ã
-            //W/Sï¼šä½“ã®æ­£é¢ã‚’ç”»é¢ã®å·¦ã«å‘ã‘ãŸã¾ã¾ã€æ¨ªå‘ãã§é€²ã‚€
-            //A/Dï¼šå‘ãã¯å¤‰ãˆãšã«ãã®ã¾ã¾é€²ã‚€
+            //‰¡•à‚«
+            //W/SF‘Ì‚Ì³–Ê‚ğ‰æ–Ê‚Ì¶‚ÉŒü‚¯‚½‚Ü‚ÜA‰¡Œü‚«‚Åi‚Ş
+            //A/DFŒü‚«‚Í•Ï‚¦‚¸‚É‚»‚Ì‚Ü‚Üi‚Ş
             if (Mathf.Abs(moveInput.y) > 0.01f)
             {
                 RotateToward(-right, faceLeftTurnSpeed);
@@ -122,7 +122,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            //é€šå¸¸ç§»å‹•ï¼šé€²è¡Œæ–¹å‘ã¸ä½“ã‚’å‘ã‘ã‚‹
+            //’ÊíˆÚ“®Fis•ûŒü‚Ö‘Ì‚ğŒü‚¯‚é
             if (moveDirection.sqrMagnitude > 0.01f)
             {
                 RotateToward(moveDirection, turnSpeed);
@@ -130,10 +130,10 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    //ä½“ã®æ­£é¢ã‚’æŒ‡å®šã—ãŸæ–¹å‘ã¸ã€æŒ‡å®šã—ãŸé€Ÿã•ã§æ»‘ã‚‰ã‹ã«å‘ã‘ã‚‹
+    //‘Ì‚Ì³–Ê‚ğw’è‚µ‚½•ûŒü‚ÖAw’è‚µ‚½‘¬‚³‚ÅŠŠ‚ç‚©‚ÉŒü‚¯‚é
     private void RotateToward(Vector3 direction, float speed)
     {
-        //å‘ã‘ãŸã„æ–¹å‘ã«ãƒ¢ãƒ‡ãƒ«ã®æ­£é¢ã®ãšã‚Œåˆ†ã‚’è¶³ã—ãŸå‘ãã‚’ç›®æ¨™ã«ã™ã‚‹
+        //Œü‚¯‚½‚¢•ûŒü‚Éƒ‚ƒfƒ‹‚Ì³–Ê‚Ì‚¸‚ê•ª‚ğ‘«‚µ‚½Œü‚«‚ğ–Ú•W‚É‚·‚é
         Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up) * Quaternion.Euler(0f, modelYawOffset, 0f);
         Quaternion newRotation = Quaternion.Slerp(rb.rotation, targetRotation, speed * Time.fixedDeltaTime);
         rb.MoveRotation(newRotation);

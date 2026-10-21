@@ -220,7 +220,7 @@ public class NPC_Controller : MonoBehaviour
         return avoidTarget;
     }
 
-    void SetState(string stateName)
+    public void SetState(string stateName)
     {
         switch (stateName)
         {
