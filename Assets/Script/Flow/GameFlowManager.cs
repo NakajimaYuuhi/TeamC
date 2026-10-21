@@ -42,9 +42,6 @@ public class GameFlowManager : MonoBehaviour
     private GameObject _purposeViewPrefab;
     private GameObject _purposeView;
 
-    [SerializeField, Tooltip("Canvass")]
-    private GameObject _canvas;
-
     [Header("===== フロー管理変数 =====")]
     [SerializeField, Tooltip("目的地の名前を表示する時間")]
     private float _purposeViewTime;
@@ -73,7 +70,7 @@ public class GameFlowManager : MonoBehaviour
         // プレイヤー生成
         _player = _playerPrefab ? Instantiate(_playerPrefab,new Vector3(0.0f,2.0f,0.0f),Quaternion.identity) : null;
 
-        _ui = _uiPrefab ? Instantiate(_uiPrefab,_canvas.transform) : null;
+        _ui = _uiPrefab ? Instantiate(_uiPrefab) : null;
 
         Initialize(_gameData.GetSelectStageData());
     }
@@ -143,17 +140,6 @@ public class GameFlowManager : MonoBehaviour
         {
             _flowState = FlowState.Execution;
             _currentTimer = 0.0f;
-
-            if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
-            {
-
-            }
-            InGameUI.InGameUIData uiData;
-            uiData.stageNum = 0;
-            uiData.identity = _purposeData.DestinationName;
-            uiData.destination = "Test";
-            uiData.remainingTime = _failedTime;
-            ingameUI.SetInGameUIData(uiData);
         }
     }
 
@@ -161,10 +147,8 @@ public class GameFlowManager : MonoBehaviour
     {
         if(_purposeData.IsWithinAchievementRange(_player.transform.position)) CollectPurpose();
 
-        if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
-        {
+        InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
 
-        }
         InGameUI.InGameUI_PlayerData uiData;
         uiData.stamina = 1.0f;
         uiData.nuisance = _annoyanceLevel * 100.0f;
@@ -194,10 +178,8 @@ public class GameFlowManager : MonoBehaviour
             _flowState = FlowState.Execution;
         }
 
-        if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
-        {
+        InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
 
-        }
         InGameUI.InGameUI_PlayerData uiData;
         uiData.stamina = 1.0f;
         uiData.nuisance = _annoyanceLevel * 100.0f;
@@ -222,10 +204,8 @@ public class GameFlowManager : MonoBehaviour
         // auto playerComp = _player?.GetComponent<>();
         // playerComp?.SetPurpose(_purposeData.座標のやつ);
 
-        if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
-        {
-
-        }
+        InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
+        
         InGameUI.InGameUIData uiData;
         uiData.stageNum = 0;
         uiData.identity = _purposeData.DestinationName;
@@ -233,10 +213,8 @@ public class GameFlowManager : MonoBehaviour
         uiData.remainingTime = _failedTime;
         ingameUI.SetInGameUIData(uiData);
 
-        // if(_ui.TrygetComponent<XXXX>(out XXXX PurposeUI))
-        // {
-        //      PurposeUi.目標地点を表示するアニメーション開始フック
-        // }
+        InGameUIPopup popup = _ui.GetComponentInChildren<InGameUIPopup>();
+        popup.Play();
     }
 
     public void CollectPurpose()
