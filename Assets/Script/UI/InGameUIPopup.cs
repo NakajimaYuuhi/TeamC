@@ -1,4 +1,4 @@
-/*
+/**
  * file   : InGameUIPopup.cs
  * brief  : 目的地設定時のUIアニメーション
  * 
@@ -67,6 +67,7 @@ public class InGameUIPopup : MonoBehaviour
 
 
 
+
 	//____________________________________
 	// private function
 
@@ -88,23 +89,7 @@ public class InGameUIPopup : MonoBehaviour
             return;
         }
 
-        // 位置を移動させる前に、常設の位置を保存
-        _endPos = _rectTransform.anchoredPosition;
-        _endSize = _rectTransform.sizeDelta;
-
-        _boardGroup.alpha = 0f;
-        _boardGroup.interactable = false;       // 表示専用を明示し、操作や背後のUI入力を遮らない
-        _boardGroup.blocksRaycasts = false;
-
-        _hudContent.alpha = 0f;
-        _hudContent.interactable = false;
-        _hudContent.blocksRaycasts = false;
-        _hudContent.ignoreParentGroups = false; // 親のCanvasGroupの透明度も適用
-
-        _desableContent.alpha = 1f;
-        _desableContent.interactable = false;
-        _desableContent.blocksRaycasts = false;
-        _desableContent.ignoreParentGroups = false;
+        StateReset();
 
         _isInitialized = true;
     }
@@ -128,6 +113,15 @@ public class InGameUIPopup : MonoBehaviour
             return;
         }
 
+        if (!_inGameUi.CanPlay)
+        {
+            Debug.LogError("[InGameUIPopup::Play] Unset InGameUIData.");
+            return;
+        }
+
+        StateReset();
+
+        _inGameUi.CanPlay = false;
         _hasPlayed = true;
         // 待機を挟みながら、アニメーションを順番に実行
         StartCoroutine(PlaySequence());
@@ -193,6 +187,7 @@ public class InGameUIPopup : MonoBehaviour
 
         // 常設位置へ移動後、ゲージなどの追加情報を表示
         yield return FadeIn(_hudContent, _hudFadeDuration);
+        _hasPlayed = false;
     }
 
     private IEnumerator FadeIn(CanvasGroup target, float duration)
@@ -230,5 +225,26 @@ public class InGameUIPopup : MonoBehaviour
 
         target.alpha = 0f;
     }
+
+    private void StateReset()
+    {
+		// 位置を移動させる前に、常設の位置を保存
+		_endPos = _rectTransform.anchoredPosition;
+		_endSize = _rectTransform.sizeDelta;
+
+		_boardGroup.alpha = 0f;
+		_boardGroup.interactable = false;       // 表示専用を明示し、操作や背後のUI入力を遮らない
+		_boardGroup.blocksRaycasts = false;
+
+		_hudContent.alpha = 0f;
+		_hudContent.interactable = false;
+		_hudContent.blocksRaycasts = false;
+		_hudContent.ignoreParentGroups = false; // 親のCanvasGroupの透明度も適用
+
+		_desableContent.alpha = 1f;
+		_desableContent.interactable = false;
+		_desableContent.blocksRaycasts = false;
+		_desableContent.ignoreParentGroups = false;
+	}
 
 }
