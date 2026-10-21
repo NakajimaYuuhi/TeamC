@@ -42,9 +42,6 @@ public class GameFlowManager : MonoBehaviour
     private GameObject _purposeViewPrefab;
     private GameObject _purposeView;
 
-    [SerializeField, Tooltip("Canvass")]
-    private GameObject _canvas;
-
     [Header("===== フロー管理変数 =====")]
     [SerializeField, Tooltip("目的地の名前を表示する時間")]
     private float _purposeViewTime;
@@ -73,7 +70,7 @@ public class GameFlowManager : MonoBehaviour
         // プレイヤー生成
         _player = _playerPrefab ? Instantiate(_playerPrefab,new Vector3(0.0f,2.0f,0.0f),Quaternion.identity) : null;
 
-        _ui = _uiPrefab ? Instantiate(_uiPrefab,_canvas.transform) : null;
+        _ui = _uiPrefab ? Instantiate(_uiPrefab) : null;
 
         Initialize(_gameData.GetSelectStageData());
     }
@@ -122,10 +119,10 @@ public class GameFlowManager : MonoBehaviour
             var area = _stageData.MapData.GetArea(Random.Range(0, _stageData.MapData.Areas.Count));
             
             Vector3 SpawnCenter = area.Center;
-            Vector2 SpawnBoxSize = area.Size;
+            Vector3 SpawnBoxSize = area.Size;
 
             float posX = Random.Range(SpawnCenter.x - (SpawnBoxSize.x * 0.5f), SpawnCenter.x + (SpawnBoxSize.x * 0.5f));
-            float posZ = Random.Range(SpawnCenter.z - (SpawnBoxSize.y * 0.5f), SpawnCenter.z + (SpawnBoxSize.y * 0.5f));
+            float posZ = Random.Range(SpawnCenter.z - (SpawnBoxSize.z * 0.5f), SpawnCenter.z + (SpawnBoxSize.z * 0.5f));
 
             Vector3 SpawnPos = new Vector3(posX, 1.2f, posZ);
 
@@ -150,10 +147,8 @@ public class GameFlowManager : MonoBehaviour
     {
         if(_purposeData.IsWithinAchievementRange(_player.transform.position)) CollectPurpose();
 
-        if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
-        {
+        InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
 
-        }
         InGameUI.InGameUI_PlayerData uiData;
         uiData.stamina = 1.0f;
         uiData.nuisance = _annoyanceLevel * 100.0f;
@@ -165,7 +160,7 @@ public class GameFlowManager : MonoBehaviour
             // プレイヤーを追跡状態にする
         }
 
-        if (_failedTime == 0.0f && _currentTimer > _failedTime)
+        if (_failedTime != 0.0f && _currentTimer > _failedTime)
         {
             ToResult(false);
         }
@@ -183,16 +178,14 @@ public class GameFlowManager : MonoBehaviour
             _flowState = FlowState.Execution;
         }
 
-        if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
-        {
+        InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
 
-        }
         InGameUI.InGameUI_PlayerData uiData;
         uiData.stamina = 1.0f;
         uiData.nuisance = _annoyanceLevel * 100.0f;
         ingameUI.SetInGameUI_PlayerData(uiData);
 
-        if (_failedTime == 0.0f && _currentTimer > _failedTime)
+        if (_failedTime != 0.0f && _currentTimer > _failedTime)
         {
             ToResult(false);
         }
@@ -206,26 +199,22 @@ public class GameFlowManager : MonoBehaviour
         _currentTimer = 0.0f;
 
         _purposeView = Instantiate(_purposeViewPrefab, _purposeData.DestinationPosition, Quaternion.identity);
-        _purposeView.transform.localScale = new Vector3(_purposeData.AchievementSizeX, 5.0f, _purposeData.AchievementSizeZ);
+        _purposeView.transform.localScale = new Vector3(_purposeData.AchievementSizeX, 20.0f, _purposeData.AchievementSizeZ);
 
         // auto playerComp = _player?.GetComponent<>();
         // playerComp?.SetPurpose(_purposeData.座標のやつ);
 
-        if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
-        {
-
-        }
+        InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
+        
         InGameUI.InGameUIData uiData;
         uiData.stageNum = 0;
+        uiData.identity = _purposeData.DestinationName;
         uiData.destination = "Test";
-        uiData.identity = "Test";
         uiData.remainingTime = _failedTime;
         ingameUI.SetInGameUIData(uiData);
 
-        // if(_ui.TrygetComponent<XXXX>(out XXXX PurposeUI))
-        // {
-        //      PurposeUi.目標地点を表示するアニメーション開始フック
-        // }
+        InGameUIPopup popup = _ui.GetComponentInChildren<InGameUIPopup>();
+        popup.Play();
     }
 
     public void CollectPurpose()
