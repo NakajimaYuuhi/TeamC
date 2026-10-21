@@ -31,6 +31,9 @@ public class StageData : ScriptableObject
     public List<DestinationData> PurposeDatas = new List<DestinationData>();
 
     [Header("===== ステージの設定 =====")]
+    [SerializeField, Tooltip("プレイヤーの初期位置")]
+    public Vector3 PlayerInitPos;
+
     [SerializeField,Tooltip("ステージの種類")]
     public StageType Type = StageType.Booth;
 

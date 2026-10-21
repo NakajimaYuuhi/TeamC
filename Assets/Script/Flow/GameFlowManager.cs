@@ -67,11 +67,6 @@ public class GameFlowManager : MonoBehaviour
 
     void Awake()
     {
-        // プレイヤー生成
-        _player = _playerPrefab ? Instantiate(_playerPrefab,new Vector3(0.0f,2.0f,0.0f),Quaternion.identity) : null;
-
-        _ui = _uiPrefab ? Instantiate(_uiPrefab) : null;
-
         Initialize(_gameData.GetSelectStageData());
     }
 
@@ -102,11 +97,18 @@ public class GameFlowManager : MonoBehaviour
     /// <param name="data"></param>
     public void Initialize(StageData data)
     {
+
+
+        _stageData = data;
+        // プレイヤー生成
+        _player = _playerPrefab ? Instantiate(_playerPrefab, _stageData.PlayerInitPos, Quaternion.identity) : null;
+
+        _ui = _uiPrefab ? Instantiate(_uiPrefab) : null;
+
         // プレイヤーにデータ配布
         // auto playerComp = _player?.GetComponent<>();
         // playerComp?.Initialize(data.PlayerData);
 
-        _stageData = data;
         _purposeTimes = data.ClearCount;
         _currentPurposeTimes = 0;
         _resultTime = 0.0f;
@@ -134,7 +136,6 @@ public class GameFlowManager : MonoBehaviour
             string state = area.Tag == NpcSpawnAreaTag.WalkArea ? "Browsing" : area.Tag == NpcSpawnAreaTag.StandArea ? "Standing" : "Grouping";
             npcCtrl?.SetState(state);
         }
-
     }
 
     private void PurposeView()
