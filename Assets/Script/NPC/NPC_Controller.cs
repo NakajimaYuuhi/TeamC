@@ -30,12 +30,32 @@ public class NPC_Controller : MonoBehaviour
     [SerializeField] private float _browseAcceleration = 10.0f;
     [SerializeField] private float _arrivalDistance = 0.5f;
 
+    [Header("ノードベースでの徘徊状態の設定")]
+    [SerializeField] private Node_Edge_Data.Node _node;
+    // 過去のノードのID
+    private int _previousNodeID = -1;
+    // 仮でノードのデータを持ってる場所
+    [SerializeField] private GameObject _nodeData;
+
     // ----- 状態 -----
+    public enum NPCStateType
+    {
+        Standing,
+        Browsing,
+        Browsing_BasedOnNode
+
+    }
+
+
     [Header("状態の設定")]
     [SerializeField] private string initialState = "Standing";
+    [SerializeField] private NPCStateType _initialStateType = NPCStateType.Standing;
+    [SerializeField] private NPCStateType _currentStateType = NPCStateType.Standing;
     private StateMachine<NPC_Controller> _NPCState;
     private NPCStanding _NPCStanding = new NPCStanding();
     private NPCBrowsing _NPCBrowsing = new NPCBrowsing();
+    private NPCBrowsing_BasedOnNode _NPCBrowsing_BasedOnNode = new NPCBrowsing_BasedOnNode();
+
 
     [Header("回避（ステアリング）設定")]
     [SerializeField] private float _avoidRadius = 1.4f;
@@ -48,35 +68,55 @@ public class NPC_Controller : MonoBehaviour
 
     public float ArrivalDistance => _arrivalDistance;
 
+
+    // ===== Unityのライフサイクル =====
+
+    // Awake
+    // デフォルトパラメータの初期化
     void Awake()
     {
+
+        // 初期位置と初期向きを記憶
         _defaultPosition = transform.position;
         _defaultRotation = transform.rotation; // 初期の向きを記憶
 
+        // Rigidbody の取得
         rb = GetComponent<Rigidbody>();
 
-        // 倒れ防止
+        // 回転のフリーズ
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 
+        // ステートマシンの初期化
         _NPCState = new StateMachine<NPC_Controller>(this, _NPCStanding);
+
+        // 初期状態の設定
+        SetState(_initialStateType);
     }
 
+    // Start
     void Start()
     {
-        SetState(initialState);
+
     }
 
+    // FixedUpdate
     void FixedUpdate()
     {
+        // ステートマシンの更新
         _NPCState.OnUpdate();
     }
 
+    // ===== 巡回地点の管理 =====
+
+    // --- 次の巡回地点に進む ---
     public void AdvanceToNextTarget()
     {
+        // 次の巡回地点に進む
         if (_targetPositions == null || _targetPositions.Length == 0) return;
         _currentTargetIndex = (_currentTargetIndex + 1) % _targetPositions.Length;
     }
 
+    // --- 現在の巡回地点を取得 ---
     public Vector3 GetCurrentPatrolPosition()
     {
         if (_targetPositions == null || _targetPositions.Length == 0) return transform.position;
@@ -87,6 +127,8 @@ public class NPC_Controller : MonoBehaviour
     public void MoveTowardsPatrolPoint(Vector3 targetPos)
     {
         Vector3 steerTarget = GetAvoidanceTarget(targetPos);
+        Debug.Log($"NPC is moving towards steerTarget position: {steerTarget}");
+
         // 通常の徘徊移動（デッドゾーンは小さめ 0.05m）
         AccelerateTowards(steerTarget, _browseSpeed, _browseAcceleration, 0.05f, false);
     }
@@ -98,6 +140,7 @@ public class NPC_Controller : MonoBehaviour
         AccelerateTowards(_defaultPosition, _returnSpeed, _returnAcceleration, _stopDeadZone, true);
     }
 
+    // ===== 移動処理 =====
     private void AccelerateTowards(Vector3 targetPos, float maxSpeed, float accel, float stopThreshold, bool isStanding)
     {
         Vector3 currentPos = transform.position;
@@ -150,6 +193,7 @@ public class NPC_Controller : MonoBehaviour
         }
     }
 
+    // ==== 回避（ステアリング）処理 =====
     private Vector3 GetAvoidanceTarget(Vector3 originalTarget)
     {
         Vector3 toTarget = originalTarget - transform.position;
@@ -220,19 +264,133 @@ public class NPC_Controller : MonoBehaviour
         return avoidTarget;
     }
 
+    // ===== 状態の切り替え =====
     public void SetState(string stateName)
     {
         switch (stateName)
         {
             case "Standing":
                 _NPCState.ChangeState(_NPCStanding);
+                _currentStateType = NPCStateType.Standing;
                 break;
             case "Browsing":
                 _NPCState.ChangeState(_NPCBrowsing);
+                _currentStateType = NPCStateType.Browsing;
+                break;
+            case "Browsing_BasedOnNode":
+                _NPCState.ChangeState(_NPCBrowsing_BasedOnNode);
+                _currentStateType = NPCStateType.Browsing_BasedOnNode;
                 break;
             default:
                 Debug.LogWarning($"Unknown state: {stateName}");
                 break;
         }
     }
+
+    public void SetState(NPCStateType stateType)
+    {
+        switch (stateType)
+        {
+            case NPCStateType.Standing:
+                _NPCState.ChangeState(_NPCStanding);
+                _currentStateType = NPCStateType.Standing;
+                break;
+            case NPCStateType.Browsing:
+                _NPCState.ChangeState(_NPCBrowsing);
+                _currentStateType = NPCStateType.Browsing;
+                break;
+            case NPCStateType.Browsing_BasedOnNode:
+                _NPCState.ChangeState(_NPCBrowsing_BasedOnNode);
+                _currentStateType = NPCStateType.Browsing_BasedOnNode;
+                break;
+            default:
+                Debug.LogWarning($"Unknown state type: {stateType}");
+                break;
+        }
+    }
+
+
+    // ===== ノードベースの移動用の関数 =====
+
+    // ノードのセット
+    public void SetNode(Node_Edge_Data.Node node)
+    {
+        _node = node;
+    }
+
+    // 現在のノードの座標を取得
+    public Vector3 GetCurrentNodePosition()
+    {
+        return _node.position;
+    }
+
+    // 次のノードに進む（ここでは単純にランダムで次のノードを選ぶ）
+    public void AdvanceToNextNode()
+    {
+
+
+        if (_node.adjacents == null || _node.adjacents.Count == 0) return;
+
+        // 再抽選が効率悪いなら...
+        // 過去のノードのインデックスを記録して、ランダム抽選を1少ない数で行う
+        // 過去のノードのインデックッス以上のインデックスなら、インデックス値を1足して使う
+
+        // 再抽選方式
+        // 無限ループの可能性がゼロではない（よっぽど無い）
+
+        //// ランダムに次のノードを選ぶ
+        //int randomIndex = Random.Range(0, _node.adjacents.Count);
+        //int nextNodeID = _node.adjacents[randomIndex];
+
+        //// 現在のノードと同じノードを選んでしまった場合は、再度ランダムに選び直す
+        //while (_previousNodeID != -1 && nextNodeID == _previousNodeID && _node.adjacents.Count > 1 )
+        //{
+        //    randomIndex = Random.Range(0, _node.adjacents.Count);
+        //    nextNodeID = _node.adjacents[randomIndex];
+        //}
+
+
+
+        int count = _node.adjacents.Count;
+        int nextNodeID;
+
+        // 直前のノードが隣接リストに含まれていて、かつ他に選択肢がある場合
+        int prevIndex = (_previousNodeID != -1 && count > 1)
+            ? _node.adjacents.IndexOf(_previousNodeID)
+            : -1;
+
+        if (prevIndex != -1)
+        {
+            // 直前のノードを除いた (count - 1) 個から抽選
+            int randomIndex = UnityEngine.Random.Range(0, count - 1);
+
+            // 除外したインデックス以上の値が出たら、1つ後ろにずらす
+            if (randomIndex >= prevIndex)
+            {
+                randomIndex++;
+            }
+
+            nextNodeID = _node.adjacents[randomIndex];
+        }
+        else
+        {
+            // 初回や袋小路（戻るしかない）の場合は通常抽選
+            int randomIndex = UnityEngine.Random.Range(0, count);
+            nextNodeID = _node.adjacents[randomIndex];
+        }
+
+
+
+        // 過去ノードを更新
+        _previousNodeID = _node.NodeID;
+
+        // ノードのIDからノードを取得
+        NodeEdgeGenerator nodeData = _nodeData.GetComponent<NodeEdgeGenerator>();
+
+        // 次のノードを取得
+        Node_Edge_Data.Node nextNode = nodeData.GetNode(nextNodeID);        // ノードを更新
+        SetNode(nextNode);
+    }
+
+
 }

@@ -14,35 +14,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NodeData
   nodes:
   - nodeID: 0
-    position: {x: -5, y: 0, z: -5}
-    adjacents: 0300000001000000
-  - nodeID: 1
-    position: {x: 5, y: 0, z: -5}
-    adjacents: 0000000002000000
-  - nodeID: 2
-    position: {x: 5, y: 0, z: 5}
+    position: {x: 0, y: 0, z: 0}
     adjacents: 0100000003000000
+  - nodeID: 1
+    position: {x: 5, y: 0, z: 0}
+    adjacents: 000000000200000004000000
+  - nodeID: 2
+    position: {x: 10, y: 0, z: 0}
+    adjacents: 0100000005000000
   - nodeID: 3
-    position: {x: -5, y: 0, z: 5}
-    adjacents: 0000000002000000
+    position: {x: 0, y: 0, z: 5}
+    adjacents: 000000000400000006000000
+  - nodeID: 4
+    position: {x: 5, y: 0, z: 5}
+    adjacents: 01000000030000000500000007000000
+  - nodeID: 5
+    position: {x: 10, y: 0, z: 5}
+    adjacents: 020000000400000008000000
+  - nodeID: 6
+    position: {x: 0, y: 0, z: 10}
+    adjacents: 0700000003000000
+  - nodeID: 7
+    position: {x: 5, y: 0, z: 10}
+    adjacents: 060000000800000004000000
+  - nodeID: 8
+    position: {x: 10, y: 0, z: 10}
+    adjacents: 0700000005000000
   edges:
   - fromNodeID: 0
-    toNodeID: 3
-    distance: 10
-    isTwoWay: 1
-    width: 2
-  - fromNodeID: 0
     toNodeID: 1
-    distance: 10
+    distance: 5
     isTwoWay: 1
     width: 2
   - fromNodeID: 1
     toNodeID: 2
-    distance: 10
+    distance: 5
+    isTwoWay: 1
+    width: 2
+  - fromNodeID: 0
+    toNodeID: 3
+    distance: 5
+    isTwoWay: 1
+    width: 2
+  - fromNodeID: 1
+    toNodeID: 4
+    distance: 5
     isTwoWay: 1
     width: 2
   - fromNodeID: 2
-    toNodeID: 3
-    distance: 10
+    toNodeID: 5
+    distance: 5
+    isTwoWay: 1
+    width: 2
+  - fromNodeID: 3
+    toNodeID: 4
+    distance: 5
+    isTwoWay: 1
+    width: 2
+  - fromNodeID: 4
+    toNodeID: 5
+    distance: 5
+    isTwoWay: 1
+    width: 2
+  - fromNodeID: 6
+    toNodeID: 7
+    distance: 5
+    isTwoWay: 1
+    width: 2
+  - fromNodeID: 7
+    toNodeID: 8
+    distance: 5
+    isTwoWay: 1
+    width: 2
+  - fromNodeID: 3
+    toNodeID: 6
+    distance: 5
+    isTwoWay: 1
+    width: 2
+  - fromNodeID: 4
+    toNodeID: 7
+    distance: 5
+    isTwoWay: 1
+    width: 2
+  - fromNodeID: 5
+    toNodeID: 8
+    distance: 5
     isTwoWay: 1
     width: 2
