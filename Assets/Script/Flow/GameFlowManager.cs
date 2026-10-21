@@ -122,10 +122,10 @@ public class GameFlowManager : MonoBehaviour
             var area = _stageData.MapData.GetArea(Random.Range(0, _stageData.MapData.Areas.Count));
             
             Vector3 SpawnCenter = area.Center;
-            Vector2 SpawnBoxSize = area.Size;
+            Vector3 SpawnBoxSize = area.Size;
 
             float posX = Random.Range(SpawnCenter.x - (SpawnBoxSize.x * 0.5f), SpawnCenter.x + (SpawnBoxSize.x * 0.5f));
-            float posZ = Random.Range(SpawnCenter.z - (SpawnBoxSize.y * 0.5f), SpawnCenter.z + (SpawnBoxSize.y * 0.5f));
+            float posZ = Random.Range(SpawnCenter.z - (SpawnBoxSize.z * 0.5f), SpawnCenter.z + (SpawnBoxSize.z * 0.5f));
 
             Vector3 SpawnPos = new Vector3(posX, 1.2f, posZ);
 
@@ -143,6 +143,17 @@ public class GameFlowManager : MonoBehaviour
         {
             _flowState = FlowState.Execution;
             _currentTimer = 0.0f;
+
+            if (!_ui.TryGetComponent<InGameUI>(out InGameUI ingameUI))
+            {
+
+            }
+            InGameUI.InGameUIData uiData;
+            uiData.stageNum = 0;
+            uiData.identity = _purposeData.DestinationName;
+            uiData.destination = "Test";
+            uiData.remainingTime = _failedTime;
+            ingameUI.SetInGameUIData(uiData);
         }
     }
 
@@ -165,7 +176,7 @@ public class GameFlowManager : MonoBehaviour
             // プレイヤーを追跡状態にする
         }
 
-        if (_failedTime == 0.0f && _currentTimer > _failedTime)
+        if (_failedTime != 0.0f && _currentTimer > _failedTime)
         {
             ToResult(false);
         }
@@ -192,7 +203,7 @@ public class GameFlowManager : MonoBehaviour
         uiData.nuisance = _annoyanceLevel * 100.0f;
         ingameUI.SetInGameUI_PlayerData(uiData);
 
-        if (_failedTime == 0.0f && _currentTimer > _failedTime)
+        if (_failedTime != 0.0f && _currentTimer > _failedTime)
         {
             ToResult(false);
         }
@@ -206,7 +217,7 @@ public class GameFlowManager : MonoBehaviour
         _currentTimer = 0.0f;
 
         _purposeView = Instantiate(_purposeViewPrefab, _purposeData.DestinationPosition, Quaternion.identity);
-        _purposeView.transform.localScale = new Vector3(_purposeData.AchievementSizeX, 5.0f, _purposeData.AchievementSizeZ);
+        _purposeView.transform.localScale = new Vector3(_purposeData.AchievementSizeX, 20.0f, _purposeData.AchievementSizeZ);
 
         // auto playerComp = _player?.GetComponent<>();
         // playerComp?.SetPurpose(_purposeData.座標のやつ);
@@ -217,8 +228,8 @@ public class GameFlowManager : MonoBehaviour
         }
         InGameUI.InGameUIData uiData;
         uiData.stageNum = 0;
+        uiData.identity = _purposeData.DestinationName;
         uiData.destination = "Test";
-        uiData.identity = "Test";
         uiData.remainingTime = _failedTime;
         ingameUI.SetInGameUIData(uiData);
 
