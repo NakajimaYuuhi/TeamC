@@ -35,7 +35,7 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField, Tooltip("警備員のプレハブ")]
     private GameObject _securityPrefab;
 
-    [SerializeField,Tooltip("ゲームのデータ")]
+    [SerializeField, Tooltip("ゲームのデータ")]
     private GameData _gameData;
 
     [SerializeField, Tooltip("目的地の表示")]
@@ -64,7 +64,7 @@ public class GameFlowManager : MonoBehaviour
     private int _currentPurposeTimes; // 現在の目的達成数
     private float _resultTime; // 最終結果時間
     private bool _isClear; // クリアしたかの情報受け渡し用
-   
+
     void Awake()
     {
         // プレイヤー生成
@@ -105,6 +105,7 @@ public class GameFlowManager : MonoBehaviour
         // プレイヤーにデータ配布
         // auto playerComp = _player?.GetComponent<>();
         // playerComp?.Initialize(data.PlayerData);
+
         _stageData = data;
         _purposeTimes = data.ClearCount;
         _currentPurposeTimes = 0;
@@ -126,10 +127,12 @@ public class GameFlowManager : MonoBehaviour
 
             Vector3 SpawnPos = new Vector3(posX, 1.2f, posZ);
 
-            var npc = Instantiate(_enemyPrefab,SpawnPos,Quaternion.identity);
+            Quaternion rot = Random.rotation;
+            rot.x = rot.z = 0.0f;
+            var npc = Instantiate(_enemyPrefab,SpawnPos,rot);
             var npcCtrl = npc.GetComponentInChildren<NPC_Controller>();
             string state = area.Tag == NpcSpawnAreaTag.WalkArea ? "Browsing" : area.Tag == NpcSpawnAreaTag.StandArea ? "Standing" : "Grouping";
-            // npcCtrl?.SetState(state);
+            npcCtrl?.SetState(state);
         }
 
     }
@@ -202,7 +205,7 @@ public class GameFlowManager : MonoBehaviour
         _purposeView.transform.localScale = new Vector3(_purposeData.AchievementSizeX, 20.0f, _purposeData.AchievementSizeZ);
 
         // auto playerComp = _player?.GetComponent<>();
-        // playerComp?.SetPurpose(_purposeData.座標のやつ);
+        // playerComp?.SetPurpose(_purposeData.destinationPosition);
 
         InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
         
@@ -242,8 +245,6 @@ public class GameFlowManager : MonoBehaviour
             _annoyanceLevel = 1.0f;
         }
     }
-
-
     public void ToResult(bool clear)
     {
         _flowState = FlowState.ResultView;
@@ -254,4 +255,5 @@ public class GameFlowManager : MonoBehaviour
         _gameData.ApplyResult(data);
         SceneManager.LoadScene("Result", LoadSceneMode.Additive);
     }
+
 }

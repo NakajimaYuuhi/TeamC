@@ -24,6 +24,6 @@ MonoBehaviour:
   FailedTime: 30
   _securityCount: 3
   ClearCount: 5
-  EnemyCount: 4000
+  EnemyCount: 2000
   DiffMulti: 1
   PhaseMulti: 0

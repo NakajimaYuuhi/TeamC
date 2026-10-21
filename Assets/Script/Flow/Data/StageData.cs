@@ -22,7 +22,7 @@ public class StageData : ScriptableObject
     public NpcSpawnAreaData MapData;
 
     [SerializeField, Tooltip("プレイヤーのパラメータ")]
-    public ScriptableObject PlayerData;
+    public PlayerData PlayerData;
 
     [SerializeField, Tooltip("存在する敵の種類リスト")]
     public List<ScriptableObject> EnemyDetas = new List<ScriptableObject>();
