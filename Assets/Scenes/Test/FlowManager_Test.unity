@@ -155,7 +155,6 @@ MonoBehaviour:
   _securityPrefab: {fileID: 0}
   _gameData: {fileID: 11400000, guid: 0364facd7094dde478ead4e0ae9f3736, type: 2}
   _purposeViewPrefab: {fileID: 5893641079708652875, guid: b7f76c93adc94264eab06801c65869f6, type: 3}
-  _canvas: {fileID: 0}
   _purposeViewTime: 2
   _annoyanceDecrease: 3
 --- !u!114 &824258865
@@ -191,6 +190,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &824258865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824258862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbace8d6d2e5274cbbfc172f417b9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NodeEdgeGenerator
+  nodeData: {fileID: 11400000, guid: 31488134137b4c444be77ab56fcc8276, type: 2}
+  nodePrefab: {fileID: 0}
+  edgePrefab: {fileID: 0}
+  _npcController: {fileID: 0}
+  _nodeID: 0
 --- !u!1 &1260487759
 GameObject:
   m_ObjectHideFlags: 0
