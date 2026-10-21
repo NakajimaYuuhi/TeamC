@@ -1,69 +1,71 @@
 /**
  * File:GameFlowManager.cs
  * 
- * “à—eFƒQ[ƒ€‚Ì—¬‚ê‚ğŠÇ—‚µA•K—vƒIƒuƒWƒFƒNƒg‚Ì¶¬‚È‚Ç‚ğs‚¤
+ * å†…å®¹ï¼šã‚²ãƒ¼ãƒ ã®æµã‚Œã‚’ç®¡ç†ã—ã€å¿…è¦ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆãªã©ã‚’è¡Œã†
  * 
- * ì¬Ò:›“c
+ * ä½œæˆè€…:å¯ºç”°
  */
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(NpcPhysicsLodManager))]
 public class GameFlowManager : MonoBehaviour
 {
+    private NpcPhysicsLodManager _npcPhysicsLodManager;
     enum FlowState
     {
-        PurposeView, // –Ú“I’ñ¦
-        Execution, // –Ú“I‹s
-        Track, // Œx”õˆõ‚©‚ç“¦‚°‚é
-        ResultView, // Œ‹‰Ê•\¦
+        PurposeView, // ç›®çš„æç¤º
+        Execution, // ç›®çš„é‚è¡Œ
+        Track, // è­¦å‚™å“¡ã‹ã‚‰é€ƒã’ã‚‹
+        ResultView, // çµæœè¡¨ç¤º
     };
 
 
-    [Header("===== QÆ ======")]
-    [SerializeField, Tooltip("ƒvƒŒƒCƒ„[‚ÌƒvƒŒƒnƒu")]
+    [Header("===== å‚ç…§ ======")]
+    [SerializeField, Tooltip("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒ—ãƒ¬ãƒãƒ–")]
     private GameObject _playerPrefab;
     private GameObject _player;
 
-    [SerializeField, Tooltip("“G‚ÌƒvƒŒƒCƒnƒu")]
+    [SerializeField, Tooltip("æ•µã®ãƒ—ãƒ¬ã‚¤ãƒãƒ–")]
     private GameObject _enemyPrefab;
 
-    [SerializeField, Tooltip("UI‚ÌƒvƒŒƒnƒu")]
+    [SerializeField, Tooltip("UIã®ãƒ—ãƒ¬ãƒãƒ–")]
     private GameObject _uiPrefab;
     private GameObject _ui;
 
-    [SerializeField, Tooltip("Œx”õˆõ‚ÌƒvƒŒƒnƒu")]
+    [SerializeField, Tooltip("è­¦å‚™å“¡ã®ãƒ—ãƒ¬ãƒãƒ–")]
     private GameObject _securityPrefab;
 
-    [SerializeField, Tooltip("ƒQ[ƒ€‚Ìƒf[ƒ^")]
+    [SerializeField, Tooltip("ã‚²ãƒ¼ãƒ ã®ãƒ‡ãƒ¼ã‚¿")]
     private GameData _gameData;
 
-    [SerializeField, Tooltip("–Ú“I’n‚Ì•\¦")]
+    [SerializeField, Tooltip("ç›®çš„åœ°ã®è¡¨ç¤º")]
     private GameObject _purposeViewPrefab;
     private GameObject _purposeView;
 
-    [Header("===== ƒtƒ[ŠÇ—•Ï” =====")]
-    [SerializeField, Tooltip("–Ú“I’n‚Ì–¼‘O‚ğ•\¦‚·‚éŠÔ")]
+    [Header("===== ãƒ•ãƒ­ãƒ¼ç®¡ç†å¤‰æ•° =====")]
+    [SerializeField, Tooltip("ç›®çš„åœ°ã®åå‰ã‚’è¡¨ç¤ºã™ã‚‹æ™‚é–“")]
     private float _purposeViewTime;
 
-    [SerializeField, Tooltip("–À˜f—¦‚ªŒ¸­‚·‚é‘¬“x")]
+    [SerializeField, Tooltip("è¿·æƒ‘ç‡ãŒæ¸›å°‘ã™ã‚‹é€Ÿåº¦")]
     private float _annoyanceDecrease = 3.0f;
 
     private DestinationData _purposeData;
     private FlowState _flowState = FlowState.PurposeView;
 
-    // –À˜f“x
+    // è¿·æƒ‘åº¦
     private float _annoyanceLevel;
     private StageData _stageData;
 
-    // SO‚©‚çQÆ
-    private float _failedTime; // ¸”s‚·‚é‚Ü‚Å‚ÌŠÔ
-    private float _currentTimer; // Œ»İ‚ÌŒo‰ßŠÔ
+    // SOã‹ã‚‰å‚ç…§
+    private float _failedTime; // å¤±æ•—ã™ã‚‹ã¾ã§ã®æ™‚é–“
+    private float _currentTimer; // ç¾åœ¨ã®çµŒéæ™‚é–“
 
-    private int _purposeTimes; // –Ú“I‚ÌŒÂ”
-    private int _currentPurposeTimes; // Œ»İ‚Ì–Ú“I’B¬”
-    private float _resultTime; // ÅIŒ‹‰ÊŠÔ
-    private bool _isClear; // ƒNƒŠƒA‚µ‚½‚©‚Ìî•ñó‚¯“n‚µ—p
+    private int _purposeTimes; // ç›®çš„ã®å€‹æ•°
+    private int _currentPurposeTimes; // ç¾åœ¨ã®ç›®çš„é”æˆæ•°
+    private float _resultTime; // æœ€çµ‚çµæœæ™‚é–“
+    private bool _isClear; // ã‚¯ãƒªã‚¢ã—ãŸã‹ã®æƒ…å ±å—ã‘æ¸¡ã—ç”¨
 
     void Awake()
     {
@@ -92,7 +94,7 @@ public class GameFlowManager : MonoBehaviour
     }
 
     /// <summary>
-    /// SO‚©‚çó‚¯æ‚Á‚½ƒf[ƒ^‚ğ•Ï”‚É—¬‚·
+    /// SOã‹ã‚‰å—ã‘å–ã£ãŸãƒ‡ãƒ¼ã‚¿ã‚’å¤‰æ•°ã«æµã™
     /// </summary>
     /// <param name="data"></param>
     public void Initialize(StageData data)
@@ -100,12 +102,12 @@ public class GameFlowManager : MonoBehaviour
 
 
         _stageData = data;
-        // ƒvƒŒƒCƒ„[¶¬
+        // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç”Ÿæˆ
         _player = _playerPrefab ? Instantiate(_playerPrefab, _stageData.PlayerInitPos, Quaternion.identity) : null;
 
         _ui = _uiPrefab ? Instantiate(_uiPrefab) : null;
 
-        // ƒvƒŒƒCƒ„[‚Éƒf[ƒ^”z•z
+        // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«ãƒ‡ãƒ¼ã‚¿é…å¸ƒ
         // auto playerComp = _player?.GetComponent<>();
         // playerComp?.Initialize(data.PlayerData);
 
@@ -115,10 +117,10 @@ public class GameFlowManager : MonoBehaviour
         Instantiate(_stageData.MapData.MapPrefab ?? null);
         SetPurpose();
 
-        // “G¶¬
+        // æ•µç”Ÿæˆ
         for(int i = 0;i < _stageData.EnemyCount;++i)
         {
-            // Map‚Ì¶¬ˆÊ’uƒf[ƒ^ƒŠƒXƒg‚ğ‚à‚Æ‚É¶¬‚µ‚Ä‚¢‚­
+            // Mapã®ç”Ÿæˆä½ç½®ãƒ‡ãƒ¼ã‚¿ãƒªã‚¹ãƒˆã‚’ã‚‚ã¨ã«ç”Ÿæˆã—ã¦ã„ã
             var area = _stageData.MapData.GetArea(Random.Range(0, _stageData.MapData.Areas.Count));
             
             Vector3 SpawnCenter = area.Center;
@@ -133,6 +135,7 @@ public class GameFlowManager : MonoBehaviour
             rot.x = rot.z = 0.0f;
             var npc = Instantiate(_enemyPrefab,SpawnPos,rot);
             var npcCtrl = npc.GetComponentInChildren<NPC_Controller>();
+            if (npcCtrl != null) _npcPhysicsLodManager.Register(npcCtrl);
             string state = area.Tag == NpcSpawnAreaTag.WalkArea ? "Browsing" : area.Tag == NpcSpawnAreaTag.StandArea ? "Standing" : "Grouping";
             npcCtrl?.SetState(state);
         }
@@ -161,7 +164,7 @@ public class GameFlowManager : MonoBehaviour
         if (_annoyanceLevel >= 1.0f)
         {
             _flowState = FlowState.Track;
-            // ƒvƒŒƒCƒ„[‚ğ’ÇÕó‘Ô‚É‚·‚é
+            // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’è¿½è·¡çŠ¶æ…‹ã«ã™ã‚‹
         }
 
         if (_failedTime != 0.0f && _currentTimer > _failedTime)
@@ -177,7 +180,7 @@ public class GameFlowManager : MonoBehaviour
         _annoyanceLevel -= Time.deltaTime / _annoyanceDecrease;
         if(_annoyanceLevel <= 0.0f)
         {
-            // ƒvƒŒƒCƒ„[‚ğŒ³‚Ìó‘Ô‚É–ß‚·
+            // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’å…ƒã®çŠ¶æ…‹ã«æˆ»ã™
 
             _flowState = FlowState.Execution;
         }

@@ -157,6 +157,24 @@ MonoBehaviour:
   _purposeViewPrefab: {fileID: 5893641079708652875, guid: b7f76c93adc94264eab06801c65869f6, type: 3}
   _purposeViewTime: 2
   _annoyanceDecrease: 3
+--- !u!114 &824258865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824258862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0ba8e07af14412b52563bb344f981a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::NpcPhysicsLodManager
+  target: {fileID: 0}
+  activationDistance: 15
+  suspensionDistance: 20
+  checkInterval: 0.2
+  maxChecksPerFrame: 256
+  initialSimulationTime: 1
 --- !u!4 &824258864
 Transform:
   m_ObjectHideFlags: 0
