@@ -5,7 +5,6 @@
  */
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 [CreateAssetMenu(fileName = "GameFloawData", menuName = "Scriptable Objects/GameFloawData")]
 public class GameData : ScriptableObject

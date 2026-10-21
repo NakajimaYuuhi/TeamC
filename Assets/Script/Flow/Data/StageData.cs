@@ -5,7 +5,6 @@
  */
 using UnityEngine;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 [CreateAssetMenu(fileName = "StageData", menuName = "Scriptable Objects/StageData")]
 public class StageData : ScriptableObject
