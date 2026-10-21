@@ -25,7 +25,7 @@ public class GameData : ScriptableObject
     public List<StageData> StageDatas = new List<StageData>();
 
     [SerializeField, Tooltip("プレイヤーの種類データ")]
-    public List<ScriptableObject> playerTypeDatas = new List<ScriptableObject>();
+    public List<PlayerData> playerTypeDatas = new List<PlayerData>();
 
     private int _selectStageNo;
     public int SelectStageNo => _selectStageNo;
