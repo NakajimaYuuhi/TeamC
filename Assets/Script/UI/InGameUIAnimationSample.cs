@@ -1,4 +1,4 @@
-/*
+/**
  * file   : InGameUIAnimatioinSample.cs
  * brief  : 動作確認用のファイル
  * 　　　　　落ち着いたら消す
@@ -43,10 +43,12 @@ public class InGameUIAnimationSample : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		/*
+
 		if (Keyboard.current != null &&
 			Keyboard.current.spaceKey.wasPressedThisFrame)
 		{
+			return;
+
 			if (_inGamePopup == null)
 			{
 				Debug.LogError(
@@ -55,9 +57,32 @@ public class InGameUIAnimationSample : MonoBehaviour
 			}
 
 			Debug.Log("play");
-			_inGamePopup.Play();	// ここで実行
+			_inGamePopup.Play();    // ここで実行
 
 		}
-		*/
+
+		if(Keyboard.current != null &&
+			Keyboard.current.enterKey.wasPressedThisFrame)
+		{
+			return;
+			
+			InGameUI.InGameUIData data;
+			data.destination = "友達100人できるだろ！！！！";
+			data.identity = "VD-32";
+			data.remainingTime = 50f;
+			data.stageNum = 8;
+
+			_inGameUI.SetInGameUIData(data);
+			_inGamePopup.Play();
+		}
+
+		if (Keyboard.current != null &&
+			Keyboard.current.aKey.wasPressedThisFrame)
+		{
+			return;
+
+			_inGameUI.TimerStart();
+		}
+
 	}
 }

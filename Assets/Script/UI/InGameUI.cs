@@ -78,6 +78,10 @@ public class InGameUI : MonoBehaviour
 	private bool _isGameUISetUp = false;
 	private bool _isPlayerSetUp = false;
 
+	private bool _canPlay = false;
+
+	private bool _timeStartFlag = false;
+
 
 
 	//____________________________________
@@ -106,12 +110,21 @@ public class InGameUI : MonoBehaviour
 			return;
 		}
 
-		SetRemainingTime(_remainingTime - Time.deltaTime);
+		if (_timeStartFlag)
+		{
+			SetRemainingTime(_remainingTime - Time.deltaTime);
+		}
 		SetStamina(Mathf.MoveTowards(
 			_stamina, MAX_VALUE, _staminaRecovery * Time.deltaTime));
 		SetNuisance(Mathf.MoveTowards(
 			_nuisance, 0f, _nuisanceDecrease * Time.deltaTime));
     }
+
+
+	public void TimerStart()
+	{
+		_timeStartFlag = true;
+	}
 
 
 
@@ -132,6 +145,8 @@ public class InGameUI : MonoBehaviour
 		SetRemainingTime(data.remainingTime);
 
 		_isGameUISetUp = true;
+		_canPlay = true;
+		_timeStartFlag = false;
 	}
 
 	/// <summary>
@@ -197,5 +212,12 @@ public class InGameUI : MonoBehaviour
 			remainingTime = _remainingTime
 		};
 	}
+
+	public bool CanPlay
+	{
+		get => _canPlay;
+		set => _canPlay = value;
+	}
+
 
 }
