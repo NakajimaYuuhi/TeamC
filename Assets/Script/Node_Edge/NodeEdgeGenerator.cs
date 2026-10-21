@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NodeEdgeGenerator : MonoBehaviour
@@ -10,6 +11,15 @@ public class NodeEdgeGenerator : MonoBehaviour
 
     [SerializeField]
     GameObject edgePrefab;
+
+    // ノードをセットするためのパラメータ
+    // セット先のオブジェクト
+    [SerializeField]
+    private NPC_Controller _npcController;
+
+    // ノードのIDを指定するためのパラメータ
+    [SerializeField]
+    private int _nodeID;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,11 +61,45 @@ public class NodeEdgeGenerator : MonoBehaviour
 
             }
         }
+
+
+        // ノードの情報をNPC_Controllerにセットする
+        if (_npcController != null)
+        {
+            Node_Edge_Data.Node nodeInfo = GetNode(_nodeID);
+            _npcController.SetNode(nodeInfo);
+        }
+        else
+        {
+            Debug.LogError("NPC_Controller is not assigned.");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    // ノードの情報を取得する
+    public Node_Edge_Data.Node GetNode(int nodeID)
+    {
+        if (nodeID < 0 || nodeID >= nodeData.Nodes.Count)
+        {
+            Debug.LogError($"Invalid nodeID: {nodeID}");
+            return default;
+        }
+        return nodeData.Nodes[nodeID];
+    }
+
+    // エッジの情報を取得する
+    public Node_Edge_Data.Edge GetEdge(int edgeIndex)
+    {
+        if (edgeIndex < 0 || edgeIndex >= nodeData.Edges.Count)
+        {
+            Debug.LogError($"Invalid edgeIndex: {edgeIndex}");
+            return default;
+        }
+        return nodeData.Edges[edgeIndex];
     }
 }
