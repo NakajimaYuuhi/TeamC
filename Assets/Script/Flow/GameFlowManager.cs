@@ -39,6 +39,10 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField,Tooltip("ゲームのデータ")]
     private GameData _gameData;
 
+    [SerializeField, Tooltip("目的地の表示")]
+    private GameObject _purposeViewPrefab;
+    private GameObject _purposeView;
+
     [SerializeField, Tooltip("Canvass")]
     private GameObject _canvas;
 
@@ -62,8 +66,8 @@ public class GameFlowManager : MonoBehaviour
 
     private int _purposeTimes; // 目的の個数
     private int _currentPurposeTimes; // 現在の目的達成数
-    private float _resultTime;
-    private bool _isClear;
+    private float _resultTime; // 最終結果時間
+    private bool _isClear; // クリアしたかの情報受け渡し用
    
     void Awake()
     {
@@ -109,6 +113,7 @@ public class GameFlowManager : MonoBehaviour
         _purposeTimes = data.ClearCount;
         _currentPurposeTimes = 0;
         _resultTime = 0.0f;
+        Instantiate(_stageData.MapData.MapPrefab ?? null);
         SetPurpose();
 
         // 敵生成
@@ -125,7 +130,10 @@ public class GameFlowManager : MonoBehaviour
 
             Vector3 SpawnPos = new Vector3(posX, 1.2f, posZ);
 
-            Instantiate(_enemyPrefab,SpawnPos,Quaternion.identity);
+            var npc = Instantiate(_enemyPrefab,SpawnPos,Quaternion.identity);
+            var npcCtrl = npc.GetComponentInChildren<NPC_Controller>();
+            string state = area.Tag == NpcSpawnAreaTag.WalkArea ? "Browsing" : area.Tag == NpcSpawnAreaTag.StandArea ? "Standing" : "Grouping";
+            // npcCtrl?.SetState(state);
         }
 
     }
@@ -158,7 +166,7 @@ public class GameFlowManager : MonoBehaviour
             // プレイヤーを追跡状態にする
         }
 
-        if (_currentTimer > _failedTime)
+        if (_failedTime == 0.0f && _currentTimer > _failedTime)
         {
             ToResult(false);
         }
@@ -185,7 +193,7 @@ public class GameFlowManager : MonoBehaviour
         uiData.nuisance = _annoyanceLevel * 100.0f;
         ingameUI.SetInGameUI_PlayerData(uiData);
 
-        if (_currentTimer > _failedTime)
+        if (_failedTime == 0.0f && _currentTimer > _failedTime)
         {
             ToResult(false);
         }
@@ -197,6 +205,10 @@ public class GameFlowManager : MonoBehaviour
 
         _failedTime = _stageData.FailedTime;
         _currentTimer = 0.0f;
+
+        _purposeView = Instantiate(_purposeViewPrefab, _purposeData.DestinationPosition, Quaternion.identity);
+        _purposeView.transform.localScale = new Vector3(_purposeData.AchievementSizeX, 5.0f, _purposeData.AchievementSizeZ);
+
         // auto playerComp = _player?.GetComponent<>();
         // playerComp?.SetPurpose(_purposeData.座標のやつ);
 
@@ -219,6 +231,7 @@ public class GameFlowManager : MonoBehaviour
 
     public void CollectPurpose()
     {
+        Destroy(_purposeView);
         _resultTime += _currentTimer;
         if (++_currentPurposeTimes >= _purposeTimes)
         {
