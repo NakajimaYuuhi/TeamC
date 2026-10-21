@@ -88,13 +88,15 @@ public class NPC_Controller : MonoBehaviour
 
         // ステートマシンの初期化
         _NPCState = new StateMachine<NPC_Controller>(this, _NPCStanding);
+
+        // 初期状態の設定
+        SetState(_initialStateType);
     }
 
     // Start
     void Start()
     {
-        // 初期状態の設定
-        SetState(_initialStateType);
+
     }
 
     // FixedUpdate
