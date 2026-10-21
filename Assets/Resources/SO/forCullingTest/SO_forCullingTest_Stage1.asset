@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8665c5fc24fbdd045b463237a9836604, type: 3}
+  m_Name: SO_forCullingTest_Stage1
+  m_EditorClassIdentifier: Assembly-CSharp::StageData
+  MapData: {fileID: 0}
+  PlayerData: {fileID: 0}
+  EnemyDetas:
+  - {fileID: 0}
+  PurposeDatas:
+  - {fileID: 11400000, guid: bdab98d226695b24389c78e197c1f536, type: 2}
+  - {fileID: 11400000, guid: c5e8434c089f26b4895773d34a6368f5, type: 2}
+  Type: 0
+  FailedTime: 30
+  _securityCount: 3
+  ClearCount: 5
+  EnemyCount: 10
+  DiffMulti: 1
+  PhaseMulti: 0
