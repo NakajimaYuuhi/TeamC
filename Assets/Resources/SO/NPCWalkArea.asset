@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a4b7af1e8c472f90e2a8f26d2f7b38, type: 3}
+  m_Name: NPCWalkArea
+  m_EditorClassIdentifier: Assembly-CSharp::NpcSpawnAreaData
+  MapPrefab: {fileID: 3077033770173759229, guid: f82249cb16f72ad42926b82205849b98, type: 3}
+  areas:
+  - center: {x: 0, y: 0, z: 6.39}
+    size: {x: 100, y: 1, z: 5.6}
+    tag: 0
+  - center: {x: 0, y: 0, z: -23.97}
+    size: {x: 100, y: 1, z: 5.6}
+    tag: 0
+  - center: {x: 0, y: 0, z: -52.1}
+    size: {x: 100, y: 1, z: 5.6}
+    tag: 0
+  - center: {x: 0, y: 0, z: -7.67}
+    size: {x: 6.5, y: 1, z: 95}
+    tag: 0
+  - center: {x: 0, y: 0, z: 37.35}
+    size: {x: 100, y: 1, z: 5}
+    tag: 0
+  - center: {x: 47.07, y: 0, z: -7.67}
+    size: {x: 5.5, y: 1, z: 95}
+    tag: 0
+  - center: {x: -47.24, y: 0, z: -7.67}
+    size: {x: 5.4, y: 1, z: 95}
+    tag: 0
+  - center: {x: 23.9, y: 0, z: 0.82}
+    size: {x: 40, y: 1, z: 4.87}
+    tag: 1
+  - center: {x: 23.9, y: 0, z: 12.04}
+    size: {x: 40, y: 1, z: 5.03}
+    tag: 1
+  - center: {x: 23.9, y: 0, z: -18.21}
+    size: {x: 40, y: 1, z: 5.73}
+    tag: 1
+  - center: {x: 23.9, y: 0.5, z: -29.46}
+    size: {x: 40, y: 1, z: 4.9}
+    tag: 1
+  - center: {x: 23.9, y: 0.5, z: 31.73}
+    size: {x: 40, y: 1, z: 5.86}
+    tag: 1
+  - center: {x: 23.9, y: 0.5, z: -47.58}
+    size: {x: 40, y: 1, z: 3.36}
+    tag: 1
