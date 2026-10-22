@@ -55,6 +55,7 @@ public class GameFlowManager : MonoBehaviour
     private FlowState _flowState = FlowState.PurposeView;
 
     private NpcPhysicsLodManager _npcPhysicsLodManager;
+    private UITimer _uiTimer;
 
     // 迷惑度
     private float _annoyanceLevel;
@@ -62,7 +63,6 @@ public class GameFlowManager : MonoBehaviour
 
     // SOから参照
     private float _failedTime; // 失敗するまでの時間
-    private float _currentTimer; // 現在の経過時間
 
     private int _purposeTimes; // 目的の個数
     private int _currentPurposeTimes; // 現在の目的達成数
@@ -77,7 +77,7 @@ public class GameFlowManager : MonoBehaviour
     
     void Update()
     {
-        _currentTimer += Time.deltaTime;
+        _uiTimer.RemainingTime -= Time.deltaTime;
 
         switch (_flowState)
         {
@@ -110,6 +110,9 @@ public class GameFlowManager : MonoBehaviour
         _npcPhysicsLodManager.SetTarget(_player.GetComponentInChildren<PlayerMove>().transform);
 
         _ui = _uiPrefab ? Instantiate(_uiPrefab) : null;
+        _uiTimer = new UITimer();
+        var ingameUI = _ui.GetComponentInChildren<InGameUI>();
+        ingameUI?.SetUITimer(_uiTimer);
 
         // プレイヤーにデータ配布
         // auto playerComp = _player?.GetComponent<>();
@@ -152,10 +155,10 @@ public class GameFlowManager : MonoBehaviour
 
     private void PurposeView()
     {
-        if(_currentTimer > _purposeViewTime)
+        if(_uiTimer.RemainingTime > _purposeViewTime)
         {
             _flowState = FlowState.Execution;
-            _currentTimer = 0.0f;
+            _uiTimer.RemainingTime = _failedTime;
             InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
             ingameUI.TimerStart();
         }
@@ -178,7 +181,7 @@ public class GameFlowManager : MonoBehaviour
             // プレイヤーを追跡状態にする
         }
 
-        if (_failedTime != 0.0f && _currentTimer > _failedTime)
+        if (_failedTime != 0.0f && _uiTimer.RemainingTime > _failedTime)
         {
             ToResult(false);
         }
@@ -203,7 +206,7 @@ public class GameFlowManager : MonoBehaviour
         uiData.nuisance = _annoyanceLevel * 100.0f;
         ingameUI.SetInGameUI_PlayerData(uiData);
 
-        if (_failedTime != 0.0f && _currentTimer > _failedTime)
+        if (_failedTime != 0.0f && _uiTimer.RemainingTime > _failedTime)
         {
             ToResult(false);
         }
@@ -214,7 +217,7 @@ public class GameFlowManager : MonoBehaviour
         _purposeData = _stageData.PurposePick();
 
         _failedTime = _stageData.FailedTime;
-        _currentTimer = 0.0f;
+        _uiTimer.RemainingTime = _failedTime;
 
         _purposeView = Instantiate(_purposeViewPrefab, _purposeData.DestinationPosition, Quaternion.identity);
         _purposeView.transform.localScale = new Vector3(_purposeData.AchievementSizeX, 20.0f, _purposeData.AchievementSizeZ);
@@ -237,7 +240,7 @@ public class GameFlowManager : MonoBehaviour
     public void CollectPurpose()
     {
         Destroy(_purposeView);
-        _resultTime += _currentTimer;
+        _resultTime += (_failedTime - _uiTimer.RemainingTime);
         if (++_currentPurposeTimes >= _purposeTimes)
         {
             ToResult(true);
