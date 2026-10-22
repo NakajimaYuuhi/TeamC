@@ -6,14 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Test/PlayTest.unity
+    guid: 7d5adc020c7fb024b8b7bf6314872298
   - enabled: 1
     path: Assets/Scenes/Test/Result.unity
     guid: b4aaf13066a451142a1df82ee3cb9b3e
-  - enabled: 0
-    path: Assets/Scenes/Test/FlowManager_Test.unity
-    guid: 87d8dbb71ab9b5e4aadb863d3a3e5849
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -451,5 +451,8 @@ public class NPC_Controller : MonoBehaviour
         SetNode(nextNode);
     }
 
-
+    public void SetNodeData(GameObject data)
+    {
+        _nodeData = data;
+    }
 }
