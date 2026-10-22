@@ -12,7 +12,6 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(NpcPhysicsLodManager))]
 public class GameFlowManager : MonoBehaviour
 {
-    private NpcPhysicsLodManager _npcPhysicsLodManager;
     enum FlowState
     {
         PurposeView, // 目的提示
@@ -53,6 +52,8 @@ public class GameFlowManager : MonoBehaviour
 
     private DestinationData _purposeData;
     private FlowState _flowState = FlowState.PurposeView;
+
+    private NpcPhysicsLodManager _npcPhysicsLodManager;
 
     // 迷惑度
     private float _annoyanceLevel;
@@ -100,10 +101,12 @@ public class GameFlowManager : MonoBehaviour
     public void Initialize(StageData data)
     {
 
-
         _stageData = data;
         // プレイヤー生成
         _player = _playerPrefab ? Instantiate(_playerPrefab, _stageData.PlayerInitPos, Quaternion.identity) : null;
+
+        _npcPhysicsLodManager = GetComponent<NpcPhysicsLodManager>();
+        _npcPhysicsLodManager.SetTarget(_player.GetComponentInChildren<PlayerMove>().transform);
 
         _ui = _uiPrefab ? Instantiate(_uiPrefab) : null;
 

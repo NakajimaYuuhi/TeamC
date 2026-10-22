@@ -22,6 +22,6 @@ public class ResultUI : MonoBehaviour
 
     public void Next()
     {
-        SceneManager.LoadScene("FlowManager_Test");
+        SceneManager.LoadScene("PlayTest");
     }
 }
