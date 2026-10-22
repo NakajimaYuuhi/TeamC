@@ -40,6 +40,8 @@ public class PlayerMove : MonoBehaviour
     private float playerPushPower; //プレイヤーの押す力を格納する変数
     private float currentNuisance; //プレイヤーの迷惑度を格納する変数
     private float voiceVolume; //プレイヤーの声の音量を格納する変数
+    private float facingMinSpeedRate; //体の向きが真逆のときの速度の割合
+    private float facingSpeedCurve;   //向きのずれに対する減速のかかり方
 
     private float faceLeftTurnSpeed = 5f; //Shift中に体の正面を進行方向の左に向ける回転速度
 
@@ -91,6 +93,9 @@ public class PlayerMove : MonoBehaviour
         playerPushPower = playerData.PlayerPushPower; //プレイヤーの押す力を取得
         currentNuisance = playerData.PlayerNuisance;//プレイヤーの迷惑度を取得
 
+        facingMinSpeedRate = playerData.FacingMinSpeedRate; //向きが真逆のときの速度の割合を取得
+        facingSpeedCurve = playerData.FacingSpeedCurve;     //向きのずれに対する減速のかかり方を取得
+
         //親オブジェクトのサイズを設定
         if (transform.parent != null)
         {
@@ -113,38 +118,49 @@ public class PlayerMove : MonoBehaviour
     {
         if (cameraController == null) return;
 
-        moveSpeed = playerData.MoveSpeed;
+        //速度を保存
+        float speed = moveSpeed;
 
         //横歩き中は速度を落とす
         if (isSideStep)
         {
-            moveSpeed *= sideStepSpeedRate;
+            speed *= sideStepSpeedRate;
         }
 
         //カメラの回転角度から水平な前方向・右方向を取得
         Vector3 forward = cameraController.FlatForward;
         Vector3 right = cameraController.FlatRight;
 
-        //W/Sでカメラの奥・手前、A/Dで画面の左右に移動
+        //W/Sでカメラの奥・手前、A/Dで画面の左右に進みたい方向
         Vector3 moveDirection = forward * moveInput.y + right * moveInput.x;
-        Vector3 horizontalVelocity = moveDirection * moveSpeed;
 
-        rb.linearVelocity = new Vector3(horizontalVelocity.x, rb.linearVelocity.y, horizontalVelocity.z);
+        //入力がないときは止まる（向きも変えない）
+        if (moveDirection.sqrMagnitude <= 0.01f)
+        {
+            rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+            return;
+        }
 
-        //入力がないときは向きを変えない
-        if (moveDirection.sqrMagnitude <= 0.01f) return;
-
+        //体を向けるべき方向を決めて、そちらへ回転させる
+        Vector3 desiredFacing;
         if (isSideStep)
         {
             //横歩き：押したキーの方向に進み、体の正面は進行方向の左に向ける 上と進行方向の外積で左側がもとまる
-            Vector3 leftOfMoveDirection = Vector3.Cross(moveDirection, Vector3.up);
-            RotateToward(leftOfMoveDirection, faceLeftTurnSpeed);
+            desiredFacing = Vector3.Cross(moveDirection, Vector3.up);
+            RotateToward(desiredFacing, faceLeftTurnSpeed);//進行方向の左側を向くように
         }
         else
         {
             //通常移動：進行方向へ体を向ける
-            RotateToward(moveDirection, turnSpeed);
+            desiredFacing = moveDirection;
+            RotateToward(desiredFacing, turnSpeed);
         }
+
+        //体の向きのずれに応じて速度を落とす
+        speed *= GetFacingSpeedRate(desiredFacing);
+
+        Vector3 horizontalVelocity = moveDirection.normalized * speed;
+        rb.linearVelocity = new Vector3(horizontalVelocity.x, rb.linearVelocity.y, horizontalVelocity.z);
     }
 
     //体の正面を指定した方向へ、指定した速さで滑らかに向ける
@@ -154,6 +170,30 @@ public class PlayerMove : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up) * Quaternion.Euler(0f, modelYawOffset, 0f);
         Quaternion newRotation = Quaternion.Slerp(rb.rotation, targetRotation, speed * Time.fixedDeltaTime);
         rb.MoveRotation(newRotation);
+    }
+
+    //今の体の正面を求める関数
+    private Vector3 GetBodyForward()
+    {
+        //RotateTowardで足したモデルのずれ補正を逆に戻して、本来の正面を求める
+        Vector3 bodyForward = rb.rotation * Quaternion.Euler(0f, -modelYawOffset, 0f) * Vector3.forward;
+        bodyForward.y = 0f;
+        return bodyForward.normalized;
+    }
+
+    //体の向きと向くべき方向のずれから、速度の割合を求める
+    private float GetFacingSpeedRate(Vector3 desiredFacing)
+    {
+        //内積で向きのずれを求める
+        float dot = Vector3.Dot(GetBodyForward(), desiredFacing.normalized);
+
+        //-1から1 を 0から1 に変換
+        float t = (dot + 1f) * 0.5f;
+
+        //カーブをかけて、ずれに対する減速のかかり方を調整する
+        t = Mathf.Pow(t, facingSpeedCurve);
+
+        return Mathf.Lerp(facingMinSpeedRate, 1f, t);
     }
 
     //プッシュ(スペースキー)が押されたときの処理
