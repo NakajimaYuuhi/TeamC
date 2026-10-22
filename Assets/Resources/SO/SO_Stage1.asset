@@ -16,12 +16,15 @@ MonoBehaviour:
   PlayerData: {fileID: 0}
   EnemyDetas: []
   PurposeDatas:
-  - {fileID: 11400000, guid: 3f256da694d1e534b8953ecc276d7756, type: 2}
-  - {fileID: 11400000, guid: cdaa4281d79617e499c0920214ccb6a7, type: 2}
+  - {fileID: 11400000, guid: 671ee4f4e67fe354192faed4e258eb52, type: 2}
+  - {fileID: 11400000, guid: cf4d0b2788a9e7f40a916bc947eca44d, type: 2}
+  - {fileID: 11400000, guid: aca32dabb08e3d84c90ab6ba58ea3c46, type: 2}
+  - {fileID: 11400000, guid: 2571b59acc3585247b1e257d6bfdde47, type: 2}
+  PlayerInitPos: {x: -3.5, y: 0, z: 3.5}
   Type: 0
   FailedTime: 30
   _securityCount: 3
   ClearCount: 5
-  EnemyCount: 50
+  EnemyCount: 1000
   DiffMulti: 1
   PhaseMulti: 0

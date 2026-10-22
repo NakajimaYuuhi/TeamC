@@ -22,7 +22,7 @@ public class StageData : ScriptableObject
     public NpcSpawnAreaData MapData;
 
     [SerializeField, Tooltip("プレイヤーのパラメータ")]
-    public ScriptableObject PlayerData;
+    public PlayerData PlayerData;
 
     [SerializeField, Tooltip("存在する敵の種類リスト")]
     public List<ScriptableObject> EnemyDetas = new List<ScriptableObject>();
@@ -31,6 +31,9 @@ public class StageData : ScriptableObject
     public List<DestinationData> PurposeDatas = new List<DestinationData>();
 
     [Header("===== ステージの設定 =====")]
+    [SerializeField, Tooltip("プレイヤーの初期位置")]
+    public Vector3 PlayerInitPos;
+
     [SerializeField,Tooltip("ステージの種類")]
     public StageType Type = StageType.Booth;
 
@@ -55,15 +58,18 @@ public class StageData : ScriptableObject
     [SerializeField, Tooltip("回数ごとに人が増える倍率")]
     [Min(0.0f)] public float PhaseMulti = 0.0f;
 
-    private int lastIdx = 0; 
+    private int lastIdx = -99;
     public DestinationData PurposePick()
     {
-        int currentIdx;
-        do
+        int currentIdx = 0;
+        if (PurposeDatas.Count > 1)
         {
-            currentIdx = Random.Range(0, PurposeDatas.Count);
-        } while (currentIdx == lastIdx);
-        lastIdx = currentIdx;
+            do
+            {
+                currentIdx = Random.Range(0, PurposeDatas.Count);
+            } while (currentIdx == lastIdx);
+            lastIdx = currentIdx;
+        }
         return PurposeDatas[currentIdx];
     }
 }

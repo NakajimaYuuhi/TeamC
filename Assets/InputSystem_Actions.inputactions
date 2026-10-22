@@ -25,13 +25,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "BodyTurn",
-                    "type": "Value",
-                    "id": "61d39d0e-4849-4006-967b-12afde4886ed",
-                    "expectedControlType": "Vector2",
+                    "name": "Push",
+                    "type": "Button",
+                    "id": "e21f832f-3e81-42a2-8c53-4a0a9f09e26b",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CameraModeChange",
+                    "type": "Button",
+                    "id": "718ad61a-8d7e-4649-a48c-434650723bf0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -230,6 +239,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "56bbdfd2-ceb0-46d3-a22d-b57e1265ddb5",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Push",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9055c24-c615-4c0e-8dac-5e4e454a6545",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraModeChange",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
