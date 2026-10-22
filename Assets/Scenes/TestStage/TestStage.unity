@@ -955,7 +955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCSpawner
   _spawnObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-  _spawnInterval: 2.5
+  _spawnInterval: 1
   _spawnPoints:
   - {fileID: 673803055}
   - {fileID: 699743999}
