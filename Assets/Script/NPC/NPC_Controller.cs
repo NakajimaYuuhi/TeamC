@@ -176,7 +176,7 @@ public class NPC_Controller : MonoBehaviour
     public void MoveTowardsPatrolPoint(Vector3 targetPos)
     {
         Vector3 steerTarget = GetAvoidanceTarget(targetPos);
-        Debug.Log($"NPC is moving towards steerTarget position: {steerTarget}");
+        //Debug.Log($"NPC is moving towards steerTarget position: {steerTarget}");
 
         // 通常の徘徊移動（デッドゾーンは小さめ 0.05m）
         AccelerateTowards(steerTarget, _browseSpeed, _browseAcceleration, 0.05f, false);

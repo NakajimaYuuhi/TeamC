@@ -8,6 +8,7 @@
 /// 2026/10/21 佐藤蒼也：PlayerBodyTurnの処理を統合
 /// 2026/10/21 佐藤蒼也：横歩き中は常に進行方向の左を向くよう変更→RotateToward関数
 /// 2026/10/21 佐藤蒼也：NPCを押す処理を追加→PushNPC関数
+/// 2026/10/22 佐藤蒼也：サイドステップを追加→CheckStepInput・StartStep・UpdateStep・EndStep関数
 /// 
 /////////////////////////////////////////
 
@@ -27,6 +28,14 @@ public class PlayerMove : MonoBehaviour
     [Header("横歩きの設定,通常時に対する速度の割合")]
     [SerializeField, Range(0.1f, 1f)] private float sideStepSpeedRate = 0.5f; //通常時に対する速度の割合
 
+    [Header("サイドステップの設定")]
+    [SerializeField, Tooltip("1回のステップで進む距離")]
+    private float stepDistance = 2.5f;
+    [SerializeField, Tooltip("ステップにかかる時間（秒）")]
+    private float stepDuration = 0.2f;
+    [SerializeField, Tooltip("ステップのあと、次のステップができるまでの時間（秒）")]
+    private float stepCooldown = 0.3f;
+
     Rigidbody rb;
     private Vector2 moveInput; //移動の入力を格納する変数
     private CameraController cameraController; //移動方向の基準にするカメラ
@@ -44,6 +53,14 @@ public class PlayerMove : MonoBehaviour
     private float facingSpeedCurve;   //向きのずれに対する減速のかかり方
 
     private float faceLeftTurnSpeed = 5f; //Shift中に体の正面を進行方向の左に向ける回転速度
+
+    //サイドステップ用
+    private bool stepRequested;      //ステップの入力があったか
+    private Vector2 stepInput;       //ステップを入力したときのキーの向き
+    private bool isStepping;         //ステップ中か
+    private float stepTimer;         //ステップの残り時間
+    private float stepCooldownTimer; //次のステップができるまでの残り時間
+    private Vector3 stepVelocity;    //ステップ中の速度
 
 
     void Awake()
@@ -73,11 +90,30 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-
+        CheckStepInput();//サイドステップの入力確認
     }
 
     void FixedUpdate()
     {
+        //クールダウンを減らす
+        if (stepCooldownTimer > 0f)
+        {
+            stepCooldownTimer -= Time.fixedDeltaTime;
+        }
+
+        //ステップの入力があればステップを始める
+        if (stepRequested)
+        {
+            StartStep();
+        }
+
+        //ステップ中は通常の移動をしない
+        if (isStepping)
+        {
+            UpdateStep();
+            return;
+        }
+
         //Shiftが押されているか
         bool isSideStep = Keyboard.current != null && Keyboard.current.leftShiftKey.isPressed;
 
@@ -196,10 +232,81 @@ public class PlayerMove : MonoBehaviour
         return Mathf.Lerp(facingMinSpeedRate, 1f, t);
     }
 
+    //----------------------------------------------------------------------------------------
+    //サイドステップ
+
+    //Shift + A/D が押された瞬間に実行される
+    private void CheckStepInput()
+    {
+        if (Keyboard.current == null) return;
+        if (isStepping || stepRequested || stepCooldownTimer > 0f) return;
+
+        bool isShift = Keyboard.current.leftShiftKey.isPressed;
+        bool isStepKeyPressed = Keyboard.current.aKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame;
+
+        if (isShift && isStepKeyPressed)
+        {
+            //押されているキーからステップの向きを決める
+            float x = 0f;
+            float y = 0f;
+            if (Keyboard.current.dKey.isPressed) x += 1f;
+            if (Keyboard.current.aKey.isPressed) x -= 1f;
+            if (Keyboard.current.wKey.isPressed) y += 1f;
+            if (Keyboard.current.sKey.isPressed) y -= 1f;
+            if (Mathf.Approximately(x, 0f)) return;
+
+            stepInput = new Vector2(x, y);
+            stepRequested = true;
+        }
+    }
+
+    //ステップ開始
+    private void StartStep()
+    {
+        stepRequested = false;
+
+        if (cameraController == null) return;
+
+        //カメラ基準でステップする方向を求める
+        Vector3 direction = cameraController.FlatForward * stepInput.y + cameraController.FlatRight * stepInput.x;
+        direction.Normalize();
+
+        //決めた時間で決めた距離を進む速度
+        stepVelocity = direction * (stepDistance / stepDuration);
+
+        stepTimer = stepDuration;
+        isStepping = true;
+    }
+
+    //ステップ中の処理
+    private void UpdateStep()
+    {
+        rb.linearVelocity = new Vector3(stepVelocity.x, rb.linearVelocity.y, stepVelocity.z);
+
+        stepTimer -= Time.fixedDeltaTime;
+        if (stepTimer <= 0f)
+        {
+            EndStep();
+        }
+    }
+
+    //ステップ終了
+    private void EndStep()
+    {
+        isStepping = false;
+        stepCooldownTimer = stepCooldown;
+
+        //横方向の速度を止める　ないと若干動いたりする
+        rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+    }
+
+    //----------------------------------------------------------------------------------------
+    //プッシュ
+
     //プッシュ(スペースキー)が押されたときの処理
     void OnPush(InputValue value)
     {
-        
+
         if (value.isPressed)
         {
             //押す処理
