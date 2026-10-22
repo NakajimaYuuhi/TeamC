@@ -271,6 +271,15 @@ public class PlayerMove : MonoBehaviour
         Vector3 direction = cameraController.FlatForward * stepInput.y + cameraController.FlatRight * stepInput.x;
         direction.Normalize();
 
+        if(TryGetComponent<PlayerCryticalStep>(out PlayerCryticalStep crtStep))
+        {
+            if(crtStep.GetCanStepPosition(transform.position,playerSize,direction))
+            {
+                return;
+            }
+
+        }
+
         //決めた時間で決めた距離を進む速度
         stepVelocity = direction * (stepDistance / stepDuration);
 
