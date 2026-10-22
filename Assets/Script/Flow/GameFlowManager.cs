@@ -144,7 +144,7 @@ public class GameFlowManager : MonoBehaviour
             if(transform.TryGetComponent<NodeEdgeGenerator>(out NodeEdgeGenerator neg))
             {
                 npcCtrl.SetNodeData(gameObject);
-                npcCtrl.SetNode(neg.GetNode(Random.Range(0,4)));
+                npcCtrl.SetNode(neg.GetNode(Random.Range(0,6)));
             }
             npcCtrl?.SetState(state);
         }

@@ -15,8 +15,8 @@ MonoBehaviour:
   MapPrefab: {fileID: 3379136654085156025, guid: ad5c256be3186874f97af9b71a31185f, type: 3}
   areas:
   - center: {x: 0, y: 0, z: 0}
-    size: {x: 14, y: 1, z: 4}
+    size: {x: 20, y: 1, z: 4}
     tag: 0
   - center: {x: 0, y: 0, z: 0}
-    size: {x: 4, y: 1, z: 14}
+    size: {x: 4, y: 1, z: 20}
     tag: 0
