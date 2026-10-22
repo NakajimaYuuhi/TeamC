@@ -225,15 +225,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87a97981a6c5fd4c86f4fb3120af209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  FPSMode: 0
   offset: {x: 0, y: 5, z: -10}
   followSpeed: 10
-  zoomSpeed: 2
+  zoomSpeed: 50
   minZoom: 3
   maxZoom: 15
   mouseSensitivity: 0.15
   minPitch: -10
   maxPitch: 80
   rotateOnlyWhileRightClick: 1
+  fpsEyeOffset: {x: 0, y: 1.5, z: 0}
+  fpsMinPitch: -80
+  fpsMaxPitch: 80
 --- !u!114 &14788801
 MonoBehaviour:
   m_ObjectHideFlags: 0
