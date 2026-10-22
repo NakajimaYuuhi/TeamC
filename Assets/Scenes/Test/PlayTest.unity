@@ -167,10 +167,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 500300461050473171, guid: cb4fbcda598f7564eb9a0e57543e351f, type: 3}
+      propertyPath: suspensionDistance
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4228155809779836047, guid: cb4fbcda598f7564eb9a0e57543e351f, type: 3}
       propertyPath: m_Name
       value: PFB_FlowManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5677262603163221370, guid: cb4fbcda598f7564eb9a0e57543e351f, type: 3}
+      propertyPath: nodeData
+      value: 
+      objectReference: {fileID: 11400000, guid: a05b0c673e3f79f4ab3b5218ad42dedd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -361,15 +369,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87a97981a6c5fd4c86f4fb3120af209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  FPSMode: 0
   offset: {x: 0, y: 5, z: -10}
   followSpeed: 10
-  zoomSpeed: 2
+  zoomSpeed: 5
   minZoom: 3
   maxZoom: 15
   mouseSensitivity: 0.15
   minPitch: -10
   maxPitch: 80
   rotateOnlyWhileRightClick: 1
+  fpsEyeOffset: {x: 0, y: 1.2, z: 0}
+  fpsMinPitch: -80
+  fpsMaxPitch: 80
 --- !u!114 &1498646390
 MonoBehaviour:
   m_ObjectHideFlags: 0

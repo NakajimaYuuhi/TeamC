@@ -8,6 +8,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(NpcPhysicsLodManager))]
 public class GameFlowManager : MonoBehaviour
@@ -139,7 +140,12 @@ public class GameFlowManager : MonoBehaviour
             var npc = Instantiate(_enemyPrefab,SpawnPos,rot);
             var npcCtrl = npc.GetComponentInChildren<NPC_Controller>();
             if (npcCtrl != null) _npcPhysicsLodManager.Register(npcCtrl);
-            string state = area.Tag == NpcSpawnAreaTag.WalkArea ? "Browsing" : area.Tag == NpcSpawnAreaTag.StandArea ? "Standing" : "Grouping";
+            string state = area.Tag == NpcSpawnAreaTag.WalkArea ? "Browsing_BasedOnNode" : area.Tag == NpcSpawnAreaTag.StandArea ? "Standing" : "Grouping";
+            if(transform.TryGetComponent<NodeEdgeGenerator>(out NodeEdgeGenerator neg))
+            {
+                npcCtrl.SetNodeData(gameObject);
+                npcCtrl.SetNode(neg.GetNode(Random.Range(0,6)));
+            }
             npcCtrl?.SetState(state);
         }
     }
@@ -150,6 +156,8 @@ public class GameFlowManager : MonoBehaviour
         {
             _flowState = FlowState.Execution;
             _currentTimer = 0.0f;
+            InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
+            ingameUI.TimerStart();
         }
     }
 

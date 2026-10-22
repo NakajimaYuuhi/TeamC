@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfdd82a0653a8d9469c4f8940877b3c9, type: 3}
+  m_Name: SO_StreightNode
+  m_EditorClassIdentifier: Assembly-CSharp::Node_Edge_Data
+  nodes:
+  - nodeID: 0
+    position: {x: 0, y: 0, z: -10}
+    adjacents: 03000000
+  - nodeID: 1
+    position: {x: -3, y: 0, z: -10}
+    adjacents: 04000000
+  - nodeID: 2
+    position: {x: 3, y: 0, z: -10}
+    adjacents: 05000000
+  - nodeID: 3
+    position: {x: 3, y: 0, z: 10}
+    adjacents: 00000000
+  - nodeID: 4
+    position: {x: -3, y: 0, z: 10}
+    adjacents: 01000000
+  - nodeID: 5
+    position: {x: 0, y: 0, z: 10}
+    adjacents: 02000000
+  edges:
+  - fromNodeID: 0
+    toNodeID: 3
+    distance: 20.22375
+    isTwoWay: 1
+    width: 10
+  - fromNodeID: 1
+    toNodeID: 4
+    distance: 20
+    isTwoWay: 1
+    width: 10
+  - fromNodeID: 2
+    toNodeID: 5
+    distance: 20.22375
+    isTwoWay: 1
+    width: 10

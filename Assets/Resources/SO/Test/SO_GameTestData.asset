@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SO_GameTestData
   m_EditorClassIdentifier: Assembly-CSharp::GameData
   StageDatas:
-  - {fileID: 11400000, guid: cc0c0c79abf93684895b2564767b25b1, type: 2}
+  - {fileID: 11400000, guid: becf7df0d68e14c4aa097957e4f7c908, type: 2}
   playerTypeDatas:
   - {fileID: 11400000, guid: 0534ebcec49cbc24db206ad53128db68, type: 2}
