@@ -17,50 +17,48 @@ public class InGameUI : MonoBehaviour
 
 	// ゲーム開始時に受け取るデータ
 	[System.Serializable]
-    public struct InGameUIData
-    {
-        [Tooltip("ステージの番号")]  public int stageNum;
-        [Tooltip("目的地の名称")]    public string destination;
-        [Tooltip("目的地の番号")]    public string identity;
-        [Tooltip("残り時間")]       public float remainingTime;
-    }
+	public struct InGameUIData
+	{
+		[Tooltip("ステージの番号")] public int stageNum;
+		[Tooltip("目的地の名称")] public string destination;
+		[Tooltip("目的地の番号")] public string identity;
+	}
 
 	// 更新されるPlayerのデータ
 	[System.Serializable]
-    public struct InGameUI_PlayerData
-    {
-        [Tooltip("体力")]      public float stamina;
-        [Tooltip("迷惑度")]    public float nuisance;
-    }
+	public struct InGameUI_PlayerData
+	{
+		[Tooltip("体力")] public float stamina;
+		[Tooltip("迷惑度")] public float nuisance;
+	}
 
 
 
-    //____________________________________
-    // variables
+	//____________________________________
+	// variables
 
-    [Header("----- Text -----")]
+	[Header("----- Text -----")]
 	[SerializeField] private TMP_Text _stageText;
 	[SerializeField] private TMP_Text _destinationText;
 	[SerializeField] private TMP_Text _identityText;
 	[SerializeField] private TMP_Text _remainingTimeText;
 
 
-    [Header("----- Gauge -----")]
+	[Header("----- Gauge -----")]
 	[SerializeField] private Slider _staminaGauge;
 	[SerializeField] private Slider _nuisanceGauge;
 
-    
-    [Header("----- Initialize -----")]
+
+	[Header("----- Initialize -----")]
 	[SerializeField, Min(1)] private int _stageNum = 1;
 	[SerializeField] private string _destination = "Office";
 	[SerializeField] private string _identity = "AT-13";
 
-	[SerializeField, Min(0f)] private float _remainingTime = 61.3f;
-	
-    [SerializeField] private float _stamina = 100.0f;
+
+	[SerializeField] private float _stamina = 100.0f;
 	[SerializeField] private float _nuisance = 0f;
-    [SerializeField, Min(0f)] private float _staminaRecovery = 10f;
-    [SerializeField, Min(0f)] private float _nuisanceDecrease = 5f;
+	[SerializeField, Min(0f)] private float _staminaRecovery = 10f;
+	[SerializeField, Min(0f)] private float _nuisanceDecrease = 5f;
 
 
 
@@ -82,6 +80,11 @@ public class InGameUI : MonoBehaviour
 
 	private bool _timeStartFlag = false;
 
+	private UITimer _uiTimer;
+
+
+	public UITimer UITimer {  get { return _uiTimer; } }
+
 
 
 	//____________________________________
@@ -97,7 +100,6 @@ public class InGameUI : MonoBehaviour
 		SetStageNum(_stageNum);
 		SetDestination(_destination);
 		SetIdentity(_identity);
-		SetRemainingTime(_remainingTime);
 		SetStamina(_stamina);
 		SetNuisance(_nuisance);
 	}
@@ -110,15 +112,25 @@ public class InGameUI : MonoBehaviour
 			return;
 		}
 
-		if (_timeStartFlag)
+		// データがない場合、UI単独で更新する
+		if (_timeStartFlag || _uiTimer == null)
 		{
-			SetRemainingTime(_remainingTime - Time.deltaTime);
+//			SetRemainingTime(_remainingTime - Time.deltaTime);
 		}
 		SetStamina(Mathf.MoveTowards(
 			_stamina, MAX_VALUE, _staminaRecovery * Time.deltaTime));
 		SetNuisance(Mathf.MoveTowards(
 			_nuisance, 0f, _nuisanceDecrease * Time.deltaTime));
     }
+
+	private void LateUpdate()
+	{
+		// フローのUpdate後に、細心の残り時間を更新
+		if(_uiTimer != null)
+		{
+			SetRemainingTime(_uiTimer.RemainingTime);
+		}
+	}
 
 
 	public void TimerStart()
@@ -142,7 +154,6 @@ public class InGameUI : MonoBehaviour
 		SetStageNum(data.stageNum);
 		SetDestination(data.destination);
 		SetIdentity(data.identity);
-		SetRemainingTime(data.remainingTime);
 
 		_isGameUISetUp = true;
 		_canPlay = true;
@@ -161,6 +172,15 @@ public class InGameUI : MonoBehaviour
 		_isPlayerSetUp = true;
 	}
 
+	public void SetUITimer(UITimer uiTimer)
+	{
+		_uiTimer = uiTimer;
+		if(_uiTimer != null)
+		{
+			SetRemainingTime(_uiTimer.RemainingTime);
+		}
+	}
+
 	public void SetStamina(float value)
 	{
 		_stamina = Mathf.Clamp(value, 0f, MAX_VALUE);
@@ -175,8 +195,8 @@ public class InGameUI : MonoBehaviour
 
 	public void SetRemainingTime(float seconds)
 	{
-		_remainingTime = Mathf.Max(0f, seconds);
-		_remainingTimeText.text = $"{_remainingTime:F1}";
+		float time = Mathf.Max(0f, seconds);
+		_remainingTimeText.text = $"{time:F1}";
 	}
 
 	public void SetStageNum(int value)
@@ -209,7 +229,6 @@ public class InGameUI : MonoBehaviour
 			stageNum = _stageNum,
 			destination = _destination,
 			identity = _identity,
-			remainingTime = _remainingTime
 		};
 	}
 
