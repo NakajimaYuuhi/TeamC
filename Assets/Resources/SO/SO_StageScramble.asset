@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StageData
   MapData: {fileID: 11400000, guid: a6e9388bdd502c54a83738bcbfc8f990, type: 2}
   PlayerData: {fileID: 11400000, guid: 0534ebcec49cbc24db206ad53128db68, type: 2}
-  EnemyDetas: []
+  EnemyDetas:
+  - {fileID: 0}
   PurposeDatas:
   - {fileID: 11400000, guid: 57d53c78e63484a4f8538120fd95942a, type: 2}
   PlayerInitPos: {x: -3.5, y: 0, z: 3.5}
@@ -22,6 +23,6 @@ MonoBehaviour:
   FailedTime: 10
   _securityCount: 3
   ClearCount: 1
-  EnemyCount: 1000
+  EnemyCount: 20
   DiffMulti: 1
   PhaseMulti: 0
