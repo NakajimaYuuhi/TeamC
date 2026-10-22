@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
   PlayerSize: {x: 1, y: 1, z: 1}
   VoiceVolume: 1
-  PlayerPushPower: 60
+  PlayerPushPower: 30
   PlayerNuisance: 0
   MoveSpeed: 4
   TurnSpeed: 2
