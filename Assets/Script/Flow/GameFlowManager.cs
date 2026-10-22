@@ -228,7 +228,6 @@ public class GameFlowManager : MonoBehaviour
         uiData.stageNum = 0;
         uiData.identity = _purposeData.DestinationName;
         uiData.destination = "Test";
-        uiData.remainingTime = _failedTime;
         ingameUI.SetInGameUIData(uiData);
 
         InGameUIPopup popup = _ui.GetComponentInChildren<InGameUIPopup>();
