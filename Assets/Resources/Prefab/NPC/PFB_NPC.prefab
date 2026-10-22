@@ -94,7 +94,7 @@ MonoBehaviour:
   _initialStateType: 0
   _currentStateType: 0
   _avoidRadius: 1.2
-  _avoidWeight: 5
+  _avoidWeight: 4
   _npcLayer:
     serializedVersion: 2
     m_Bits: 8
