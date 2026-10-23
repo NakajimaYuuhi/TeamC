@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3908729661445044237}
   - component: {fileID: 776922142485533220}
   - component: {fileID: 4811941278150778332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: table_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 5214104647378492123}
   - component: {fileID: 1360431132250483307}
   - component: {fileID: 152532855974794953}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Divider_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4395618800996402358}
   - component: {fileID: 2344664716077553100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 6710889454801832955}
   - component: {fileID: 7349851592433823889}
   - component: {fileID: 6150303880117969544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: table_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 6982824851080764910}
   - component: {fileID: 9180473836701316504}
   - component: {fileID: 3292157431180996808}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Divider_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 1690859106968893320}
   - component: {fileID: 4512487073423348444}
   - component: {fileID: 7364147041884974798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BackBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 4060883627382674446}
   - component: {fileID: 5813002713298803393}
   - component: {fileID: 3275666676402161848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
