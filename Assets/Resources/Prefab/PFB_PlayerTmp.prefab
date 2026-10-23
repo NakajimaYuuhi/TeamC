@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8257023562898060995}
   - component: {fileID: 6783528689114648714}
   - component: {fileID: 3076527854008699379}
-  - component: {fileID: 6430233255259727282}
+  - component: {fileID: 7979106195664266316}
   m_Layer: 0
   m_Name: GoalArrow
   m_TagString: Untagged
@@ -91,7 +91,7 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6430233255259727282
+--- !u!114 &7979106195664266316
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,11 +103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a595568ae90ff4d8573d1cf23e98bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalArrow
-  distanceFromPlayer: 1.15
-  heightFromGround: 0.04
+  distanceFromPlayer: 1.2
+  heightFromGround: 0.01
   playerFootOffset: 0
-  blinkSpeed: 6
-  minAlpha: 0.55
+  blinkSpeed: 4
+  minAlpha: 0.082
   maxAlpha: 0.9
 --- !u!1 &3046883363749966388
 GameObject:

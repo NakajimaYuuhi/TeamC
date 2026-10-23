@@ -73,10 +73,12 @@ public class GoalArrow : MonoBehaviour
         if (!hasDirection) return;
 
         //プレイヤーの足元から、目的地の方向へ少し離れた位置に置く
+        //                          new Vector3(0,1,0)
         Vector3 foot = player.position + Vector3.up * playerFootOffset;
+        //矢印のポジション = プレイヤーの足元からの距離 + 目的地の座標 * プレイヤーからの距離(矢印の) + 地面からの高さ
         transform.position = foot + direction * distanceFromPlayer + Vector3.up * heightFromGround;
 
-        //Quadを地面に寝かせ、テクスチャの上側が目的地の方向を向くように回転させる
+        //テクスチャの上側が目的地の方向を向くように回転させる[かつ]目的地にむかせる
         transform.rotation = Quaternion.LookRotation(direction, Vector3.up) * Quaternion.Euler(90f, 0f, 0f);
 
         //不透明度を minAlpha ～ maxAlpha の間で点滅させる
@@ -92,10 +94,10 @@ public class GoalArrow : MonoBehaviour
     //目的地の方向を受け取る
     public void SetDirection(Vector3 newDirection)
     {
-        //上下成分を消して水平にする
+        //yを0に
         newDirection.y = 0f;
 
-        //近いなら非表示にする
+        //近いなら非表示にする　sqrMagnitude:x^2 + y^2 + z^2
         if (newDirection.sqrMagnitude < 0.0001f)
         {
             hasDirection = false;
