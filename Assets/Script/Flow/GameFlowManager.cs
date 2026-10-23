@@ -51,11 +51,18 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField, Tooltip("迷惑率が減少する速度")]
     private float _annoyanceDecrease = 3.0f;
 
+    [SerializeField]
+    private bool _isSpawnerBase;
+
+    [SerializeField]
+    private bool _isFinishTypeTimer;
+
     private DestinationData _purposeData;
     private FlowState _flowState = FlowState.PurposeView;
 
     private NpcPhysicsLodManager _npcPhysicsLodManager;
     private UITimer _uiTimer;
+
 
     // 迷惑度
     private float _annoyanceLevel;
@@ -121,35 +128,39 @@ public class GameFlowManager : MonoBehaviour
         _purposeTimes = data.ClearCount;
         _currentPurposeTimes = 0;
         _resultTime = 0.0f;
+        _isSpawnerBase = _stageData.IsSpawnerBase;
         Instantiate(_stageData.MapData.MapPrefab ?? null);
         SetPurpose();
 
         // 敵生成
-        for(int i = 0;i < _stageData.EnemyCount;++i)
+        if(!_isSpawnerBase)
         {
-            // Mapの生成位置データリストをもとに生成していく
-            var area = _stageData.MapData.GetArea(Random.Range(0, _stageData.MapData.Areas.Count));
-            
-            Vector3 SpawnCenter = area.Center;
-            Vector3 SpawnBoxSize = area.Size;
-
-            float posX = Random.Range(SpawnCenter.x - (SpawnBoxSize.x * 0.5f), SpawnCenter.x + (SpawnBoxSize.x * 0.5f));
-            float posZ = Random.Range(SpawnCenter.z - (SpawnBoxSize.z * 0.5f), SpawnCenter.z + (SpawnBoxSize.z * 0.5f));
-
-            Vector3 SpawnPos = new Vector3(posX, 1.2f, posZ);
-
-            Quaternion rot = Random.rotation;
-            rot.x = rot.z = 0.0f;
-            var npc = Instantiate(_enemyPrefab,SpawnPos,rot);
-            var npcCtrl = npc.GetComponentInChildren<NPC_Controller>();
-            if (npcCtrl != null) _npcPhysicsLodManager.Register(npcCtrl);
-            string state = area.Tag == NpcSpawnAreaTag.WalkArea ? "Browsing_BasedOnNode" : area.Tag == NpcSpawnAreaTag.StandArea ? "Standing" : "Grouping";
-            if(transform.TryGetComponent<NodeEdgeGenerator>(out NodeEdgeGenerator neg))
+            for(int i = 0;i < _stageData.EnemyCount;++i)
             {
-                npcCtrl.SetNodeData(gameObject);
-                npcCtrl.SetNode(neg.GetNode(Random.Range(0,6)));
+                // Mapの生成位置データリストをもとに生成していく
+                var area = _stageData.MapData.GetArea(Random.Range(0, _stageData.MapData.Areas.Count));
+            
+                Vector3 SpawnCenter = area.Center;
+                Vector3 SpawnBoxSize = area.Size;
+
+                float posX = Random.Range(SpawnCenter.x - (SpawnBoxSize.x * 0.5f), SpawnCenter.x + (SpawnBoxSize.x * 0.5f));
+                float posZ = Random.Range(SpawnCenter.z - (SpawnBoxSize.z * 0.5f), SpawnCenter.z + (SpawnBoxSize.z * 0.5f));
+
+                Vector3 SpawnPos = new Vector3(posX, 1.2f, posZ);
+
+                Quaternion rot = Random.rotation;
+                rot.x = rot.z = 0.0f;
+                var npc = Instantiate(_enemyPrefab,SpawnPos,rot);
+                var npcCtrl = npc.GetComponentInChildren<NPC_Controller>();
+                if (npcCtrl != null) _npcPhysicsLodManager.Register(npcCtrl);
+                string state = area.Tag == NpcSpawnAreaTag.WalkArea ? "Browsing_BasedOnNode" : area.Tag == NpcSpawnAreaTag.StandArea ? "Standing" : "Grouping";
+                if(transform.TryGetComponent<NodeEdgeGenerator>(out NodeEdgeGenerator neg))
+                {
+                    npcCtrl.SetNodeData(gameObject);
+                    npcCtrl.SetNode(neg.GetNode(Random.Range(0,6)));
+                }
+                npcCtrl?.SetState(state);
             }
-            npcCtrl?.SetState(state);
         }
     }
 

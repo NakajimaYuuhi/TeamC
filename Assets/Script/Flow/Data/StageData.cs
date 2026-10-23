@@ -45,6 +45,12 @@ public class StageData : ScriptableObject
 
     [Header("====== ステージ進行データ =======")]
 
+    [SerializeField, Tooltip("失敗条件はタイマーか")]
+    public bool IsTimerFailed = true;
+
+    [SerializeField,Tooltip("スポナーベースでNPCをスポーンするか否か")]
+    public bool IsSpawnerBase = false;
+
     [SerializeField, Tooltip("一回でクリアではない場合何回でクリアになるか(0で無限)")]
     public int ClearCount = 1;
 
