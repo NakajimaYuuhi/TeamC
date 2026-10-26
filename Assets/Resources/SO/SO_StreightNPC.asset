@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a4b7af1e8c472f90e2a8f26d2f7b38, type: 3}
   m_Name: SO_StreightNPC
   m_EditorClassIdentifier: Assembly-CSharp::NpcSpawnAreaData
-  MapPrefab: {fileID: 3379136654085156025, guid: ad5c256be3186874f97af9b71a31185f, type: 3}
+  MapPrefab: {fileID: 634319880867828657, guid: df3bf679fbcfe4047859dab1f61711b8, type: 3}
   areas:
   - center: {x: 0, y: 0, z: 0}
-    size: {x: 10, y: 1, z: 20}
+    size: {x: 80, y: 1, z: 10}
     tag: 0
