@@ -1,3 +1,4 @@
+using Unity.Hierarchy;
 using UnityEngine;
 
 public class ItemFloat : MonoBehaviour
@@ -14,6 +15,11 @@ public class ItemFloat : MonoBehaviour
     [SerializeField, Tooltip("アイテムエフェクト")]
     private GameObject _effect;
 
+    [SerializeField]
+    private float _lifeTime = 20.0f;
+
+    private float _currentLifeTime;
+
     private float _currentRotation;
     private float _currentRate;
 
@@ -26,6 +32,7 @@ public class ItemFloat : MonoBehaviour
     {
         _currentRate = 0.0f;
         _currentRotation = 0.0f;
+        _currentLifeTime = 0.0f;
         _basePos = transform.position;
         _effectObj = Instantiate(_effect, transform);
     }
@@ -33,6 +40,10 @@ public class ItemFloat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _currentLifeTime += Time.deltaTime;
+        if (_currentLifeTime > _lifeTime)
+            Destroy(gameObject);
+
         _currentRate += Time.fixedDeltaTime * _floatSpeed;
         _currentRotation += Time.deltaTime * _rotSpeed;
 

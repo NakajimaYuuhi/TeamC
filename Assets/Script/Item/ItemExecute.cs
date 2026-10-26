@@ -1,3 +1,4 @@
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class ItemExecute : MonoBehaviour
@@ -23,6 +24,8 @@ public class ItemExecute : MonoBehaviour
 
     private GameObject _currentEffect;
 
+    private Vector3 _exeCutePosition;
+
     private void Start()
     {
         _executeRangeObj?.SetActive(false);
@@ -34,33 +37,40 @@ public class ItemExecute : MonoBehaviour
     {
         if(_isExecute)
         {
-            _currentExecuteTime += Time.deltaTime;
+            _currentExecuteTime += Time.fixedDeltaTime;
             if(_currentExecuteTime > _executeTime )
             {
                 if(_currentEffect != null)
                     Destroy(_currentEffect);
                 if(_breakEffect != null)
-                    Destroy(Instantiate(_breakEffect),1.0f);
+                    Destroy(Instantiate(_breakEffect,transform.position,Quaternion.identity),1.0f);
                 Destroy(gameObject);
             }
         }
     }
 
-    public void Throw()
+    public void OnThrown()
     {
         _isThrow = true;
         if (_throwEffect != null)
             _currentEffect = Instantiate(_throwEffect, transform);
+        var itemFloat = GetComponentInChildren<ItemFloat>();
+        itemFloat.enabled = false;
+        gameObject.tag = "Untagged";
     }
 
     public void Execute()
     {
         _isExecute = true;
+        _currentExecuteTime = 0.0f;
         if (_currentEffect != null) Destroy(_currentEffect);
         _executeRangeObj?.SetActive(true);
         if (_groundEffect != null)
-            Instantiate(_groundEffect, transform);
-        _currentExecuteTime = 0.0f;
+            _currentEffect = Instantiate(_groundEffect, transform.position, Quaternion.identity);
+        Vector3 exePosition = transform.position;
+        exePosition.y = 1.0f;
+        transform.position = exePosition;
+        Destroy(GetComponent<Rigidbody>());
     }
 
     private void OnTriggerEnter(Collider other)
