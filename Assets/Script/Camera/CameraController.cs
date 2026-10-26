@@ -8,6 +8,8 @@
 /// 
 /////////////////////////////////////////
 
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -66,6 +68,12 @@ public class CameraController : MonoBehaviour
     //プレイヤーの移動方向の基準にする水平な前方向・右方向
     public Vector3 FlatForward => Quaternion.Euler(0f, yaw, 0f) * Vector3.forward;
     public Vector3 FlatRight => Quaternion.Euler(0f, yaw, 0f) * Vector3.right;
+
+    public float CurrentZoomDistance => currentZoomDistance;
+    public void SetZoomDistance(float dis)
+    {
+        currentZoomDistance = dis;
+    }
 
     void Start()
     {
@@ -247,8 +255,7 @@ public class CameraController : MonoBehaviour
             pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
         }
     }
-
-    //カメラモードチェンジ Vキー
+        //カメラモードチェンジ Vキー
     void OnCameraModeChange(InputAction.CallbackContext context)
     {
         FPSMode = !FPSMode;
