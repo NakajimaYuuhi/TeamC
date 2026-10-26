@@ -14,36 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node_Edge_Data
   nodes:
   - nodeID: 0
-    position: {x: 0, y: 0, z: -10}
+    position: {x: -40, y: 0, z: 0}
     adjacents: 03000000
   - nodeID: 1
-    position: {x: -3, y: 0, z: -10}
+    position: {x: -40, y: 0, z: -3}
     adjacents: 04000000
   - nodeID: 2
-    position: {x: 3, y: 0, z: -10}
+    position: {x: -40, y: 0, z: 3}
     adjacents: 05000000
   - nodeID: 3
-    position: {x: 3, y: 0, z: 10}
+    position: {x: 45, y: 0, z: 0}
     adjacents: 00000000
   - nodeID: 4
-    position: {x: -3, y: 0, z: 10}
+    position: {x: 45, y: 0, z: -3}
     adjacents: 01000000
   - nodeID: 5
-    position: {x: 0, y: 0, z: 10}
+    position: {x: 45, y: 0, z: 3}
     adjacents: 02000000
   edges:
-  - fromNodeID: 0
-    toNodeID: 3
-    distance: 20.22375
+  - fromNodeID: 3
+    toNodeID: 0
+    distance: 85
     isTwoWay: 1
     width: 10
-  - fromNodeID: 1
-    toNodeID: 4
-    distance: 20
+  - fromNodeID: 4
+    toNodeID: 1
+    distance: 85
     isTwoWay: 1
     width: 10
-  - fromNodeID: 2
-    toNodeID: 5
-    distance: 20.22375
+  - fromNodeID: 5
+    toNodeID: 2
+    distance: 85
     isTwoWay: 1
     width: 10

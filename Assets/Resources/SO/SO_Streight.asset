@@ -17,12 +17,14 @@ MonoBehaviour:
   EnemyDetas:
   - {fileID: 0}
   PurposeDatas:
-  - {fileID: 11400000, guid: f895bbf5c73635b40bee18f400c4f41c, type: 2}
-  PlayerInitPos: {x: 0, y: 0, z: -11}
+  - {fileID: 11400000, guid: 2f729662fc8a28044927ec76cf8495f3, type: 2}
+  PlayerInitPos: {x: 45, y: 2, z: 0}
   Type: 0
   FailedTime: 1000
   _securityCount: 3
+  IsTimerFailed: 1
+  IsSpawnerBase: 0
   ClearCount: 1
-  EnemyCount: 100
+  EnemyCount: 200
   DiffMulti: 1
   PhaseMulti: 0

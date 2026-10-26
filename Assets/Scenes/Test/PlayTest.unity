@@ -169,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 500300461050473171, guid: cb4fbcda598f7564eb9a0e57543e351f, type: 3}
       propertyPath: suspensionDistance
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4228155809779836047, guid: cb4fbcda598f7564eb9a0e57543e351f, type: 3}
       propertyPath: m_Name
@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: nodeData
       value: 
       objectReference: {fileID: 11400000, guid: a05b0c673e3f79f4ab3b5218ad42dedd, type: 2}
+    - target: {fileID: 5677262603163221370, guid: cb4fbcda598f7564eb9a0e57543e351f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
