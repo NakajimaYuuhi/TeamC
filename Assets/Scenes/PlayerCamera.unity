@@ -683,6 +683,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2199655249829972037, guid: 76be48ec711d5ee448dff0eebb9f45ab, type: 3}
+      propertyPath: goalMarkerPrefab
+      value: 
+      objectReference: {fileID: 2039268224}
+    - target: {fileID: 2199655249829972037, guid: 76be48ec711d5ee448dff0eebb9f45ab, type: 3}
+      propertyPath: goalPositions.Array.data[0].z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5060728979383298203, guid: 76be48ec711d5ee448dff0eebb9f45ab, type: 3}
       propertyPath: m_Name
       value: PFB_PlayerTmp
@@ -1117,6 +1125,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+--- !u!1 &2039268224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+  m_PrefabInstance: {fileID: 2111013709}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2111013709
 PrefabInstance:
   m_ObjectHideFlags: 0

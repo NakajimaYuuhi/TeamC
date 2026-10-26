@@ -36,6 +36,10 @@ public class PlayerMove : MonoBehaviour
     [SerializeField, Tooltip("ステップのあと、次のステップができるまでの時間（秒）")]
     private float stepCooldown = 0.3f;
 
+    //ステップの開始・終了イベント
+    public event System.Action StepStarted;
+    public event System.Action StepEnded;
+
     Rigidbody rb;
     private Vector2 moveInput; //移動の入力を格納する変数
     private CameraController cameraController; //移動方向の基準にするカメラ
@@ -62,10 +66,13 @@ public class PlayerMove : MonoBehaviour
     private float stepCooldownTimer; //次のステップができるまでの残り時間
     private Vector3 stepVelocity;    //ステップ中の速度
 
+    private PlayerEvasion playerEvasion; //回り込み回避
+
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        TryGetComponent(out playerEvasion);
     }
 
     void Start()
@@ -285,12 +292,22 @@ public class PlayerMove : MonoBehaviour
 
         stepTimer = stepDuration;
         isStepping = true;
+
+        StepStarted?.Invoke(); //ステップ開始を知らせる
     }
 
     //ステップ中の処理
     private void UpdateStep()
     {
-        rb.linearVelocity = new Vector3(stepVelocity.x, rb.linearVelocity.y, stepVelocity.z);
+        Vector3 velocity = stepVelocity;
+
+        //PlayerEvasionがあれば、近くのNPCを回り込むように速度を曲げる
+        if (playerEvasion != null)
+        {
+            velocity = playerEvasion.GetDodgeVelocity(rb.position, velocity);
+        }
+
+        rb.linearVelocity = new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
 
         stepTimer -= Time.fixedDeltaTime;
         if (stepTimer <= 0f)
@@ -307,6 +324,8 @@ public class PlayerMove : MonoBehaviour
 
         //横方向の速度を止める　ないと若干動いたりする
         rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+
+        StepEnded?.Invoke(); //ステップ終了を知らせる
     }
 
     //----------------------------------------------------------------------------------------
