@@ -22,7 +22,7 @@ public class FlowField : MonoBehaviour
     [SerializeField] float viewHeight = 0.02f;    // 地面とのZファイティング避け
     [SerializeField, Range(0f, 1f)] float viewAlpha = 0.7f;
 
-    public enum ViewMode { Color = 0, Arrow = 1, Both = 2 }
+    public enum ViewMode { Color = 0, Arrow = 1, Both = 2, Lane = 3 }
     [SerializeField] ViewMode viewMode = ViewMode.Color;
     [Tooltip("何セルごとに矢印を1本出すか。グリッドが細かいときに上げる")]
     [SerializeField, Min(1)] int arrowStep = 1;
@@ -30,7 +30,7 @@ public class FlowField : MonoBehaviour
     [Tooltip("このキーで表示モードを切り替える")]
     [SerializeField] KeyCode cycleKey = KeyCode.F1;
 
-    public void CycleViewMode() => viewMode = (ViewMode)(((int)viewMode + 1) % 3);
+    public void CycleViewMode() => viewMode = (ViewMode)(((int)viewMode + 1) % 4);
 
     Vector2[] flow;      // 本体のデータ。index = x + y * width
     Texture2D tex;       // 可視化用(RG = 流れのベクトル)
@@ -100,6 +100,8 @@ public class FlowField : MonoBehaviour
     public bool InBounds(int x, int y) => x >= 0 && y >= 0 && x < width && y < height;
 
     public Vector2 GetCell(int x, int y) => flow[x + y * width];
+    public Vector2 GetCell(int index) => flow[index];
+    public Vector3 OriginPosition => transform.position;
 
     // ------------------------------------------------------------
     // 読み出し(NPCが使う)
@@ -122,7 +124,7 @@ public class FlowField : MonoBehaviour
         int yb = Mathf.Clamp(y0 + 1, 0, height - 1);
 
         Vector2 bottom = Vector2.Lerp(flow[xa + ya * width], flow[xb + ya * width], tx);
-        Vector2 top    = Vector2.Lerp(flow[xa + yb * width], flow[xb + yb * width], tx);
+        Vector2 top = Vector2.Lerp(flow[xa + yb * width], flow[xb + yb * width], tx);
         return Vector2.Lerp(bottom, top, ty);
     }
 
@@ -163,6 +165,12 @@ public class FlowField : MonoBehaviour
         System.Array.Clear(flow, 0, flow.Length);
     }
 
+    /// <summary>レーン表示用のテクスチャを表示マテリアルに渡す(FlowLaneAnalyzerから呼ばれる)</summary>
+    public void SetLaneTexture(Texture laneTex)
+    {
+        if (mat != null) mat.SetTexture("_LaneTex", laneTex);
+    }
+
     // ------------------------------------------------------------
     // 内部処理
     // ------------------------------------------------------------
@@ -182,7 +190,7 @@ public class FlowField : MonoBehaviour
         var px = tex.GetPixelData<ushort>(0);
         for (int i = 0; i < flow.Length; i++)
         {
-            px[i * 2]     = Mathf.FloatToHalf(flow[i].x);
+            px[i * 2] = Mathf.FloatToHalf(flow[i].x);
             px[i * 2 + 1] = Mathf.FloatToHalf(flow[i].y);
         }
         tex.Apply(false);
