@@ -34,6 +34,7 @@ public class GoalArrow : MonoBehaviour
     private Material arrowMaterial;  //点滅させるマテリアル
     private Color baseColor;         //元の色
 
+    private Vector3 _goalPosition;
     private Vector3 direction;       //目的地の方向
     private bool hasDirection;       //方向を受け取っているか
 
@@ -41,7 +42,7 @@ public class GoalArrow : MonoBehaviour
     {
         //親のスケールをいじったときに影響を受けないように
         //違和感あるなら消して影響うけるようにしよ
-        transform.SetParent(null, true);
+        // transform.SetParent(null, true);
 
         arrowRenderer = GetComponent<Renderer>();
         arrowMaterial = arrowRenderer.material; //専用のマテリアルを作って取得
@@ -68,6 +69,8 @@ public class GoalArrow : MonoBehaviour
     {
         if (player == null) return;
 
+        UpdateGoalArrow();
+
         //方向がないときは表示しない
         arrowRenderer.enabled = hasDirection;
         if (!hasDirection) return;
@@ -88,6 +91,21 @@ public class GoalArrow : MonoBehaviour
         arrowMaterial.color = c;
     }
 
+    private void UpdateGoalArrow()
+    {
+        Vector3 calcDirection = _goalPosition - transform.position;
+
+        //近いなら非表示にする　sqrMagnitude:x^2 + y^2 + z^2
+        if (calcDirection.sqrMagnitude < 0.0001f)
+        {
+            hasDirection = false;
+            return;
+        }
+
+        direction = calcDirection.normalized;
+        hasDirection = true;
+    }
+
     //----------------------------------------------------------------------------------------
     //外部から呼ぶ関数
 
@@ -97,15 +115,7 @@ public class GoalArrow : MonoBehaviour
         //yを0に
         newDirection.y = 0f;
 
-        //近いなら非表示にする　sqrMagnitude:x^2 + y^2 + z^2
-        if (newDirection.sqrMagnitude < 0.0001f)
-        {
-            hasDirection = false;
-            return;
-        }
-
-        direction = newDirection.normalized;
-        hasDirection = true;
+        _goalPosition = newDirection;
     }
 
     //矢印を消す

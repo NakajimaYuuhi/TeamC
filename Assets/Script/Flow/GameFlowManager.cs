@@ -233,8 +233,8 @@ public class GameFlowManager : MonoBehaviour
         _purposeView = Instantiate(_purposeViewPrefab, _purposeData.DestinationPosition, Quaternion.identity);
         _purposeView.transform.localScale = new Vector3(_purposeData.AchievementSizeX, 20.0f, _purposeData.AchievementSizeZ);
 
-        // auto playerComp = _player?.GetComponent<>();
-        // playerComp?.SetPurpose(_purposeData.destinationPosition);
+        var playerComp = _player?.GetComponentInChildren<GoalArrow>();
+        playerComp?.SetDirection(_purposeData.DestinationPosition);
 
         InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
         
