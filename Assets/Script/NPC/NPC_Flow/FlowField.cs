@@ -4,29 +4,6 @@ using UnityEngine;
 /// XZ平面上のベクトル場。transform.position をグリッドの左下(原点)として扱う。
 /// ※回転は考慮していないので、このオブジェクトの回転は (0,0,0) のままにしておくこと。
 /// </summary>
-/// 
-
-// 使い方:
-// 1. FlowField をシーンに置く。
-// 2. FlowEmitter を NPC やプレイヤーに付ける。
-// 3. FlowEmitter の field に FlowField を指定する。
-// 4. FlowField の decayPerSec を調整して流れの消える速さを変える。
-
-// ===== 関数一覧 =================================================================
-// WorldToGrid : ワールド座標 → グリッド座標(セル単位の実数)
-// InBounds : グリッド座標が範囲内かどうか
-// GetCell : グリッド座標のセルの流れを返す
-// Sample : 周りの4セルをバイリニア補間して流れ
-// AddFlow : 指定した範囲に流れを追加
-// Clear : 全セルをクリア
-//
-// Decay : 全セルを指数的に減衰させる
-// Upload : 配列 → テクスチャ。GetPixelData でテクスチャのメモリに直接書く
-//
-// CreateView : デバッグ表示用の Quad を作る
-// OnDrawGizmos : エディタ上で範囲を確認できるように
-// ================================================================================
-
 public class FlowField : MonoBehaviour
 {
     [Header("Grid")]
@@ -63,13 +40,13 @@ public class FlowField : MonoBehaviour
     public int Width => width;
     public int Height => height;
     public float CellSize => cellSize;
+    public float MaxStrength => maxStrength;
     public Texture FlowTexture => tex;
     Vector3 Origin => transform.position;
 
     // ------------------------------------------------------------
     void Awake()
     {
-        // 配列の初期化
         flow = new Vector2[width * height];
 
         // linear = true にしておかないと値がガンマ補正されてしまう
@@ -83,13 +60,9 @@ public class FlowField : MonoBehaviour
         CreateView();
     }
 
-    // 移動が終わった後に実行される
     void LateUpdate()
     {
-        // 流れの減衰
         Decay(Time.deltaTime);
-
-        // テクスチャにアップロード
         Upload();
 
 #if ENABLE_LEGACY_INPUT_MANAGER
@@ -149,7 +122,7 @@ public class FlowField : MonoBehaviour
         int yb = Mathf.Clamp(y0 + 1, 0, height - 1);
 
         Vector2 bottom = Vector2.Lerp(flow[xa + ya * width], flow[xb + ya * width], tx);
-        Vector2 top = Vector2.Lerp(flow[xa + yb * width], flow[xb + yb * width], tx);
+        Vector2 top    = Vector2.Lerp(flow[xa + yb * width], flow[xb + yb * width], tx);
         return Vector2.Lerp(bottom, top, ty);
     }
 
@@ -206,17 +179,15 @@ public class FlowField : MonoBehaviour
     void Upload()
     {
         // RGHalf は 1ピクセル = ushort(half) × 2
-        // なので GetPixelData<ushort>(0) で ushort 配列を取得して書き込む
         var px = tex.GetPixelData<ushort>(0);
         for (int i = 0; i < flow.Length; i++)
         {
-            px[i * 2] = Mathf.FloatToHalf(flow[i].x);
+            px[i * 2]     = Mathf.FloatToHalf(flow[i].x);
             px[i * 2 + 1] = Mathf.FloatToHalf(flow[i].y);
         }
         tex.Apply(false);
     }
 
-    // 
     void CreateView()
     {
         if (debugShader == null)
@@ -224,17 +195,13 @@ public class FlowField : MonoBehaviour
             Debug.LogWarning("[FlowField] debugShader が未設定なので表示はスキップ", this);
             return;
         }
-        
-        // デバッグ表示用の Quad を作る
+
         view = GameObject.CreatePrimitive(PrimitiveType.Quad);
         view.name = "FlowFieldView";
-        Destroy(view.GetComponent<Collider>()); // コライダーは不要
+        Destroy(view.GetComponent<Collider>());
 
-        // Quad のサイズをグリッドに合わせる
         float sx = width * cellSize;
         float sz = height * cellSize;
-
-        // FlowField の子にして、XZ平面上に置く
         view.transform.SetParent(transform, false);
         view.transform.localPosition = new Vector3(sx * 0.5f, viewHeight, sz * 0.5f);
         view.transform.localRotation = Quaternion.Euler(90f, 0f, 0f); // 寝かせて上向きに
@@ -246,8 +213,7 @@ public class FlowField : MonoBehaviour
         view.GetComponent<MeshRenderer>().sharedMaterial = mat;
     }
 
-
-    // エディタ上でグリッドの範囲を表示
+    // エディタ上で範囲を確認できるように
     void OnDrawGizmos()
     {
         Gizmos.color = new Color(0.3f, 0.8f, 1f, 0.8f);

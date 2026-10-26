@@ -5,7 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 public class tmpPlayer_forNPC : MonoBehaviour
 {
     // ˆÚ“®‘¬“x
-    float moveSpeed = 5f;
+    [SerializeField] float moveSpeed = 5f;
 
     private Vector2 _moveInput;
 
