@@ -160,6 +160,111 @@ public class FlowField : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// apex(頂点)から forward 方向に、扇形(コーン)の範囲へ流れを足す。
+    ///  - 頂点に近いほど強く、遠いほど弱い
+    ///  - 中心線ほど強く、扇の端ほど弱い
+    ///  - spread が大きいほど、流れの向きが「まっすぐ前」から「外側へ広がる向き」になる
+    /// </summary>
+    /// <param name="length">コーンの長さ(m)</param>
+    /// <param name="halfAngleDeg">中心線から片側の角度</param>
+    /// <param name="spread">0 = 全部前向き / 1 = 頂点から放射状</param>
+    /// <param name="amount">中心(頂点付近・中心線上)に足す流れの量</param>
+    public void AddFlowCone(Vector3 apex, Vector2 forward, float length, float halfAngleDeg,
+                            float spread, float amount)
+    {
+        if (length <= 0f || amount <= 0f || forward.sqrMagnitude < 1e-8f) return;
+        forward.Normalize();
+
+        Vector2 a = WorldToGrid(apex);           // 頂点(グリッド座標)
+        float lenCells = length / cellSize;      // 長さ(セル単位)
+        float cosHalf = Mathf.Cos(halfAngleDeg * Mathf.Deg2Rad);
+
+        // 頂点を中心に半径 lenCells の四角形だけ調べる
+        int minX = Mathf.Max(0, Mathf.FloorToInt(a.x - lenCells));
+        int maxX = Mathf.Min(width - 1, Mathf.CeilToInt(a.x + lenCells));
+        int minY = Mathf.Max(0, Mathf.FloorToInt(a.y - lenCells));
+        int maxY = Mathf.Min(height - 1, Mathf.CeilToInt(a.y + lenCells));
+
+        for (int y = minY; y <= maxY; y++)
+        {
+            for (int x = minX; x <= maxX; x++)
+            {
+                Vector2 d = new Vector2(x + 0.5f, y + 0.5f) - a;
+                float dist = d.magnitude;
+                if (dist > lenCells || dist < 1e-4f) continue;
+
+                Vector2 dn = d / dist;
+                float c = Vector2.Dot(dn, forward);
+                if (c < cosHalf) continue;       // 扇の外
+
+                float distT = dist / lenCells;                    // 0:頂点 ? 1:先端
+                float angT = Mathf.InverseLerp(1f, cosHalf, c);   // 0:中心線 ? 1:扇の端
+                float w = (1f - distT) * (1f - angT * angT);
+
+                // 前向きと放射状(外向き)を混ぜる → 相手が左右どちらに避ければいいか分かる
+                Vector2 dir = Vector2.Lerp(forward, dn, spread).normalized;
+
+                int i = x + y * width;
+                flow[i] = Vector2.ClampMagnitude(flow[i] + dir * (amount * w), maxStrength);
+            }
+        }
+    }
+
+    /// <summary>
+    /// start から forward の「逆方向(後ろ)」に伸びる帯の範囲へ、forward 向きの流れを足す。
+    ///  - start に近いほど強く、帯の後端ほど弱い
+    ///  - 中心線ほど強く、帯の端ほど弱い
+    /// 動いている間は毎フレーム書き直されるので、後ろ length 分の道は減衰に関係なく保たれる。
+    /// </summary>
+    /// <param name="length">帯の長さ(m)</param>
+    /// <param name="halfWidth">帯の片側の幅(m)</param>
+    /// <param name="amount">中心(start付近・中心線上)に足す流れの量</param>
+    public void AddFlowBand(Vector3 start, Vector2 forward, float length, float halfWidth, float amount)
+    {
+        if (length <= 0f || halfWidth <= 0f || amount <= 0f || forward.sqrMagnitude < 1e-8f) return;
+        forward.Normalize();
+
+        Vector2 s = WorldToGrid(start);
+        float lenCells = length / cellSize;
+        float hwCells = halfWidth / cellSize;
+        Vector2 back = -forward;
+        Vector2 side = new Vector2(-forward.y, forward.x);   // 横方向
+
+        // 帯の4隅から、調べる範囲(四角形)を決める
+        Vector2 c0 = s + side * hwCells;
+        Vector2 c1 = s - side * hwCells;
+        Vector2 c2 = c0 + back * lenCells;
+        Vector2 c3 = c1 + back * lenCells;
+        int minX = Mathf.Max(0, Mathf.FloorToInt(Mathf.Min(Mathf.Min(c0.x, c1.x), Mathf.Min(c2.x, c3.x))));
+        int maxX = Mathf.Min(width - 1, Mathf.CeilToInt(Mathf.Max(Mathf.Max(c0.x, c1.x), Mathf.Max(c2.x, c3.x))));
+        int minY = Mathf.Max(0, Mathf.FloorToInt(Mathf.Min(Mathf.Min(c0.y, c1.y), Mathf.Min(c2.y, c3.y))));
+        int maxY = Mathf.Min(height - 1, Mathf.CeilToInt(Mathf.Max(Mathf.Max(c0.y, c1.y), Mathf.Max(c2.y, c3.y))));
+
+        Vector2 add = forward * amount;
+
+        for (int y = minY; y <= maxY; y++)
+        {
+            for (int x = minX; x <= maxX; x++)
+            {
+                Vector2 d = new Vector2(x + 0.5f, y + 0.5f) - s;
+
+                float along = Vector2.Dot(d, back);           // 後ろにどれだけ離れているか
+                if (along < 0f || along > lenCells) continue;
+
+                float across = Mathf.Abs(Vector2.Dot(d, side)); // 中心線からの距離
+                if (across > hwCells) continue;
+
+                float alongT = along / lenCells;     // 0:先頭 ? 1:後端
+                float acrossT = across / hwCells;    // 0:中心 ? 1:端
+                float w = (1f - alongT) * (1f - acrossT * acrossT);
+
+                int i = x + y * width;
+                flow[i] = Vector2.ClampMagnitude(flow[i] + add * w, maxStrength);
+            }
+        }
+    }
+
     public void Clear()
     {
         System.Array.Clear(flow, 0, flow.Length);

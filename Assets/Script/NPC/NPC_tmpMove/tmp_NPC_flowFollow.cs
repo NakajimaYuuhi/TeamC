@@ -46,6 +46,7 @@ public class tmp_NPC_flowFollow : MonoBehaviour
 
     Rigidbody rb;
     FlowLaneRider laneRider;   // 付いていればレーンの速度ボーナスを使う(なくても動く)
+    FormationMember member;    // 付いていて席に入っていれば、隊形の速度で動く(なくても動く)
     Vector3 targetDir;      // Thinkで選んだ方向
     Vector3 currentDir;     // 実際に向かっている方向(targetDirへ徐々に寄せる)
     float speedScale = 1f;
@@ -60,6 +61,7 @@ public class tmp_NPC_flowFollow : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         laneRider = GetComponent<FlowLaneRider>();
+        member = GetComponent<FormationMember>();
         if (field == null) field = FindAnyObjectByType<FlowField>();
 
         targetDir = currentDir = DesiredDir();
@@ -93,9 +95,20 @@ public class tmp_NPC_flowFollow : MonoBehaviour
     {
         // 速度を直接上書きせず「目標速度との差」を力として加える
         // → 他のNPCやプレイヤーに押された分が消えずに残る
-        // 流れに乗っている分(speedScale) × レーンの大きさの分(laneMul)
-        float laneMul = laneRider != null ? laneRider.SpeedMultiplier : 1f;
-        Vector3 targetVel = currentDir * (moveSpeed * speedScale * laneMul);
+        Vector3 targetVel;
+        if (member != null && member.HasSlot)
+        {
+            // 隊形の席に入っている → リーダーの速度 + 席へのバネ
+            // (速度ボーナスはリーダー側にかかっているので、ここでは掛けない)
+            targetVel = member.DesiredVelocity;
+            if (targetVel.sqrMagnitude > 1e-4f) currentDir = targetVel.normalized; // 外れたときに向きが飛ばないように
+        }
+        else
+        {
+            // 流れに乗っている分(speedScale) × レーンの大きさの分(laneMul)
+            float laneMul = laneRider != null ? laneRider.SpeedMultiplier : 1f;
+            targetVel = currentDir * (moveSpeed * speedScale * laneMul);
+        }
         Vector3 v = rb.linearVelocity;
         Vector3 diff = targetVel - new Vector3(v.x, 0f, v.z);
         rb.AddForce(diff * acceleration, ForceMode.Acceleration);
