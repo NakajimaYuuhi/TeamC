@@ -2,16 +2,18 @@
 //   Color : 向き = 色相、強さ = 濃さ
 //   Arrow : セルごとに矢印(向き = 矢印の向き/色、強さ = 長さ)
 //   Both  : 薄い色 + 矢印
+//   Lane  : レーンごとに色分け + 白い矢印
 Shader "Debug/FlowField"
 {
     Properties
     {
         _FlowTex ("Flow (RG)", 2D) = "black" {}
+        _LaneTex ("Lane (RGBA)", 2D) = "black" {}
         _MaxStrength ("Max Strength", Float) = 5
         _Alpha ("Alpha", Range(0, 1)) = 0.7
         _GridSize ("Grid Size (xy)", Vector) = (128, 128, 0, 0)
         _GridLine ("Grid Line Alpha", Range(0, 1)) = 0.15
-        [Enum(Color,0,Arrow,1,Both,2)] _Mode ("Mode", Float) = 0
+        [Enum(Color,0,Arrow,1,Both,2,Lane,3)] _Mode ("Mode", Float) = 0
         _ArrowStep ("Arrow Step (cells)", Float) = 1
         _ArrowThickness ("Arrow Thickness", Range(0.01, 0.2)) = 0.06
         _MinStrength ("Hide Below (0-1)", Range(0, 0.2)) = 0.02
@@ -31,6 +33,7 @@ Shader "Debug/FlowField"
             #include "UnityCG.cginc"
 
             sampler2D _FlowTex;
+            sampler2D _LaneTex;
             float _MaxStrength;
             float _Alpha;
             float4 _GridSize;
@@ -75,10 +78,8 @@ Shader "Debug/FlowField"
                 float headLen = min(0.18, halfLen);
                 float headW   = 0.14;
 
-                // 軸
                 float dShaft = SegmentDist(p, float2(-halfLen, 0), float2(halfLen - headLen, 0)) - th * 0.5;
 
-                // 先端の三角形(簡易SDF)
                 float k = headW / headLen;
                 float dHead = max(max(p.x - halfLen, (halfLen - headLen) - p.x),
                                   abs(p.y) - (halfLen - p.x) * k);
@@ -90,24 +91,37 @@ Shader "Debug/FlowField"
             fixed4 frag (v2f i) : SV_Target
             {
                 float2 gridPos = i.uv * _GridSize.xy;
+                bool laneMode = _Mode > 2.5;
 
-                // ---- Color ----
-                float2 f = tex2D(_FlowTex, i.uv).rg;
-                float mag = saturate(length(f) / _MaxStrength);
-                float3 col = DirColor(f);
-                float a = _Alpha * saturate(mag * 2);
-                if (_Mode > 1.5) a *= 0.35;            // Both のときは背景として薄く
-                if (_Mode > 0.5 && _Mode < 1.5) a = 0;  // Arrow のときは色なし
+                float3 col;
+                float a;
 
-                // ---- Arrow ----
+                if (laneMode)
+                {
+                    // ---- Lane ----
+                    float4 lc = tex2D(_LaneTex, i.uv);
+                    col = lc.rgb;
+                    a = lc.a * _Alpha;
+                }
+                else
+                {
+                    // ---- Color ----
+                    float2 f = tex2D(_FlowTex, i.uv).rg;
+                    float mag = saturate(length(f) / _MaxStrength);
+                    col = DirColor(f);
+                    a = _Alpha * saturate(mag * 2);
+                    if (_Mode > 1.5) a *= 0.35;            // Both:背景として薄く
+                    else if (_Mode > 0.5) a = 0;           // Arrow:色なし
+                }
+
+                // ---- Arrow(Arrow / Both / Lane) ----
                 if (_Mode > 0.5)
                 {
                     float step_ = max(1, _ArrowStep);
                     float2 ag = gridPos / step_;
                     float2 cellId = floor(ag);
-                    float2 local = frac(ag) - 0.5;      // -0.5?0.5
+                    float2 local = frac(ag) - 0.5;
 
-                    // 矢印のセル中心の値を読む(補間なしで1矢印=1つの値)
                     float2 centerUV = (cellId + 0.5) * step_ / _GridSize.xy;
                     float2 fc = tex2Dlod(_FlowTex, float4(centerUV, 0, 0)).rg;
                     float len = length(fc);
@@ -116,13 +130,12 @@ Shader "Debug/FlowField"
                     if (m > _MinStrength)
                     {
                         float2 dir = fc / len;
-                        // 流れの向きが +x になるように回転
                         float2 p = float2(dot(local, dir), dot(local, float2(-dir.y, dir.x)));
                         float halfLen = lerp(0.15, 0.45, m);
-                        float aa = fwidth(ag.x) * 1.0;
+                        float aa = fwidth(ag.x);
                         float arrow = ArrowMask(p, halfLen, _ArrowThickness, aa);
 
-                        float3 arrowCol = DirColor(fc);
+                        float3 arrowCol = laneMode ? float3(1, 1, 1) : DirColor(fc);
                         col = lerp(col, arrowCol, arrow);
                         a = max(a, arrow);
                     }
