@@ -15,6 +15,9 @@ public class ItemExecute : MonoBehaviour
     [SerializeField, Tooltip("Œø‰Ê‚Ì”­“®ŽžŠÔ")]
     private float _executeTime = 2.0f;
 
+    [SerializeField]
+    private float _executeSize = 2.0f;
+
     private float _currentExecuteTime;
     private bool _isExecute;
     private bool _isThrow;
@@ -66,7 +69,17 @@ public class ItemExecute : MonoBehaviour
         if (_currentEffect != null) Destroy(_currentEffect);
         _executeRangeObj?.SetActive(true);
         if (_groundEffect != null)
+        {
             _currentEffect = Instantiate(_groundEffect, transform.position, Quaternion.identity);
+            _executeRangeObj.transform.localScale = Vector3.one * _executeSize;
+            var particles = _currentEffect.GetComponentsInChildren<Transform>();
+            foreach(var particle in  particles)
+            {
+                particle.localScale = Vector3.one * _executeSize;
+
+            }
+        }
+
         Vector3 exePosition = transform.position;
         exePosition.y = 1.0f;
         transform.position = exePosition;

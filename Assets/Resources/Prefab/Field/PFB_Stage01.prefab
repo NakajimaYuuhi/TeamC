@@ -668,6 +668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildRed (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2598363539500226204, guid: ce3345e9f2c7f9246bc618706c4da5ca, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -689,6 +693,10 @@ PrefabInstance:
     - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_Name
       value: Building 1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     - target: {fileID: 4197452165830981537, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_LocalPosition.x
@@ -792,6 +800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building 1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4303519172670616181, guid: ff4a7f75f8b9536419a62119131141d1, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -853,6 +865,10 @@ PrefabInstance:
     - target: {fileID: 2598363539500226204, guid: ce3345e9f2c7f9246bc618706c4da5ca, type: 3}
       propertyPath: m_Name
       value: BuildRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598363539500226204, guid: ce3345e9f2c7f9246bc618706c4da5ca, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -916,6 +932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building 1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4303519172670616181, guid: ff4a7f75f8b9536419a62119131141d1, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -937,6 +957,10 @@ PrefabInstance:
     - target: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
       propertyPath: m_Name
       value: BuildBlue (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     - target: {fileID: 4473996128611440346, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1040,6 +1064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildRed (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2598363539500226204, guid: ce3345e9f2c7f9246bc618706c4da5ca, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1101,6 +1129,10 @@ PrefabInstance:
     - target: {fileID: 4303519172670616181, guid: ff4a7f75f8b9536419a62119131141d1, type: 3}
       propertyPath: m_Name
       value: Building 1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303519172670616181, guid: ff4a7f75f8b9536419a62119131141d1, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1164,6 +1196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildRed (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2598363539500226204, guid: ce3345e9f2c7f9246bc618706c4da5ca, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1225,6 +1261,10 @@ PrefabInstance:
     - target: {fileID: 4303519172670616181, guid: ff4a7f75f8b9536419a62119131141d1, type: 3}
       propertyPath: m_Name
       value: Building 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303519172670616181, guid: ff4a7f75f8b9536419a62119131141d1, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1382,6 +1422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildRed (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2598363539500226204, guid: ce3345e9f2c7f9246bc618706c4da5ca, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1403,6 +1447,10 @@ PrefabInstance:
     - target: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
       propertyPath: m_Name
       value: BuildBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     - target: {fileID: 4473996128611440346, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1466,6 +1514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildBlue (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     - target: {fileID: 4473996128611440346, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.73
@@ -1527,6 +1579,10 @@ PrefabInstance:
     - target: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
       propertyPath: m_Name
       value: BuildBlue (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     - target: {fileID: 4473996128611440346, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1590,6 +1646,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildBlue
       objectReference: {fileID: 0}
+    - target: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     - target: {fileID: 4473996128611440346, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.354527
@@ -1651,6 +1711,10 @@ PrefabInstance:
     - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_Name
       value: Building 1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     - target: {fileID: 4197452165830981537, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1816,6 +1880,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building 1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4303519172670616181, guid: ff4a7f75f8b9536419a62119131141d1, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1837,6 +1905,10 @@ PrefabInstance:
     - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_Name
       value: Building 1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     - target: {fileID: 4197452165830981537, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1959,13 +2031,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 864812532036738343}
   m_SourcePrefab: {fileID: 100100000, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
 --- !u!4 &263382354971686785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4473996128611440346, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
   m_PrefabInstance: {fileID: 4445452081241448795}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4082187090067082139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
+  m_PrefabInstance: {fileID: 4445452081241448795}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &864812532036738343
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082187090067082139}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.98, y: 8, z: 1}
+  m_Center: {x: 2, y: 4, z: -0.66}
 --- !u!1001 &4486723674578253222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2017,6 +2118,10 @@ PrefabInstance:
     - target: {fileID: 2598363539500226204, guid: ce3345e9f2c7f9246bc618706c4da5ca, type: 3}
       propertyPath: m_Name
       value: BuildRed (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598363539500226204, guid: ce3345e9f2c7f9246bc618706c4da5ca, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2080,6 +2185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildRed
       objectReference: {fileID: 0}
+    - target: {fileID: 2598363539500226204, guid: ce3345e9f2c7f9246bc618706c4da5ca, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2101,6 +2210,10 @@ PrefabInstance:
     - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_Name
       value: Building 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     - target: {fileID: 4197452165830981537, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2204,6 +2317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildRed (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2598363539500226204, guid: ce3345e9f2c7f9246bc618706c4da5ca, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2225,6 +2342,10 @@ PrefabInstance:
     - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_Name
       value: Building 1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     - target: {fileID: 4197452165830981537, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2328,6 +2449,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4303519172670616181, guid: ff4a7f75f8b9536419a62119131141d1, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2349,6 +2474,10 @@ PrefabInstance:
     - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_Name
       value: Building 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     - target: {fileID: 4197452165830981537, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2451,6 +2580,10 @@ PrefabInstance:
     - target: {fileID: 4303519172670616181, guid: ff4a7f75f8b9536419a62119131141d1, type: 3}
       propertyPath: m_Name
       value: Building 1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303519172670616181, guid: ff4a7f75f8b9536419a62119131141d1, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2630,6 +2763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildBlue (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     - target: {fileID: 4473996128611440346, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5154743
@@ -2732,6 +2869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4303519172670616181, guid: ff4a7f75f8b9536419a62119131141d1, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2753,6 +2894,10 @@ PrefabInstance:
     - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_Name
       value: Building 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745231900023079613, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     - target: {fileID: 4197452165830981537, guid: 8306f941139477741a023e0c5d5bed00, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2815,6 +2960,10 @@ PrefabInstance:
     - target: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
       propertyPath: m_Name
       value: BuildBlue (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 366969267927165632, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
+      propertyPath: m_TagString
+      value: AlphaWall
       objectReference: {fileID: 0}
     - target: {fileID: 4473996128611440346, guid: 125577696a569104dac2aa336cbebf4d, type: 3}
       propertyPath: m_LocalPosition.x
