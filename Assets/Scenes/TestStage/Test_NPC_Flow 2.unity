@@ -207,6 +207,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &3575414 stripped
 GameObject:
@@ -296,6 +308,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &5884869
 PrefabInstance:
@@ -458,6 +482,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &7395593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7395587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &12167325
 GameObject:
@@ -539,6 +595,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &17786544
 MonoBehaviour:
@@ -628,6 +696,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &18324334
 MonoBehaviour:
@@ -764,6 +844,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &19041914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19041908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &21028253
 PrefabInstance:
@@ -860,6 +972,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 10
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &21028256
 MonoBehaviour:
@@ -968,6 +1092,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &25762234
 MonoBehaviour:
@@ -1057,6 +1193,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &39087481
 MonoBehaviour:
@@ -1266,6 +1414,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &44871477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44871471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &45835179
 PrefabInstance:
@@ -1428,6 +1608,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &55332220
 PrefabInstance:
@@ -1582,6 +1774,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 368042069}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 368042073}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &61729881
 PrefabInstance:
@@ -1664,6 +1859,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1118898690}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1118898691}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &64825318 stripped
 GameObject:
@@ -1753,6 +1951,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &64825324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64825318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &72772710 stripped
 GameObject:
@@ -1781,6 +2011,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &72772716
 MonoBehaviour:
@@ -1829,6 +2071,26 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
+--- !u!114 &72772720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72772710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
+  showDebug: 0
 --- !u!1 &73150231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -1870,6 +2132,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &73150237
 MonoBehaviour:
@@ -1959,6 +2233,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &75337297
 MonoBehaviour:
@@ -2095,6 +2381,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &80086787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80086781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &89195185 stripped
 GameObject:
@@ -2184,6 +2502,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &90549756
 PrefabInstance:
@@ -2458,6 +2788,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &97646853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97646847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &101107314 stripped
 GameObject:
@@ -2547,6 +2909,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &101107320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101107314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &106586764
 PrefabInstance:
@@ -2770,6 +3164,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2095651601}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2095651605}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &118929151 stripped
 GameObject:
@@ -2859,6 +3256,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &118929157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118929151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &143681729
 GameObject:
@@ -2976,6 +3405,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 928995303}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 928995304}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &148354685 stripped
 GameObject:
@@ -3065,6 +3497,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &148354691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148354685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &153397398
 PrefabInstance:
@@ -3143,6 +3607,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2056193508}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2056193509}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &161646264 stripped
 GameObject:
@@ -3185,6 +3652,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &161646270
 MonoBehaviour:
@@ -3274,6 +3753,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &162110909
 MonoBehaviour:
@@ -3410,6 +3901,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &164726047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164726041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &165481436
 PrefabInstance:
@@ -3684,6 +4207,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &189158826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189158820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &189188048 stripped
 GameObject:
@@ -3726,6 +4281,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &189188054
 MonoBehaviour:
@@ -3850,6 +4417,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1274062401}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1274062405}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &196622324 stripped
 GameObject:
@@ -3939,6 +4509,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &207833620
 PrefabInstance:
@@ -4016,6 +4598,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1428290998}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1428291002}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &224790923
 PrefabInstance:
@@ -4097,6 +4682,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2127880080}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2127880084}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &228364076 stripped
 GameObject:
@@ -4125,6 +4713,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &228364082
 MonoBehaviour:
@@ -4173,6 +4773,26 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
+--- !u!114 &228364086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228364076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
+  showDebug: 0
 --- !u!1 &230063324 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -4214,6 +4834,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &230063330
 MonoBehaviour:
@@ -4303,6 +4935,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &234779339
 MonoBehaviour:
@@ -4574,6 +5218,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1045208459}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1045208460}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &250631494 stripped
 GameObject:
@@ -4616,6 +5263,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &250631500
 MonoBehaviour:
@@ -4744,6 +5403,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1711621541}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1711621545}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &255218047
 PrefabInstance:
@@ -4906,6 +5568,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &255242763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255242757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &261178069
 PrefabInstance:
@@ -4922,6 +5616,114 @@ PrefabInstance:
     - target: {fileID: 1901536223226255256, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
       propertyPath: m_Constraints
       value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: c95b2375-e6d9-4b88-9c4c-c5e76515df4b
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: 7607c7b6-cd76-4816-beef-bd0341cfe950
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 15cef263-9014-4fd5-94d9-4e4a6234a6ef
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 32b35790-4ed0-4e9a-aa41-69ac6d629449
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: 3c7022bf-7922-4f7c-a998-c437916075ad
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: 44b200b1-1557-4083-816c-b22cbdf77ddf
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionId
+      value: dad70c86-b58c-4b17-88ad-f5e53adf419e
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionId
+      value: 0489e84a-4833-4c40-bfae-cea84b696689
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionId
+      value: 24908448-c609-4bc3-a128-ea258674378a
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
+      value: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
+      value: e21f832f-3e81-42a2-8c53-4a0a9f09e26b
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: 718ad61a-8d7e-4649-a48c-434650723bf0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: 'Player/Attack[/XInputControllerWindows/buttonWest,/Mouse/leftButton,/Keyboard/enter]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: 'UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: 'UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: 'UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: 'UI/Point[/Mouse/position]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: 'UI/Click[/Mouse/leftButton]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: 'UI/RightClick[/Mouse/rightButton]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: 'UI/MiddleClick[/Mouse/middleButton]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionName
+      value: 'UI/ScrollWheel[/Mouse/scroll]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
+      value: UI/TrackedDevicePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
+      value: UI/TrackedDeviceOrientation
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
+      value: 'Player/Push[/Keyboard/space]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: 'Player/CameraModeChange[/Keyboard/v]'
       objectReference: {fileID: 0}
     - target: {fileID: 5370302564841579712, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4974,6 +5776,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 250514139476172583, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1349993179}
+    - targetCorrespondingSourceObject: {fileID: 250514139476172583, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1349993180}
   m_SourcePrefab: {fileID: 100100000, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
 --- !u!1 &261496389 stripped
 GameObject:
@@ -5063,6 +5868,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &261769043 stripped
 GameObject:
@@ -5105,6 +5922,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &261769049
 MonoBehaviour:
@@ -5194,6 +6023,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &262652821
 MonoBehaviour:
@@ -5283,6 +6124,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &264809987
 MonoBehaviour:
@@ -5445,6 +6298,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &266619323
 MonoBehaviour:
@@ -5581,6 +6446,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &278348927 stripped
 GameObject:
@@ -5670,6 +6547,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &278348933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278348927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &279942076
 GameObject:
@@ -5842,6 +6751,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &288769342
 MonoBehaviour:
@@ -5966,6 +6887,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 148354687}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 148354691}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &296373983 stripped
 GameObject:
@@ -6055,6 +6979,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &296373989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296373983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &305700761
 PrefabInstance:
@@ -6278,6 +7234,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1060513474}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1060513478}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &319424609
 GameObject:
@@ -6479,6 +7438,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &330431222 stripped
 GameObject:
@@ -6568,6 +7539,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &335742445
 PrefabInstance:
@@ -6645,6 +7628,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1539789609}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1539789613}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &338965131
 PrefabInstance:
@@ -6819,6 +7805,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &353674472
 MonoBehaviour:
@@ -6866,6 +7864,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &353674476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353674466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &354562272
 PrefabInstance:
@@ -6943,6 +7961,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1626598183}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626598187}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &357136523
 GameObject:
@@ -7071,6 +8092,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &359578492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359578486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &360584534 stripped
 GameObject:
@@ -7160,6 +8213,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &361043931
 PrefabInstance:
@@ -7361,6 +8426,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &368042073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368042067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &376345017
 GameObject:
@@ -7477,6 +8574,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 914750891}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 914750895}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &384597396
 PrefabInstance:
@@ -7639,6 +8739,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &384948053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384948047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &386019313
 GameObject:
@@ -7754,6 +8886,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 384948049}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 384948053}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &392410677
 GameObject:
@@ -7834,6 +8969,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &396733017
 MonoBehaviour:
@@ -7970,6 +9117,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &418001337
 PrefabInstance:
@@ -8132,6 +9291,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &425741167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425741161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &441317921
 PrefabInstance:
@@ -8282,6 +9473,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1238496518}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1238496522}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &465798139 stripped
 GameObject:
@@ -8310,6 +9504,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &465798145
 MonoBehaviour:
@@ -8357,6 +9563,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &465798149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465798139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &477170747
 GameObject:
@@ -8634,6 +9860,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1181775196}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1181775200}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &488047401 stripped
 GameObject:
@@ -8676,6 +9905,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &488047407
 MonoBehaviour:
@@ -8765,6 +10006,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &488353141
 MonoBehaviour:
@@ -8893,6 +10146,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1056251077}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1056251081}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &493670893
 GameObject:
@@ -9133,6 +10389,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &496145953 stripped
 GameObject:
@@ -9161,6 +10429,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &496145959
 MonoBehaviour:
@@ -9208,6 +10488,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &496145963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496145953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &498943196
 PrefabInstance:
@@ -9370,6 +10670,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &505419246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505419240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &509789855
 PrefabInstance:
@@ -9485,6 +10817,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &510736365
 MonoBehaviour:
@@ -9682,6 +11026,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1709754671}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1709754675}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &543071118
 PrefabInstance:
@@ -9860,6 +11207,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &560980850
 MonoBehaviour:
@@ -9907,6 +11266,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &560980854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560980844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &561123068 stripped
 GameObject:
@@ -9996,6 +11375,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &565228498 stripped
 GameObject:
@@ -10038,6 +11429,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &565228504
 MonoBehaviour:
@@ -10174,6 +11577,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &582567239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582567233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &584572460
 PrefabInstance:
@@ -10251,6 +11686,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 665359333}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 665359337}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &590833216
 PrefabInstance:
@@ -10328,6 +11766,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 101107316}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 101107320}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &597182442
 PrefabInstance:
@@ -10405,6 +11846,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 359578488}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 359578492}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &612467298
 PrefabInstance:
@@ -10520,6 +11964,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &618043600
 MonoBehaviour:
@@ -10644,6 +12100,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7395589}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7395593}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &619056435 stripped
 GameObject:
@@ -10733,6 +12192,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &619056441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619056435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &620513633
 GameObject:
@@ -10850,6 +12341,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 465798148}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 465798149}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &636923767
 PrefabInstance:
@@ -10927,6 +12421,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1322140700}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1322140704}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &645405672
 PrefabInstance:
@@ -11089,6 +12586,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &655353665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655353659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &656169572 stripped
 GameObject:
@@ -11178,6 +12707,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &665359331 stripped
 GameObject:
@@ -11267,6 +12808,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &665359337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665359331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &666361386 stripped
 GameObject:
@@ -11356,6 +12929,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &666361392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666361386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &667140787
 PrefabInstance:
@@ -11433,6 +13038,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1820672332}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1820672336}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &669123403
 PrefabInstance:
@@ -11511,6 +13119,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 353674475}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 353674476}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &677265807
 PrefabInstance:
@@ -11593,6 +13204,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 496145962}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 496145963}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &681705665
 GameObject:
@@ -11720,6 +13334,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &694539458
 PrefabInstance:
@@ -11797,6 +13423,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1682947201}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1682947205}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &701341453
 PrefabInstance:
@@ -11879,6 +13508,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 72772719}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 72772720}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &713142813 stripped
 GameObject:
@@ -11968,6 +13600,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &713142819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713142813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &722554223 stripped
 GameObject:
@@ -12010,6 +13674,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &722554229
 MonoBehaviour:
@@ -12172,6 +13848,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &727495715
 MonoBehaviour:
@@ -12308,6 +13996,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &736475651 stripped
 GameObject:
@@ -12397,6 +14097,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &736475657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736475651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &741005142
 PrefabInstance:
@@ -12475,6 +14207,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1142982992}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1142982993}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &744330315 stripped
 GameObject:
@@ -12503,6 +14238,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &744330321
 MonoBehaviour:
@@ -12550,6 +14297,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &744330325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744330315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &771517667
 PrefabInstance:
@@ -12631,6 +14398,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1887341111}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1887341115}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &772399112
 PrefabInstance:
@@ -12708,6 +14478,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1722970249}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1722970253}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &797036396
 PrefabInstance:
@@ -12900,6 +14673,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &803721787
 MonoBehaviour:
@@ -13113,6 +14898,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &818043101
 GameObject:
@@ -13341,6 +15138,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &837135591
 MonoBehaviour:
@@ -13465,6 +15274,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 164726043}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 164726047}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &839980368 stripped
 GameObject:
@@ -13554,6 +15366,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &842993475
 PrefabInstance:
@@ -13781,6 +15605,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1486796126}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1486796130}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &860788298
 PrefabInstance:
@@ -13931,6 +15758,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 118929153}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 118929157}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &869491255
 PrefabInstance:
@@ -14008,6 +15838,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1861862849}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1861862853}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &875963738 stripped
 GameObject:
@@ -14050,6 +15883,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &875963744
 MonoBehaviour:
@@ -14186,6 +16031,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &887088611
 PrefabInstance:
@@ -14383,6 +16240,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &905141097
 PrefabInstance:
@@ -14461,6 +16330,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1152476176}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1152476177}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &908272769
 GameObject:
@@ -14735,6 +16607,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &914750895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914750889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &920946575
 PrefabInstance:
@@ -15043,6 +16947,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &928995294 stripped
 GameObject:
@@ -15071,6 +16987,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &928995300
 MonoBehaviour:
@@ -15118,6 +17046,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &928995304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928995294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &929150709 stripped
 GameObject:
@@ -15207,6 +17155,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &929150715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929150709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &934029308
 PrefabInstance:
@@ -15408,6 +17388,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &942843162 stripped
 GameObject:
@@ -15497,6 +17489,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &954569098 stripped
 GameObject:
@@ -15586,6 +17590,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &955514746
 PrefabInstance:
@@ -15663,6 +17679,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 505419242}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 505419246}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &957579150
 PrefabInstance:
@@ -15740,6 +17759,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 80086783}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 80086787}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &979097639 stripped
 GameObject:
@@ -15829,6 +17851,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &986323388 stripped
 GameObject:
@@ -15918,6 +17952,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &988147067 stripped
 GameObject:
@@ -15960,6 +18006,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &988147073
 MonoBehaviour:
@@ -16270,6 +18328,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 228364085}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 228364086}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1005151274
 PrefabInstance:
@@ -16493,6 +18554,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1753502953}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1753502957}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1026203996 stripped
 GameObject:
@@ -16582,6 +18646,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &1029187409
 PrefabInstance:
@@ -16756,6 +18832,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1045208456
 MonoBehaviour:
@@ -16803,6 +18891,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &1045208460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045208450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1047202891
 PrefabInstance:
@@ -16881,6 +18989,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1074585796}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1074585797}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1056251075 stripped
 GameObject:
@@ -16970,6 +19081,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1056251081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056251075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1060513472 stripped
 GameObject:
@@ -17059,6 +19202,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 10
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1060513478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060513472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1063437381
 PrefabInstance:
@@ -17160,6 +19335,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1074585793
 MonoBehaviour:
@@ -17207,6 +19394,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &1074585797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074585787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1076943078
 GameObject:
@@ -17430,6 +19637,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1090041144
 MonoBehaviour:
@@ -17566,6 +19785,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1100615828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100615822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1101306951
 PrefabInstance:
@@ -17643,6 +19894,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 296373985}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 296373989}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1102691724
 GameObject:
@@ -17767,6 +20021,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1107300425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107300419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1109894510 stripped
 GameObject:
@@ -17809,6 +20095,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1109894516
 MonoBehaviour:
@@ -17957,6 +20255,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1118898687
 MonoBehaviour:
@@ -18004,6 +20314,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &1118898691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118898681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1126487227
 PrefabInstance:
@@ -18082,6 +20412,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2123913774}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2123913775}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1141383275 stripped
 GameObject:
@@ -18124,6 +20457,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1141383281
 MonoBehaviour:
@@ -18199,6 +20544,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1142982989
 MonoBehaviour:
@@ -18246,6 +20603,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &1142982993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142982983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1145629312
 PrefabInstance:
@@ -18485,6 +20862,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1152476167 stripped
 GameObject:
@@ -18513,6 +20902,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1152476173
 MonoBehaviour:
@@ -18560,6 +20961,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &1152476177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152476167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1160784444
 PrefabInstance:
@@ -18776,6 +21197,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1181775200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181775194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1202952494
 PrefabInstance:
@@ -18891,6 +21344,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1210935858
 MonoBehaviour:
@@ -19027,6 +21492,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &1214572008
 PrefabInstance:
@@ -19262,6 +21739,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1233246555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233246549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1234096074
 PrefabInstance:
@@ -19339,6 +21848,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 619056437}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 619056441}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1234135561
 PrefabInstance:
@@ -19501,6 +22013,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1238496522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238496516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1239976655 stripped
 GameObject:
@@ -19590,6 +22134,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1239976661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239976655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1245538671
 PrefabInstance:
@@ -19705,6 +22281,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1263549663
 MonoBehaviour:
@@ -19914,6 +22502,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1274062405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274062399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1275024822
 PrefabInstance:
@@ -19991,6 +22611,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1599302054}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1599302058}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1286146863
 PrefabInstance:
@@ -20069,6 +22692,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2054863904}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2054863905}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1287690819
 PrefabInstance:
@@ -20304,6 +22930,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1296727860 stripped
 GameObject:
@@ -20346,6 +22984,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1296727866
 MonoBehaviour:
@@ -20581,6 +23231,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1310641608
 MonoBehaviour:
@@ -20670,6 +23332,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1313230123
 MonoBehaviour:
@@ -20806,6 +23480,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1322140704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322140698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1344224436
 PrefabInstance:
@@ -20956,6 +23662,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 97646849}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 97646853}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1348891547
 PrefabInstance:
@@ -21056,7 +23765,49 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
+--- !u!114 &1349993180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349993174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cf490c2fca1684893ee043d16ad3b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationLeader
+  maxRows: 6
+  spacing: 1.1
+  firstRowOffset: 0
+  maxMembers: 20
+  frontBias: 0.5
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
+  checkRadius: 0.4
+  checkHeight: 1
+  validateInterval: 0.1
+  turnSpeed: 4
+  minMoveSpeed: 0.2
+  joinRadius: 4
+  joinAlign: 0.5
+  analyzer: {fileID: 1163818906}
+  requireSameLane: 1
+  showDebug: 1
 --- !u!1 &1351094291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -21145,6 +23896,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &1358855558
 PrefabInstance:
@@ -21492,6 +24255,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &1388960827
 PrefabInstance:
@@ -21727,6 +24502,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &1397160204
 PrefabInstance:
@@ -21966,6 +24753,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1401629029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401629023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1420232994
 GameObject:
@@ -22094,6 +24913,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1428291002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428290996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1430099827
 PrefabInstance:
@@ -22244,6 +25095,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2052432154}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2052432158}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1440835068
 GameObject:
@@ -22695,6 +25549,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1233246551}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1233246555}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1486796124 stripped
 GameObject:
@@ -22784,6 +25641,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1486796130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486796124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1513473853
 PrefabInstance:
@@ -23019,6 +25908,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1521078898 stripped
 GameObject:
@@ -23108,6 +26009,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &1528782979
 PrefabInstance:
@@ -23185,6 +26098,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1107300421}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1107300425}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1539261197 stripped
 GameObject:
@@ -23227,6 +26143,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1539261203
 MonoBehaviour:
@@ -23363,6 +26291,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1539789613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539789607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1545854230
 PrefabInstance:
@@ -23478,6 +26438,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1557757811
 MonoBehaviour:
@@ -23602,6 +26574,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 582567235}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 582567239}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1563465730
 PrefabInstance:
@@ -23679,6 +26654,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1401629025}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1401629029}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1563975269
 GameObject:
@@ -23876,6 +26854,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1574169757 stripped
 GameObject:
@@ -23965,6 +26955,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &1575597631
 PrefabInstance:
@@ -24042,6 +27044,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 189158822}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 189158826}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1583197468
 PrefabInstance:
@@ -24119,6 +27124,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 736475653}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 736475657}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1584403194 stripped
 GameObject:
@@ -24208,6 +27216,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1584403200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584403194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1595344733
 PrefabInstance:
@@ -24285,6 +27325,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1584403196}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1584403200}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1599302052 stripped
 GameObject:
@@ -24374,6 +27417,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1599302058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599302052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1607486473 stripped
 GameObject:
@@ -24463,6 +27538,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &1614416643
 PrefabInstance:
@@ -24540,6 +27627,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1100615824}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1100615828}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1626598181 stripped
 GameObject:
@@ -24629,6 +27719,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1626598187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626598181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1628156620
 PrefabInstance:
@@ -24706,6 +27828,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 666361388}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 666361392}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1643569217 stripped
 GameObject:
@@ -24795,6 +27920,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 10
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1644039279 stripped
 GameObject:
@@ -24884,6 +28021,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1662624795 stripped
 GameObject:
@@ -24926,6 +28075,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1662624801
 MonoBehaviour:
@@ -25015,6 +28176,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1664760209
 MonoBehaviour:
@@ -25177,6 +28350,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1669669786
 MonoBehaviour:
@@ -25313,6 +28498,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1682947205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682947199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1684241031
 PrefabInstance:
@@ -25390,6 +28607,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 64825320}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 64825324}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1704569575
 GameObject:
@@ -25518,6 +28738,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1709754669 stripped
 GameObject:
@@ -25607,6 +28839,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1709754675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709754669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1711621539 stripped
 GameObject:
@@ -25696,6 +28960,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1711621545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711621539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1713235097
 PrefabInstance:
@@ -25858,6 +29154,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1722970253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722970247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1726570593
 PrefabInstance:
@@ -26020,6 +29348,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1730536486
 GameObject:
@@ -26137,6 +29477,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 560980853}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 560980854}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1746858035
 PrefabInstance:
@@ -26299,6 +29642,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1753502957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753502951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1755405200
 GameObject:
@@ -26419,6 +29794,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1768299328
 MonoBehaviour:
@@ -26508,6 +29895,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1773532554
 MonoBehaviour:
@@ -26597,6 +29996,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1776070521
 MonoBehaviour:
@@ -26733,6 +30144,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &1778199126
 PrefabInstance:
@@ -26810,6 +30233,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1239976657}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1239976661}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1782963012
 PrefabInstance:
@@ -27126,6 +30552,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1820672336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820672330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1821554998 stripped
 GameObject:
@@ -27168,6 +30626,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1821555004
 MonoBehaviour:
@@ -27304,6 +30774,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1831765630
 GameObject:
@@ -27489,6 +30971,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 713142815}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 713142819}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1856145149
 PrefabInstance:
@@ -27604,6 +31089,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1859981620
 MonoBehaviour:
@@ -27740,6 +31237,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1861862853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861862847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1867614571 stripped
 GameObject:
@@ -27782,6 +31311,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1867614577
 MonoBehaviour:
@@ -27980,6 +31521,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 744330324}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 744330325}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1878832927
 GameObject:
@@ -28108,6 +31652,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1887341109 stripped
 GameObject:
@@ -28197,6 +31753,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &1887341115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887341109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1889945429
 PrefabInstance:
@@ -28359,6 +31947,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1928313233 stripped
 GameObject:
@@ -28448,6 +32048,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &1929612215
 PrefabInstance:
@@ -28525,6 +32137,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 255242759}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 255242763}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1952275659 stripped
 GameObject:
@@ -28614,6 +32229,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1954665396 stripped
 GameObject:
@@ -28703,6 +32330,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &1955555310
 PrefabInstance:
@@ -28938,6 +32577,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &1971534538 stripped
 GameObject:
@@ -28980,6 +32631,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1971534544
 MonoBehaviour:
@@ -29142,6 +32805,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &1983550705
 MonoBehaviour:
@@ -29266,6 +32941,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 44871473}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 44871477}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &2011934129 stripped
 GameObject:
@@ -29308,6 +32986,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &2011934135
 MonoBehaviour:
@@ -29736,6 +33426,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &2036895961
 PrefabInstance:
@@ -29813,6 +33515,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 278348929}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 278348933}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &2038633528
 PrefabInstance:
@@ -29963,6 +33668,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 425741163}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 425741167}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &2043773670
 GameObject:
@@ -30117,6 +33825,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &2048840685
 MonoBehaviour:
@@ -30326,6 +34046,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &2052432158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052432152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &2054457341 stripped
 GameObject:
@@ -30368,6 +34120,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &2054457347
 MonoBehaviour:
@@ -30443,6 +34207,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &2054863901
 MonoBehaviour:
@@ -30491,6 +34267,26 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
+--- !u!114 &2054863905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054863895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
+  showDebug: 0
 --- !u!1 &2056193499 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -30518,6 +34314,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &2056193505
 MonoBehaviour:
@@ -30565,6 +34373,26 @@ MonoBehaviour:
   maxBonus: 0.5
   minAlign: 0.5
   smoothing: 4
+  showDebug: 0
+--- !u!114 &2056193509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056193499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &2069077823 stripped
 GameObject:
@@ -30654,6 +34482,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &2076240731
 PrefabInstance:
@@ -30889,6 +34729,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &2094186789 stripped
 GameObject:
@@ -30931,6 +34783,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &2094186795
 MonoBehaviour:
@@ -31179,6 +35043,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &2095651605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095651599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &2100721848
 PrefabInstance:
@@ -31256,6 +35152,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 655353661}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 655353665}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &2107741620
 PrefabInstance:
@@ -31333,6 +35232,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 19041910}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 19041914}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &2114139760 stripped
 GameObject:
@@ -31422,6 +35324,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &2118008330 stripped
 GameObject:
@@ -31511,6 +35425,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1001 &2120688793
 PrefabInstance:
@@ -31612,6 +35538,18 @@ MonoBehaviour:
   gain: 3
   amplify: 5
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &2123913771
 MonoBehaviour:
@@ -31660,6 +35598,26 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
+--- !u!114 &2123913775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123913765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
+  showDebug: 0
 --- !u!1 &2124385697 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -31701,6 +35659,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!114 &2124385703
 MonoBehaviour:
@@ -31837,6 +35807,18 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
   showDebug: 0
 --- !u!1 &2127880078 stripped
 GameObject:
@@ -31926,6 +35908,38 @@ MonoBehaviour:
   gain: 3
   amplify: 2
   counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &2127880084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127880078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 1349993180}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &2128176414
 PrefabInstance:
@@ -32003,6 +36017,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 929150711}
+    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 929150715}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
