@@ -6,7 +6,9 @@ TagManager:
   tags:
   - NPC
   - Item
+  - Ground
   - Groud
+  - AlphaWall
   layers:
   - Default
   - TransparentFX
