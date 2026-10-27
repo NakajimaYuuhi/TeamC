@@ -261,11 +261,11 @@ MonoBehaviour:
     adjacents: 
   _nodeGenerator: {fileID: 0}
   _defaultEdgeWidth: 2
-  _lateralGain: 0.5
+  _lateralGain: 1
   _maxLateralCorrection: 0.5
-  _offsetAdaptRate: 0.3
+  _offsetAdaptRate: 0
   _maxOffsetRate: 0.9
-  _initialStateType: 0
+  _initialStateType: 2
   _currentStateType: 0
 --- !u!114 &8431329086106416441
 MonoBehaviour:
@@ -286,13 +286,13 @@ MonoBehaviour:
   counterSensitivity: 3
   shapeIgnoresCounterFlow: 0
   shapeTurnSpeed: 8
-  coneEnabled: 1
+  coneEnabled: 0
   coneLength: 6
   coneHalfAngle: 35
   coneSpread: 0.5
   coneGain: 2
   coneApexOffset: -0.5
-  bandEnabled: 1
+  bandEnabled: 0
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
@@ -348,8 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc706b8cb774548827d6179664d654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC_FlowLocomotion
-  moveDirection: {x: 1, y: 0}
-  moveSpeed: 1
+  moveDirection: {x: 0, y: 1}
+  moveSpeed: 2
   field: {fileID: 0}
   candidateCount: 9
   searchAngle: 60

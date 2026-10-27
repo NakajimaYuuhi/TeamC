@@ -27,17 +27,6 @@ public class NPCSpawner : MonoBehaviour
     // 重なったときに場所を選び直す回数(全部だめならそのスポーンは飛ばす)
     [SerializeField, Min(1)] private int _maxTries = 5;
 
-    //
-    [Header("NPCに渡す用")]
-    // FlowField
-    [SerializeField] private FlowField _flowField;
-    // Analyzer
-    [SerializeField] private FlowLaneAnalyzer _analyzer;
-    // Leader
-    [SerializeField] private FormationLeader _leader;
-
-
-
     private float _spawnTimer = 0f;
     private bool _isFirstSpawn = true;
     private bool _isFinished = false;

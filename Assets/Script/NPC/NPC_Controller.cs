@@ -55,13 +55,11 @@ public class NPC_Controller : MonoBehaviour
     [SerializeField] private NodeEdgeGenerator _nodeGenerator;
     // エッジが見つからないときの幅
     [SerializeField] private float _defaultEdgeWidth = 2.0f;
-    // 中心からのズレ(割合)に戻ろうとする強さ
+    // エッジの幅からはみ出したとき、内側に戻ろうとする強さ
     [SerializeField] private float _lateralGain = 0.5f;
     // 横に戻る補正の上限(1で最大45°くらい斜めに進む)
     [SerializeField] private float _maxLateralCorrection = 0.5f;
-    // 押されて横にずれたとき、そのズレを新しい自分の位置として受け入れる速さ(0なら必ず元に戻る)
-    [SerializeField, Min(0f)] private float _offsetAdaptRate = 0.3f;
-    // エッジの端からこの割合だけ内側に収める(壁ぎわに張り付かないように)
+    // エッジの幅のこの割合の内側なら、横には補正しない(壁ぎわに張り付かないように1より小さく)
     [SerializeField, Range(0f, 1f)] private float _maxOffsetRate = 0.9f;
 
     // 今歩いているエッジ(位置で持つ。始点がノードでないときもある)
@@ -261,17 +259,19 @@ public class NPC_Controller : MonoBehaviour
             return;
         }
 
-        // 押されてずれた分を少しずつ「自分の位置」として受け入れる
-        if (_edgeHalfWidth > 0.01f && _offsetAdaptRate > 0f)
+        // 基本はエッジに平行にまっすぐ進むだけ。
+        // 押されたり避けたりしてずれたら、そのずれた位置をそのまま新しいズレとして記録する(元には戻らない)。
+        // 戻すのは、エッジの幅(_maxOffsetRate)からはみ出したときだけ。
+        float correction = 0f;
+        if (_edgeHalfWidth > 0.01f)
         {
-            float currentRate = Mathf.Clamp(lat / _edgeHalfWidth, -_maxOffsetRate, _maxOffsetRate);
-            float t = 1f - Mathf.Exp(-_offsetAdaptRate * Time.fixedDeltaTime);
-            _offsetRate = Mathf.Lerp(_offsetRate, currentRate, t);
-        }
+            float limit = _edgeHalfWidth * _maxOffsetRate;
+            if (lat > limit) correction = -Mathf.Min((lat - limit) * _lateralGain, _maxLateralCorrection);
+            else if (lat < -limit) correction = Mathf.Min((-limit - lat) * _lateralGain, _maxLateralCorrection);
 
-        // 目標のズレへ戻る補正(ずれが大きいほど斜めに戻る。上限あり)
-        float targetLat = _offsetRate * _edgeHalfWidth;
-        float correction = Mathf.Clamp((targetLat - lat) * _lateralGain, -_maxLateralCorrection, _maxLateralCorrection);
+            // 次のエッジに引き継ぐズレ(割合)
+            _offsetRate = Mathf.Clamp(lat / _edgeHalfWidth, -_maxOffsetRate, _maxOffsetRate);
+        }
 
         Move(forward + right * correction, _browseSpeed);
     }

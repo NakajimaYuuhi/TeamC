@@ -4472,10 +4472,10 @@ PrefabInstance:
     - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
       propertyPath: _nodeedgeGenerator
       value: 
-      objectReference: {fileID: 444647453}
+      objectReference: {fileID: 1432509897}
     - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
       propertyPath: _spawnPoints.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
       propertyPath: _overlapCheckMask.m_Bits
@@ -4484,7 +4484,7 @@ PrefabInstance:
     - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
       propertyPath: '_spawnPoints.Array.data[0]'
       value: 
-      objectReference: {fileID: 1378081895}
+      objectReference: {fileID: 1912689145}
     - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
       propertyPath: '_spawnPoints.Array.data[1]'
       value: 
@@ -6088,7 +6088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6992419487875479284, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
       propertyPath: moveSpeed
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

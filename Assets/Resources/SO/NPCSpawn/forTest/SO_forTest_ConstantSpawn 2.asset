@@ -15,6 +15,6 @@ MonoBehaviour:
   _spawnPrefab: {fileID: 4484798500382670019, guid: e7d540e3795105a47920c300ceac0e9b, type: 3}
   _intervalType: 1
   _initialDelay: 0
-  _fixedInterval: 3
+  _fixedInterval: 1
   _minInterval: 2
   _maxInterval: 5
