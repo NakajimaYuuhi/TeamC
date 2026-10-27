@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 932910255283351945}
   - component: {fileID: 5788652839401843032}
   - component: {fileID: 7066524948001342770}
+  - component: {fileID: 2417075027649358035}
   m_Layer: 3
   m_Name: PFB_NPC
   m_TagString: NPC
@@ -197,7 +198,7 @@ Transform:
   m_GameObject: {fileID: 4484798500382670019}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.64, y: -1.32085, z: 0.36637878}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -246,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC_Controller
   _returnSpeed: 4
-  _returnAcceleration: 8
+  _returnSlowRadius: 1
   _stopDeadZone: 0.25
   _targetPositions:
   - {x: 5, y: 0, z: 0}
@@ -254,23 +255,19 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 5}
   _currentTargetIndex: 0
   _browseSpeed: 8
-  _browseAcceleration: 8
   _arrivalDistance: 1
   _node:
     nodeID: 0
     position: {x: 0, y: 0, z: 0}
     adjacents: 
-  _nodeData: {fileID: 0}
-  initialState: Standing
+  _nodeGenerator: {fileID: 0}
+  _defaultEdgeWidth: 2
+  _lateralGain: 0.5
+  _maxLateralCorrection: 0.5
+  _offsetAdaptRate: 0.3
+  _maxOffsetRate: 0.9
   _initialStateType: 0
   _currentStateType: 0
-  _avoidRadius: 1.2
-  _avoidWeight: 4
-  _npcLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  _avoidSmoothing: 5
-  _turnSpeed: 10
 --- !u!114 &8431329086106416441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +365,36 @@ MonoBehaviour:
   rejoinCooldown: 2
   joinCheckInterval: 0.25
   showDebug: 0
+--- !u!114 &2417075027649358035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4484798500382670019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dc706b8cb774548827d6179664d654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC_FlowLocomotion
+  moveDirection: {x: 1, y: 0}
+  moveSpeed: 1
+  field: {fileID: 0}
+  candidateCount: 9
+  searchAngle: 60
+  lookAhead: 1.5
+  goalWeight: 1
+  flowWeight: 1
+  flowSpeedBonus: 0.5
+  thinkInterval: 0.2
+  wideSearchAngle: 90
+  counterSensitivity: 2
+  counterWeight: 3
+  stickiness: 0.2
+  turnSpeed: 5
+  acceleration: 10
+  bodyTurnSpeed: 10
+  faceMinSpeed: 0.3
 --- !u!1 &6147584093735849134
 GameObject:
   m_ObjectHideFlags: 0

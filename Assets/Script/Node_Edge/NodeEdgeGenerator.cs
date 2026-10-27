@@ -102,4 +102,26 @@ public class NodeEdgeGenerator : MonoBehaviour
         }
         return nodeData.Edges[edgeIndex];
     }
+
+    public float GetEdgeWidth(int edgeIndex)
+    {
+        if (edgeIndex < 0 || edgeIndex >= nodeData.Edges.Count)
+        {
+            Debug.LogError($"Invalid edgeIndex: {edgeIndex}");
+            return 0f;
+        }
+        return nodeData.Edges[edgeIndex].width;
+    }
+
+    // from → to のエッジの番号を返す(なければ -1)。双方向のエッジは逆向きでも見つける
+    public int FindEdgeIndex(int fromNodeID, int toNodeID)
+    {
+        for (int i = 0; i < nodeData.Edges.Count; i++)
+        {
+            var e = nodeData.Edges[i];
+            if (e.fromNodeID == fromNodeID && e.toNodeID == toNodeID) return i;
+            if (e.isTwoWay && e.fromNodeID == toNodeID && e.toNodeID == fromNodeID) return i;
+        }
+        return -1;
+    }
 }
