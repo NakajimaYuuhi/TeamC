@@ -275,13 +275,15 @@ public class GameFlowManager : MonoBehaviour
     }
     public void ToResult(bool clear)
     {
+        var presentation = GetComponent<CollectPurposePresentation>();
+
         _flowState = FlowState.ResultView;
         _isClear = clear;
         GameData.ResultData data = new GameData.ResultData();
         data.IsClear = clear;
         data.pastTime = _resultTime;
         _gameData.ApplyResult(data);
-        SceneManager.LoadScene("Result", LoadSceneMode.Additive);
+        StartCoroutine(presentation.Play());
     }
 
 }

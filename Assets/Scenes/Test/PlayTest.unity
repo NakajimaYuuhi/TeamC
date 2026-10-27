@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 1498646390}
   - component: {fileID: 1498646389}
   - component: {fileID: 1498646391}
+  - component: {fileID: 1498646392}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -489,6 +490,20 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _cameraController: {fileID: 1498646389}
+--- !u!114 &1498646392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498646385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653cd3669514ca044aa67f565e48954d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraObstacleAlpha
+  _player: {fileID: 0}
+  _obstacleMaterial: {fileID: 2100000, guid: 80eec482b1b079a43bccdb63bb5c5fa2, type: 2}
 --- !u!1 &2052873625
 GameObject:
   m_ObjectHideFlags: 0
