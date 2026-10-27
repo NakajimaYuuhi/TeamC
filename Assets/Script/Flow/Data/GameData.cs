@@ -9,10 +9,19 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "GameFloawData", menuName = "Scriptable Objects/GameFloawData")]
 public class GameData : ScriptableObject
 {
+    public enum ScoreRank
+    {
+        S,
+        A,
+        B,
+        C,
+    };
+
     public struct ResultData
     {
         public float pastTime;
         public bool IsClear;
+        public ScoreRank rank;
     };
 
     public enum PlayerType

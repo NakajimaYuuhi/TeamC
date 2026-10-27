@@ -64,6 +64,8 @@ public class StageData : ScriptableObject
     [SerializeField, Tooltip("‰ñ”‚²‚Æ‚Él‚ª‘‚¦‚é”{—¦")]
     [Min(0.0f)] public float PhaseMulti = 0.0f;
 
+    public GameData.ResultData SaveData;
+    
     private int lastIdx = -99;
     public DestinationData PurposePick()
     {
