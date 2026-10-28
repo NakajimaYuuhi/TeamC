@@ -47,3 +47,16 @@ MonoBehaviour:
   _item: {fileID: 8902309748527221679, guid: b87b5d350fd8dac43a0dd515c3251b98, type: 3}
   _spawnAreaSize: {x: 50, y: 0.1, z: 10}
   _spawnInterval: 2
+  _maxFieldItem: 5
+  _skills:
+  - Type: 0
+    model: {fileID: 3789874330538851295, guid: c9ad81fdcf48c88488283f46a3888bcc, type: 3}
+    effect: {fileID: 5344813511865819279, guid: b978b6f185619ac42bc2204fc2151482, type: 3}
+  - Type: 1
+    model: {fileID: 8202472994690737945, guid: 72057a45934faf04c8fb1af5476a89ce, type: 3}
+    effect: {fileID: 5344813511865819279, guid: b978b6f185619ac42bc2204fc2151482, type: 3}
+  - Type: 2
+    model: {fileID: 2208420576313365728, guid: 435b5d6bb4578ad4ab410e296e4a15d1, type: 3}
+    effect: {fileID: 5344813511865819279, guid: b978b6f185619ac42bc2204fc2151482, type: 3}
+  _isTypeRandom: 1
+  _type: 0

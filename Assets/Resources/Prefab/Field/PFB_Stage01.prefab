@@ -2325,6 +2325,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_ItemSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[1].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[2].Type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6609898005892868842, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
