@@ -102,4 +102,52 @@ public class NodeEdgeGenerator : MonoBehaviour
         }
         return nodeData.Edges[edgeIndex];
     }
+
+    public float GetEdgeWidth(int edgeIndex)
+    {
+        if (edgeIndex < 0 || edgeIndex >= nodeData.Edges.Count)
+        {
+            Debug.LogError($"Invalid edgeIndex: {edgeIndex}");
+            return 0f;
+        }
+        return nodeData.Edges[edgeIndex].width;
+    }
+
+    // from → to のエッジの番号を返す(なければ -1)。双方向のエッジは逆向きでも見つける
+    public int FindEdgeIndex(int fromNodeID, int toNodeID)
+    {
+        for (int i = 0; i < nodeData.Edges.Count; i++)
+        {
+            var e = nodeData.Edges[i];
+            if (e.fromNodeID == fromNodeID && e.toNodeID == toNodeID) return i;
+            if (e.isTwoWay && e.fromNodeID == toNodeID && e.toNodeID == fromNodeID) return i;
+        }
+        return -1;
+    }
+
+    // toNodeID に入ってくるエッジのうち、pos が一番近いエッジの始点ノードIDを返す(なければ -1)
+    // 一方通行のエッジにも対応(隣接リストは「出ていく」方向しか持っていないため)
+    public int FindNearestIncomingNode(int toNodeID, Vector3 pos)
+    {
+        Vector3 p = new Vector3(pos.x, 0f, pos.z);
+        Vector3 b = nodeData.Nodes[toNodeID].position; b.y = 0f;
+        int best = -1;
+        float bestDist = float.PositiveInfinity;
+
+        for (int i = 0; i < nodeData.Edges.Count; i++)
+        {
+            var e = nodeData.Edges[i];
+            int from;
+            if (e.toNodeID == toNodeID) from = e.fromNodeID;
+            else if (e.isTwoWay && e.fromNodeID == toNodeID) from = e.toNodeID;
+            else continue;
+
+            Vector3 a = nodeData.Nodes[from].position; a.y = 0f;
+            Vector3 ab = b - a;
+            float t = ab.sqrMagnitude > 1e-6f ? Mathf.Clamp01(Vector3.Dot(p - a, ab) / ab.sqrMagnitude) : 0f;
+            float d = Vector3.Distance(p, a + ab * t);
+            if (d < bestDist) { bestDist = d; best = from; }
+        }
+        return best;
+    }
 }

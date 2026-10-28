@@ -1,102 +1,57 @@
 using UnityEngine;
 
 // ----- 基底クラス -----
+// 各状態は「NPC_Controller のどの更新処理を呼ぶか」だけを決める。
+// 判断(到着・次の目的地)と移動の指示は NPC_Controller 側にまとめてある。
 public abstract class NPCState : StateBase<NPC_Controller>
 {
     public abstract bool AllowsSubUpdate { get; }
-
 }
 
+// 立ち止まり:初期位置に戻って、初期の向きで踏ん張る
 public class NPCStanding : NPCState
 {
     public override bool AllowsSubUpdate => true;
 
-
-    public override void OnEnter()
-    {
-    }
+    public override void OnEnter() { }
 
     public override void OnUpdate()
     {
-        owner.ReturnToDefaultPosition();
+        if (owner == null) return;
+        owner.UpdateStanding();
     }
 
-    public override void OnExit()
-    {
-    }
+    public override void OnExit() { }
 }
 
+// 徘徊:巡回地点を点から点へ回る
 public class NPCBrowsing : NPCState
 {
     public override bool AllowsSubUpdate => true;
 
-    public override void OnEnter()
-    {
-    }
+    public override void OnEnter() { }
 
     public override void OnUpdate()
     {
         if (owner == null) return;
-
-        // 1. 【判断】現在の巡回ポイントの座標を取得
-        Vector3 targetPos = owner.GetCurrentPatrolPosition();
-        Debug.Log($"NPC is moving towards target position: {targetPos}");
-
-        // 2. 【判断】到着したかどうかの監視
-        float distance = Vector3.Distance(targetPos, owner.transform.position);
-        if (distance < owner.ArrivalDistance)
-        {
-            Debug.Log($"NPC has arrived at target position: {targetPos}");
-            owner.AdvanceToNextTarget(); // 到着したら次のポイントへ
-            return;
-        }
-
-        // 3. 【命令】コントローラーに「ここへ動け」と指示を出す
-        owner.MoveTowardsPatrolPoint(targetPos);
+        owner.UpdatePatrol();
     }
 
-    public override void OnExit()
-    {
-    }
-
+    public override void OnExit() { }
 }
 
+// ノードベースの徘徊:エッジに沿って、中心からのズレを保ったまま平行に進む
 public class NPCBrowsing_BasedOnNode : NPCState
 {
     public override bool AllowsSubUpdate => true;
 
-    public override void OnEnter()
-    {
-    }
+    public override void OnEnter() { }
 
     public override void OnUpdate()
     {
         if (owner == null) return;
-
-        // 1. 【判断】現在の目標ノードの座標を取得
-        Vector3 targetPos = owner.GetCurrentNodePosition();
-        //Debug.Log($"NPC is moving towards target position: {targetPos}");
-
-        // 2. 【判断】到着したかどうかの監視
-        Vector3 currentPos = owner.transform.position;
-        currentPos.y = 0; // 高さを無視する場合はY座標を0に設定
-        float distance = Vector3.Distance(targetPos, currentPos);
-        if (distance < owner.ArrivalDistance)
-        {
-            // 2.1 到着したら次のポイントへ
-            Debug.Log($"NPC has arrived at target position: {targetPos}");
-
-            // 2.2 次の巡回ポイントに進む
-            owner.AdvanceToNextNode(); // 到着したら次のポイントへ
-            return;
-        }
-
-        // 3. 【命令】コントローラーに「ここへ動け」と指示を出す
-        owner.MoveTowardsPatrolPoint(targetPos);
+        owner.UpdateNodeTravel();
     }
 
-    public override void OnExit()
-    {
-    }
-
+    public override void OnExit() { }
 }

@@ -495,26 +495,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &7395593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7395587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &12167325
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,26 +836,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &19041914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19041908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &21028253
 PrefabInstance:
@@ -1427,26 +1387,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &44871477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44871471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &45835179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1774,9 +1714,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 368042069}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 368042073}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &61729881
 PrefabInstance:
@@ -1861,7 +1798,7 @@ PrefabInstance:
       addedObject: {fileID: 1118898690}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1118898691}
+      addedObject: {fileID: 1118898693}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &64825318 stripped
 GameObject:
@@ -1964,26 +1901,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &64825324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64825318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &72772710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -2071,7 +1988,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &72772720
+--- !u!114 &72772722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2083,7 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -2393,26 +2310,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &80086787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80086781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &89195185 stripped
 GameObject:
@@ -2801,26 +2698,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &97646853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97646847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &101107314 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -2921,26 +2798,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &101107320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101107314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &106586764
 PrefabInstance:
@@ -3164,9 +3021,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2095651601}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2095651605}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &118929151 stripped
 GameObject:
@@ -3268,26 +3122,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &118929157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118929151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &143681729
 GameObject:
@@ -3407,7 +3241,7 @@ PrefabInstance:
       addedObject: {fileID: 928995303}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 928995304}
+      addedObject: {fileID: 928995306}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &148354685 stripped
 GameObject:
@@ -3510,26 +3344,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &148354691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148354685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &153397398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3609,7 +3423,7 @@ PrefabInstance:
       addedObject: {fileID: 2056193508}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2056193509}
+      addedObject: {fileID: 2056193511}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &161646264 stripped
 GameObject:
@@ -3914,26 +3728,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &164726047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164726041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &165481436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4220,26 +4014,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &189158826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189158820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &189188048 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -4417,9 +4191,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1274062401}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1274062405}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &196622324 stripped
 GameObject:
@@ -4598,9 +4369,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1428290998}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1428291002}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &224790923
 PrefabInstance:
@@ -4682,9 +4450,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2127880080}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2127880084}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &228364076 stripped
 GameObject:
@@ -4773,7 +4538,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &228364086
+--- !u!114 &228364088
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4785,7 +4550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -5220,7 +4985,7 @@ PrefabInstance:
       addedObject: {fileID: 1045208459}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1045208460}
+      addedObject: {fileID: 1045208462}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &250631494 stripped
 GameObject:
@@ -5403,9 +5168,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1711621541}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1711621545}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &255218047
 PrefabInstance:
@@ -5581,26 +5343,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &255242763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255242757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &261178069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5619,7 +5361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_ActionId
@@ -5674,6 +5416,14 @@ PrefabInstance:
       value: 718ad61a-8d7e-4649-a48c-434650723bf0
       objectReference: {fileID: 0}
     - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: e05feb8c-8ee2-42e1-b64e-33b8832185cf
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 80803717-2e5f-479e-a743-0c69371c5fe3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_ActionName
       value: 'Player/Attack[/XInputControllerWindows/buttonWest,/Mouse/leftButton,/Keyboard/enter]'
       objectReference: {fileID: 0}
@@ -5724,6 +5474,14 @@ PrefabInstance:
     - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_ActionName
       value: 'Player/CameraModeChange[/Keyboard/v]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: 'Player/UseItem[/Mouse/leftButton]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264052887462366260, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: 'Player/CancelItem[/Mouse/rightButton]'
       objectReference: {fileID: 0}
     - target: {fileID: 5370302564841579712, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5778,7 +5536,7 @@ PrefabInstance:
       addedObject: {fileID: 1349993179}
     - targetCorrespondingSourceObject: {fileID: 250514139476172583, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1349993180}
+      addedObject: {fileID: 1349993184}
   m_SourcePrefab: {fileID: 100100000, guid: 5ab5c9f80e5e53641ab8aa19236b20ea, type: 3}
 --- !u!1 &261496389 stripped
 GameObject:
@@ -6560,26 +6318,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &278348933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278348927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &279942076
 GameObject:
   m_ObjectHideFlags: 0
@@ -6887,9 +6625,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 148354687}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 148354691}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &296373983 stripped
 GameObject:
@@ -6991,26 +6726,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &296373989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296373983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &305700761
 PrefabInstance:
@@ -7234,9 +6949,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1060513474}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1060513478}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &319424609
 GameObject:
@@ -7628,9 +7340,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1539789609}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1539789613}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &338965131
 PrefabInstance:
@@ -7865,7 +7574,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &353674476
+--- !u!114 &353674478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7877,7 +7586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -7961,9 +7670,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1626598183}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1626598187}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &357136523
 GameObject:
@@ -8104,26 +7810,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &359578492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 359578486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &360584534 stripped
 GameObject:
@@ -8439,26 +8125,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &368042073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368042067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &376345017
 GameObject:
   m_ObjectHideFlags: 0
@@ -8574,9 +8240,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 914750891}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 914750895}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &384597396
 PrefabInstance:
@@ -8752,26 +8415,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &384948053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384948047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &386019313
 GameObject:
   m_ObjectHideFlags: 0
@@ -8886,9 +8529,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 384948049}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 384948053}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &392410677
 GameObject:
@@ -9304,26 +8944,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &425741167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425741161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &441317921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9473,9 +9093,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1238496518}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1238496522}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &465798139 stripped
 GameObject:
@@ -9564,7 +9181,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &465798149
+--- !u!114 &465798151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9576,7 +9193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -9860,9 +9477,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1181775196}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1181775200}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &488047401 stripped
 GameObject:
@@ -10146,9 +9760,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1056251077}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1056251081}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &493670893
 GameObject:
@@ -10489,7 +10100,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &496145963
+--- !u!114 &496145965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10501,7 +10112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -10682,26 +10293,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &505419246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505419240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &509789855
 PrefabInstance:
@@ -11026,9 +10617,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1709754671}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1709754675}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &543071118
 PrefabInstance:
@@ -11267,7 +10855,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &560980854
+--- !u!114 &560980856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11279,7 +10867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -11590,26 +11178,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &582567239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582567233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &584572460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11686,9 +11254,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 665359333}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 665359337}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &590833216
 PrefabInstance:
@@ -11766,9 +11331,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 101107316}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 101107320}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &597182442
 PrefabInstance:
@@ -11846,9 +11408,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 359578488}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 359578492}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &612467298
 PrefabInstance:
@@ -12100,9 +11659,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7395589}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7395593}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &619056435 stripped
 GameObject:
@@ -12204,26 +11760,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &619056441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619056435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &620513633
 GameObject:
@@ -12343,7 +11879,7 @@ PrefabInstance:
       addedObject: {fileID: 465798148}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 465798149}
+      addedObject: {fileID: 465798151}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &636923767
 PrefabInstance:
@@ -12421,9 +11957,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1322140700}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1322140704}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &645405672
 PrefabInstance:
@@ -12598,26 +12131,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &655353665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655353659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &656169572 stripped
 GameObject:
@@ -12821,26 +12334,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &665359337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665359331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &666361386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -12942,26 +12435,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &666361392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666361386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &667140787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13038,9 +12511,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1820672332}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1820672336}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &669123403
 PrefabInstance:
@@ -13121,7 +12591,7 @@ PrefabInstance:
       addedObject: {fileID: 353674475}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 353674476}
+      addedObject: {fileID: 353674478}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &677265807
 PrefabInstance:
@@ -13206,7 +12676,7 @@ PrefabInstance:
       addedObject: {fileID: 496145962}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 496145963}
+      addedObject: {fileID: 496145965}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &681705665
 GameObject:
@@ -13423,9 +12893,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1682947201}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1682947205}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &701341453
 PrefabInstance:
@@ -13510,7 +12977,7 @@ PrefabInstance:
       addedObject: {fileID: 72772719}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 72772720}
+      addedObject: {fileID: 72772722}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &713142813 stripped
 GameObject:
@@ -13612,26 +13079,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &713142819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713142813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &722554223 stripped
 GameObject:
@@ -14110,26 +13557,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &736475657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736475651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &741005142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14209,7 +13636,7 @@ PrefabInstance:
       addedObject: {fileID: 1142982992}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1142982993}
+      addedObject: {fileID: 1142982995}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &744330315 stripped
 GameObject:
@@ -14298,7 +13725,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &744330325
+--- !u!114 &744330327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14310,7 +13737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -14398,9 +13825,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1887341111}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1887341115}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &772399112
 PrefabInstance:
@@ -14478,9 +13902,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1722970249}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1722970253}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &797036396
 PrefabInstance:
@@ -15274,9 +14695,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 164726043}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 164726047}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &839980368 stripped
 GameObject:
@@ -15605,9 +15023,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1486796126}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1486796130}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &860788298
 PrefabInstance:
@@ -15758,9 +15173,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 118929153}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 118929157}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &869491255
 PrefabInstance:
@@ -15838,9 +15250,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1861862849}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1861862853}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &875963738 stripped
 GameObject:
@@ -16332,7 +15741,7 @@ PrefabInstance:
       addedObject: {fileID: 1152476176}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1152476177}
+      addedObject: {fileID: 1152476179}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &908272769
 GameObject:
@@ -16619,26 +16028,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &914750895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914750889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &920946575
 PrefabInstance:
@@ -17047,7 +16436,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &928995304
+--- !u!114 &928995306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17059,7 +16448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -17167,26 +16556,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &929150715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929150709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &934029308
 PrefabInstance:
@@ -17679,9 +17048,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 505419242}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 505419246}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &957579150
 PrefabInstance:
@@ -17759,9 +17125,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 80086783}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 80086787}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &979097639 stripped
 GameObject:
@@ -18078,7 +17441,7 @@ GameObject:
   - component: {fileID: 988605616}
   - component: {fileID: 988605615}
   - component: {fileID: 988605614}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18330,7 +17693,7 @@ PrefabInstance:
       addedObject: {fileID: 228364085}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 228364086}
+      addedObject: {fileID: 228364088}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1005151274
 PrefabInstance:
@@ -18554,9 +17917,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1753502953}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1753502957}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1026203996 stripped
 GameObject:
@@ -18892,7 +18252,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &1045208460
+--- !u!114 &1045208462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18904,7 +18264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -18991,7 +18351,7 @@ PrefabInstance:
       addedObject: {fileID: 1074585796}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1074585797}
+      addedObject: {fileID: 1074585799}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1056251075 stripped
 GameObject:
@@ -19094,26 +18454,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1056251081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056251075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &1060513472 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -19214,26 +18554,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1060513478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060513472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1063437381
 PrefabInstance:
@@ -19395,7 +18715,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &1074585797
+--- !u!114 &1074585799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19407,7 +18727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -19798,26 +19118,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1100615828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100615822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &1101306951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19894,9 +19194,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 296373985}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 296373989}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1102691724
 GameObject:
@@ -20033,26 +19330,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1107300425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107300419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1109894510 stripped
 GameObject:
@@ -20315,7 +19592,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &1118898691
+--- !u!114 &1118898693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20327,7 +19604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -20414,7 +19691,7 @@ PrefabInstance:
       addedObject: {fileID: 2123913774}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2123913775}
+      addedObject: {fileID: 2123913777}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1141383275 stripped
 GameObject:
@@ -20604,7 +19881,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &1142982993
+--- !u!114 &1142982995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20616,7 +19893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -20962,7 +20239,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &1152476177
+--- !u!114 &1152476179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20974,7 +20251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -21209,26 +20486,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1181775200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181775194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1202952494
 PrefabInstance:
@@ -21752,26 +21009,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1233246555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233246549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &1234096074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21848,9 +21085,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 619056437}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 619056441}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1234135561
 PrefabInstance:
@@ -22026,26 +21260,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1238496522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238496516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &1239976655 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -22146,26 +21360,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1239976661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239976655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1245538671
 PrefabInstance:
@@ -22515,26 +21709,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1274062405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1274062399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &1275024822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22611,9 +21785,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1599302054}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1599302058}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1286146863
 PrefabInstance:
@@ -22694,7 +21865,7 @@ PrefabInstance:
       addedObject: {fileID: 2054863904}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2054863905}
+      addedObject: {fileID: 2054863907}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1287690819
 PrefabInstance:
@@ -23493,26 +22664,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1322140704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1322140698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &1344224436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23662,9 +22813,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 97646849}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 97646853}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1348891547
 PrefabInstance:
@@ -23761,8 +22909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlowEmitter
   field: {fileID: 279942078}
-  radius: 1
-  gain: 3
+  radius: 2
+  gain: 100
   amplify: 5
   counterSensitivity: 3
   shapeIgnoresCounterFlow: 0
@@ -23778,7 +22926,7 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1349993180
+--- !u!114 &1349993184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23797,7 +22945,7 @@ MonoBehaviour:
   frontBias: 0.5
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 131072
   checkRadius: 0.4
   checkHeight: 1
   validateInterval: 0.1
@@ -24766,26 +23914,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1401629029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401629023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &1420232994
 GameObject:
   m_ObjectHideFlags: 0
@@ -24925,26 +24053,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1428291002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428290996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1430099827
 PrefabInstance:
@@ -25095,9 +24203,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2052432154}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2052432158}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1440835068
 GameObject:
@@ -25549,9 +24654,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1233246551}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1233246555}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1486796124 stripped
 GameObject:
@@ -25653,26 +24755,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1486796130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486796124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1513473853
 PrefabInstance:
@@ -26098,9 +25180,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1107300421}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1107300425}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1539261197 stripped
 GameObject:
@@ -26303,26 +25382,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1539789613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539789607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1545854230
 PrefabInstance:
@@ -26574,9 +25633,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 582567235}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 582567239}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1563465730
 PrefabInstance:
@@ -26654,9 +25710,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1401629025}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1401629029}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1563975269
 GameObject:
@@ -27044,9 +26097,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 189158822}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 189158826}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1583197468
 PrefabInstance:
@@ -27124,9 +26174,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 736475653}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 736475657}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1584403194 stripped
 GameObject:
@@ -27229,26 +26276,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1584403200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584403194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &1595344733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27325,9 +26352,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1584403196}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1584403200}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1599302052 stripped
 GameObject:
@@ -27429,26 +26453,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1599302058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599302052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1607486473 stripped
 GameObject:
@@ -27627,9 +26631,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1100615824}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1100615828}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1626598181 stripped
 GameObject:
@@ -27732,26 +26733,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1626598187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626598181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &1628156620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27828,9 +26809,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 666361388}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 666361392}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1643569217 stripped
 GameObject:
@@ -28511,26 +27489,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1682947205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682947199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &1684241031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28607,9 +27565,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 64825320}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 64825324}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1704569575
 GameObject:
@@ -28852,26 +27807,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1709754675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709754669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &1711621539 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -28972,26 +27907,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1711621545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711621539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1713235097
 PrefabInstance:
@@ -29166,26 +28081,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1722970253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722970247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1726570593
 PrefabInstance:
@@ -29479,7 +28374,7 @@ PrefabInstance:
       addedObject: {fileID: 560980853}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 560980854}
+      addedObject: {fileID: 560980856}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1746858035
 PrefabInstance:
@@ -29654,26 +28549,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1753502957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753502951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1755405200
 GameObject:
@@ -30233,9 +29108,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1239976657}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1239976661}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1782963012
 PrefabInstance:
@@ -30564,26 +29436,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1820672336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820672330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1 &1821554998 stripped
 GameObject:
@@ -30971,9 +29823,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 713142815}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 713142819}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &1856145149
 PrefabInstance:
@@ -31250,26 +30099,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &1861862853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861862847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &1867614571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -31523,7 +30352,7 @@ PrefabInstance:
       addedObject: {fileID: 744330324}
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 744330325}
+      addedObject: {fileID: 744330327}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1878832927
 GameObject:
@@ -31765,26 +30594,6 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
-  showDebug: 0
---- !u!114 &1887341115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887341109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
   showDebug: 0
 --- !u!1001 &1889945429
 PrefabInstance:
@@ -32137,9 +30946,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 255242759}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 255242763}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &1952275659 stripped
 GameObject:
@@ -32941,9 +31747,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 44871473}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 44871477}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &2011934129 stripped
 GameObject:
@@ -33515,9 +32318,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 278348929}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 278348933}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &2038633528
 PrefabInstance:
@@ -33668,9 +32468,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 425741163}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 425741167}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &2043773670
 GameObject:
@@ -34059,26 +32856,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &2052432158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052432152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1 &2054457341 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -34267,7 +33044,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &2054863905
+--- !u!114 &2054863907
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34279,7 +33056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -34374,7 +33151,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &2056193509
+--- !u!114 &2056193511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34386,7 +33163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -34855,7 +33632,7 @@ GameObject:
   - component: {fileID: 2094679022}
   - component: {fileID: 2094679021}
   - component: {fileID: 2094679020}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35056,26 +33833,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &2095651605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095651599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &2100721848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35152,9 +33909,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 655353661}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 655353665}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1001 &2107741620
 PrefabInstance:
@@ -35232,9 +33986,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 19041910}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 19041914}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1 &2114139760 stripped
 GameObject:
@@ -35598,7 +34349,7 @@ MonoBehaviour:
   minAlign: 0.5
   smoothing: 4
   showDebug: 0
---- !u!114 &2123913775
+--- !u!114 &2123913777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -35610,7 +34361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
+  leader: {fileID: 1349993184}
   spring: 3
   maxCatchUpSpeed: 3
   breakDistance: 3
@@ -35921,26 +34672,6 @@ MonoBehaviour:
   bandHalfWidth: 1.5
   bandGain: 1.5
   showDebug: 0
---- !u!114 &2127880084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127880078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
-  leader: {fileID: 1349993180}
-  spring: 3
-  maxCatchUpSpeed: 3
-  breakDistance: 3
-  breakTime: 1
-  rejoinCooldown: 2
-  joinCheckInterval: 0.25
-  showDebug: 0
 --- !u!1001 &2128176414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36017,9 +34748,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 929150711}
-    - targetCorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 929150715}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
