@@ -244,6 +244,11 @@ public class FormationLeader : MonoBehaviour
         return best;
     }
 
+    public void SetAnalizer(FlowLaneAnalyzer flowLaneAnalyzer)
+    {
+        analyzer = flowLaneAnalyzer;
+    }
+
     // ------------------------------------------------------------
     // 白 = 空き、緑 = 使用中、赤 = 壁で使えない
     // ------------------------------------------------------------

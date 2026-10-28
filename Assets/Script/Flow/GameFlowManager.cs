@@ -130,6 +130,25 @@ public class GameFlowManager : MonoBehaviour
         _resultTime = 0.0f;
         _isSpawnerBase = _stageData.IsSpawnerBase;
         Instantiate(_stageData.MapData.MapPrefab ?? null);
+
+        var flowField = FindFirstObjectByType<FlowField>();
+        if (flowField != null)
+        {
+            if(_player.TryGetComponent<FlowEmitter>(out FlowEmitter flowEmitter))
+            {
+                flowEmitter.SetField(flowField);
+            }
+        }
+
+        var flowAnalizer = FindFirstObjectByType<FlowLaneAnalyzer>();
+        if (flowField != null)
+        {
+            if (_player.TryGetComponent<FormationLeader>(out FormationLeader formationLeader))
+            {
+                formationLeader.SetAnalizer(flowAnalizer);
+            }
+        }
+
         SetPurpose();
 
         // 敵生成

@@ -125,6 +125,9 @@ GameObject:
   - component: {fileID: 1044970148627421585}
   - component: {fileID: 1711125798097602152}
   - component: {fileID: 4609822401321879913}
+  - component: {fileID: 6984680953439484567}
+  - component: {fileID: 6565813024796229995}
+  - component: {fileID: 8612362896631739486}
   m_Layer: 3
   m_Name: PFB_NPC
   m_TagString: NPC
@@ -215,6 +218,75 @@ MonoBehaviour:
     m_Bits: 8
   _avoidSmoothing: 5
   _turnSpeed: 10
+--- !u!114 &6984680953439484567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918360694675728311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c384bfb82a6d594aac0bc09924e5501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlowEmitter
+  field: {fileID: 0}
+  radius: 2
+  gain: 3
+  amplify: 2
+  counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &6565813024796229995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918360694675728311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e8b2ff852ad9e4d846b346bdd58222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlowLaneRider
+  analyzer: {fileID: 0}
+  smallLaneCells: 10
+  bigLaneCells: 200
+  maxBonus: 0.5
+  minAlign: 0.5
+  smoothing: 4
+  showDebug: 0
+--- !u!114 &8612362896631739486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918360694675728311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8c90837dd94a64f885fb85854ee732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationMember
+  leader: {fileID: 0}
+  spring: 3
+  maxCatchUpSpeed: 3
+  breakDistance: 3
+  breakTime: 1
+  rejoinCooldown: 2
+  joinCheckInterval: 0.25
+  showDebug: 0
 --- !u!1 &5068333559594014965
 GameObject:
   m_ObjectHideFlags: 0

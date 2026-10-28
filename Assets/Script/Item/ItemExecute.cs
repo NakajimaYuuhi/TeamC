@@ -1,4 +1,4 @@
-using UnityEditor.SceneManagement;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemExecute : MonoBehaviour
@@ -11,6 +11,9 @@ public class ItemExecute : MonoBehaviour
 
     [SerializeField]
     private GameObject _breakEffect;
+
+    [SerializeField]
+    private List<GameObject> _skillEffects = new List<GameObject>();
 
     [SerializeField, Tooltip("Œø‰Ê‚Ì”­“®ŽžŠÔ")]
     private float _executeTime = 2.0f;
@@ -40,7 +43,7 @@ public class ItemExecute : MonoBehaviour
     {
         if(_isExecute)
         {
-            _currentExecuteTime += Time.fixedDeltaTime;
+            _currentExecuteTime += Time.deltaTime;
             if(_currentExecuteTime > _executeTime )
             {
                 if(_currentEffect != null)
@@ -71,7 +74,14 @@ public class ItemExecute : MonoBehaviour
         if (_groundEffect != null)
         {
             _currentEffect = Instantiate(_groundEffect, transform.position, Quaternion.identity);
-            _executeRangeObj.transform.localScale = Vector3.one * _executeSize;
+            if(_currentEffect.TryGetComponent<ObjectEffect>(out ObjectEffect efk))
+            {
+                efk.SetScale(_executeSize * 0.5f);
+            }
+            else
+            {
+                _executeRangeObj.transform.localScale = Vector3.one * _executeSize;
+            }
             var particles = _currentEffect.GetComponentsInChildren<Transform>();
             foreach(var particle in  particles)
             {

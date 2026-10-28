@@ -106,6 +106,12 @@ public class ObjectEffect : MonoBehaviour
         Apply();
     }
 
+    public void SetScale(float newScale)
+    {
+        scale = newScale;
+    }
+
+
     // Inspector で値を変えたらすぐ反映する(OnValidate 中はオブジェクトを作れないので遅らせる)
     void OnValidate()
     {

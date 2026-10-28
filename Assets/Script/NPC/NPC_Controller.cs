@@ -53,6 +53,7 @@ public class NPC_Controller : MonoBehaviour
     private int _previousNodeID = -1;
     // ノードのデータ(未設定なら自動で探す)
     [SerializeField] private NodeEdgeGenerator _nodeGenerator;
+    public NodeEdgeGenerator NodeGenerator => _nodeGenerator;
     // エッジが見つからないときの幅
     [SerializeField] private float _defaultEdgeWidth = 2.0f;
     // エッジの幅からはみ出したとき、内側に戻ろうとする強さ

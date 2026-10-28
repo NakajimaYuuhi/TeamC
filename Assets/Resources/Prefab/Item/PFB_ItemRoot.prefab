@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5619804534187116832}
   - component: {fileID: 3299141035945872045}
+  - component: {fileID: 8800502139258208634}
   m_Layer: 0
   m_Name: ExecuteRange
   m_TagString: Untagged
@@ -53,6 +54,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8800502139258208634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24846832706914141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f20f888f72ee843a3f7164c34482c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSkill
+  _skillType: 2
 --- !u!1 &5837959622939155428
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,8 +244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemExecute
   _executeRangeObj: {fileID: 24846832706914141}
-  _groundEffect: {fileID: 6118997157249593963, guid: bb42be634d292cf4e9e58b5a2731abd0, type: 3}
-  _breakEffect: {fileID: 4799993734069104607, guid: 7a9b630d296c8c645a644c079e96f3f0, type: 3}
+  _groundEffect: {fileID: 5344813511865819279, guid: b978b6f185619ac42bc2204fc2151482, type: 3}
+  _breakEffect: {fileID: 6781354095927270088, guid: 8a36de3738dc4da459ebdbeb6076da19, type: 3}
   _executeTime: 10
   _executeSize: 2
   _throwEffect: {fileID: 2322606017227580261, guid: a4d08454c2292ef409b49ef5b2d29ee9, type: 3}
