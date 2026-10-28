@@ -180,4 +180,9 @@ public class FlowEmitter : MonoBehaviour
             Gizmos.DrawLine(e + side, e - side);
         }
     }
+
+    public void SetField(FlowField flowField)
+    {
+        field = flowField;
+    }
 }

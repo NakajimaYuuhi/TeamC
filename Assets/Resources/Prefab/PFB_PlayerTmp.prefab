@@ -268,6 +268,8 @@ GameObject:
   - component: {fileID: 8297245870149234614}
   - component: {fileID: 5442153490282327161}
   - component: {fileID: 2443801880621849689}
+  - component: {fileID: 6782937028356879433}
+  - component: {fileID: 3388339993079732632}
   m_Layer: 0
   m_Name: PFB_PlayerTmp
   m_TagString: Player
@@ -427,6 +429,66 @@ MonoBehaviour:
   useItemActionName: UseItem
   cancelItemActionName: CancelItem
   aimMoveActionName: Move
+--- !u!114 &6782937028356879433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060728979383298203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c384bfb82a6d594aac0bc09924e5501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlowEmitter
+  field: {fileID: 0}
+  radius: 2
+  gain: 3
+  amplify: 2
+  counterSensitivity: 3
+  shapeIgnoresCounterFlow: 0
+  shapeTurnSpeed: 8
+  coneEnabled: 1
+  coneLength: 6
+  coneHalfAngle: 35
+  coneSpread: 0.5
+  coneGain: 2
+  coneApexOffset: -0.5
+  bandEnabled: 1
+  bandLength: 5
+  bandHalfWidth: 1.5
+  bandGain: 1.5
+  showDebug: 0
+--- !u!114 &3388339993079732632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060728979383298203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cf490c2fca1684893ee043d16ad3b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationLeader
+  maxRows: 6
+  spacing: 1.1
+  firstRowOffset: 0
+  maxMembers: 20
+  frontBias: 0.5
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 131072
+  checkRadius: 0.4
+  checkHeight: 1
+  validateInterval: 0.1
+  turnSpeed: 4
+  minMoveSpeed: 0.2
+  joinRadius: 4
+  joinAlign: 0.5
+  analyzer: {fileID: 0}
+  requireSameLane: 1
+  showDebug: 1
 --- !u!1 &7508110826259941913
 GameObject:
   m_ObjectHideFlags: 0

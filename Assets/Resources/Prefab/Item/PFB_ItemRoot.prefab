@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f20f888f72ee843a3f7164c34482c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSkill
+  _skillType: 2
 --- !u!1 &5837959622939155428
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,8 +244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemExecute
   _executeRangeObj: {fileID: 24846832706914141}
-  _groundEffect: {fileID: 6118997157249593963, guid: bb42be634d292cf4e9e58b5a2731abd0, type: 3}
-  _breakEffect: {fileID: 4799993734069104607, guid: 7a9b630d296c8c645a644c079e96f3f0, type: 3}
+  _groundEffect: {fileID: 5344813511865819279, guid: b978b6f185619ac42bc2204fc2151482, type: 3}
+  _breakEffect: {fileID: 6781354095927270088, guid: 8a36de3738dc4da459ebdbeb6076da19, type: 3}
   _executeTime: 10
   _executeSize: 2
   _throwEffect: {fileID: 2322606017227580261, guid: a4d08454c2292ef409b49ef5b2d29ee9, type: 3}
