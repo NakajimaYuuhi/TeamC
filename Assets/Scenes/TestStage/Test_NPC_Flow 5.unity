@@ -219,6 +219,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &3575414 stripped
 GameObject:
@@ -320,6 +327,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &5884869
 PrefabInstance:
@@ -494,6 +508,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &7395596
 MonoBehaviour:
@@ -516,6 +537,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &12167325
 GameObject:
@@ -609,6 +634,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &17786544
 MonoBehaviour:
@@ -710,6 +742,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &18324334
 MonoBehaviour:
@@ -858,6 +897,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &19041917
 MonoBehaviour:
@@ -880,6 +926,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &21028253
 PrefabInstance:
@@ -988,6 +1038,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &21028256
 MonoBehaviour:
@@ -1108,6 +1165,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &25762234
 MonoBehaviour:
@@ -1209,6 +1273,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &39087481
 MonoBehaviour:
@@ -1430,6 +1501,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &44871480
 MonoBehaviour:
@@ -1452,6 +1530,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &45835179
 PrefabInstance:
@@ -1626,6 +1708,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &55332220
 PrefabInstance:
@@ -2009,6 +2098,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &64825327
 MonoBehaviour:
@@ -2031,6 +2127,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &72772710 stripped
 GameObject:
@@ -2071,6 +2171,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &72772716
 MonoBehaviour:
@@ -2140,6 +2247,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &73150231 stripped
 GameObject:
@@ -2194,6 +2305,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &73150237
 MonoBehaviour:
@@ -2295,6 +2413,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &75337297
 MonoBehaviour:
@@ -2443,6 +2568,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &80086790
 MonoBehaviour:
@@ -2465,6 +2597,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &89195185 stripped
 GameObject:
@@ -2566,6 +2702,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &90549756
 PrefabInstance:
@@ -2852,6 +2995,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &97646856
 MonoBehaviour:
@@ -2874,6 +3024,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &101107314 stripped
 GameObject:
@@ -2975,6 +3129,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &101107323
 MonoBehaviour:
@@ -2997,6 +3158,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &106586764
 PrefabInstance:
@@ -3344,6 +3509,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &118929160
 MonoBehaviour:
@@ -3366,6 +3538,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &143681729
 GameObject:
@@ -3607,6 +3783,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &148354694
 MonoBehaviour:
@@ -3629,6 +3812,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &153397398
 PrefabInstance:
@@ -3784,6 +3971,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &161646270
 MonoBehaviour:
@@ -3885,6 +4079,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &162110909
 MonoBehaviour:
@@ -4033,6 +4234,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &164726050
 MonoBehaviour:
@@ -4055,6 +4263,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &165481436
 PrefabInstance:
@@ -4341,6 +4553,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &189158829
 MonoBehaviour:
@@ -4363,6 +4582,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &189188048 stripped
 GameObject:
@@ -4417,6 +4640,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &189188054
 MonoBehaviour:
@@ -4778,6 +5008,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &207833620
 PrefabInstance:
@@ -5243,6 +5480,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &228364082
 MonoBehaviour:
@@ -5312,6 +5556,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &230063324 stripped
 GameObject:
@@ -5366,6 +5614,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &230063330
 MonoBehaviour:
@@ -5467,6 +5722,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &234779339
 MonoBehaviour:
@@ -5815,6 +6077,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &250631500
 MonoBehaviour:
@@ -6140,6 +6409,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &255242766
 MonoBehaviour:
@@ -6162,6 +6438,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &261178069
 PrefabInstance:
@@ -6462,6 +6742,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &261769043 stripped
 GameObject:
@@ -6516,6 +6803,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &261769049
 MonoBehaviour:
@@ -6617,6 +6911,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &262652821
 MonoBehaviour:
@@ -6718,6 +7019,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &264809987
 MonoBehaviour:
@@ -6892,6 +7200,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &266619323
 MonoBehaviour:
@@ -7040,6 +7355,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &278348927 stripped
 GameObject:
@@ -7141,6 +7463,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &278348936
 MonoBehaviour:
@@ -7163,6 +7492,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &279942076
 GameObject:
@@ -7347,6 +7680,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &288769342
 MonoBehaviour:
@@ -7816,6 +8156,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &296373992
 MonoBehaviour:
@@ -7838,6 +8185,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &305700761
 PrefabInstance:
@@ -8297,6 +8648,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &330431222 stripped
 GameObject:
@@ -8398,6 +8756,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &335742445
 PrefabInstance:
@@ -8684,6 +9049,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &353674472
 MonoBehaviour:
@@ -8753,6 +9125,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &354562272
 PrefabInstance:
@@ -8993,6 +9369,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &359578495
 MonoBehaviour:
@@ -9015,6 +9398,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &360584534 stripped
 GameObject:
@@ -9116,6 +9503,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &361043931
 PrefabInstance:
@@ -9329,6 +9723,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &368042076
 MonoBehaviour:
@@ -9351,6 +9752,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &376345017
 GameObject:
@@ -9664,6 +10069,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &384948056
 MonoBehaviour:
@@ -9686,6 +10098,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &386019313
 GameObject:
@@ -10137,6 +10553,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &396733017
 MonoBehaviour:
@@ -10285,6 +10708,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &418001337
 PrefabInstance:
@@ -10459,6 +10889,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &425741170
 MonoBehaviour:
@@ -10481,6 +10918,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &430721352
 PrefabInstance:
@@ -10964,6 +11405,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &465798145
 MonoBehaviour:
@@ -11033,6 +11481,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &476488031
 GameObject:
@@ -11418,6 +11870,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &488047407
 MonoBehaviour:
@@ -11519,6 +11978,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &488353141
 MonoBehaviour:
@@ -11848,6 +12314,227 @@ MonoBehaviour:
   fpsEyeOffset: {x: 0, y: 1.5, z: 0}
   fpsMinPitch: -80
   fpsMaxPitch: 80
+--- !u!1001 &493918835
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _leader
+      value: 
+      objectReference: {fileID: 1349993184}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _analyzer
+      value: 
+      objectReference: {fileID: 1163818906}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _flowField
+      value: 
+      objectReference: {fileID: 279942078}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _spawnData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b12e29368b886a4282b19c620c263a1, type: 2}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _fallbackWidth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _initialSpawnIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _nodeedgeGenerator
+      value: 
+      objectReference: {fileID: 444647453}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _spawnPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _overlapCheckMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[9]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[10]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[12]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[13]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[14]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[15]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[16]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[17]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[18]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[19]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[20]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[21]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[22]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[23]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[24]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[25]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[26]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[27]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[28]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[29]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[30]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 5088426591857397206, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_Name
+      value: PFB_NPCSpawner_Initial (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088426591857397206, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.77176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.91534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
 --- !u!1 &494382681 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -11948,6 +12635,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &496145953 stripped
 GameObject:
@@ -11988,6 +12682,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &496145959
 MonoBehaviour:
@@ -12057,6 +12758,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &498943196
 PrefabInstance:
@@ -12231,6 +12936,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &505419249
 MonoBehaviour:
@@ -12253,6 +12965,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &509789855
 PrefabInstance:
@@ -12380,6 +13096,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &510736365
 MonoBehaviour:
@@ -12790,6 +13513,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &560980850
 MonoBehaviour:
@@ -12859,6 +13589,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &561123068 stripped
 GameObject:
@@ -12960,6 +13694,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &565228498 stripped
 GameObject:
@@ -13014,6 +13755,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &565228504
 MonoBehaviour:
@@ -13162,6 +13910,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &582567242
 MonoBehaviour:
@@ -13184,6 +13939,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &584572460
 PrefabInstance:
@@ -13611,6 +14370,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &618043600
 MonoBehaviour:
@@ -13859,6 +14625,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &619056444
 MonoBehaviour:
@@ -13881,6 +14654,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &620513633
 GameObject:
@@ -14295,6 +15072,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &655353668
 MonoBehaviour:
@@ -14317,6 +15101,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &656169572 stripped
 GameObject:
@@ -14418,6 +15206,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &665359331 stripped
 GameObject:
@@ -14519,6 +15314,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &665359340
 MonoBehaviour:
@@ -14541,6 +15343,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &666361386 stripped
 GameObject:
@@ -14642,6 +15448,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &666361395
 MonoBehaviour:
@@ -14664,6 +15477,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &667140787
 PrefabInstance:
@@ -15109,6 +15926,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &694539458
 PrefabInstance:
@@ -15415,6 +16239,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &713142822
 MonoBehaviour:
@@ -15437,6 +16268,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &722554223 stripped
 GameObject:
@@ -15491,6 +16326,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &722554229
 MonoBehaviour:
@@ -15665,6 +16507,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &727495715
 MonoBehaviour:
@@ -15813,6 +16662,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &736475651 stripped
 GameObject:
@@ -15914,6 +16770,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &736475660
 MonoBehaviour:
@@ -15936,6 +16799,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &738240310
 GameObject:
@@ -16126,6 +16993,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &744330321
 MonoBehaviour:
@@ -16195,6 +17069,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &771517667
 PrefabInstance:
@@ -16634,6 +17512,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &803721787
 MonoBehaviour:
@@ -16859,6 +17744,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &818043101
 GameObject:
@@ -17099,6 +17991,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &837135591
 MonoBehaviour:
@@ -17347,6 +18246,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &842993475
 PrefabInstance:
@@ -17955,6 +18861,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &875963744
 MonoBehaviour:
@@ -18103,6 +19016,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &887088611
 PrefabInstance:
@@ -18312,6 +19232,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &905141097
 PrefabInstance:
@@ -18699,6 +19626,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &914750898
 MonoBehaviour:
@@ -18721,6 +19655,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &920946575
 PrefabInstance:
@@ -19041,6 +19979,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &928995294 stripped
 GameObject:
@@ -19081,6 +20026,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &928995300
 MonoBehaviour:
@@ -19150,6 +20102,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &929150709 stripped
 GameObject:
@@ -19251,6 +20207,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &929150718
 MonoBehaviour:
@@ -19273,6 +20236,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &934029308
 PrefabInstance:
@@ -19486,6 +20453,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &942843162 stripped
 GameObject:
@@ -19587,6 +20561,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &954569098 stripped
 GameObject:
@@ -19688,6 +20669,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &955514746
 PrefabInstance:
@@ -19989,6 +20977,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &986323388 stripped
 GameObject:
@@ -20090,6 +21085,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &988147067 stripped
 GameObject:
@@ -20144,6 +21146,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &988147073
 MonoBehaviour:
@@ -20824,6 +21833,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &1029187409
 PrefabInstance:
@@ -21010,6 +22026,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1045208456
 MonoBehaviour:
@@ -21079,6 +22102,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1047202891
 PrefabInstance:
@@ -21281,6 +22308,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1056251084
 MonoBehaviour:
@@ -21303,6 +22337,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &1060513472 stripped
 GameObject:
@@ -21404,6 +22442,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1060513481
 MonoBehaviour:
@@ -21426,6 +22471,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1063437381
 PrefabInstance:
@@ -21500,6 +22549,227 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 494382683}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+--- !u!1001 &1071244963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _leader
+      value: 
+      objectReference: {fileID: 1349993184}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _analyzer
+      value: 
+      objectReference: {fileID: 1163818906}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _flowField
+      value: 
+      objectReference: {fileID: 279942078}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _spawnData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b12e29368b886a4282b19c620c263a1, type: 2}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _fallbackWidth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _initialSpawnIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _nodeedgeGenerator
+      value: 
+      objectReference: {fileID: 444647453}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _spawnPoints.Array.size
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _overlapCheckMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[9]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[10]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[12]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[13]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[14]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[15]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[16]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[17]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[18]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[19]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[20]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[21]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[22]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[23]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[24]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[25]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[26]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[27]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[28]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[29]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[30]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 5088426591857397206, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_Name
+      value: PFB_NPCSpawner_Initial (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088426591857397206, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.77176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.91534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
 --- !u!1 &1074585787 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -21539,6 +22809,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1074585793
 MonoBehaviour:
@@ -21608,6 +22885,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &1076943078
 GameObject:
@@ -21843,6 +23124,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1090041144
 MonoBehaviour:
@@ -21991,6 +23279,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1100615831
 MonoBehaviour:
@@ -22013,6 +23308,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1101306951
 PrefabInstance:
@@ -22249,6 +23548,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1107300428
 MonoBehaviour:
@@ -22271,6 +23577,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &1109894510 stripped
 GameObject:
@@ -22325,6 +23635,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1109894516
 MonoBehaviour:
@@ -22485,6 +23802,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1118898687
 MonoBehaviour:
@@ -22554,6 +23878,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1126487227
 PrefabInstance:
@@ -22713,6 +24041,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1141383281
 MonoBehaviour:
@@ -22800,6 +24135,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1142982989
 MonoBehaviour:
@@ -22869,6 +24211,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1145629312
 PrefabInstance:
@@ -23120,6 +24466,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1152476167 stripped
 GameObject:
@@ -23160,6 +24513,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1152476173
 MonoBehaviour:
@@ -23229,6 +24589,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1160784444
 PrefabInstance:
@@ -23457,6 +24821,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1181775203
 MonoBehaviour:
@@ -23479,6 +24850,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1202952494
 PrefabInstance:
@@ -23606,6 +24981,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1210935858
 MonoBehaviour:
@@ -23754,6 +25136,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &1214572008
 PrefabInstance:
@@ -24001,6 +25390,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1233246558
 MonoBehaviour:
@@ -24023,6 +25419,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1234096074
 PrefabInstance:
@@ -24297,6 +25697,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1238496525
 MonoBehaviour:
@@ -24319,6 +25726,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &1239976655 stripped
 GameObject:
@@ -24420,6 +25831,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1239976664
 MonoBehaviour:
@@ -24442,6 +25860,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1245538671
 PrefabInstance:
@@ -24569,6 +25991,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1263549663
 MonoBehaviour:
@@ -24790,6 +26219,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1274062408
 MonoBehaviour:
@@ -24812,6 +26248,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1275024822
 PrefabInstance:
@@ -25260,6 +26700,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1296727860 stripped
 GameObject:
@@ -25314,6 +26761,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1296727866
 MonoBehaviour:
@@ -25561,6 +27015,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1310641608
 MonoBehaviour:
@@ -25662,6 +27123,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1313230123
 MonoBehaviour:
@@ -25810,6 +27278,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1322140707
 MonoBehaviour:
@@ -25832,6 +27307,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1344224436
 PrefabInstance:
@@ -26117,6 +27596,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1349993184
 MonoBehaviour:
@@ -26130,6 +27616,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cf490c2fca1684893ee043d16ad3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormationLeader
+  shape: 0
+  columnRowsPerWidth: 3
+  columnMaxWidth: 3
+  columnRows: 10
   maxRows: 6
   spacing: 1.1
   firstRowOffset: 0
@@ -26141,6 +27631,9 @@ MonoBehaviour:
   checkRadius: 0.4
   checkHeight: 1
   validateInterval: 0.1
+  blockByCounterFlow: 1
+  counterBlockRatio: 0.3
+  field: {fileID: 0}
   turnSpeed: 4
   minMoveSpeed: 0.2
   reverseDot: -0.2
@@ -26148,8 +27641,16 @@ MonoBehaviour:
   intendedTimeout: 0.2
   joinRadius: 4
   joinAlign: 0.5
+  joinFrontLimit: 0.5
+  bodyJoinRadius: 1.5
   analyzer: {fileID: 1163818906}
   requireSameLane: 1
+  compactInterval: 0.4
+  compactMinRowGap: 1
+  compactMaxDistance: 2
+  trailSpacing: 0.5
+  trailLength: 30
+  rejoinRadius: 10
   showDebug: 1
 --- !u!1 &1351094291 stripped
 GameObject:
@@ -26251,6 +27752,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &1358855558
 PrefabInstance:
@@ -26641,6 +28149,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &1388960827
 PrefabInstance:
@@ -26888,6 +28403,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &1397160204
 PrefabInstance:
@@ -27139,6 +28661,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1401629032
 MonoBehaviour:
@@ -27161,6 +28690,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &1420232994
 GameObject:
@@ -27301,6 +28834,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1428291005
 MonoBehaviour:
@@ -27323,6 +28863,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1430099827
 PrefabInstance:
@@ -28120,6 +29664,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1486796133
 MonoBehaviour:
@@ -28142,6 +29693,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1513473853
 PrefabInstance:
@@ -28389,6 +29944,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1521078898 stripped
 GameObject:
@@ -28490,6 +30052,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &1528782979
 PrefabInstance:
@@ -28644,6 +30213,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1539261203
 MonoBehaviour:
@@ -28792,6 +30368,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1539789616
 MonoBehaviour:
@@ -28814,6 +30397,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1545854230
 PrefabInstance:
@@ -28941,6 +30528,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1557757811
 MonoBehaviour:
@@ -29297,6 +30891,227 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2118008332}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+--- !u!1001 &1567684853
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _leader
+      value: 
+      objectReference: {fileID: 1349993184}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _analyzer
+      value: 
+      objectReference: {fileID: 1163818906}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _flowField
+      value: 
+      objectReference: {fileID: 279942078}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _spawnData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b12e29368b886a4282b19c620c263a1, type: 2}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _fallbackWidth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _initialSpawnIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _nodeedgeGenerator
+      value: 
+      objectReference: {fileID: 444647453}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _spawnPoints.Array.size
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _overlapCheckMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[9]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[10]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[12]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[13]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[14]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[15]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[16]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[17]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[18]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[19]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[20]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[21]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[22]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[23]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[24]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[25]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[26]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[27]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[28]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[29]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[30]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 5088426591857397206, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_Name
+      value: PFB_NPCSpawner_Initial (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088426591857397206, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.77176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.91534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
 --- !u!1 &1569274449 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -29397,6 +31212,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1574169757 stripped
 GameObject:
@@ -29498,6 +31320,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &1575597631
 PrefabInstance:
@@ -29912,6 +31741,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1584403203
 MonoBehaviour:
@@ -29934,6 +31770,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1595344733
 PrefabInstance:
@@ -30135,6 +31975,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1599302061
 MonoBehaviour:
@@ -30157,6 +32004,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &1607486473 stripped
 GameObject:
@@ -30258,6 +32109,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1609807916
 GameObject:
@@ -30490,6 +32348,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1626598190
 MonoBehaviour:
@@ -30512,6 +32377,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1628156620
 PrefabInstance:
@@ -30775,6 +32644,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1644039279 stripped
 GameObject:
@@ -30876,6 +32752,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1662624795 stripped
 GameObject:
@@ -30930,6 +32813,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1662624801
 MonoBehaviour:
@@ -31031,6 +32921,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1664760209
 MonoBehaviour:
@@ -31205,6 +33102,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1669669786
 MonoBehaviour:
@@ -31353,6 +33257,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1682947208
 MonoBehaviour:
@@ -31375,6 +33286,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1684241031
 PrefabInstance:
@@ -31615,6 +33530,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1709754669 stripped
 GameObject:
@@ -31716,6 +33638,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1709754678
 MonoBehaviour:
@@ -31738,6 +33667,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &1711621539 stripped
 GameObject:
@@ -31839,6 +33772,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1711621548
 MonoBehaviour:
@@ -31861,6 +33801,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1713235097
 PrefabInstance:
@@ -32035,6 +33979,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1722970256
 MonoBehaviour:
@@ -32057,6 +34008,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1726570593
 PrefabInstance:
@@ -32231,6 +34186,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1730536486
 GameObject:
@@ -32545,6 +34507,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1753502960
 MonoBehaviour:
@@ -32567,6 +34536,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &1755405200
 GameObject:
@@ -32699,6 +34672,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1768299328
 MonoBehaviour:
@@ -32800,6 +34780,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1773532554
 MonoBehaviour:
@@ -32901,6 +34888,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1776070521
 MonoBehaviour:
@@ -33049,6 +35043,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &1778199126
 PrefabInstance:
@@ -33477,6 +35478,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1820672339
 MonoBehaviour:
@@ -33499,6 +35507,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &1821554998 stripped
 GameObject:
@@ -33553,6 +35565,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1821555004
 MonoBehaviour:
@@ -33701,6 +35720,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1831765630
 GameObject:
@@ -34036,6 +36062,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1859981620
 MonoBehaviour:
@@ -34184,6 +36217,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1861862856
 MonoBehaviour:
@@ -34206,6 +36246,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &1867614571 stripped
 GameObject:
@@ -34260,6 +36304,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1867614577
 MonoBehaviour:
@@ -34621,6 +36672,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1887341109 stripped
 GameObject:
@@ -34722,6 +36780,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1887341118
 MonoBehaviour:
@@ -34744,6 +36809,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &1889945429
 PrefabInstance:
@@ -34949,7 +37018,235 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
+--- !u!1001 &1927082238
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _leader
+      value: 
+      objectReference: {fileID: 1349993184}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _analyzer
+      value: 
+      objectReference: {fileID: 1163818906}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _flowField
+      value: 
+      objectReference: {fileID: 279942078}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _spawnData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b12e29368b886a4282b19c620c263a1, type: 2}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _fallbackWidth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _initialSpawnIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _nodeedgeGenerator
+      value: 
+      objectReference: {fileID: 444647453}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _spawnPoints.Array.size
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _overlapCheckMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[9]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[10]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[12]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[13]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[14]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[15]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[16]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[17]'
+      value: 
+      objectReference: {fileID: 1641838479}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[18]'
+      value: 
+      objectReference: {fileID: 2122260909}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[19]'
+      value: 
+      objectReference: {fileID: 476488032}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[20]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[21]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[22]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[23]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[24]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[25]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[26]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[27]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[28]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[29]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[30]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 5088426591857397206, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_Name
+      value: PFB_NPCSpawner_Initial (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088426591857397206, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.77176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.91534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
 --- !u!1 &1928313233 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
@@ -35050,6 +37347,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &1929612215
 PrefabInstance:
@@ -35251,6 +37555,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1954665396 stripped
 GameObject:
@@ -35352,6 +37663,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &1955555310
 PrefabInstance:
@@ -35599,6 +37917,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &1971534538 stripped
 GameObject:
@@ -35653,6 +37978,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1971534544
 MonoBehaviour:
@@ -35827,6 +38159,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &1983550705
 MonoBehaviour:
@@ -36028,6 +38367,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &2011934135
 MonoBehaviour:
@@ -36300,7 +38646,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3699038306114680232, guid: 79345ca40f0fc62488bf39ae0315a562, type: 3}
   m_PrefabInstance: {fileID: 2984488161893356316}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5060728979708950315}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48cf490c2fca1684893ee043d16ad3b5, type: 3}
@@ -36479,6 +38825,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &2035624353
 GameObject:
@@ -36949,6 +39302,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &2048840685
 MonoBehaviour:
@@ -37170,6 +39530,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &2052432161
 MonoBehaviour:
@@ -37192,6 +39559,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &2054457341 stripped
 GameObject:
@@ -37246,6 +39617,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &2054457347
 MonoBehaviour:
@@ -37333,6 +39711,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &2054863901
 MonoBehaviour:
@@ -37402,6 +39787,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &2056193499 stripped
 GameObject:
@@ -37442,6 +39831,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &2056193505
 MonoBehaviour:
@@ -37511,6 +39907,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &2069077823 stripped
 GameObject:
@@ -37612,6 +40012,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &2076240731
 PrefabInstance:
@@ -37686,6 +40093,227 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1569274451}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
+--- !u!1001 &2077498543
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _leader
+      value: 
+      objectReference: {fileID: 1349993184}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _analyzer
+      value: 
+      objectReference: {fileID: 1163818906}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _flowField
+      value: 
+      objectReference: {fileID: 279942078}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _spawnData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b12e29368b886a4282b19c620c263a1, type: 2}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _fallbackWidth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _initialSpawnIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _nodeedgeGenerator
+      value: 
+      objectReference: {fileID: 1432509897}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _spawnPoints.Array.size
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: _overlapCheckMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1609807917}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1609807917}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1609807917}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1609807917}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1609807917}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1609807917}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1609807917}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 2035624354}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 2035624354}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[9]'
+      value: 
+      objectReference: {fileID: 2035624354}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[10]'
+      value: 
+      objectReference: {fileID: 2035624354}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[11]'
+      value: 
+      objectReference: {fileID: 2035624354}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[12]'
+      value: 
+      objectReference: {fileID: 2035624354}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[13]'
+      value: 
+      objectReference: {fileID: 2035624354}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[14]'
+      value: 
+      objectReference: {fileID: 1640914759}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[15]'
+      value: 
+      objectReference: {fileID: 1640914759}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[16]'
+      value: 
+      objectReference: {fileID: 1640914759}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[17]'
+      value: 
+      objectReference: {fileID: 1640914759}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[18]'
+      value: 
+      objectReference: {fileID: 1640914759}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[19]'
+      value: 
+      objectReference: {fileID: 1640914759}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[20]'
+      value: 
+      objectReference: {fileID: 1640914759}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[21]'
+      value: 
+      objectReference: {fileID: 1609807917}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[22]'
+      value: 
+      objectReference: {fileID: 799629471}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[23]'
+      value: 
+      objectReference: {fileID: 799629471}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[24]'
+      value: 
+      objectReference: {fileID: 799629471}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[25]'
+      value: 
+      objectReference: {fileID: 799629471}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[26]'
+      value: 
+      objectReference: {fileID: 799629471}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[27]'
+      value: 
+      objectReference: {fileID: 799629471}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[28]'
+      value: 
+      objectReference: {fileID: 799629471}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[29]'
+      value: 
+      objectReference: {fileID: 1640914759}
+    - target: {fileID: 330601327691879454, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: '_spawnPoints.Array.data[30]'
+      value: 
+      objectReference: {fileID: 868070351}
+    - target: {fileID: 5088426591857397206, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_Name
+      value: PFB_NPCSpawner_Initial (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088426591857397206, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.77176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.91534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452108317694382421, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2d4cf0bf1972c8448c2314ba2c9c393, type: 3}
 --- !u!1001 &2080874839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37859,6 +40487,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &2094186789 stripped
 GameObject:
@@ -37913,6 +40548,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &2094186795
 MonoBehaviour:
@@ -38173,6 +40815,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &2095651608
 MonoBehaviour:
@@ -38195,6 +40844,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &2100721848
 PrefabInstance:
@@ -38496,6 +41149,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &2118008330 stripped
 GameObject:
@@ -38597,6 +41257,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1001 &2120688793
 PrefabInstance:
@@ -38741,6 +41408,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &2123913771
 MonoBehaviour:
@@ -38810,6 +41484,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1 &2124385697 stripped
 GameObject:
@@ -38864,6 +41542,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &2124385703
 MonoBehaviour:
@@ -39012,6 +41697,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!1 &2127880078 stripped
 GameObject:
@@ -39113,6 +41805,13 @@ MonoBehaviour:
   bandLength: 5
   bandHalfWidth: 1.5
   bandGain: 1.5
+  burstStrength: 25
+  burstDuration: 0.5
+  burstLength: 8
+  burstHalfAngle: 25
+  burstSpread: 0.6
+  burstApexOffset: -0.5
+  burstFadeOut: 1
   showDebug: 0
 --- !u!114 &2127880087
 MonoBehaviour:
@@ -39135,6 +41834,10 @@ MonoBehaviour:
   joinCheckInterval: 0.25
   leaveAlign: 0.2
   leaveTime: 0.5
+  trailFollowDistance: 1.5
+  trailLookAhead: 2
+  closingSpeed: 0.2
+  chaseTime: 4
   showDebug: 0
 --- !u!1001 &2128176414
 PrefabInstance:
@@ -39266,7 +41969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4089450276593195691, guid: 79345ca40f0fc62488bf39ae0315a562, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.02
+      value: 9.12
       objectReference: {fileID: 0}
     - target: {fileID: 4089450276593195691, guid: 79345ca40f0fc62488bf39ae0315a562, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39327,8 +42030,64 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 246890679360013844, guid: 79345ca40f0fc62488bf39ae0315a562, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8297245870494806023}
+    - targetCorrespondingSourceObject: {fileID: 246890679360013844, guid: 79345ca40f0fc62488bf39ae0315a562, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8297245870494806024}
   m_SourcePrefab: {fileID: 100100000, guid: 79345ca40f0fc62488bf39ae0315a562, type: 3}
+--- !u!1 &5060728979708950315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 246890679360013844, guid: 79345ca40f0fc62488bf39ae0315a562, type: 3}
+  m_PrefabInstance: {fileID: 2984488161893356316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8297245870494806023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060728979708950315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e8b2ff852ad9e4d846b346bdd58222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlowLaneRider
+  analyzer: {fileID: 1163818906}
+  smallLaneCells: 10
+  bigLaneCells: 200
+  maxBonus: 0.5
+  minAlign: 0.5
+  smoothing: 4
+  showDebug: 0
+--- !u!114 &8297245870494806024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060728979708950315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8050f80b746d24290a97851b206c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FormationPressure
+  field: {fileID: 279942078}
+  minMembers: 3
+  fullMembers: 15
+  maxStrength: 30
+  minLength: 4
+  maxLength: 8
+  halfAngle: 30
+  spread: 0.5
+  apexOffset: 0
+  fitBandToFormation: 1
+  bandWidthMargin: 0.6
+  bandLengthMargin: 1.5
+  bandFitSpeed: 2
+  showDebug: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -39350,8 +42109,13 @@ SceneRoots:
   - {fileID: 444647454}
   - {fileID: 195374298}
   - {fileID: 393254977}
+  - {fileID: 1567684853}
+  - {fileID: 1071244963}
+  - {fileID: 1927082238}
+  - {fileID: 493918835}
   - {fileID: 295651046}
   - {fileID: 213206697}
+  - {fileID: 2077498543}
   - {fileID: 430721352}
   - {fileID: 1579998072}
   - {fileID: 1378081895}
