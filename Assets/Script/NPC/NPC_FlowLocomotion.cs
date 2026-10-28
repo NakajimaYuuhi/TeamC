@@ -37,10 +37,19 @@ public class NPC_FlowLocomotion : MonoBehaviour
     [SerializeField, Range(0f, 120f)] float wideSearchAngle = 90f;
     // 正面の逆流にどれだけ敏感に探索範囲を広げるか
     [SerializeField, Min(0f)] float counterSensitivity = 2f;
+    // 足元の「自分の向きの流れ」をどれだけ自信として使うか(0で使わない=前の動き)
+    // 大きい群れの中にいる人ほど足元の流れが強いので、少しの逆流では避けなくなる
+    // → 群れの大きさ(=力)の差で、どっちが道を譲るかが決まる
+    [SerializeField, Min(0f)] float supportWeight = 1f;
     // 逆流のペナルティ(2乗で効くので、弱い逆流はほぼ無視・強い逆流だけ避ける)
     [SerializeField, Min(0f)] float counterWeight = 3f;
     // 今の方向を保とうとする強さ(左右に迷ってフラフラするのを防ぐ)
     [SerializeField, Min(0f)] float stickiness = 0.2f;
+    // 正面の危険度がこれ未満なら、流れを探さずにまっすぐ進む(0にすると常に流れを探す=前の動き)
+    [SerializeField, Range(0f, 1f)] float calmThreshold = 0.15f;
+    // 逆流を避けるとき、どっち側に避けやすくするか(+で右、-で左、0で偏りなし)
+    // 全員が同じルールで避けるので、向かい合った人同士が反対側に分かれてすれ違える
+    [SerializeField, Range(-1f, 1f)] float passSideBias = 0.3f;
 
     [Header("動き")]
     // 方向転換のなめらかさ(大きいほど素早く曲がる)
@@ -74,6 +83,7 @@ public class NPC_FlowLocomotion : MonoBehaviour
     Vector3[] debugDirs;
     float[] debugScores;
     float debugDanger;
+    float debugSupport;
 
     // ===== 外から使う =====
 
@@ -111,6 +121,9 @@ public class NPC_FlowLocomotion : MonoBehaviour
     }
 
     public void ClearIdleFacing() => hasIdleFacing = false;
+
+    /// <summary>本人が行きたい向き(止まっているときは zero)。押されて動いている向きとは別</summary>
+    public Vector3 DesiredDirection => IsStopped ? Vector3.zero : desiredDir;
 
     public float MoveSpeed
     {
@@ -231,9 +244,25 @@ public class NPC_FlowLocomotion : MonoBehaviour
         // ---- 正面の逆流をチェックして、探索範囲を決める ----
         Vector2 front = SampleAhead(desired);
         float frontCounter = Mathf.Clamp01(-Vector2.Dot(front, ToV2(desired)) / maxStrength);
-        float danger = Mathf.Clamp01(frontCounter * counterSensitivity); // 0:平和 ～ 1:正面が強い逆流
+        // 足元で自分の向きに流れている強さ(仲間が多いほど強い)= 自信
+        Vector2 hereFlow = field.Sample(transform.position);
+        float support = Mathf.Clamp01(Vector2.Dot(hereFlow, ToV2(desired)) / maxStrength);
+        debugSupport = support;
+        // 正面の逆流から自信の分を差し引いたものが、実際に感じる圧力
+        float pressure = Mathf.Max(0f, frontCounter - support * supportWeight);
+        float danger = Mathf.Clamp01(pressure * counterSensitivity); // 0:平和 ～ 1:正面が強い逆流
         float angleRange = Mathf.Lerp(searchAngle, wideSearchAngle, danger);
         debugDanger = danger;
+
+        // 正面に逆流がなければ、まっすぐ進む(候補は探さない)
+        // → 自分や周りの人が書いた流れに引っ張られてくねくねするのを防ぐ
+        if (danger < calmThreshold)
+        {
+            targetDir = desired;
+            debugDirs = null; // Gizmoの候補表示を消す
+            UpdateSpeedScale(maxStrength);
+            return;
+        }
 
         if (debugDirs == null || debugDirs.Length != candidateCount)
         {
@@ -242,6 +271,7 @@ public class NPC_FlowLocomotion : MonoBehaviour
         }
 
         // ---- 候補の採点 ----
+        Vector3 desiredRight = Vector3.Cross(Vector3.up, desired);
         float bestScore = float.NegativeInfinity;
         Vector3 bestDir = desired;
 
@@ -263,11 +293,13 @@ public class NPC_FlowLocomotion : MonoBehaviour
 
             float goal = Vector3.Dot(dir, desired);  // 進みたい方向への近さ
             float keep = Vector3.Dot(dir, targetDir); // 今の方向を保つ
+            float side = Vector3.Dot(dir, desiredRight); // 右に避ける方向ほど +
 
             float score = goal * goalWeight
                         + follow * flowWeight
                         - counter * counter * counterWeight
-                        + keep * stickiness;
+                        + keep * stickiness
+                        + side * passSideBias * danger; // 逆流が強いときほど決まった側に避ける
 
             debugDirs[i] = dir;
             debugScores[i] = score;
@@ -280,8 +312,12 @@ public class NPC_FlowLocomotion : MonoBehaviour
         }
 
         targetDir = bestDir;
+        UpdateSpeedScale(maxStrength);
+    }
 
-        // 今いる場所の流れに乗っていれば速く、逆らっていれば遅く
+    // 今いる場所の流れに乗っていれば速く、逆らっていれば遅く
+    void UpdateSpeedScale(float maxStrength)
+    {
         Vector2 here = field.Sample(transform.position);
         float hereAlign = Vector2.Dot(here, ToV2(targetDir)) / maxStrength;
         speedScale = 1f + Mathf.Clamp(hereAlign, -0.5f, 1f) * flowSpeedBonus;
@@ -297,6 +333,10 @@ public class NPC_FlowLocomotion : MonoBehaviour
         {
             Gizmos.color = Color.cyan;
             Gizmos.DrawLine(p, p + desiredDir * lookAhead * 1.5f);
+
+            // 自信(足元の自分の向きの流れ)。緑の円が大きいほど、逆流に強い
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(p + Vector3.up * 1.5f, 0.1f + 0.4f * debugSupport);
         }
 
         if (debugDirs == null) return;

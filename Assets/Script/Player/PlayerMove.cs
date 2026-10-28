@@ -1,14 +1,14 @@
 /////////////////////////////////////////
 /// PlayerMove.cs
-/// 2026/10/20 ä½œè€…ï¼šä½è—¤è’¼ä¹Ÿ
+/// 2026/10/20 ìÒF²“¡‘“–ç
 /// 
-/// ãƒ­ã‚°
-/// 2026/10/20 ä½è—¤è’¼ä¹Ÿï¼šãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç§»å‹•å‡¦ç†å®Ÿè£…â†’Moveé–¢æ•°
-/// 2026/10/20 ä½è—¤è’¼ä¹Ÿï¼šShiftä¸­ã®æ¨ªæ­©ãå‡¦ç†å®Ÿè£…â†’Moveé–¢æ•°(ã‚‚ã¨ã‚‚ã¨PlayerBodyTurn)
-/// 2026/10/21 ä½è—¤è’¼ä¹Ÿï¼šPlayerBodyTurnã®å‡¦ç†ã‚’çµ±åˆ
-/// 2026/10/21 ä½è—¤è’¼ä¹Ÿï¼šæ¨ªæ­©ãä¸­ã¯å¸¸ã«é€²è¡Œæ–¹å‘ã®å·¦ã‚’å‘ãã‚ˆã†å¤‰æ›´â†’RotateTowardé–¢æ•°
-/// 2026/10/21 ä½è—¤è’¼ä¹Ÿï¼šNPCã‚’æŠ¼ã™å‡¦ç†ã‚’è¿½åŠ â†’PushNPCé–¢æ•°
-/// 2026/10/22 ä½è—¤è’¼ä¹Ÿï¼šã‚µã‚¤ãƒ‰ã‚¹ãƒ†ãƒƒãƒ—ã‚’è¿½åŠ â†’CheckStepInputãƒ»StartStepãƒ»UpdateStepãƒ»EndStepé–¢æ•°
+/// ƒƒO
+/// 2026/10/20 ²“¡‘“–çFƒvƒŒƒCƒ„[ˆÚ“®ˆ—À‘•¨MoveŠÖ”
+/// 2026/10/20 ²“¡‘“–çFShift’†‚Ì‰¡•à‚«ˆ—À‘•¨MoveŠÖ”(‚à‚Æ‚à‚ÆPlayerBodyTurn)
+/// 2026/10/21 ²“¡‘“–çFPlayerBodyTurn‚Ìˆ—‚ğ“‡
+/// 2026/10/21 ²“¡‘“–çF‰¡•à‚«’†‚Íí‚Éis•ûŒü‚Ì¶‚ğŒü‚­‚æ‚¤•ÏX¨RotateTowardŠÖ”
+/// 2026/10/21 ²“¡‘“–çFNPC‚ğ‰Ÿ‚·ˆ—‚ğ’Ç‰Á¨PushNPCŠÖ”
+/// 2026/10/22 ²“¡‘“–çFƒTƒCƒhƒXƒeƒbƒv‚ğ’Ç‰Á¨CheckStepInputEStartStepEUpdateStepEEndStepŠÖ”
 /// 
 /////////////////////////////////////////
 
@@ -20,48 +20,50 @@ using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
-    [Header("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒ‡ãƒ¼ã‚¿")]
+    [Header("ƒvƒŒƒCƒ„[‚Ìƒf[ƒ^")]
     [SerializeField] private PlayerData playerData;
 
 
 
-    [Header("æ¨ªæ­©ãã®è¨­å®š,é€šå¸¸æ™‚ã«å¯¾ã™ã‚‹é€Ÿåº¦ã®å‰²åˆ")]
-    [SerializeField, Range(0.1f, 1f)] private float sideStepSpeedRate = 0.5f; //é€šå¸¸æ™‚ã«å¯¾ã™ã‚‹é€Ÿåº¦ã®å‰²åˆ
+    [Header("‰¡•à‚«‚Ìİ’è,’Êí‚É‘Î‚·‚é‘¬“x‚ÌŠ„‡")]
+    [SerializeField, Range(0.1f, 1f)] private float sideStepSpeedRate = 0.5f; //’Êí‚É‘Î‚·‚é‘¬“x‚ÌŠ„‡
 
-    [Header("ã‚µã‚¤ãƒ‰ã‚¹ãƒ†ãƒƒãƒ—ã®è¨­å®š")]
-    [SerializeField, Tooltip("1å›ã®ã‚¹ãƒ†ãƒƒãƒ—ã§é€²ã‚€è·é›¢")]
+    [Header("ƒTƒCƒhƒXƒeƒbƒv‚Ìİ’è")]
+    [SerializeField, Tooltip("1‰ñ‚ÌƒXƒeƒbƒv‚Åi‚Ş‹——£")]
     private float stepDistance = 2.5f;
-    [SerializeField, Tooltip("ã‚¹ãƒ†ãƒƒãƒ—ã«ã‹ã‹ã‚‹æ™‚é–“ï¼ˆç§’ï¼‰")]
+    [SerializeField, Tooltip("ƒXƒeƒbƒv‚É‚©‚©‚éŠÔi•bj")]
     private float stepDuration = 0.2f;
-    [SerializeField, Tooltip("ã‚¹ãƒ†ãƒƒãƒ—ã®ã‚ã¨ã€æ¬¡ã®ã‚¹ãƒ†ãƒƒãƒ—ãŒã§ãã‚‹ã¾ã§ã®æ™‚é–“ï¼ˆç§’ï¼‰")]
+    [SerializeField, Tooltip("ƒXƒeƒbƒv‚Ì‚ ‚ÆAŸ‚ÌƒXƒeƒbƒv‚ª‚Å‚«‚é‚Ü‚Å‚ÌŠÔi•bj")]
     private float stepCooldown = 0.3f;
 
     Rigidbody rb;
-    private Vector2 moveInput; //ç§»å‹•ã®å…¥åŠ›ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
-    private CameraController cameraController; //ç§»å‹•æ–¹å‘ã®åŸºæº–ã«ã™ã‚‹ã‚«ãƒ¡ãƒ©
-    private float modelYawOffset = 90f; //ãƒ¢ãƒ‡ãƒ«ã®æ­£é¢ã®ãšã‚Œè£œæ­£
-    private CapsuleCollider pushArea;//æŠ¼ã™ãŸã‚ã®ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼æ ¼ç´
+    private Vector2 moveInput; //ˆÚ“®‚Ì“ü—Í‚ğŠi”[‚·‚é•Ï”
+    private CameraController cameraController; //ˆÚ“®•ûŒü‚ÌŠî€‚É‚·‚éƒJƒƒ‰
+    private float modelYawOffset = 90f; //ƒ‚ƒfƒ‹‚Ì³–Ê‚Ì‚¸‚ê•â³
+    private CapsuleCollider pushArea;//‰Ÿ‚·‚½‚ß‚ÌƒRƒ‰ƒCƒ_[Ši”[
 
-    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
-    private float moveSpeed; //ç§»å‹•é€Ÿåº¦ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
-    private float turnSpeed; //é€²è¡Œæ–¹å‘ã¸ä½“ã‚’å‘ã‘ã‚‹å›è»¢é€Ÿåº¦
-    private Vector3 playerSize; //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚µã‚¤ã‚ºã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
-    private float playerPushPower; //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æŠ¼ã™åŠ›ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
-    private float currentNuisance; //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è¿·æƒ‘åº¦ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
-    private float voiceVolume; //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å£°ã®éŸ³é‡ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
-    private float facingMinSpeedRate; //ä½“ã®å‘ããŒçœŸé€†ã®ã¨ãã®é€Ÿåº¦ã®å‰²åˆ
-    private float facingSpeedCurve;   //å‘ãã®ãšã‚Œã«å¯¾ã™ã‚‹æ¸›é€Ÿã®ã‹ã‹ã‚Šæ–¹
+    //ƒvƒŒƒCƒ„[ƒpƒ‰ƒ[ƒ^
+    private float moveSpeed; //ˆÚ“®‘¬“x‚ğŠi”[‚·‚é•Ï”
+    private float turnSpeed; //is•ûŒü‚Ö‘Ì‚ğŒü‚¯‚é‰ñ“]‘¬“x
+    private Vector3 playerSize; //ƒvƒŒƒCƒ„[‚ÌƒTƒCƒY‚ğŠi”[‚·‚é•Ï”
+    private float playerPushPower; //ƒvƒŒƒCƒ„[‚Ì‰Ÿ‚·—Í‚ğŠi”[‚·‚é•Ï”
+    private float currentNuisance; //ƒvƒŒƒCƒ„[‚Ì–À˜f“x‚ğŠi”[‚·‚é•Ï”
+    private float voiceVolume; //ƒvƒŒƒCƒ„[‚Ìº‚Ì‰¹—Ê‚ğŠi”[‚·‚é•Ï”
+    private float facingMinSpeedRate; //‘Ì‚ÌŒü‚«‚ª^‹t‚Ì‚Æ‚«‚Ì‘¬“x‚ÌŠ„‡
+    private float facingSpeedCurve;   //Œü‚«‚Ì‚¸‚ê‚É‘Î‚·‚éŒ¸‘¬‚Ì‚©‚©‚è•û
 
-    private float faceLeftTurnSpeed = 5f; //Shiftä¸­ã«ä½“ã®æ­£é¢ã‚’é€²è¡Œæ–¹å‘ã®å·¦ã«å‘ã‘ã‚‹å›è»¢é€Ÿåº¦
+    private float faceLeftTurnSpeed = 5f; //Shift’†‚É‘Ì‚Ì³–Ê‚ğis•ûŒü‚Ì¶‚ÉŒü‚¯‚é‰ñ“]‘¬“x
 
-    //ã‚µã‚¤ãƒ‰ã‚¹ãƒ†ãƒƒãƒ—ç”¨
-    private bool stepRequested;      //ã‚¹ãƒ†ãƒƒãƒ—ã®å…¥åŠ›ãŒã‚ã£ãŸã‹
-    private Vector2 stepInput;       //ã‚¹ãƒ†ãƒƒãƒ—ã‚’å…¥åŠ›ã—ãŸã¨ãã®ã‚­ãƒ¼ã®å‘ã
-    private bool isStepping;         //ã‚¹ãƒ†ãƒƒãƒ—ä¸­ã‹
-    private float stepTimer;         //ã‚¹ãƒ†ãƒƒãƒ—ã®æ®‹ã‚Šæ™‚é–“
-    private float stepCooldownTimer; //æ¬¡ã®ã‚¹ãƒ†ãƒƒãƒ—ãŒã§ãã‚‹ã¾ã§ã®æ®‹ã‚Šæ™‚é–“
-    private Vector3 stepVelocity;    //ã‚¹ãƒ†ãƒƒãƒ—ä¸­ã®é€Ÿåº¦
+    //ƒTƒCƒhƒXƒeƒbƒv—p
+    private bool stepRequested;      //ƒXƒeƒbƒv‚Ì“ü—Í‚ª‚ ‚Á‚½‚©
+    private Vector2 stepInput;       //ƒXƒeƒbƒv‚ğ“ü—Í‚µ‚½‚Æ‚«‚ÌƒL[‚ÌŒü‚«
+    private bool isStepping;         //ƒXƒeƒbƒv’†‚©
+    private float stepTimer;         //ƒXƒeƒbƒv‚Ìc‚èŠÔ
+    private float stepCooldownTimer; //Ÿ‚ÌƒXƒeƒbƒv‚ª‚Å‚«‚é‚Ü‚Å‚Ìc‚èŠÔ
+    private Vector3 stepVelocity;    //ƒXƒeƒbƒv’†‚Ì‘¬“x
 
+    // ƒtƒB[ƒ‹ƒh‚É’Ç‰Á
+    [SerializeField] FormationLeader formationLeader;   // “¯‚¶ƒvƒŒƒCƒ„[‚É•t‚¢‚Ä‚é‚à‚Ì
 
     void Awake()
     {
@@ -70,13 +72,13 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-        PlayerDataInitialized();//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼å¤‰æ•°åˆæœŸåŒ–
+        PlayerDataInitialized();//ƒvƒŒƒCƒ„[•Ï”‰Šú‰»
 
-        pushArea = transform.Find("PushArea").GetComponent<CapsuleCollider>();//pushç”¨ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
-        pushArea.enabled = false;//pushç”¨ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’éè¡¨ç¤ºã«ã™ã‚‹
+        pushArea = transform.Find("PushArea").GetComponent<CapsuleCollider>();//push—pƒIƒuƒWƒFƒNƒg‚ğæ“¾
+        pushArea.enabled = false;//push—pƒIƒuƒWƒFƒNƒg‚ğ”ñ•\¦‚É‚·‚é
 
 
-        //MainCameraã‚¿ã‚°ã®ã¤ã„ãŸã‚«ãƒ¡ãƒ©ã‹ã‚‰CameraControllerã‚’å–å¾—
+        //MainCameraƒ^ƒO‚Ì‚Â‚¢‚½ƒJƒƒ‰‚©‚çCameraController‚ğæ“¾
         if (Camera.main != null)
         {
             cameraController = Camera.main.GetComponent<CameraController>();
@@ -84,55 +86,55 @@ public class PlayerMove : MonoBehaviour
 
         if (cameraController == null)
         {
-            Debug.LogError("CameraControllerã®ã¤ã„ãŸMainCameraãŒãªã„");
+            Debug.LogError("CameraController‚Ì‚Â‚¢‚½MainCamera‚ª‚È‚¢");
         }
     }
 
     void Update()
     {
-        CheckStepInput();//ã‚µã‚¤ãƒ‰ã‚¹ãƒ†ãƒƒãƒ—ã®å…¥åŠ›ç¢ºèª
+        CheckStepInput();//ƒTƒCƒhƒXƒeƒbƒv‚Ì“ü—ÍŠm”F
     }
 
     void FixedUpdate()
     {
-        //ã‚¯ãƒ¼ãƒ«ãƒ€ã‚¦ãƒ³ã‚’æ¸›ã‚‰ã™
+        //ƒN[ƒ‹ƒ_ƒEƒ“‚ğŒ¸‚ç‚·
         if (stepCooldownTimer > 0f)
         {
             stepCooldownTimer -= Time.fixedDeltaTime;
         }
 
-        //ã‚¹ãƒ†ãƒƒãƒ—ã®å…¥åŠ›ãŒã‚ã‚Œã°ã‚¹ãƒ†ãƒƒãƒ—ã‚’å§‹ã‚ã‚‹
+        //ƒXƒeƒbƒv‚Ì“ü—Í‚ª‚ ‚ê‚ÎƒXƒeƒbƒv‚ğn‚ß‚é
         if (stepRequested)
         {
             StartStep();
         }
 
-        //ã‚¹ãƒ†ãƒƒãƒ—ä¸­ã¯é€šå¸¸ã®ç§»å‹•ã‚’ã—ãªã„
+        //ƒXƒeƒbƒv’†‚Í’Êí‚ÌˆÚ“®‚ğ‚µ‚È‚¢
         if (isStepping)
         {
             UpdateStep();
             return;
         }
 
-        //ShiftãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹
+        //Shift‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©
         bool isSideStep = Keyboard.current != null && Keyboard.current.leftShiftKey.isPressed;
 
-        Move(isSideStep);//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç§»å‹•å‡¦ç†
+        Move(isSideStep);//ƒvƒŒƒCƒ„[ˆÚ“®ˆ—
     }
 
-    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼å¤‰æ•°åˆæœŸåŒ–
+    //ƒvƒŒƒCƒ„[•Ï”‰Šú‰»
     private void PlayerDataInitialized()
     {
-        moveSpeed = playerData.MoveSpeed; //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç§»å‹•é€Ÿåº¦ã‚’å–å¾—
-        playerSize = playerData.PlayerSize; //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚µã‚¤ã‚ºã‚’å–å¾—
-        turnSpeed = playerData.TurnSpeed; //é€²è¡Œæ–¹å‘ã¸ã®å›è»¢é€Ÿåº¦ã‚’å–å¾—
-        playerPushPower = playerData.PlayerPushPower; //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æŠ¼ã™åŠ›ã‚’å–å¾—
-        currentNuisance = playerData.PlayerNuisance;//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è¿·æƒ‘åº¦ã‚’å–å¾—
+        moveSpeed = playerData.MoveSpeed; //ƒvƒŒƒCƒ„[‚ÌˆÚ“®‘¬“x‚ğæ“¾
+        playerSize = playerData.PlayerSize; //ƒvƒŒƒCƒ„[‚ÌƒTƒCƒY‚ğæ“¾
+        turnSpeed = playerData.TurnSpeed; //is•ûŒü‚Ö‚Ì‰ñ“]‘¬“x‚ğæ“¾
+        playerPushPower = playerData.PlayerPushPower; //ƒvƒŒƒCƒ„[‚Ì‰Ÿ‚·—Í‚ğæ“¾
+        currentNuisance = playerData.PlayerNuisance;//ƒvƒŒƒCƒ„[‚Ì–À˜f“x‚ğæ“¾
 
-        facingMinSpeedRate = playerData.FacingMinSpeedRate; //å‘ããŒçœŸé€†ã®ã¨ãã®é€Ÿåº¦ã®å‰²åˆã‚’å–å¾—
-        facingSpeedCurve = playerData.FacingSpeedCurve;     //å‘ãã®ãšã‚Œã«å¯¾ã™ã‚‹æ¸›é€Ÿã®ã‹ã‹ã‚Šæ–¹ã‚’å–å¾—
+        facingMinSpeedRate = playerData.FacingMinSpeedRate; //Œü‚«‚ª^‹t‚Ì‚Æ‚«‚Ì‘¬“x‚ÌŠ„‡‚ğæ“¾
+        facingSpeedCurve = playerData.FacingSpeedCurve;     //Œü‚«‚Ì‚¸‚ê‚É‘Î‚·‚éŒ¸‘¬‚Ì‚©‚©‚è•û‚ğæ“¾
 
-        //è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚µã‚¤ã‚ºã‚’è¨­å®š
+        //eƒIƒuƒWƒFƒNƒg‚ÌƒTƒCƒY‚ğİ’è
         if (transform.parent != null)
         {
             transform.parent.localScale = playerSize;
@@ -143,99 +145,102 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    //ç§»å‹•ã®å…¥åŠ›ã‚’å—ã‘å–ã‚‹é–¢æ•° WASD
+    //ˆÚ“®‚Ì“ü—Í‚ğó‚¯æ‚éŠÖ” WASD
     void OnMove(InputValue value)
     {
-        moveInput = value.Get<Vector2>();//å…¥åŠ›ã‚’å–å¾— 
+        moveInput = value.Get<Vector2>();//“ü—Í‚ğæ“¾ 
     }
 
-    //ç§»å‹•å‡¦ç†
+    //ˆÚ“®ˆ—
     private void Move(bool isSideStep)
     {
         if (cameraController == null) return;
 
-        //é€Ÿåº¦ã‚’ä¿å­˜
+        //‘¬“x‚ğ•Û‘¶
         float speed = moveSpeed;
 
-        //æ¨ªæ­©ãä¸­ã¯é€Ÿåº¦ã‚’è½ã¨ã™
+        //‰¡•à‚«’†‚Í‘¬“x‚ğ—‚Æ‚·
         if (isSideStep)
         {
             speed *= sideStepSpeedRate;
         }
 
-        //ã‚«ãƒ¡ãƒ©ã®å›è»¢è§’åº¦ã‹ã‚‰æ°´å¹³ãªå‰æ–¹å‘ãƒ»å³æ–¹å‘ã‚’å–å¾—
+        //ƒJƒƒ‰‚Ì‰ñ“]Šp“x‚©‚ç…•½‚È‘O•ûŒüE‰E•ûŒü‚ğæ“¾
         Vector3 forward = cameraController.FlatForward;
         Vector3 right = cameraController.FlatRight;
 
-        //W/Sã§ã‚«ãƒ¡ãƒ©ã®å¥¥ãƒ»æ‰‹å‰ã€A/Dã§ç”»é¢ã®å·¦å³ã«é€²ã¿ãŸã„æ–¹å‘
+        //W/S‚ÅƒJƒƒ‰‚Ì‰œEè‘OAA/D‚Å‰æ–Ê‚Ì¶‰E‚Éi‚İ‚½‚¢•ûŒü
         Vector3 moveDirection = forward * moveInput.y + right * moveInput.x;
 
-        //å…¥åŠ›ãŒãªã„ã¨ãã¯æ­¢ã¾ã‚‹ï¼ˆå‘ãã‚‚å¤‰ãˆãªã„ï¼‰
+        //‘àŒ`‚É“ü—Í‚ÌŒü‚«‚ğ“n‚·(“ü—Í‚ª‚È‚¢‚Æ‚«‚Ízero‚É‚È‚é ¨ ‘àŒ`‚ÌŒü‚«‚Í‚»‚Ì‚Ü‚Ü)
+        if (formationLeader != null) formationLeader.SetIntendedDirection(moveDirection);
+
+        //“ü—Í‚ª‚È‚¢‚Æ‚«‚Í~‚Ü‚éiŒü‚«‚à•Ï‚¦‚È‚¢j
         if (moveDirection.sqrMagnitude <= 0.01f)
         {
             rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
             return;
         }
 
-        //ä½“ã‚’å‘ã‘ã‚‹ã¹ãæ–¹å‘ã‚’æ±ºã‚ã¦ã€ãã¡ã‚‰ã¸å›è»¢ã•ã›ã‚‹
+        //‘Ì‚ğŒü‚¯‚é‚×‚«•ûŒü‚ğŒˆ‚ß‚ÄA‚»‚¿‚ç‚Ö‰ñ“]‚³‚¹‚é
         Vector3 desiredFacing;
         if (isSideStep)
         {
-            //æ¨ªæ­©ãï¼šæŠ¼ã—ãŸã‚­ãƒ¼ã®æ–¹å‘ã«é€²ã¿ã€ä½“ã®æ­£é¢ã¯é€²è¡Œæ–¹å‘ã®å·¦ã«å‘ã‘ã‚‹ ä¸Šã¨é€²è¡Œæ–¹å‘ã®å¤–ç©ã§å·¦å´ãŒã‚‚ã¨ã¾ã‚‹
+            //‰¡•à‚«F‰Ÿ‚µ‚½ƒL[‚Ì•ûŒü‚Éi‚İA‘Ì‚Ì³–Ê‚Íis•ûŒü‚Ì¶‚ÉŒü‚¯‚é ã‚Æis•ûŒü‚ÌŠOÏ‚Å¶‘¤‚ª‚à‚Æ‚Ü‚é
             desiredFacing = Vector3.Cross(moveDirection, Vector3.up);
-            RotateToward(desiredFacing, faceLeftTurnSpeed);//é€²è¡Œæ–¹å‘ã®å·¦å´ã‚’å‘ãã‚ˆã†ã«
+            RotateToward(desiredFacing, faceLeftTurnSpeed);//is•ûŒü‚Ì¶‘¤‚ğŒü‚­‚æ‚¤‚É
         }
         else
         {
-            //é€šå¸¸ç§»å‹•ï¼šé€²è¡Œæ–¹å‘ã¸ä½“ã‚’å‘ã‘ã‚‹
+            //’ÊíˆÚ“®Fis•ûŒü‚Ö‘Ì‚ğŒü‚¯‚é
             desiredFacing = moveDirection;
             RotateToward(desiredFacing, turnSpeed);
         }
 
-        //ä½“ã®å‘ãã®ãšã‚Œã«å¿œã˜ã¦é€Ÿåº¦ã‚’è½ã¨ã™
+        //‘Ì‚ÌŒü‚«‚Ì‚¸‚ê‚É‰‚¶‚Ä‘¬“x‚ğ—‚Æ‚·
         speed *= GetFacingSpeedRate(desiredFacing);
 
         Vector3 horizontalVelocity = moveDirection.normalized * speed;
         rb.linearVelocity = new Vector3(horizontalVelocity.x, rb.linearVelocity.y, horizontalVelocity.z);
     }
 
-    //ä½“ã®æ­£é¢ã‚’æŒ‡å®šã—ãŸæ–¹å‘ã¸ã€æŒ‡å®šã—ãŸé€Ÿã•ã§æ»‘ã‚‰ã‹ã«å‘ã‘ã‚‹
+    //‘Ì‚Ì³–Ê‚ğw’è‚µ‚½•ûŒü‚ÖAw’è‚µ‚½‘¬‚³‚ÅŠŠ‚ç‚©‚ÉŒü‚¯‚é
     private void RotateToward(Vector3 direction, float speed)
     {
-        //å‘ã‘ãŸã„æ–¹å‘ã«ãƒ¢ãƒ‡ãƒ«ã®æ­£é¢ã®ãšã‚Œåˆ†ã‚’è¶³ã—ãŸå‘ãã‚’ç›®æ¨™ã«ã™ã‚‹
+        //Œü‚¯‚½‚¢•ûŒü‚Éƒ‚ƒfƒ‹‚Ì³–Ê‚Ì‚¸‚ê•ª‚ğ‘«‚µ‚½Œü‚«‚ğ–Ú•W‚É‚·‚é
         Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up) * Quaternion.Euler(0f, modelYawOffset, 0f);
         Quaternion newRotation = Quaternion.Slerp(rb.rotation, targetRotation, speed * Time.fixedDeltaTime);
         rb.MoveRotation(newRotation);
     }
 
-    //ä»Šã®ä½“ã®æ­£é¢ã‚’æ±‚ã‚ã‚‹é–¢æ•°
+    //¡‚Ì‘Ì‚Ì³–Ê‚ğ‹‚ß‚éŠÖ”
     private Vector3 GetBodyForward()
     {
-        //RotateTowardã§è¶³ã—ãŸãƒ¢ãƒ‡ãƒ«ã®ãšã‚Œè£œæ­£ã‚’é€†ã«æˆ»ã—ã¦ã€æœ¬æ¥ã®æ­£é¢ã‚’æ±‚ã‚ã‚‹
+        //RotateToward‚Å‘«‚µ‚½ƒ‚ƒfƒ‹‚Ì‚¸‚ê•â³‚ğ‹t‚É–ß‚µ‚ÄA–{—ˆ‚Ì³–Ê‚ğ‹‚ß‚é
         Vector3 bodyForward = rb.rotation * Quaternion.Euler(0f, -modelYawOffset, 0f) * Vector3.forward;
         bodyForward.y = 0f;
         return bodyForward.normalized;
     }
 
-    //ä½“ã®å‘ãã¨å‘ãã¹ãæ–¹å‘ã®ãšã‚Œã‹ã‚‰ã€é€Ÿåº¦ã®å‰²åˆã‚’æ±‚ã‚ã‚‹
+    //‘Ì‚ÌŒü‚«‚ÆŒü‚­‚×‚«•ûŒü‚Ì‚¸‚ê‚©‚çA‘¬“x‚ÌŠ„‡‚ğ‹‚ß‚é
     private float GetFacingSpeedRate(Vector3 desiredFacing)
     {
-        //å†…ç©ã§å‘ãã®ãšã‚Œã‚’æ±‚ã‚ã‚‹
+        //“àÏ‚ÅŒü‚«‚Ì‚¸‚ê‚ğ‹‚ß‚é
         float dot = Vector3.Dot(GetBodyForward(), desiredFacing.normalized);
 
-        //-1ã‹ã‚‰1 ã‚’ 0ã‹ã‚‰1 ã«å¤‰æ›
+        //-1‚©‚ç1 ‚ğ 0‚©‚ç1 ‚É•ÏŠ·
         float t = (dot + 1f) * 0.5f;
 
-        //ã‚«ãƒ¼ãƒ–ã‚’ã‹ã‘ã¦ã€ãšã‚Œã«å¯¾ã™ã‚‹æ¸›é€Ÿã®ã‹ã‹ã‚Šæ–¹ã‚’èª¿æ•´ã™ã‚‹
+        //ƒJ[ƒu‚ğ‚©‚¯‚ÄA‚¸‚ê‚É‘Î‚·‚éŒ¸‘¬‚Ì‚©‚©‚è•û‚ğ’²®‚·‚é
         t = Mathf.Pow(t, facingSpeedCurve);
 
         return Mathf.Lerp(facingMinSpeedRate, 1f, t);
     }
 
     //----------------------------------------------------------------------------------------
-    //ã‚µã‚¤ãƒ‰ã‚¹ãƒ†ãƒƒãƒ—
+    //ƒTƒCƒhƒXƒeƒbƒv
 
-    //Shift + A/D ãŒæŠ¼ã•ã‚ŒãŸç¬é–“ã«å®Ÿè¡Œã•ã‚Œã‚‹
+    //Shift + A/D ‚ª‰Ÿ‚³‚ê‚½uŠÔ‚ÉÀs‚³‚ê‚é
     private void CheckStepInput()
     {
         if (Keyboard.current == null) return;
@@ -246,7 +251,7 @@ public class PlayerMove : MonoBehaviour
 
         if (isShift && isStepKeyPressed)
         {
-            //æŠ¼ã•ã‚Œã¦ã„ã‚‹ã‚­ãƒ¼ã‹ã‚‰ã‚¹ãƒ†ãƒƒãƒ—ã®å‘ãã‚’æ±ºã‚ã‚‹
+            //‰Ÿ‚³‚ê‚Ä‚¢‚éƒL[‚©‚çƒXƒeƒbƒv‚ÌŒü‚«‚ğŒˆ‚ß‚é
             float x = 0f;
             float y = 0f;
             if (Keyboard.current.dKey.isPressed) x += 1f;
@@ -260,14 +265,14 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    //ã‚¹ãƒ†ãƒƒãƒ—é–‹å§‹
+    //ƒXƒeƒbƒvŠJn
     private void StartStep()
     {
         stepRequested = false;
 
         if (cameraController == null) return;
 
-        //ã‚«ãƒ¡ãƒ©åŸºæº–ã§ã‚¹ãƒ†ãƒƒãƒ—ã™ã‚‹æ–¹å‘ã‚’æ±‚ã‚ã‚‹
+        //ƒJƒƒ‰Šî€‚ÅƒXƒeƒbƒv‚·‚é•ûŒü‚ğ‹‚ß‚é
         Vector3 direction = cameraController.FlatForward * stepInput.y + cameraController.FlatRight * stepInput.x;
         direction.Normalize();
 
@@ -280,16 +285,21 @@ public class PlayerMove : MonoBehaviour
 
         }
 
-        //æ±ºã‚ãŸæ™‚é–“ã§æ±ºã‚ãŸè·é›¢ã‚’é€²ã‚€é€Ÿåº¦
+        //Œˆ‚ß‚½ŠÔ‚ÅŒˆ‚ß‚½‹——£‚ği‚Ş‘¬“x
         stepVelocity = direction * (stepDistance / stepDuration);
 
         stepTimer = stepDuration;
         isStepping = true;
     }
 
-    //ã‚¹ãƒ†ãƒƒãƒ—ä¸­ã®å‡¦ç†
+    //ƒXƒeƒbƒv’†‚Ìˆ—
     private void UpdateStep()
     {
+        //ƒXƒeƒbƒv’†‚Í‘àŒ`‚ÌŒü‚«‚ğ•Ï‚¦‚È‚¢
+        if (formationLeader != null) formationLeader.SetIntendedDirection(Vector3.zero);
+
+
+
         rb.linearVelocity = new Vector3(stepVelocity.x, rb.linearVelocity.y, stepVelocity.z);
 
         stepTimer -= Time.fixedDeltaTime;
@@ -299,54 +309,54 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    //ã‚¹ãƒ†ãƒƒãƒ—çµ‚äº†
+    //ƒXƒeƒbƒvI—¹
     private void EndStep()
     {
         isStepping = false;
         stepCooldownTimer = stepCooldown;
 
-        //æ¨ªæ–¹å‘ã®é€Ÿåº¦ã‚’æ­¢ã‚ã‚‹ã€€ãªã„ã¨è‹¥å¹²å‹•ã„ãŸã‚Šã™ã‚‹
+        //‰¡•ûŒü‚Ì‘¬“x‚ğ~‚ß‚é@‚È‚¢‚ÆáŠ±“®‚¢‚½‚è‚·‚é
         rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
     }
 
     //----------------------------------------------------------------------------------------
-    //ãƒ—ãƒƒã‚·ãƒ¥
+    //ƒvƒbƒVƒ…
 
-    //ãƒ—ãƒƒã‚·ãƒ¥(ã‚¹ãƒšãƒ¼ã‚¹ã‚­ãƒ¼)ãŒæŠ¼ã•ã‚ŒãŸã¨ãã®å‡¦ç†
+    //ƒvƒbƒVƒ…(ƒXƒy[ƒXƒL[)‚ª‰Ÿ‚³‚ê‚½‚Æ‚«‚Ìˆ—
     void OnPush(InputValue value)
     {
 
         if (value.isPressed)
         {
-            //æŠ¼ã™å‡¦ç†
+            //‰Ÿ‚·ˆ—
             PushNPC();
         }
     }
 
-    //NPCã‚’æŠ¼ã™å‡¦ç†
+    //NPC‚ğ‰Ÿ‚·ˆ—
     private void PushNPC()
     {
-        pushArea.enabled = true;//pushç”¨ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«
-        //CapsuleColliderã®è¨­å®šã‹ã‚‰ã€ãƒ¯ãƒ¼ãƒ«ãƒ‰ä¸Šã®ä¸¡ç«¯ã®ç‚¹ã¨åŠå¾„ã‚’æ±‚ã‚ã‚‹
+        pushArea.enabled = true;//push—pƒIƒuƒWƒFƒNƒg‚ğƒAƒNƒeƒBƒu‚É
+        //CapsuleCollider‚Ìİ’è‚©‚çAƒ[ƒ‹ƒhã‚Ì—¼’[‚Ì“_‚Æ”¼Œa‚ğ‹‚ß‚é
         GetCapsuleWorld(pushArea, out Vector3 point0, out Vector3 point1, out float radius);
 
-        //ç¯„å›²å†…ã®ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ã‚’ã™ã¹ã¦å–å¾—
+        //”ÍˆÍ“à‚ÌƒRƒ‰ƒCƒ_[‚ğ‚·‚×‚Äæ“¾
         Collider[] hits = Physics.OverlapCapsule(point0, point1, radius);
-        //Debug.Log("ãƒ’ãƒƒãƒˆæ•°:" + hits.Length); //ç¢ºèªç”¨
-        //åŒã˜NPCã‚’2å›æ•°ãˆãªã„ã‚ˆã†ã«ã€æ•°ãˆãŸNPCã‚’è¨˜éŒ²ã—ã¦ãŠã
+        //Debug.Log("ƒqƒbƒg”:" + hits.Length); //Šm”F—p
+        //“¯‚¶NPC‚ğ2‰ñ”‚¦‚È‚¢‚æ‚¤‚ÉA”‚¦‚½NPC‚ğ‹L˜^‚µ‚Ä‚¨‚­
         var countedNPCs = new System.Collections.Generic.HashSet<GameObject>();
 
         foreach (Collider hit in hits)
         {
-            //å½“ãŸã£ãŸã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ã‹ã‚‰è¦ªã‚’ãŸã©ã£ã¦ã€NPCã‚¿ã‚°ã®ä»˜ã„ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¢ã™
+            //“–‚½‚Á‚½ƒRƒ‰ƒCƒ_[‚©‚çe‚ğ‚½‚Ç‚Á‚ÄANPCƒ^ƒO‚Ì•t‚¢‚½ƒIƒuƒWƒFƒNƒg‚ğ’T‚·
             GameObject npc = FindNPCRoot(hit.transform);
 
-            //NPCã«ãƒ’ãƒƒãƒˆã—ãŸã‚‰ã€ã¾ã æ•°ãˆã¦ã„ãªã„NPCã ã‘å‡¦ç†ã™ã‚‹
+            //NPC‚Éƒqƒbƒg‚µ‚½‚çA‚Ü‚¾”‚¦‚Ä‚¢‚È‚¢NPC‚¾‚¯ˆ—‚·‚é
             if (npc != null && countedNPCs.Add(npc))
             {
                 currentNuisance += playerPushPower / 10.0f;
 
-                //NPCã®Rigidbodyã‚’å–å¾— å½“ãŸã£ãŸã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ã®Rigidbody â†’ ãªã‘ã‚Œã°NPCã®ä¸­ã‹ã‚‰æ¢ã™
+                //NPC‚ÌRigidbody‚ğæ“¾ “–‚½‚Á‚½ƒRƒ‰ƒCƒ_[‚ÌRigidbody ¨ ‚È‚¯‚ê‚ÎNPC‚Ì’†‚©‚ç’T‚·
                 Rigidbody npcRb = hit.attachedRigidbody;
                 if (npcRb == null)
                 {
@@ -355,7 +365,7 @@ public class PlayerMove : MonoBehaviour
 
                 if (npcRb != null)
                 {
-                    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‹ã‚‰NPCã¸ã®æ°´å¹³ãªæ–¹å‘ã«æŠ¼ã—é£›ã°ã™
+                    //ƒvƒŒƒCƒ„[‚©‚çNPC‚Ö‚Ì…•½‚È•ûŒü‚É‰Ÿ‚µ”ò‚Î‚·
                     Vector3 pushDirection = npcRb.position - transform.position;
                     pushDirection.y = 0f;
                     pushDirection.Normalize();
@@ -365,10 +375,10 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        pushArea.enabled = false;//å‡¦ç†ãŒçµ‚ã‚ã£ãŸã‚‰pushç”¨ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ã‚’ç„¡åŠ¹ã«
+        pushArea.enabled = false;//ˆ—‚ªI‚í‚Á‚½‚çpush—pƒRƒ‰ƒCƒ_[‚ğ–³Œø‚É
     }
 
-    //å½“ãŸã£ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰è¦ªã¸ãŸã©ã‚Šã€NPCã‚¿ã‚°ã®ä»˜ã„ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã™
+    //“–‚½‚Á‚½ƒIƒuƒWƒFƒNƒg‚©‚çe‚Ö‚½‚Ç‚èANPCƒ^ƒO‚Ì•t‚¢‚½ƒIƒuƒWƒFƒNƒg‚ğ•Ô‚·
     private GameObject FindNPCRoot(Transform hitTransform)
     {
         Transform current = hitTransform;
@@ -379,20 +389,20 @@ public class PlayerMove : MonoBehaviour
             {
                 return current.gameObject;
             }
-            current = current.parent; //1ã¤ä¸Šã®è¦ªã¸
+            current = current.parent; //1‚Âã‚Ìe‚Ö
         }
 
         return null;
     }
 
-    //CapsuleColliderã®ãƒ¯ãƒ¼ãƒ«ãƒ‰ä¸Šã®ä¸¡ç«¯ã®ç‚¹ï¼ˆçƒã®ä¸­å¿ƒï¼‰ã¨åŠå¾„ã‚’æ±‚ã‚ã‚‹
-    //OverlapCapsuleé–¢æ•°ã®å¼•æ•°ã«ä½¿ã†ãŸã‚ã®è¨ˆç®—ã‚’è¡Œã†
+    //CapsuleCollider‚Ìƒ[ƒ‹ƒhã‚Ì—¼’[‚Ì“_i‹…‚Ì’†Sj‚Æ”¼Œa‚ğ‹‚ß‚é
+    //OverlapCapsuleŠÖ”‚Ìˆø”‚Ég‚¤‚½‚ß‚ÌŒvZ‚ğs‚¤
     private void GetCapsuleWorld(CapsuleCollider capsule, out Vector3 point0, out Vector3 point1, out float radius)
     {
         Transform t = capsule.transform;
         Vector3 scale = t.lossyScale;
 
-        //Directionã®è¨­å®šï¼ˆ0:Xè»¸ 1:Yè»¸ 2:Zè»¸ï¼‰ã«åˆã‚ã›ã¦ã€ã‚«ãƒ—ã‚»ãƒ«ã®ä¼¸ã³ã‚‹å‘ãã‚’æ±ºã‚ã‚‹
+        //Direction‚Ìİ’èi0:X² 1:Y² 2:Z²j‚É‡‚í‚¹‚ÄAƒJƒvƒZƒ‹‚ÌL‚Ñ‚éŒü‚«‚ğŒˆ‚ß‚é
         Vector3 axis;
         float heightScale;
         float radiusScale;
@@ -419,90 +429,90 @@ public class PlayerMove : MonoBehaviour
         radius = capsule.radius * radiusScale;
         float height = capsule.height * heightScale;
 
-        //ä¸¡ç«¯ã®çƒã®ä¸­å¿ƒã¾ã§ã®è·é›¢ï¼ˆé«˜ã•ã®åŠåˆ†ã‹ã‚‰åŠå¾„ã‚’å¼•ã„ãŸåˆ†ï¼‰
+        //—¼’[‚Ì‹…‚Ì’†S‚Ü‚Å‚Ì‹——£i‚‚³‚Ì”¼•ª‚©‚ç”¼Œa‚ğˆø‚¢‚½•ªj
         float offset = Mathf.Max(height * 0.5f - radius, 0f);
 
         Vector3 center = t.TransformPoint(capsule.center);
-        Vector3 worldAxis = t.TransformDirection(axis); //å›è»¢ã‚’åæ˜ ã—ãŸä¼¸ã³ã‚‹å‘ã
+        Vector3 worldAxis = t.TransformDirection(axis); //‰ñ“]‚ğ”½‰f‚µ‚½L‚Ñ‚éŒü‚«
 
         point0 = center + worldAxis * offset;
         point1 = center - worldAxis * offset;
     }
 
     //----------------------------------------------------------------------------------------
-    //PlayerData(å…ƒãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿SO)ã®å€¤ã‚’å¤‰æ›´ã™ã‚‹é–¢æ•°
+    //PlayerData(Œ³ƒpƒ‰ƒ[ƒ^SO)‚Ì’l‚ğ•ÏX‚·‚éŠÖ”
 
 
-    //ç§»å‹•é€Ÿåº¦
+    //ˆÚ“®‘¬“x
     public void SetMoveSpeed(float speed)
     {
         moveSpeed = speed;
     }
 
-    //å›è»¢é€Ÿåº¦(æ™®æ®µã®å›è»¢)
+    //‰ñ“]‘¬“x(•’i‚Ì‰ñ“])
     public void SetTurnSpeed(float speed)
     {
         turnSpeed = speed;
     }
 
-    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚µã‚¤ã‚º
+    //ƒvƒŒƒCƒ„[‚ÌƒTƒCƒY
     public void SetPlayerSize(Vector3 size)
     {
         playerSize = size;
     }
 
-    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å£°ã®å¤§ãã•
+    //ƒvƒŒƒCƒ„[‚Ìº‚Ì‘å‚«‚³
     public void SetVoiceVolume(float volume)
     {
         voiceVolume = volume;
     }
 
-    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æŠ¼ã™åŠ›
+    //ƒvƒŒƒCƒ„[‚Ì‰Ÿ‚·—Í
     public void SetPlayerPushPower(float power)
     {
         playerPushPower = power;
     }
 
-    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è¿·æƒ‘åº¦
+    //ƒvƒŒƒCƒ„[‚Ì–À˜f“x
     public void SetPlayerNuisance(float nuisance)
     {
         currentNuisance = nuisance;
     }
 
     //----------------------------------------------------------------------------------------
-    //PlayerData(å…ƒãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿SO)ã®å€¤ã‚’å–å¾—ã™ã‚‹é–¢æ•°
+    //PlayerData(Œ³ƒpƒ‰ƒ[ƒ^SO)‚Ì’l‚ğæ“¾‚·‚éŠÖ”
 
-    //ç§»å‹•é€Ÿåº¦
+    //ˆÚ“®‘¬“x
     public float GetMoveSpeed()
     {
         return moveSpeed;
     }
 
-    //å›è»¢é€Ÿåº¦(æ™®æ®µã®å›è»¢)
+    //‰ñ“]‘¬“x(•’i‚Ì‰ñ“])
     public float GetTurnSpeed()
     {
         return turnSpeed;
     }
 
-    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚µã‚¤ã‚º
+    //ƒvƒŒƒCƒ„[‚ÌƒTƒCƒY
     public Vector3 GetPlayerSize()
     {
         return playerSize;
     }
 
-    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å£°ã®å¤§ãã•
+    //ƒvƒŒƒCƒ„[‚Ìº‚Ì‘å‚«‚³
     public float GetVoiceVolume()
     {
         return voiceVolume;
     }
 
-    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æŠ¼ã™åŠ›
+    //ƒvƒŒƒCƒ„[‚Ì‰Ÿ‚·—Í
     public float GetPlayerPushPower()
     {
         return playerPushPower;
     }
 
-    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è¿·æƒ‘åº¦
+    //ƒvƒŒƒCƒ„[‚Ì–À˜f“x
     public float GetPlayerNuisance()
     {
         return currentNuisance;
