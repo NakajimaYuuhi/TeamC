@@ -1,8 +1,8 @@
 /**
  * File:GameFlowManager.cs
- * 
+ *
  * 内容：ゲームの流れを管理し、必要オブジェクトの生成などを行う
- * 
+ *
  * 作成者:寺田
  */
 using UnityEngine;
@@ -63,6 +63,12 @@ public class GameFlowManager : MonoBehaviour
     private NpcPhysicsLodManager _npcPhysicsLodManager;
     private UITimer _uiTimer;
 
+    //新UI
+    private GameHud _hud;
+    //距離と仲間の人数を取るためのもの
+    private Transform _playerBody;
+    private FormationLeader _formationLeader;
+    public GameHud Hud => _hud;
 
     // 迷惑度
     private float _annoyanceLevel;
@@ -81,7 +87,7 @@ public class GameFlowManager : MonoBehaviour
         Initialize(_gameData.GetSelectStageData());
     }
 
-    
+
     void Update()
     {
         _uiTimer.RemainingTime -= Time.deltaTime;
@@ -100,6 +106,9 @@ public class GameFlowManager : MonoBehaviour
             case FlowState.ResultView:
                 break;
         }
+
+        //リザルト行くときにUIのUpdateを止める
+        if (_flowState != FlowState.ResultView) UpdateHud();
     }
 
     /// <summary>
@@ -114,12 +123,14 @@ public class GameFlowManager : MonoBehaviour
         _player = _playerPrefab ? Instantiate(_playerPrefab, _stageData.PlayerInitPos, Quaternion.identity) : null;
 
         _npcPhysicsLodManager = GetComponent<NpcPhysicsLodManager>();
-        _npcPhysicsLodManager.SetTarget(_player.GetComponentInChildren<PlayerMove>().transform);
+        _playerBody = _player.GetComponentInChildren<PlayerMove>().transform;
+        _npcPhysicsLodManager.SetTarget(_playerBody);
 
         _ui = _uiPrefab ? Instantiate(_uiPrefab) : null;
         _uiTimer = new UITimer();
-        var ingameUI = _ui.GetComponentInChildren<InGameUI>();
-        ingameUI?.SetUITimer(_uiTimer);
+
+        _hud = _ui ? _ui.GetComponentInChildren<GameHud>(true) : null;
+        if (_hud == null) Debug.LogWarning("[GameFlowManager] UIプレハブの中に GameHud が見つかりません");
 
         // プレイヤーにデータ配布
         // auto playerComp = _player?.GetComponent<>();
@@ -134,7 +145,7 @@ public class GameFlowManager : MonoBehaviour
         var flowField = FindFirstObjectByType<FlowField>();
         if (flowField != null)
         {
-            if(_player.TryGetComponent<FlowEmitter>(out FlowEmitter flowEmitter))
+            if (_player.TryGetComponent<FlowEmitter>(out FlowEmitter flowEmitter))
             {
                 flowEmitter.SetField(flowField);
             }
@@ -148,17 +159,19 @@ public class GameFlowManager : MonoBehaviour
                 formationLeader.SetAnalizer(flowAnalizer);
             }
         }
+        //プレイヤーに追従するNPCの数を取得
+        _formationLeader = _player.GetComponentInChildren<FormationLeader>();
 
         SetPurpose();
 
         // 敵生成
-        if(!_isSpawnerBase)
+        if (!_isSpawnerBase)
         {
-            for(int i = 0;i < _stageData.EnemyCount;++i)
+            for (int i = 0; i < _stageData.EnemyCount; ++i)
             {
                 // Mapの生成位置データリストをもとに生成していく
                 var area = _stageData.MapData.GetArea(Random.Range(0, _stageData.MapData.Areas.Count));
-            
+
                 Vector3 SpawnCenter = area.Center;
                 Vector3 SpawnBoxSize = area.Size;
 
@@ -169,14 +182,14 @@ public class GameFlowManager : MonoBehaviour
 
                 Quaternion rot = Random.rotation;
                 rot.x = rot.z = 0.0f;
-                var npc = Instantiate(_enemyPrefab,SpawnPos,rot);
+                var npc = Instantiate(_enemyPrefab, SpawnPos, rot);
                 var npcCtrl = npc.GetComponentInChildren<NPC_Controller>();
                 if (npcCtrl != null) _npcPhysicsLodManager.Register(npcCtrl);
                 string state = area.Tag == NpcSpawnAreaTag.WalkArea ? "Browsing_BasedOnNode" : area.Tag == NpcSpawnAreaTag.StandArea ? "Standing" : "Grouping";
-                if(transform.TryGetComponent<NodeEdgeGenerator>(out NodeEdgeGenerator neg))
+                if (transform.TryGetComponent<NodeEdgeGenerator>(out NodeEdgeGenerator neg))
                 {
                     npcCtrl.SetNodeData(gameObject);
-                    npcCtrl.SetNode(neg.GetNode(Random.Range(0,6)));
+                    npcCtrl.SetNode(neg.GetNode(Random.Range(0, 6)));
                 }
                 npcCtrl?.SetState(state);
             }
@@ -185,25 +198,16 @@ public class GameFlowManager : MonoBehaviour
 
     private void PurposeView()
     {
-        if(_uiTimer.RemainingTime > _purposeViewTime)
+        if (_uiTimer.RemainingTime > _purposeViewTime)
         {
             _flowState = FlowState.Execution;
             _uiTimer.RemainingTime = _failedTime;
-            InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
-            ingameUI.TimerStart();
         }
     }
 
     private void Execution()
     {
-        if(_purposeData.IsWithinAchievementRange(_player.transform.position)) CollectPurpose();
-
-        InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
-
-        InGameUI.InGameUI_PlayerData uiData;
-        uiData.stamina = 1.0f;
-        uiData.nuisance = _annoyanceLevel * 100.0f;
-        ingameUI.SetInGameUI_PlayerData(uiData);
+        if (_purposeData.IsWithinAchievementRange(_player.transform.position)) CollectPurpose();
 
         if (_annoyanceLevel >= 1.0f)
         {
@@ -222,24 +226,38 @@ public class GameFlowManager : MonoBehaviour
     {
         if (_purposeData.IsWithinAchievementRange(_player.transform.position)) CollectPurpose();
         _annoyanceLevel -= Time.deltaTime / _annoyanceDecrease;
-        if(_annoyanceLevel <= 0.0f)
+        if (_annoyanceLevel <= 0.0f)
         {
             // プレイヤーを元の状態に戻す
 
             _flowState = FlowState.Execution;
         }
 
-        InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
-
-        InGameUI.InGameUI_PlayerData uiData;
-        uiData.stamina = 1.0f;
-        uiData.nuisance = _annoyanceLevel * 100.0f;
-        ingameUI.SetInGameUI_PlayerData(uiData);
-
         if (_failedTime != 0.0f && _uiTimer.RemainingTime > _failedTime)
         {
             ToResult(false);
         }
+    }
+
+    //残り時間・目的地までの距離・仲間の人数を、毎フレームHUDに渡す
+    private void UpdateHud()
+    {
+        if (_hud == null) return;
+        _hud.SetTime(_uiTimer.RemainingTime);
+        if (_playerBody != null)
+        {
+            Vector3 d = _purposeData.DestinationPosition - _playerBody.position;
+            d.y = 0.0f;
+            _hud.SetDistance(d.magnitude);
+        }
+        _hud.SetFollowers(GetFollowerCount());
+    }
+
+    //ついてきている人の人数
+    private int GetFollowerCount()
+    {
+        //隊形の席に入っている人数
+        return _formationLeader != null ? _formationLeader.MemberCount : 0;
     }
 
     public void SetPurpose()
@@ -254,17 +272,6 @@ public class GameFlowManager : MonoBehaviour
 
         var playerComp = _player?.GetComponentInChildren<GoalArrow>();
         playerComp?.SetDirection(_purposeData.DestinationPosition);
-
-        InGameUI ingameUI = _ui.GetComponentInChildren<InGameUI>();
-        
-        InGameUI.InGameUIData uiData;
-        uiData.stageNum = 0;
-        uiData.identity = _purposeData.DestinationName;
-        uiData.destination = "Test";
-        ingameUI.SetInGameUIData(uiData);
-
-        InGameUIPopup popup = _ui.GetComponentInChildren<InGameUIPopup>();
-        popup.Play();
     }
 
     public void CollectPurpose()
@@ -286,7 +293,7 @@ public class GameFlowManager : MonoBehaviour
     public void AddAnnoyanceLevel(float val)
     {
         _annoyanceLevel += val;
-        if(_annoyanceLevel > 1.0f)
+        if (_annoyanceLevel > 1.0f)
         {
             _flowState = FlowState.Track;
             _annoyanceLevel = 1.0f;
