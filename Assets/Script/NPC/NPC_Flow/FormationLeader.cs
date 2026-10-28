@@ -64,9 +64,19 @@ public class FormationLeader : MonoBehaviour
     [SerializeField, Range(-1f, 1f)] float joinAlign = 0.5f;
     [Tooltip("リーダーよりこの距離(m)以上前にいる人は参加できない。前を歩いている人が下がってきて後ろの席に入るのを防ぐ(追い抜いた人だけが仲間になる)。0で真横から後ろだけ")]
     [SerializeField] float joinFrontLimit = 0.5f;
+    [Tooltip("隊列のどこかの席からこの距離(m)以内なら、リーダーから遠くても参加できる(隊列の横を歩いている人も入れる)。0で無効")]
+    [SerializeField, Min(0f)] float bodyJoinRadius = 1.5f;
     [Tooltip("あれば、リーダーと同じレーンにいる人だけが参加できる")]
     [SerializeField] FlowLaneAnalyzer analyzer;
     [SerializeField] bool requireSameLane = true;
+
+    [Header("詰め直し(前の席が空いたら後ろの人を前へ)")]
+    [Tooltip("何秒ごとに詰め直すか。1回に1人だけ動かす(一斉に動いてガタガタしないように)")]
+    [SerializeField, Min(0.05f)] float compactInterval = 0.4f;
+    [Tooltip("何列以上前の席が空いていたら移るか。1なら1列前でも移る")]
+    [SerializeField, Min(1)] int compactMinRowGap = 1;
+    [Tooltip("席から遠く離れている人(はぐれかけの人)は動かさない(m)")]
+    [SerializeField, Min(0f)] float compactMaxDistance = 2f;
 
     [Header("通った跡(遅れた仲間がたどる道)")]
     [Tooltip("プレイヤーが通った跡を何mごとに記録するか")]
@@ -93,6 +103,7 @@ public class FormationLeader : MonoBehaviour
     Vector3 prevPos;
     float validateTimer;
     float reverseTimer;
+    float compactTimer;
     Vector3 intendedDir;       // プレイヤーの入力の向き(zero = 入力なし)
     float intendedTimer;       // > 0 の間は入力の向きで隊形の向きを決める
 
@@ -210,6 +221,56 @@ public class FormationLeader : MonoBehaviour
             validateTimer += validateInterval;
             ValidateSlots();
         }
+
+        // ---- 前の席が空いていたら、後ろの人を1人前へ ----
+        compactTimer -= dt;
+        if (compactTimer <= 0f)
+        {
+            compactTimer += compactInterval;
+            CompactSlots();
+        }
+    }
+
+    /// <summary>
+    /// 一番前の空き席を探して、それより後ろの列に座っている人のうち、その席に一番近い人を移す。
+    /// 1回に1人だけなので、少しずつ前に詰まっていく。
+    /// </summary>
+    void CompactSlots()
+    {
+        // 一番前の空き席(slots は前の列から順に並んでいる)
+        int empty = -1;
+        for (int i = 0; i < slots.Count; i++)
+        {
+            if (slots[i].valid && slots[i].member == null) { empty = i; break; }
+        }
+        if (empty < 0) return;
+
+        int emptyRow = slots[empty].row;
+        Vector3 emptyPos = GetSlotPosition(empty);
+
+        int from = -1;
+        float bestD = float.PositiveInfinity;
+        for (int i = 0; i < slots.Count; i++)
+        {
+            Slot s = slots[i];
+            if (s.member == null || s.row < emptyRow + compactMinRowGap) continue;
+
+            // 自分の席から離れている人(押されている・はぐれかけ)は動かさない
+            Vector3 toOwn = GetSlotPosition(i) - s.member.transform.position;
+            toOwn.y = 0f;
+            if (toOwn.magnitude > compactMaxDistance) continue;
+
+            Vector3 d = emptyPos - s.member.transform.position;
+            d.y = 0f;
+            float sq = d.sqrMagnitude;
+            if (sq < bestD) { bestD = sq; from = i; }
+        }
+        if (from < 0) return;
+
+        FormationMember m = slots[from].member;
+        slots[from].member = null;
+        slots[empty].member = m;
+        m.OnSlotChanged(empty);
     }
 
     /// <summary>
@@ -305,7 +366,8 @@ public class FormationLeader : MonoBehaviour
 
         Vector3 d = pos - transform.position;
         d.y = 0f;
-        if (d.magnitude > radius) return false;
+        // リーダーの近く、または隊列の体(どこかの席)の近く
+        if (d.magnitude > radius && !IsNearBody(pos)) return false;
 
         // リーダーより前にいる人は入れない(追い抜いて、横か後ろになってから)
         if (Vector3.Dot(d, Forward) > joinFrontLimit) return false;
@@ -324,6 +386,40 @@ public class FormationLeader : MonoBehaviour
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// 人が座っている席の広がり。length = 一番後ろの人までの距離(m)、halfWidth = 中心線から一番外側の人までの距離(m)。
+    /// 誰もいなければ false
+    /// </summary>
+    public bool GetOccupiedExtent(out float length, out float halfWidth)
+    {
+        length = 0f;
+        halfWidth = 0f;
+        bool any = false;
+        for (int i = 0; i < slots.Count; i++)
+        {
+            if (slots[i].member == null) continue;
+            any = true;
+            length = Mathf.Max(length, -slots[i].local.z);
+            halfWidth = Mathf.Max(halfWidth, Mathf.Abs(slots[i].local.x));
+        }
+        return any;
+    }
+
+    // 隊列のどこかの席(使える席)の近くにいるか
+    bool IsNearBody(Vector3 pos)
+    {
+        if (bodyJoinRadius <= 0f) return false;
+        float r2 = bodyJoinRadius * bodyJoinRadius;
+        for (int i = 0; i < slots.Count; i++)
+        {
+            if (!slots[i].valid) continue;
+            Vector3 d = GetSlotPosition(i) - pos;
+            d.y = 0f;
+            if (d.sqrMagnitude <= r2) return true;
+        }
+        return false;
     }
 
     // ------------------------------------------------------------

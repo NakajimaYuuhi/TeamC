@@ -32,15 +32,27 @@ public class FormationPressure : MonoBehaviour
     [Tooltip("コーンの頂点の位置(マイナスで自分より後ろ)")]
     [SerializeField] float apexOffset = 0f;
 
+    [Header("後ろの帯を隊列に合わせる")]
+    [Tooltip("プレイヤーの FlowEmitter の帯の幅と長さを、仲間が座っている範囲に合わせて広げる(インスペクタの値より小さくはしない)")]
+    [SerializeField] bool fitBandToFormation = true;
+    [Tooltip("一番外側の人のさらに外に、何m余裕を持たせるか")]
+    [SerializeField, Min(0f)] float bandWidthMargin = 0.6f;
+    [Tooltip("一番後ろの人のさらに後ろに、何m余裕を持たせるか")]
+    [SerializeField, Min(0f)] float bandLengthMargin = 1.5f;
+    [Tooltip("帯の大きさが変わる速さ(人数が変わったときに急に変わらないように)")]
+    [SerializeField, Min(0.1f)] float bandFitSpeed = 2f;
+
     [Header("Debug")]
     [SerializeField] bool showDebug = true;
 
     FormationLeader leader;
+    FlowEmitter emitter;
     float lastRate;   // 0～1(デバッグ表示用)
 
     void Awake()
     {
         leader = GetComponent<FormationLeader>();
+        emitter = GetComponent<FlowEmitter>();
     }
 
     void Start()
@@ -53,6 +65,8 @@ public class FormationPressure : MonoBehaviour
 
     void Update()
     {
+        FitBand();
+
         lastRate = 0f;
         if (field == null || leader == null) return;
         if (!leader.IsAdvancing) return;
@@ -73,6 +87,25 @@ public class FormationPressure : MonoBehaviour
         float amount = maxStrength * rate * Time.deltaTime;
 
         field.AddFlowCone(apex, dir, length, halfAngle, spread, amount);
+    }
+
+    // プレイヤーの帯の幅と長さを、仲間が座っている範囲に合わせる
+    void FitBand()
+    {
+        if (!fitBandToFormation || emitter == null || leader == null) return;
+
+        float targetW = 1f, targetL = 1f;
+        if (leader.GetOccupiedExtent(out float length, out float halfWidth))
+        {
+            float baseW = Mathf.Max(emitter.BaseBandHalfWidth, 0.01f);
+            float baseL = Mathf.Max(emitter.BaseBandLength, 0.01f);
+            targetW = Mathf.Max(1f, (halfWidth + bandWidthMargin) / baseW);
+            targetL = Mathf.Max(1f, (length + bandLengthMargin) / baseL);
+        }
+
+        float t = 1f - Mathf.Exp(-bandFitSpeed * Time.deltaTime);
+        emitter.BandWidthScale = Mathf.Lerp(emitter.BandWidthScale, targetW, t);
+        emitter.BandLengthScale = Mathf.Lerp(emitter.BandLengthScale, targetL, t);
     }
 
     void OnDrawGizmos()
