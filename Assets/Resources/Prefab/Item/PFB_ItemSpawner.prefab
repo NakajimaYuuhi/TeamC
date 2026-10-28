@@ -58,5 +58,8 @@ MonoBehaviour:
   - Type: 2
     model: {fileID: 2208420576313365728, guid: 435b5d6bb4578ad4ab410e296e4a15d1, type: 3}
     effect: {fileID: 5344813511865819279, guid: b978b6f185619ac42bc2204fc2151482, type: 3}
+  - Type: 2
+    model: {fileID: 2208420576313365728, guid: 435b5d6bb4578ad4ab410e296e4a15d1, type: 3}
+    effect: {fileID: 5344813511865819279, guid: b978b6f185619ac42bc2204fc2151482, type: 3}
   _isTypeRandom: 1
   _type: 0

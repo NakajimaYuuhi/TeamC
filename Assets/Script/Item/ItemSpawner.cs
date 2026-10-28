@@ -7,6 +7,9 @@ public struct ItemData
     public ItemSkill.SkillType Type;
     public GameObject model;
     public GameObject effect;
+
+    public float Power;
+    public float Range;
 };
 
 

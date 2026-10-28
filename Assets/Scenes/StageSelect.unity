@@ -3196,6 +3196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27c30584af7cf54c97a737ec8851db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageSelectCards
+  _gameData: {fileID: 11400000, guid: 0364facd7094dde478ead4e0ae9f3736, type: 2}
   cardRoot: {fileID: 1891163258}
   focusObjectName: FocusFrame
   spacing: 760

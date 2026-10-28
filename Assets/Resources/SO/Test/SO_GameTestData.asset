@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameData
   StageDatas:
   - {fileID: 11400000, guid: becf7df0d68e14c4aa097957e4f7c908, type: 2}
+  - {fileID: 11400000, guid: 1587487c907b1304abc39851636e2829, type: 2}
+  - {fileID: 11400000, guid: becf7df0d68e14c4aa097957e4f7c908, type: 2}
+  - {fileID: 11400000, guid: becf7df0d68e14c4aa097957e4f7c908, type: 2}
+  - {fileID: 11400000, guid: becf7df0d68e14c4aa097957e4f7c908, type: 2}
   playerTypeDatas:
   - {fileID: 11400000, guid: 0534ebcec49cbc24db206ad53128db68, type: 2}

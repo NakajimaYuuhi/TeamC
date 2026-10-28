@@ -23,7 +23,7 @@ public class CollectPurposePresentation : MonoBehaviour
         float prevCamDis = camCtrl.CurrentZoomDistance;
         while (currentRate < 1.0f)
         {
-            currentRate = Mathf.Clamp01(currentRate + Time.fixedDeltaTime);
+            currentRate = Mathf.Clamp01(currentRate + Time.deltaTime);
             camCtrl.SetZoomDistance(prevCamDis - (prevCamDis * _focusDistance * _focusCurve.Evaluate(currentRate)));
             yield return null;
         }
@@ -31,6 +31,6 @@ public class CollectPurposePresentation : MonoBehaviour
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = 0.02f;
 
-        CrowdSceneTransition.Instance.LoadScene("Result");
+        UIChaosGatherTransition.Instance.LoadScene("Result");
     }
 }

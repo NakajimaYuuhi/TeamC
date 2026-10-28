@@ -7,6 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 //ステージ選択「カード」の動きだけを担当する
 //・Card Root の直下に手で置いたカードを、上から順に左→右の並びとして扱う
@@ -17,6 +18,9 @@ using UnityEngine.InputSystem;
 public class StageSelectCards : MonoBehaviour
 {
     [System.Serializable] public class IndexEvent : UnityEvent<int> { }
+
+    [SerializeField, InspectorName("ゲーム保持データ")]
+    private GameData _gameData;
 
     [Header("カード")]
     [Tooltip("カードを並べた親")]
@@ -130,6 +134,11 @@ public class StageSelectCards : MonoBehaviour
     public void Next() => Move(1);
     public void Prev() => Move(-1);
 
+    public void Quit()
+    {
+        UIChaosGatherTransition.Instance.LoadScene("Title");
+    }
+
     //番号を指定して選ぶ
     public void Select(int index)
     {
@@ -157,6 +166,8 @@ public class StageSelectCards : MonoBehaviour
                 Debug.Log($"[ステージセレクト] 決定: {selected} ({card.rect.name})");
                 onDecided.Invoke(selected);
             });
+
+        UIChaosGatherTransition.Instance.LoadScene("PlayTest");
     }
 
     public void Back()
@@ -206,6 +217,7 @@ public class StageSelectCards : MonoBehaviour
             return;
         }
         Select(next);
+        _gameData.ChangeSelectNo(dir);
     }
 
     //ステージ。選択中を中央に、前後を左右へ並べる
