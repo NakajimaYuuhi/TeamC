@@ -41,6 +41,11 @@ public class NPC_FlowLocomotion : MonoBehaviour
     [SerializeField, Min(0f)] float counterWeight = 3f;
     // 今の方向を保とうとする強さ(左右に迷ってフラフラするのを防ぐ)
     [SerializeField, Min(0f)] float stickiness = 0.2f;
+    // 正面の危険度がこれ未満なら、流れを探さずにまっすぐ進む(0にすると常に流れを探す=前の動き)
+    [SerializeField, Range(0f, 1f)] float calmThreshold = 0.15f;
+    // 逆流を避けるとき、どっち側に避けやすくするか(+で右、-で左、0で偏りなし)
+    // 全員が同じルールで避けるので、向かい合った人同士が反対側に分かれてすれ違える
+    [SerializeField, Range(-1f, 1f)] float passSideBias = 0.3f;
 
     [Header("動き")]
     // 方向転換のなめらかさ(大きいほど素早く曲がる)
@@ -235,6 +240,16 @@ public class NPC_FlowLocomotion : MonoBehaviour
         float angleRange = Mathf.Lerp(searchAngle, wideSearchAngle, danger);
         debugDanger = danger;
 
+        // 正面に逆流がなければ、まっすぐ進む(候補は探さない)
+        // → 自分や周りの人が書いた流れに引っ張られてくねくねするのを防ぐ
+        if (danger < calmThreshold)
+        {
+            targetDir = desired;
+            debugDirs = null; // Gizmoの候補表示を消す
+            UpdateSpeedScale(maxStrength);
+            return;
+        }
+
         if (debugDirs == null || debugDirs.Length != candidateCount)
         {
             debugDirs = new Vector3[candidateCount];
@@ -242,6 +257,7 @@ public class NPC_FlowLocomotion : MonoBehaviour
         }
 
         // ---- 候補の採点 ----
+        Vector3 desiredRight = Vector3.Cross(Vector3.up, desired);
         float bestScore = float.NegativeInfinity;
         Vector3 bestDir = desired;
 
@@ -263,11 +279,13 @@ public class NPC_FlowLocomotion : MonoBehaviour
 
             float goal = Vector3.Dot(dir, desired);  // 進みたい方向への近さ
             float keep = Vector3.Dot(dir, targetDir); // 今の方向を保つ
+            float side = Vector3.Dot(dir, desiredRight); // 右に避ける方向ほど +
 
             float score = goal * goalWeight
                         + follow * flowWeight
                         - counter * counter * counterWeight
-                        + keep * stickiness;
+                        + keep * stickiness
+                        + side * passSideBias * danger; // 逆流が強いときほど決まった側に避ける
 
             debugDirs[i] = dir;
             debugScores[i] = score;
@@ -280,8 +298,12 @@ public class NPC_FlowLocomotion : MonoBehaviour
         }
 
         targetDir = bestDir;
+        UpdateSpeedScale(maxStrength);
+    }
 
-        // 今いる場所の流れに乗っていれば速く、逆らっていれば遅く
+    // 今いる場所の流れに乗っていれば速く、逆らっていれば遅く
+    void UpdateSpeedScale(float maxStrength)
+    {
         Vector2 here = field.Sample(transform.position);
         float hereAlign = Vector2.Dot(here, ToV2(targetDir)) / maxStrength;
         speedScale = 1f + Mathf.Clamp(hereAlign, -0.5f, 1f) * flowSpeedBonus;

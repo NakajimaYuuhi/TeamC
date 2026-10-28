@@ -253,7 +253,7 @@ MonoBehaviour:
   - {x: -5, y: 0, z: 0}
   - {x: 0, y: 0, z: 5}
   _currentTargetIndex: 0
-  _browseSpeed: 8
+  _browseSpeed: 2
   _arrivalDistance: 1
   _node:
     nodeID: 0
@@ -263,7 +263,6 @@ MonoBehaviour:
   _defaultEdgeWidth: 2
   _lateralGain: 1
   _maxLateralCorrection: 0.5
-  _offsetAdaptRate: 0
   _maxOffsetRate: 0.9
   _initialStateType: 2
   _currentStateType: 0
