@@ -12,9 +12,10 @@ public class ItemSkill : MonoBehaviour
 
     private SkillType _skillType;
 
-    private void OnTriggerEnter(Collider other)
+   
+    private void OnTriggerStay(Collider other)
     {
-        if (other.tag != "NPC") return;
+        if (!other.CompareTag("NPC")) return;
 
         switch (_skillType)
         {
@@ -25,6 +26,29 @@ public class ItemSkill : MonoBehaviour
             case SkillType.Avoid:
                 break;
         }
+    }
+
+    /// <summary>
+    /// 敵がプレイヤーと同じ目標地点に行くようにする
+    /// </summary>
+    private void ExecuteToPurpose()
+    {
+
+    }
+
+    /// <summary>
+    /// 敵がアイテムの方に近寄ってくる
+    /// </summary>
+    private void ExecuteAttract()
+    {
+
+    }
+
+    /// <summary>
+    /// 敵がアイテムを避けて進む
+    /// </summary>
+    private void ExecureAvoid()
+    {
 
     }
 }

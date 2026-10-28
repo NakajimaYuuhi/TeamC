@@ -7,7 +7,6 @@ TagManager:
   - NPC
   - Item
   - Ground
-  - Groud
   - AlphaWall
   layers:
   - Default
