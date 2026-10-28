@@ -361,6 +361,7 @@ MonoBehaviour:
   thinkInterval: 0.2
   wideSearchAngle: 90
   counterSensitivity: 2
+  supportWeight: 1
   counterWeight: 3
   stickiness: 0.2
   calmThreshold: 0.15

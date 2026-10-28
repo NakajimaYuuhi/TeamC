@@ -34,6 +34,12 @@ public class FormationLeader : MonoBehaviour
     [SerializeField, Min(0.1f)] float turnSpeed = 4f;
     [Tooltip("これより遅いときは向きを更新しない(止まったときに隊形がくるくる回らないように)")]
     [SerializeField, Min(0f)] float minMoveSpeed = 0.2f;
+    [Tooltip("今の向きから大きく逆向き(この dot 未満)への動きは「押し返された」とみなす")]
+    [SerializeField, Range(-1f, 0f)] float reverseDot = -0.2f;
+    [Tooltip("逆向きの動きがこの秒数続いたら、本当に振り返ったとみなして向きを変える。それまでは向きを変えない")]
+    [SerializeField, Min(0f)] float reverseHoldTime = 0.6f;
+    [Tooltip("SetIntendedDirection がこの秒数呼ばれなかったら、動いた向きで決める方式に戻る")]
+    [SerializeField, Min(0f)] float intendedTimeout = 0.2f;
 
     [Header("参加条件")]
     [Tooltip("リーダーからこの距離以内の人だけが参加できる")]
@@ -59,6 +65,9 @@ public class FormationLeader : MonoBehaviour
     readonly List<FormationMember> lostMembers = new List<FormationMember>();
     Vector3 prevPos;
     float validateTimer;
+    float reverseTimer;
+    Vector3 intendedDir;       // プレイヤーの入力の向き(zero = 入力なし)
+    float intendedTimer;       // > 0 の間は入力の向きで隊形の向きを決める
 
     /// <summary>なめらかにしたリーダーの速度(メンバーはこれに合わせて動く)</summary>
     public Vector3 Velocity { get; private set; }
@@ -109,10 +118,35 @@ public class FormationLeader : MonoBehaviour
         // フレームごとのブレをならす
         Velocity = Vector3.Lerp(Velocity, v, 1f - Mathf.Exp(-10f * dt));
 
-        if (Velocity.magnitude > minMoveSpeed)
+        intendedTimer -= dt;
+        if (intendedTimer > 0f)
         {
-            float t = 1f - Mathf.Exp(-turnSpeed * dt);
-            Forward = Vector3.Slerp(Forward, Velocity.normalized, t).normalized;
+            // 入力の向きをもらえているとき:隊形の向きは入力だけで決める
+            // (人混みに押し流されても、前に進もうとしている限り隊形は前を向く)
+            reverseTimer = 0f;
+            if (intendedDir != Vector3.zero)
+            {
+                float t = 1f - Mathf.Exp(-turnSpeed * dt);
+                Forward = Vector3.Slerp(Forward, intendedDir, t).normalized;
+            }
+        }
+        else if (Velocity.magnitude > minMoveSpeed)
+        {
+            // 今の向きと大きく逆向きの動きは、人混みに押し返されただけかもしれない。
+            // しばらく続いたとき(自分で振り返ったとき)だけ向きを変える。
+            // → 押し返された瞬間に隊形が後ろを向いて、向こうから来た人が仲間に入るのを防ぐ
+            bool reversing = Vector3.Dot(Velocity.normalized, Forward) < reverseDot;
+            reverseTimer = reversing ? reverseTimer + dt : 0f;
+
+            if (!reversing || reverseTimer > reverseHoldTime)
+            {
+                float t = 1f - Mathf.Exp(-turnSpeed * dt);
+                Forward = Vector3.Slerp(Forward, Velocity.normalized, t).normalized;
+            }
+        }
+        else
+        {
+            reverseTimer = 0f;
         }
 
         // ---- 席が壁にめり込んでないか ----
@@ -122,6 +156,18 @@ public class FormationLeader : MonoBehaviour
             validateTimer += validateInterval;
             ValidateSlots();
         }
+    }
+
+    /// <summary>
+    /// プレイヤーの移動スクリプトから毎フレーム呼ぶ:入力の向き(ワールド座標。Yは無視)。
+    /// 入力がないときは Vector3.zero を渡す(隊形の向きはそのまま)。
+    /// 呼ばれている間は、実際に動いた向きではなくこの向きで隊形の向きを決める。
+    /// </summary>
+    public void SetIntendedDirection(Vector3 worldDir)
+    {
+        worldDir.y = 0f;
+        intendedDir = worldDir.sqrMagnitude > 1e-4f ? worldDir.normalized : Vector3.zero;
+        intendedTimer = intendedTimeout;
     }
 
     // ------------------------------------------------------------
