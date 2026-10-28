@@ -13,6 +13,8 @@ public class NPCSpawner : MonoBehaviour
     // 最初に向かうノード
     [SerializeField] private int _initialSpawnIndex;
     [SerializeField] private NodeEdgeGenerator _nodeedgeGenerator;
+    // 最終目的地のノード(-1 なら決めない=分岐ではランダム)
+    [SerializeField] private int _goalNodeID = -1;
 
     [Header("スポーン位置のばらつき")]
     // エッジの幅のどこまでを使うか(1でエッジの端まで)
@@ -132,13 +134,14 @@ public class NPCSpawner : MonoBehaviour
                 // 先にノードデータを渡してから、向かうノードを設定する
                 // (SetNode の中で、今の位置から中心からのズレを測る)
                 npcController.SetNodeGenerator(_nodeedgeGenerator);
+                npcController.SetGoal(_goalNodeID);
                 npcController.SetNode(targetNode);
             }
         }
     }
 
     // スポーン地点がどのエッジ上にあるかを調べて、その向きと幅を返す
-    // (NPC_Controller.SetNode と同じく、向かうノードの隣のうち一番近いエッジを使う)
+    // (NPC_Controller.SetNode と同じく、向かうノードに入ってくるエッジのうち一番近いものを使う)
     private void GetSpawnFrame(Transform spawnPoint, bool hasNode, Node_Edge_Data.Node targetNode,
                                out Vector3 forward, out Vector3 right, out float halfWidth)
     {
@@ -146,22 +149,10 @@ public class NPCSpawner : MonoBehaviour
         right = Flat(spawnPoint.right).normalized;
         halfWidth = _fallbackWidth * 0.5f;
 
-        if (!hasNode || targetNode.adjacents == null) return;
+        if (!hasNode) return;
 
-        Vector3 p = Flat(spawnPoint.position);
         Vector3 b = Flat(targetNode.position);
-        float bestDist = float.PositiveInfinity;
-        int bestFrom = -1;
-        foreach (int adjID in targetNode.adjacents)
-        {
-            Vector3 a = Flat(_nodeedgeGenerator.GetNode(adjID).position);
-            float d = DistanceToSegment(p, a, b);
-            if (d < bestDist)
-            {
-                bestDist = d;
-                bestFrom = adjID;
-            }
-        }
+        int bestFrom = _nodeedgeGenerator.FindNearestIncomingNode(targetNode.NodeID, spawnPoint.position);
         if (bestFrom == -1) return;
 
         Vector3 axis = b - Flat(_nodeedgeGenerator.GetNode(bestFrom).position);

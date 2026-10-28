@@ -57,6 +57,12 @@ public class FlowEmitter : MonoBehaviour
     public float ConeScale { get; set; } = 1f;
     /// <summary>帯の幅に掛ける倍率。隊形の幅に合わせる、などを外から入れる用</summary>
     public float BandWidthScale { get; set; } = 1f;
+    /// <summary>帯の長さに掛ける倍率。隊列の長さに合わせる、などを外から入れる用</summary>
+    public float BandLengthScale { get; set; } = 1f;
+    /// <summary>インスペクタで設定した帯の片側の幅(倍率を掛ける前)</summary>
+    public float BaseBandHalfWidth => bandHalfWidth;
+    /// <summary>インスペクタで設定した帯の長さ(倍率を掛ける前)</summary>
+    public float BaseBandLength => bandLength;
 
     Vector3 prevPos;
     Vector2 shapeDir;     // なめらかにした向き(コーンと帯で共通)
@@ -126,7 +132,7 @@ public class FlowEmitter : MonoBehaviour
         // ---- 後方の帯 ----
         if (bandEnabled)
         {
-            field.AddFlowBand(transform.position, shapeDir, bandLength, bandHalfWidth * BandWidthScale,
+            field.AddFlowBand(transform.position, shapeDir, bandLength * BandLengthScale, bandHalfWidth * BandWidthScale,
                               moveLen * bandGain * shapeScale);
         }
     }
@@ -172,7 +178,7 @@ public class FlowEmitter : MonoBehaviour
         {
             Vector3 side = new Vector3(-fwd.z, 0f, fwd.x) * (bandHalfWidth * BandWidthScale);
             Vector3 s = transform.position + up;
-            Vector3 e = s - fwd * bandLength;
+            Vector3 e = s - fwd * (bandLength * BandLengthScale);
 
             Gizmos.color = Color.yellow;
             Gizmos.DrawLine(s + side, e + side);
