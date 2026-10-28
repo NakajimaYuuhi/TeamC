@@ -41,6 +41,13 @@ public class GameHudTester : MonoBehaviour
 
     void Start()
     {
+        //本番のゲーム(GameFlowManager)がいるときは、テストの値で上書きしないよう自分を止める
+        if (FindFirstObjectByType<GameFlowManager>() != null)
+        {
+            Debug.Log("[HUD テスト] GameFlowManager があるので GameHudTester を止めました");
+            enabled = false;
+            return;
+        }
         if (hud) hud.SetItems(startItems);
     }
 

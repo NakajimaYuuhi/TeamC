@@ -2326,6 +2326,14 @@ PrefabInstance:
       value: PFB_ItemSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _isTypeRandom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
       propertyPath: _skills.Array.size
       value: 3
       objectReference: {fileID: 0}
