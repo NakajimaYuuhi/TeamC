@@ -117,6 +117,9 @@ public class NPC_FlowLocomotion : MonoBehaviour
 
     public void ClearIdleFacing() => hasIdleFacing = false;
 
+    /// <summary>本人が行きたい向き(止まっているときは zero)。押されて動いている向きとは別</summary>
+    public Vector3 DesiredDirection => IsStopped ? Vector3.zero : desiredDir;
+
     public float MoveSpeed
     {
         get => moveSpeed;
