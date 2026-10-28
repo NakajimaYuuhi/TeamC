@@ -4,10 +4,10 @@ using UnityEngine;
 public class ItemFloat : MonoBehaviour
 {
     [SerializeField, Tooltip("“®‚«‚Ì‘¬“x")]
-    private float _floatSpeed = 0.1f;
+    private float _floatSpeed = 2.0f;
 
     [SerializeField, Tooltip("‰ñ“]‘¬“x")]
-    private float _rotSpeed = 5.0f;
+    private float _rotSpeed = 20.0f;
 
     [SerializeField, Tooltip("“®‚«‚Ì‘å‚«‚³")]
     private float _floatMagnitude = 0.2f;
@@ -28,13 +28,13 @@ public class ItemFloat : MonoBehaviour
     private Vector3 _basePos;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Initialize(GameObject effect)
     {
         _currentRate = 0.0f;
         _currentRotation = 0.0f;
         _currentLifeTime = 0.0f;
         _basePos = transform.position;
-        _effectObj = Instantiate(_effect, transform);
+        _effectObj = Instantiate(effect, transform);
     }
 
     // Update is called once per frame
@@ -42,7 +42,7 @@ public class ItemFloat : MonoBehaviour
     {
         _currentLifeTime += Time.deltaTime;
         if (_currentLifeTime > _lifeTime)
-            Destroy(gameObject);
+            Destroy(gameObject.transform.parent.gameObject);
 
         _currentRate += Time.fixedDeltaTime * _floatSpeed;
         _currentRotation += Time.deltaTime * _rotSpeed;

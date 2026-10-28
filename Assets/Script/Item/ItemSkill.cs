@@ -8,13 +8,17 @@ public class ItemSkill : MonoBehaviour
         ToPurpose,
         Attract,
         Avoid,
-
+        TypeCount,
     };
 
     [SerializeField]
     private SkillType _skillType = SkillType.ToPurpose;
-    public SkillType Type => _skillType;
-   
+    public void SetType(SkillType type)
+    {
+        _skillType = type;
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("NPC")) return;

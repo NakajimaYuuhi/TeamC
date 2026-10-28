@@ -1,8 +1,12 @@
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public class ItemExecute : MonoBehaviour
 {
+    [SerializeField, InspectorName("拾う前のエフェクト")]
+    private GameObject _popEffect;
+
     [SerializeField, Tooltip("設置判定")]
     private GameObject _executeRangeObj;
 
@@ -12,15 +16,13 @@ public class ItemExecute : MonoBehaviour
     [SerializeField]
     private GameObject _breakEffect;
 
-    [SerializeField]
-    private List<GameObject> _skillEffects = new List<GameObject>();
-
     [SerializeField, Tooltip("効果の発動時間")]
     private float _executeTime = 2.0f;
 
     [SerializeField]
     private float _executeSize = 2.0f;
 
+    private ItemSkill.SkillType _type;
     private float _currentExecuteTime;
     private bool _isExecute;
     private bool _isThrow;
@@ -55,6 +57,14 @@ public class ItemExecute : MonoBehaviour
         }
     }
 
+    public void Initialize(ItemData data)
+    {
+        _type = data.Type;
+        _groundEffect = data.effect;
+        var itemFloat = Instantiate(data.model, transform).AddComponent<ItemFloat>();
+        itemFloat.Initialize(_popEffect);
+    }
+
     public void OnThrown()
     {
         _isThrow = true;
@@ -71,6 +81,7 @@ public class ItemExecute : MonoBehaviour
         _currentExecuteTime = 0.0f;
         if (_currentEffect != null) Destroy(_currentEffect);
         _executeRangeObj?.SetActive(true);
+        _executeRangeObj.GetComponent<ItemSkill>().SetType(_type);
         if (_groundEffect != null)
         {
             _currentEffect = Instantiate(_groundEffect, transform.position, Quaternion.identity);
