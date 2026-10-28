@@ -282,7 +282,7 @@ MonoBehaviour:
   radius: 1.2
   gain: 1
   amplify: 5
-  counterSensitivity: 3
+  counterSensitivity: 1
   shapeIgnoresCounterFlow: 0
   shapeTurnSpeed: 8
   coneEnabled: 0
@@ -334,6 +334,8 @@ MonoBehaviour:
   breakTime: 1
   rejoinCooldown: 2
   joinCheckInterval: 0.25
+  leaveAlign: 0.2
+  leaveTime: 0.5
   showDebug: 0
 --- !u!114 &2417075027649358035
 MonoBehaviour:
