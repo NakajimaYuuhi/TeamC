@@ -64,6 +64,7 @@ public class NPC_Controller : MonoBehaviour
 
     // 今歩いているエッジ(位置で持つ。始点がノードでないときもある)
     private bool _hasEdge;
+    private bool _hasNode;   // SetNode されたことがあるか
     private Vector3 _edgeFrom;
     private Vector3 _edgeTo;
     private float _edgeHalfWidth;
@@ -113,6 +114,13 @@ public class NPC_Controller : MonoBehaviour
 
     void FixedUpdate()
     {
+        // 割り込みの時間切れ → 元の目的地に戻す
+        if (_isRedirected && _redirectTimer > 0f)
+        {
+            _redirectTimer -= Time.fixedDeltaTime;
+            if (_redirectTimer <= 0f) EndRedirect();
+        }
+
         // ステートマシンの更新
         _NPCState.OnUpdate();
     }
@@ -277,28 +285,18 @@ public class NPC_Controller : MonoBehaviour
     }
 
     // 今向かっているノードを設定する(スポナーなどから)。
-    // 「どこから来たか」は、隣のノードのうち、自分がそのエッジ上に一番近いものとみなす。
+    // 「どこから来たか」は、このノードに入ってくるエッジのうち、自分が一番近いものとみなす。
     // 見つからなければ、今の位置からノードへ向かう仮のエッジを作る。
     public void SetNode(Node_Edge_Data.Node node)
     {
         _node = node;
+        _hasNode = true;
         EnsureGenerator();
 
-        int bestFrom = -1;
-        float bestDist = float.PositiveInfinity;
-        if (_nodeGenerator != null && node.adjacents != null)
-        {
-            foreach (int adjID in node.adjacents)
-            {
-                Vector3 a = _nodeGenerator.GetNode(adjID).position;
-                float d = DistanceToSegment(Flat(transform.position), Flat(a), Flat(node.position));
-                if (d < bestDist)
-                {
-                    bestDist = d;
-                    bestFrom = adjID;
-                }
-            }
-        }
+        // node に入ってくるエッジのうち、自分が一番近いエッジの始点(一方通行にも対応)
+        int bestFrom = _nodeGenerator != null
+            ? _nodeGenerator.FindNearestIncomingNode(node.NodeID, transform.position)
+            : -1;
 
         if (bestFrom != -1)
         {
@@ -325,6 +323,15 @@ public class NPC_Controller : MonoBehaviour
     // 次のノードに進む(直前のノードにはなるべく戻らない)
     public void AdvanceToNextNode()
     {
+        // 最終目的地に着いた → 止まる
+        if (_goalNodeID >= 0 && _hasNode && _node.NodeID == _goalNodeID)
+        {
+            _hasEdge = false;
+            GoalReached?.Invoke(this);
+            if (_destroyOnGoalReached) Destroy(gameObject);
+            return;
+        }
+
         if (_node.adjacents == null || _node.adjacents.Count == 0)
         {
             // 行き止まり:止まる
@@ -334,6 +341,13 @@ public class NPC_Controller : MonoBehaviour
 
         int count = _node.adjacents.Count;
         int nextNodeID;
+
+        // 最終目的地があれば、そこへの一番短い経路の次のノードへ
+        if (_goalNodeID >= 0 && Route(_node.NodeID, _goalNodeID, out int hop, out _) && hop >= 0)
+        {
+            AdvanceTo(hop);
+            return;
+        }
 
         // 直前のノードが隣接リストに含まれていて、ほかに選択肢がある場合
         int prevIndex = (_previousNodeID != -1 && count > 1)
@@ -354,6 +368,12 @@ public class NPC_Controller : MonoBehaviour
             nextNodeID = _node.adjacents[Random.Range(0, count)];
         }
 
+        AdvanceTo(nextNodeID);
+    }
+
+    // 今のノードから nextNodeID へのエッジを歩き始める
+    private void AdvanceTo(int nextNodeID)
+    {
         EnsureGenerator();
         if (_nodeGenerator == null)
         {
@@ -366,6 +386,110 @@ public class NPC_Controller : MonoBehaviour
         _node = next;
         // ズレの割合はそのまま引き継ぐ(右寄りの人は次のエッジでも右寄り)
         BeginEdge(from, next, measureOffset: false);
+    }
+
+    // ===== 最終目的地(経路) =====
+    //
+    // 最終目的地を決めると、各ノードで「そこへの一番短い経路」の次のノードを選ぶ(決めないときは今までどおりランダム)。
+    // 最終目的地に着いたら止まって GoalReached を呼ぶ。
+
+    private int _goalNodeID = -1;
+
+    [Header("最終目的地")]
+    // オン:最終目的地に着いたら消える / オフ:その場で止まる(初期値)
+    [SerializeField] private bool _destroyOnGoalReached = false;
+
+    /// <summary>最終目的地のノードID(-1 = なし。ランダムに歩く)</summary>
+    public int GoalNodeID => _goalNodeID;
+    /// <summary>最終目的地に着いたときに呼ばれる</summary>
+    public event System.Action<NPC_Controller> GoalReached;
+
+    /// <summary>最終目的地を決める(ずっと有効。割り込みではない)</summary>
+    public void SetGoal(int goalNodeID) => _goalNodeID = goalNodeID;
+    /// <summary>最終目的地をなくす(ランダムに歩く)</summary>
+    public void ClearGoal() => _goalNodeID = -1;
+
+    /// <summary>
+    /// 今いるエッジの両端のうち、最終目的地に早く着ける方へ向かう(必要ならその場でUターン)。
+    /// 双方向のエッジで使う。
+    /// </summary>
+    private void HeadTowardGoal()
+    {
+        EnsureGenerator();
+        if (_nodeGenerator == null || _goalNodeID < 0) return;
+
+        int best = -1;
+        float bestLen = float.PositiveInfinity;
+
+        // 候補:今向かっているノードと、来た方のノード
+        int[] candidates = { _hasNode ? _node.NodeID : -1, _previousNodeID };
+        foreach (int c in candidates)
+        {
+            if (c < 0) continue;
+            float toC = Vector3.Distance(Flat(transform.position), Flat(_nodeGenerator.GetNode(c).position));
+            float rest;
+            if (c == _goalNodeID) rest = 0f;
+            else if (!Route(c, _goalNodeID, out _, out rest)) continue;
+
+            if (toC + rest < bestLen)
+            {
+                bestLen = toC + rest;
+                best = c;
+            }
+        }
+
+        // どこにもつながっていなければ、目的地に直接向かう(仮のエッジ)
+        SetNode(_nodeGenerator.GetNode(best >= 0 ? best : _goalNodeID));
+    }
+
+    /// <summary>
+    /// start から goal への一番短い経路(エッジの向きを守る)。
+    /// firstHop:start の次に進むノード / length:経路の長さ(m)。たどり着けなければ false
+    /// </summary>
+    private bool Route(int start, int goal, out int firstHop, out float length)
+    {
+        firstHop = -1;
+        length = 0f;
+        EnsureGenerator();
+        if (_nodeGenerator == null) return false;
+        if (start == goal) return true;
+
+        var dist = new System.Collections.Generic.Dictionary<int, float>();
+        var first = new System.Collections.Generic.Dictionary<int, int>();
+        var open = new System.Collections.Generic.List<int>();
+        dist[start] = 0f;
+        open.Add(start);
+
+        while (open.Count > 0)
+        {
+            // 一番近いノードを取り出す(ノード数が少ないので単純な探し方で十分)
+            int bi = 0;
+            for (int i = 1; i < open.Count; i++)
+                if (dist[open[i]] < dist[open[bi]]) bi = i;
+            int u = open[bi];
+            open.RemoveAt(bi);
+
+            if (u == goal)
+            {
+                firstHop = first[u];
+                length = dist[u];
+                return true;
+            }
+
+            Node_Edge_Data.Node nu = _nodeGenerator.GetNode(u);
+            if (nu.adjacents == null) continue;
+            foreach (int v in nu.adjacents)
+            {
+                float nd = dist[u] + Vector3.Distance(nu.position, _nodeGenerator.GetNode(v).position);
+                if (!dist.TryGetValue(v, out float dv) || nd < dv)
+                {
+                    dist[v] = nd;
+                    first[v] = (u == start) ? v : first[u];
+                    if (!open.Contains(v)) open.Add(v);
+                }
+            }
+        }
+        return false;
     }
 
     // from → to のエッジを歩き始める
@@ -398,6 +522,130 @@ public class NPC_Controller : MonoBehaviour
     private void EnsureGenerator()
     {
         if (_nodeGenerator == null) _nodeGenerator = FindAnyObjectByType<NodeEdgeGenerator>();
+    }
+
+    // ===== 割り込み(目的地の一時変更) =====
+    //
+    // アイテムなどで目的地を一時的に変えて、あとで元に戻すための関数。
+    //  - Begin～ を呼ぶと、元の目的地(状態・ノードデータ・ノード)を保存してから目的地を変える
+    //  - 割り込み中にもう一度 Begin～ を呼んでも、保存されるのは最初の(本来の)目的地のまま
+    //  - EndRedirect で、今いる位置から本来の目的地へのエッジを作り直して戻る
+    //  - duration > 0 なら、その秒数後に自動で EndRedirect する。0以下なら EndRedirect を呼ぶまでそのまま
+
+    private struct RouteSnapshot
+    {
+        public NPCStateType state;
+        public NodeEdgeGenerator generator;
+        public Node_Edge_Data.Node node;
+        public bool hasNode;
+        public int goal;
+    }
+
+    private bool _isRedirected;
+    private RouteSnapshot _savedRoute;
+    private float _redirectTimer = -1f;
+
+    /// <summary>割り込みで目的地が変わっている途中か</summary>
+    public bool IsRedirected => _isRedirected;
+    /// <summary>自動で戻るまでの残り秒数(自動で戻らないときは -1 以下)</summary>
+    public float RedirectTimeLeft => _isRedirected ? _redirectTimer : -1f;
+    /// <summary>割り込みが終わって元の目的地に戻ったときに呼ばれる</summary>
+    public event System.Action<NPC_Controller> RedirectEnded;
+
+    /// <summary>
+    /// 目的地を一時的に別のノードに変える。
+    /// generator:そのノードを持っているノードデータ(逆向き用のSOなど)。targetNodeID:向かうノード。
+    /// duration:何秒後に元に戻すか(0以下なら EndRedirect を呼ぶまで)。
+    /// </summary>
+    public void BeginRedirect(NodeEdgeGenerator generator, int targetNodeID, float duration = -1f)
+    {
+        if (generator == null) return;
+        SaveRouteIfNeeded();
+
+        _nodeGenerator = generator;
+        SetState(NPCStateType.Browsing_BasedOnNode);
+        SetNode(generator.GetNode(targetNodeID));
+        _redirectTimer = duration;
+    }
+
+    /// <summary>
+    /// 最終目的地を一時的に変える(双方向のSOで使う)。
+    /// 今いるエッジの両端のうち、新しい目的地に早く着ける方へ向かう(反対方向なら、その場でUターン)。
+    /// generator:ノードデータ(普通は今と同じもの。null なら今のまま)。duration:何秒後に元に戻すか(0以下なら EndRedirect まで)。
+    /// </summary>
+    public void BeginRedirectToGoal(NodeEdgeGenerator generator, int goalNodeID, float duration = -1f)
+    {
+        SaveRouteIfNeeded();
+        if (generator != null) _nodeGenerator = generator;
+        _goalNodeID = goalNodeID;
+        SetState(NPCStateType.Browsing_BasedOnNode);
+        HeadTowardGoal();
+        _redirectTimer = duration;
+    }
+
+    /// <summary>
+    /// 今歩いているエッジの上でUターンして、来た方のノードへ向かう(横の位置は左右を入れ替えて保つ)。
+    /// ※ 来た方のノードに着いたあとは、今のノードデータの隣接ノードへ進む。
+    ///    一方通行のSOだと、また元の向きに戻ってしまうので、続けて逆向きに進ませたいなら BeginRedirect で逆向き用のSOを渡す。
+    /// </summary>
+    public void BeginReverse(float duration = -1f)
+    {
+        if (!_hasEdge) return;
+        SaveRouteIfNeeded();
+
+        Vector3 from = _edgeFrom;
+        _edgeFrom = _edgeTo;
+        _edgeTo = from;
+        _offsetRate = -_offsetRate;   // 向きが逆になると左右も逆になる
+
+        EnsureGenerator();
+        if (_previousNodeID >= 0 && _nodeGenerator != null)
+        {
+            int newTarget = _previousNodeID;
+            _previousNodeID = _node.NodeID;
+            _node = _nodeGenerator.GetNode(newTarget);
+        }
+        else
+        {
+            // 仮のエッジ(始点がノードでない)だった → 戻った先で止まる
+            _previousNodeID = -1;
+            _node = default;
+        }
+
+        SetState(NPCStateType.Browsing_BasedOnNode);
+        _redirectTimer = duration;
+    }
+
+    /// <summary>割り込みを終わらせて、本来の目的地に戻す(割り込み中でなければ何もしない)</summary>
+    public void EndRedirect()
+    {
+        if (!_isRedirected) return;
+        _isRedirected = false;
+        _redirectTimer = -1f;
+
+        RouteSnapshot r = _savedRoute;
+        if (r.generator != null) _nodeGenerator = r.generator;
+        _goalNodeID = r.goal;
+        SetState(r.state);
+        // 今いる位置から本来の目的地へのエッジを作り直す(横のズレも測り直す)
+        if (r.goal >= 0) HeadTowardGoal();      // 最終目的地があれば、早く着ける方へ(必要ならUターン)
+        else if (r.hasNode) SetNode(r.node);
+
+        RedirectEnded?.Invoke(this);
+    }
+
+    private void SaveRouteIfNeeded()
+    {
+        if (_isRedirected) return;   // すでに割り込み中なら、本来の目的地を保ったまま
+        _savedRoute = new RouteSnapshot
+        {
+            state = _currentStateType,
+            generator = _nodeGenerator,
+            node = _node,
+            hasNode = _hasNode,
+            goal = _goalNodeID,
+        };
+        _isRedirected = true;
     }
 
     // 古い呼び出しとの互換用
