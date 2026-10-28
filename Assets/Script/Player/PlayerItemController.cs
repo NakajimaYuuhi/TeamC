@@ -94,6 +94,10 @@ public class PlayerItemController : MonoBehaviour
     [SerializeField] string cancelItemActionName = "CancelItem";
     [Tooltip("落下地点の移動")]
     [SerializeField] string aimMoveActionName = "Move";
+    [Tooltip("アイテムモード中に次に投げるアイテムを切り替える(マウスホイール)")]
+    [SerializeField] string switchItemActionName = "SwitchItem";
+    [Tooltip("切り替えたあと、次に切り替えられるまでの秒数(ホイールの回しすぎ防止)")]
+    [SerializeField] float switchInterval = 0.12f;
 
     public Mode CurrentMode { get; private set; } = Mode.Normal;                 //現在のモード
     public IReadOnlyList<GameObject> Items => items;                             //所持アイテム一覧 外部からは読み取りのみ
@@ -113,6 +117,8 @@ public class PlayerItemController : MonoBehaviour
     Vector3 launchVelocity;       //現在の照準での初速
     InputAction useItemAction;    //アイテムモード開始・投擲
     InputAction cancelItemAction; //アイテムモードのキャンセル
+    InputAction switchItemAction; //アイテムの切り替え
+    float nextSwitchTime;         //次に切り替えられる時刻
     InputAction aimMoveAction;    //落下地点の移動
 
     //初期化 参照の準備
@@ -144,6 +150,7 @@ public class PlayerItemController : MonoBehaviour
         }
         useItemAction = FindAction(useItemActionName);
         cancelItemAction = FindAction(cancelItemActionName);
+        switchItemAction = FindAction(switchItemActionName);
         aimMoveAction = FindAction(aimMoveActionName);
     }
 
@@ -235,13 +242,15 @@ public class PlayerItemController : MonoBehaviour
                     EnterAimMode();
                 break;
 
-            //アイテムモード:右クリックでキャンセル / 照準を更新 / 左クリックで投擲
+            //アイテムモード:右クリックでキャンセル / ホイールで切り替え / 照準を更新 / 左クリックで投擲
             case Mode.Aiming:
                 if (CancelItemPressed())        
                 {
                     ExitAimMode();              
                     break;
                 }
+                int switchDir = SwitchItemInput();
+                if (switchDir != 0) CycleItem(switchDir);
                 UpdateAim();                    
                 if (UseItemPressed())           
                     Throw();
@@ -519,6 +528,36 @@ public class PlayerItemController : MonoBehaviour
 
     //キャンセルが押されたか
     bool CancelItemPressed() => cancelItemAction != null && cancelItemAction.WasPressedThisFrame();
+
+    //ホイールの入力 下に回すと+1(次)、上に回すと-1(前)、回していなければ0
+    int SwitchItemInput()
+    {
+        if (switchItemAction == null || Time.time < nextSwitchTime) return 0;
+        float v = switchItemAction.ReadValue<float>();
+        if (Mathf.Abs(v) < 0.01f) return 0;
+        nextSwitchTime = Time.time + switchInterval;
+        return v < 0f ? 1 : -1;
+    }
+
+    //所持アイテムの順番を回して、次に投げるアイテム(リストの先頭)を切り替える
+    //dir:+1で次のアイテムを先頭へ、-1で最後のアイテムを先頭へ
+    public void CycleItem(int dir)
+    {
+        if (items.Count < 2 || dir == 0) return;
+        if (dir > 0)
+        {
+            GameObject first = items[0];
+            items.RemoveAt(0);
+            items.Add(first);
+        }
+        else
+        {
+            GameObject last = items[items.Count - 1];
+            items.RemoveAt(items.Count - 1);
+            items.Insert(0, last);
+        }
+        InventoryChanged?.Invoke();
+    }
 
     //落下地点の移動入力
     Vector2 ReadMove()

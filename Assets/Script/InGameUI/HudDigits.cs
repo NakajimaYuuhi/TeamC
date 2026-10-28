@@ -12,6 +12,8 @@ public class HudDigits : MonoBehaviour
     [SerializeField] Sprite dot;
     [Tooltip("数字を入れる Image。左から順に")]
     [SerializeField] Image[] slots;
+    [Tooltip("オンにすると左そろえ(左の欄から詰める)。ラベルのすぐ右に数字を出すとき用")]
+    [SerializeField] bool alignLeft;
 
     string current;
 
@@ -22,10 +24,10 @@ public class HudDigits : MonoBehaviour
         int n = slots.Length;
         for (int i = 0; i < n; i++)
         {
-            //右端からの位置で、入れる文字を決める
-            int ci = text.Length - (n - i);
+            //右端(左そろえなら左端)からの位置で、入れる文字を決める
+            int ci = alignLeft ? i : text.Length - (n - i);
             var slot = slots[i];
-            if (ci < 0)
+            if (ci < 0 || ci >= text.Length)
             {
                 slot.enabled = false;
                 continue;

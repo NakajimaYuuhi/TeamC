@@ -88,6 +88,13 @@ public class PlayerItemHud : MonoBehaviour
         {
             Hud.TakeItem();
         }
+        else if (allHaveData && now.Count == shown.Count && now.Count > 1 && SameItems(now, shown))
+        {
+            //同じアイテムで並びだけ変わった(ホイールで切り替えた)
+            var list = new List<HudItemData>();
+            foreach (var go in now) list.Add(DataOf(go));
+            Hud.SwitchItems(list);
+        }
         else
         {
             var list = new List<HudItemData>();
@@ -103,6 +110,14 @@ public class PlayerItemHud : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
             if (a[aStart + i] != b[bStart + i]) return false;
+        return true;
+    }
+
+    //同じアイテムがそろっていて、並びだけが違うか
+    static bool SameItems(IReadOnlyList<GameObject> a, List<GameObject> b)
+    {
+        if (SameOrder(a, 0, b, 0, b.Count)) return false;
+        foreach (var go in a) if (!b.Contains(go)) return false;
         return true;
     }
 
