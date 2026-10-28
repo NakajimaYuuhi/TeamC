@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnData
   _spawnPrefab: {fileID: 4484798500382670019, guid: 79237fe2c15fd694a9becff1e08d55af, type: 3}
   _intervalType: 0
-  _initialDelay: 0
+  _initialDelay: 15
   _fixedInterval: 1
   _minInterval: 2
   _maxInterval: 5
