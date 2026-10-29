@@ -303,8 +303,6 @@ public class GameFlowManager : MonoBehaviour
     }
     public void ToResult(bool clear)
     {
-        var presentation = GetComponent<CollectPurposePresentation>();
-
         _flowState = FlowState.ResultView;
         _isClear = clear;
         GameData.ResultData data = new GameData.ResultData();
@@ -320,7 +318,15 @@ public class GameFlowManager : MonoBehaviour
             d.y = 0.0f;
             GameOverScreen.LastDistance = d.magnitude;
         }
-        StartCoroutine(presentation.Play());
+        if(clear)
+        {
+            var presentation = GetComponent<CollectPurposePresentation>();
+            StartCoroutine(presentation.Play());
+        }
+        else
+        {
+            StartCoroutine(GetComponent<GameFaiiledPresentation>().PlayFailedAnimation());
+        }
     }
 
 }
