@@ -18,10 +18,10 @@ MonoBehaviour:
     adjacents: 01000000
   - nodeID: 1
     position: {x: -47.71, y: 0, z: 0}
-    adjacents: 00000000
+    adjacents: 
   edges:
   - fromNodeID: 0
     toNodeID: 1
     distance: 96.78
-    isTwoWay: 1
+    isTwoWay: 0
     width: 10
