@@ -1,6 +1,6 @@
 using UnityEngine;
 
-//NPC の見た目を、色違いのモデルからランダムに1つ選んで出す。NPC のいちばん上に付ける
+//NPC とプレイヤーの見た目を、モデルからランダムに1つ選んで出す。いちばん上に付ける
 //チームの NPC_AnimationManager が揺らす Body の上下と傾きを、モデルにも写す
 public class NPCLook : MonoBehaviour
 {
@@ -10,6 +10,10 @@ public class NPCLook : MonoBehaviour
     [SerializeField] int fixedIndex = -1;
     [Tooltip("モデルの大きさ。1.25 で身長約2m、今の当たり判定と同じ")]
     [SerializeField] float modelScale = 1.25f;
+    [Tooltip("モデルを左右に回す角度。度。プレイヤーは正面が -X なので -90")]
+    [SerializeField] float modelYaw = 0f;
+    [Tooltip("足元の位置。NPC は 0")]
+    [SerializeField] Vector3 modelOffset = Vector3.zero;
     [Tooltip("これまでの見た目。当たり判定は残して表示だけ切る")]
     [SerializeField] Renderer[] hideRenderers;
 
@@ -28,6 +32,7 @@ public class NPCLook : MonoBehaviour
     [SerializeField] float previewSpeed = 0f;
 
     public Transform Model { get; private set; }
+    public NPCLimbSwing Swing { get; private set; }
 
     Quaternion modelRotation;
     Rigidbody body;
@@ -40,13 +45,17 @@ public class NPCLook : MonoBehaviour
         if (models == null || models.Length == 0) return;
 
         int index = fixedIndex >= 0 ? Mathf.Min(fixedIndex, models.Length - 1) : Random.Range(0, models.Length);
-        var model = Instantiate(models[index], transform);
-        model.name = "Model";
-        Model = model.transform;
-        //取り込みで付いた向きと大きさは残して、そこから大きくする
-        Model.localPosition = Vector3.zero;
+        //向きと足元はこの台で決める。腕と脚もこの台の右と前を軸に振る
+        Model = new GameObject("Model").transform;
+        Model.SetParent(transform, false);
+        Model.localPosition = modelOffset;
+        Model.localRotation = Quaternion.Euler(0f, modelYaw, 0f);
         modelRotation = Model.localRotation;
-        Model.localScale *= modelScale;
+
+        var model = Instantiate(models[index], Model);
+        //取り込みで付いた向きと大きさは残して、そこから大きくする
+        model.transform.localPosition = Vector3.zero;
+        model.transform.localScale *= modelScale;
 
         //NPC はたくさん出るので、影は足元の丸い影にまかせる
         foreach (var r in model.GetComponentsInChildren<Renderer>())
@@ -59,6 +68,7 @@ public class NPCLook : MonoBehaviour
         if (swing == null) swing = model.AddComponent<NPCLimbSwing>();
         swing.SetBody(body);
         swing.PreviewSpeed = previewSpeed;
+        Swing = swing;
     }
 
     void LateUpdate()
@@ -75,7 +85,7 @@ public class NPCLook : MonoBehaviour
         float target = Mathf.Clamp01(speed / Mathf.Max(0.01f, bobFullSpeed));
         bobAmount = Mathf.Lerp(bobAmount, target, 1f - Mathf.Exp(-8f * Time.deltaTime));
         float y = Mathf.Max(0f, bobSource.localPosition.y - bobBase) * bobScale * bobAmount;
-        Model.localPosition = new Vector3(0f, y, 0f);
+        Model.localPosition = modelOffset + new Vector3(0f, y, 0f);
         Model.localRotation = bobSource.localRotation * modelRotation;
     }
 }
