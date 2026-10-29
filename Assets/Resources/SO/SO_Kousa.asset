@@ -22,7 +22,12 @@ MonoBehaviour:
   Type: 0
   FailedTime: 90
   _securityCount: 3
+  IsTimerFailed: 1
+  IsSpawnerBase: 1
   ClearCount: 1
   EnemyCount: 300
   DiffMulti: 1
   PhaseMulti: 0
+  BackGroundType: 1
+  Textures: []
+  MovieClip: {fileID: 0}
