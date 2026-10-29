@@ -95,6 +95,7 @@ public class FanDeploy : MonoBehaviour
     {
         if (IsDeployed) return;
         IsDeployed = true;
+        SceneAudioController.Instance?.PlayPutItem();
 
         Transform root = body != null ? body.transform : transform;
         if (body != null)

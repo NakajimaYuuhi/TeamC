@@ -56,5 +56,9 @@ MonoBehaviour:
   backSound: {fileID: 8300000, guid: 2ca56a339b424322a810cf3ad2353904, type: 3}
   lockedSound: {fileID: 0}
   unlockedSound: {fileID: 0}
+  throwItemSound: {fileID: 0}
+  putItemSound: {fileID: 0}
+  itemIngSound: {fileID: 0}
   bgmVolume: 0.054
   selectionVolume: 0.523
+  itemLoopVolume: 0.101

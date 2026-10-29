@@ -77,6 +77,8 @@ public class ItemExecute : MonoBehaviour
 
     public void Execute()
     {
+        SceneAudioController.Instance?.PlayPutItem();
+        SceneAudioController.Instance?.PlayItemLoop(gameObject);
         _isExecute = true;
         _currentExecuteTime = 0.0f;
         if (_currentEffect != null) Destroy(_currentEffect);

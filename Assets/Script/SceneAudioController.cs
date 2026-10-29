@@ -34,12 +34,20 @@ public sealed class SceneAudioController : MonoBehaviour
     private AudioClip lockedSound;
     [SerializeField, InspectorName("アンロック時効果音")]
     private AudioClip unlockedSound;
+    [SerializeField, InspectorName("アイテム投擲音")]
+    private AudioClip throwItemSound;
+    [SerializeField, InspectorName("アイテム着地音")]
+    private AudioClip putItemSound;
+    [SerializeField, InspectorName("アイテム動作音（ループ）")]
+    private AudioClip itemIngSound;
 
     [Header("音量")]
     [SerializeField, Range(0f, 1f), InspectorName("BGM音量")]
     private float bgmVolume = 0.2f;
     [SerializeField, Range(0f, 1f), InspectorName("SE音量（UI・クリア・ステップ）")]
     private float selectionVolume = 0.85f;
+    [SerializeField, Range(0f, 1f), InspectorName("アイテム動作ループ音量")]
+    private float itemLoopVolume = 0.25f;
 
     private AudioSource bgmSource;
     private AudioSource selectionSource;
@@ -85,6 +93,9 @@ public sealed class SceneAudioController : MonoBehaviour
 
         if (lockedSound == null) lockedSound = Resources.Load<AudioClip>("Audio/SE/locked");
         if (unlockedSound == null) unlockedSound = Resources.Load<AudioClip>("Audio/SE/unlocked");
+        if (throwItemSound == null) throwItemSound = Resources.Load<AudioClip>("Audio/SE/throw");
+        if (putItemSound == null) putItemSound = Resources.Load<AudioClip>("Audio/SE/put_item");
+        if (itemIngSound == null) itemIngSound = Resources.Load<AudioClip>("Audio/SE/item_ing");
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -146,6 +157,31 @@ public sealed class SceneAudioController : MonoBehaviour
     {
         if (unlockedSound == null) unlockedSound = Resources.Load<AudioClip>("Audio/SE/unlocked");
         if (unlockedSound != null) selectionSource.PlayOneShot(unlockedSound);
+    }
+
+    public void PlayThrowItem()
+    {
+        if (throwItemSound == null) throwItemSound = Resources.Load<AudioClip>("Audio/SE/throw");
+        if (throwItemSound != null) selectionSource.PlayOneShot(throwItemSound);
+    }
+
+    public void PlayPutItem()
+    {
+        if (putItemSound == null) putItemSound = Resources.Load<AudioClip>("Audio/SE/put_item");
+        if (putItemSound != null) selectionSource.PlayOneShot(putItemSound);
+    }
+
+    public AudioSource PlayItemLoop(GameObject target)
+    {
+        if (itemIngSound == null) itemIngSound = Resources.Load<AudioClip>("Audio/SE/item_ing");
+        if (itemIngSound == null || target == null) return null;
+        var source = target.AddComponent<AudioSource>();
+        source.clip = itemIngSound;
+        source.loop = true;
+        source.spatialBlend = 0f;
+        source.volume = itemLoopVolume;
+        source.Play();
+        return source;
     }
 
     public void PlayStep(AudioClip clip, float volume)
