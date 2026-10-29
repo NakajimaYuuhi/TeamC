@@ -286,7 +286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &103797872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3475,6 +3475,7 @@ GameObject:
   - component: {fileID: 1256247487}
   - component: {fileID: 1256247488}
   - component: {fileID: 1472824652}
+  - component: {fileID: 1472824653}
   m_Layer: 5
   m_Name: StageSelect
   m_TagString: Untagged
@@ -4461,6 +4462,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StageProgressView
   clearCount: {fileID: 1971112320}
   totalStages: 5
+--- !u!114 &1472824653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256247486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7d74c2d922c3a46b7515f2cbbe1a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageSelectBackGround
+  _moviePrefab: {fileID: 4220694231992883360, guid: 4d52dc47e9cd8da4d9041143d5d278ae, type: 3}
+  _slideshowPrefab: {fileID: 7806745511683319001, guid: b3b7d19b624c7094583f9fc210134abf, type: 3}
+  _prefabPrefab: {fileID: 0}
+  _renderTexture: {fileID: 8400000, guid: cf5432a9d4aa79c4fb47ff1ad17d5482, type: 2}
+  _gamedata: {fileID: 11400000, guid: 0364facd7094dde478ead4e0ae9f3736, type: 2}
+  _slideSpeed: 3
+  _animSpeed: 1
 --- !u!224 &1473322514
 RectTransform:
   m_ObjectHideFlags: 0

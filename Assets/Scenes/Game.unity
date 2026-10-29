@@ -182,7 +182,15 @@ PrefabInstance:
     - target: {fileID: 3007567377187582250, guid: cb4fbcda598f7564eb9a0e57543e351f, type: 3}
       propertyPath: _playerPrefab
       value: 
-      objectReference: {fileID: 5060728979383298203, guid: 76be48ec711d5ee448dff0eebb9f45ab, type: 3}
+      objectReference: {fileID: 5060728979383298203, guid: 0143682fb63ed2fdf51b2dfb80f798fa, type: 3}
+    - target: {fileID: 3007567377187582250, guid: cb4fbcda598f7564eb9a0e57543e351f, type: 3}
+      propertyPath: _startZoomValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007567377187582250, guid: cb4fbcda598f7564eb9a0e57543e351f, type: 3}
+      propertyPath: _purposeViewTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4228155809779836047, guid: cb4fbcda598f7564eb9a0e57543e351f, type: 3}
       propertyPath: m_Name
       value: PFB_FlowManager
@@ -400,6 +408,32 @@ MonoBehaviour:
   fpsEyeOffset: {x: 0, y: 1.2, z: 0}
   fpsMinPitch: -80
   fpsMaxPitch: 80
+  _purposeViewAnimCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _animTime: 1.5
+  _animScale: 10
 --- !u!114 &1498646390
 MonoBehaviour:
   m_ObjectHideFlags: 0
