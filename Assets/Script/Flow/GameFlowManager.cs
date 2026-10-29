@@ -309,6 +309,7 @@ public class GameFlowManager : MonoBehaviour
         data.IsClear = clear;
         data.pastTime = _resultTime;
         _gameData.ApplyResult(data);
+        if (clear) SceneAudioController.Instance?.PlayStageClear();
         //リザルトに流れに乗った人数を渡す
         ResultScreen.LastFollowers = GetFollowerCount();
         //ゲームオーバーにゴールまでの距離を渡す

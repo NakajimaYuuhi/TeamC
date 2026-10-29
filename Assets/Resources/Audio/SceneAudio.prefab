@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400000}
+  - component: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fedc94e2664f49adea3099f7b063f1, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::SceneAudioController
+  titleBgm: {fileID: 8300000, guid: 39fe31d6fce343f5ae6119837f5ebf01, type: 3}
+  stageSelectBgm: {fileID: 8300000, guid: 39fe31d6fce343f5ae6119837f5ebf02, type: 3}
+  inGameBgm: {fileID: 8300000, guid: 39fe31d6fce343f5ae6119837f5ebf03, type: 3}
+  resultBgm: {fileID: 8300000, guid: 39fe31d6fce343f5ae6119837f5ebf04, type: 3}
+  titleSelectionSound: {fileID: 8300000, guid: e7581fe789884fcdb74a7982e09d4001, type: 3}
+  stageSelectionSound: {fileID: 8300000, guid: e7581fe789884fcdb74a7982e09d4002, type: 3}
+  resultSelectionSound: {fileID: 8300000, guid: e7581fe789884fcdb74a7982e09d4001, type: 3}
+  stageClearSound: {fileID: 8300000, guid: a2d4f091653a43ce803cd6c0598c2368, type: 3}
+  confirmSound: {fileID: 8300000, guid: 767cf20eb9aa4c5eb7ddf25dcf1c5021, type: 3}
+  backSound: {fileID: 8300000, guid: 2ca56a339b424322a810cf3ad2353904, type: 3}
+  bgmVolume: 0.2
+  selectionVolume: 0.85

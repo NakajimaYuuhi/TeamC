@@ -1,0 +1,17 @@
+ステップ音の出典
+
+ファイル: step_grass.ogg
+原本: Audio/footstep_grass_000.ogg（音声は未加工）
+素材集: Impact Sounds 1.0
+作者: Kenney
+配布ページ: https://kenney.nl/assets/impact-sounds
+ライセンス: CC0
+ライセンスURL: https://creativecommons.org/publicdomain/zero/1.0/
+取得日: 2026-10-29
+同梱ライセンス: KenneyImpactSoundsLicense.txt
+
+追加ファイル: step_dash.ogg
+原本: impactPunch_medium_000.ogg、footstep_concrete_000.ogg（上記Kenney素材集・CC0）。
+合成音: 固定シードのホワイトノイズから作った風切り音、下降する短いサイン波の電子音。
+加工: 風切り音を主体に、控えめな低い衝撃音・踏み込み音・電子音を混合し、約0.28秒に調整。
+帯域調整、コンプレッサー、立ち上がりと末尾のフェード、ピークリミッターを適用。

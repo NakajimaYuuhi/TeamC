@@ -63,6 +63,7 @@ public class PlayerMove : MonoBehaviour
     private float stepTimer;         //ステップの残り時間
     private float stepCooldownTimer; //次のステップができるまでの残り時間
     private Vector3 stepVelocity;    //ステップ中の速度
+    private PlayerStepFeedback stepFeedback;
 
     // フィールドに追加
     [SerializeField] FormationLeader formationLeader;   // 同じプレイヤーに付いてるもの
@@ -71,6 +72,7 @@ public class PlayerMove : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        stepFeedback = GetComponent<PlayerStepFeedback>();
         if (flowEmitter == null) flowEmitter = GetComponent<FlowEmitter>();
     }
 
@@ -277,6 +279,7 @@ public class PlayerMove : MonoBehaviour
         if (cameraController == null) return;
 
         //カメラ基準でステップする方向を求める
+        Vector3 feedbackPosition = stepFeedback != null ? stepFeedback.FootPosition : transform.position;
         Vector3 direction = cameraController.FlatForward * stepInput.y + cameraController.FlatRight * stepInput.x;
         direction.Normalize();
 
@@ -287,6 +290,7 @@ public class PlayerMove : MonoBehaviour
                 //クリティカルステップ成功：すり抜けた先から、進みたい前の方向へ道を開ける
                 Vector3 burstForward = formationLeader != null ? formationLeader.Forward : cameraController.FlatForward;
                 if (flowEmitter != null) flowEmitter.Burst(burstForward);
+                stepFeedback?.Play(feedbackPosition);
                 return;
             }
 
@@ -297,6 +301,7 @@ public class PlayerMove : MonoBehaviour
 
         stepTimer = stepDuration;
         isStepping = true;
+        stepFeedback?.Play(feedbackPosition);
     }
 
     //ステップ中の処理
