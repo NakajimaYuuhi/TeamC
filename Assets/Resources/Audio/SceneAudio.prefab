@@ -54,5 +54,11 @@ MonoBehaviour:
   stageClearSound: {fileID: 8300000, guid: a2d4f091653a43ce803cd6c0598c2368, type: 3}
   confirmSound: {fileID: 8300000, guid: 767cf20eb9aa4c5eb7ddf25dcf1c5021, type: 3}
   backSound: {fileID: 8300000, guid: 2ca56a339b424322a810cf3ad2353904, type: 3}
-  bgmVolume: 0.03
-  selectionVolume: 0.85
+  lockedSound: {fileID: 0}
+  unlockedSound: {fileID: 0}
+  throwItemSound: {fileID: 0}
+  putItemSound: {fileID: 0}
+  itemIngSound: {fileID: 8300000, guid: dc0889b129e5fb94499df2d63769e43c, type: 3}
+  bgmVolume: 0.054
+  selectionVolume: 0.523
+  itemLoopVolume: 0.204

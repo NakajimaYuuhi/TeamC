@@ -85,6 +85,10 @@ public class StageLock : MonoBehaviour
         seq.AppendInterval(delay);
         //Œ®‚ªƒKƒ`ƒƒƒKƒ`ƒƒ—h‚ê‚é
         seq.Append(padlock.DOPunchRotation(new Vector3(0f, 0f, 16f), 0.4f, 8, 0.6f));
+        seq.InsertCallback(delay + 0.4f, () =>
+        {
+            SceneAudioController.Instance?.PlayUnlocked();
+        });
         //Œ®‚ªŠO‚ê‚Ä—Ž‚¿‚é
         seq.Append(DOTween.To(() => padlock.anchoredPosition, v => padlock.anchoredPosition = v, padlockPos + new Vector2(0f, -620f), 0.6f).SetEase(Ease.InQuad));
         seq.Join(padlock.DOLocalRotate(new Vector3(0f, 0f, -40f), 0.6f).SetEase(Ease.InQuad));
@@ -114,6 +118,7 @@ public class StageLock : MonoBehaviour
     public void Rattle()
     {
         if (!IsLocked) return;
+        SceneAudioController.Instance?.PlayLocked();
         padlock.DOComplete();
         lockPlate.DOComplete();
         padlock.DOPunchRotation(new Vector3(0f, 0f, 18f), 0.35f, 10, 0.6f).SetLink(gameObject);
