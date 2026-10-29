@@ -66,9 +66,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9883e977d25385e43ae6e8b8068811b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameFlowManager
-  _playerPrefab: {fileID: 5060728979383298203, guid: 76be48ec711d5ee448dff0eebb9f45ab, type: 3}
-  _enemyPrefab: {fileID: 918360694675728311, guid: 8f52eda97af818040a29a74b26371f74, type: 3}
-  _uiPrefab: {fileID: 3528987088439523742, guid: dd77cea72d67e0f49baba8c84c3a18f6, type: 3}
+  _playerPrefab: {fileID: 5060728979383298203, guid: 0143682fb63ed2fdf51b2dfb80f798fa, type: 3}
+  _enemyPrefab: {fileID: 4484798500382670019, guid: 902e609923528439a959c61aecec8d17, type: 3}
+  _uiPrefab: {fileID: 1891986502562157748, guid: ab51b23c16922bc4e94ff40a9089da09, type: 3}
   _securityPrefab: {fileID: 0}
   _gameData: {fileID: 11400000, guid: 0364facd7094dde478ead4e0ae9f3736, type: 2}
   _purposeViewPrefab: {fileID: 5893641079708652875, guid: b7f76c93adc94264eab06801c65869f6, type: 3}
