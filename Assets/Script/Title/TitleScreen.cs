@@ -272,6 +272,7 @@ public class TitleScreen : MonoBehaviour
         }
         next = Mathf.Clamp(next, 0, menu.Count - 1);
         selected = next;
+        SceneAudioController.Instance?.PlayTitleSelection();
         ApplySelection(true);
         PulseArrow();
 
@@ -347,6 +348,7 @@ public class TitleScreen : MonoBehaviour
     {
         if (busy || menu.Count == 0) return;
         busy = true;
+        SceneAudioController.Instance?.PlayConfirm();
         StopIdle();
         int index = selected;
         var el = menu[index];
