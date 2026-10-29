@@ -50,6 +50,22 @@ public class FlowEmitter : MonoBehaviour
     [Tooltip("帯の強さ(足元の gain と同じ単位)")]
     [SerializeField, Min(0f)] float bandGain = 1.5f;
 
+    [Header("Burst(回避成功などで一瞬強く道を開ける)")]
+    [Tooltip("Burst の強さ(1秒あたり)。足元・コーンの書き込みは だいたい 速さ×gain ≒ 3 なので、それより十分大きく")]
+    [SerializeField, Min(0f)] float burstStrength = 25f;
+    [Tooltip("Burst を何秒続けるか(Burst の引数を省略したとき)")]
+    [SerializeField, Min(0f)] float burstDuration = 0.5f;
+    [Tooltip("Burst のコーンの長さ(m)")]
+    [SerializeField, Min(0f)] float burstLength = 8f;
+    [Tooltip("Burst のコーンの中心線から片側の角度")]
+    [SerializeField, Range(5f, 80f)] float burstHalfAngle = 25f;
+    [Tooltip("Burst の流れの外向き成分(左右に割れやすくする)")]
+    [SerializeField, Range(0f, 1f)] float burstSpread = 0.6f;
+    [Tooltip("Burst のコーンの頂点の位置(マイナスで自分より後ろ)")]
+    [SerializeField] float burstApexOffset = -0.5f;
+    [Tooltip("オン:時間とともに弱くなる / オフ:最後まで同じ強さ")]
+    [SerializeField] bool burstFadeOut = true;
+
     [Header("Debug")]
     [SerializeField] bool showDebug = false;
 
@@ -57,8 +73,17 @@ public class FlowEmitter : MonoBehaviour
     public float ConeScale { get; set; } = 1f;
     /// <summary>帯の幅に掛ける倍率。隊形の幅に合わせる、などを外から入れる用</summary>
     public float BandWidthScale { get; set; } = 1f;
+    /// <summary>帯の長さに掛ける倍率。隊列の長さに合わせる、などを外から入れる用</summary>
+    public float BandLengthScale { get; set; } = 1f;
+    /// <summary>インスペクタで設定した帯の片側の幅(倍率を掛ける前)</summary>
+    public float BaseBandHalfWidth => bandHalfWidth;
+    /// <summary>インスペクタで設定した帯の長さ(倍率を掛ける前)</summary>
+    public float BaseBandLength => bandLength;
 
     Vector3 prevPos;
+    Vector2 burstDir;
+    float burstTimer;
+    float burstTotal;
     Vector2 shapeDir;     // なめらかにした向き(コーンと帯で共通)
     float lastAlign;
     float lastScale = 1f;
@@ -69,8 +94,40 @@ public class FlowEmitter : MonoBehaviour
         prevPos = transform.position;
     }
 
+    /// <summary>
+    /// 一瞬だけ強い流れを書いて、その向きに道を開ける(回避成功の演出など)。
+    /// worldDir:開けたい向き(Yは無視)。duration:秒数(省略 or 0以下ならインスペクタの burstDuration)。
+    /// 時間ベースで書くので、止まっていても書かれる。続けて呼ぶと、向きと時間が上書きされる。
+    /// </summary>
+    public void Burst(Vector3 worldDir, float duration = -1f)
+    {
+        Vector2 d = new Vector2(worldDir.x, worldDir.z);
+        if (d.sqrMagnitude < 1e-6f) return;
+        burstDir = d.normalized;
+        burstTotal = duration > 0f ? duration : burstDuration;
+        burstTimer = burstTotal;
+    }
+
+    /// <summary>Burst 中か</summary>
+    public bool IsBursting => burstTimer > 0f;
+
+    void UpdateBurst()
+    {
+        if (burstTimer <= 0f || field == null) return;
+
+        float rate = burstFadeOut && burstTotal > 0f ? burstTimer / burstTotal : 1f;
+        burstTimer -= Time.deltaTime;
+
+        Vector3 fwd3 = new Vector3(burstDir.x, 0f, burstDir.y);
+        Vector3 apex = transform.position + fwd3 * burstApexOffset;
+        field.AddFlowCone(apex, burstDir, burstLength, burstHalfAngle, burstSpread,
+                          burstStrength * rate * Time.deltaTime);
+    }
+
     void Update()
     {
+        UpdateBurst();
+
         Vector3 delta = transform.position - prevPos;
         prevPos = transform.position;
 
@@ -126,7 +183,7 @@ public class FlowEmitter : MonoBehaviour
         // ---- 後方の帯 ----
         if (bandEnabled)
         {
-            field.AddFlowBand(transform.position, shapeDir, bandLength, bandHalfWidth * BandWidthScale,
+            field.AddFlowBand(transform.position, shapeDir, bandLength * BandLengthScale, bandHalfWidth * BandWidthScale,
                               moveLen * bandGain * shapeScale);
         }
     }
@@ -172,7 +229,7 @@ public class FlowEmitter : MonoBehaviour
         {
             Vector3 side = new Vector3(-fwd.z, 0f, fwd.x) * (bandHalfWidth * BandWidthScale);
             Vector3 s = transform.position + up;
-            Vector3 e = s - fwd * bandLength;
+            Vector3 e = s - fwd * (bandLength * BandLengthScale);
 
             Gizmos.color = Color.yellow;
             Gizmos.DrawLine(s + side, e + side);

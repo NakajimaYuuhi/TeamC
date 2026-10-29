@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-//ゲーム中の画面の表示だけを担当
+//ゲーム中の画面の表示だけを担当する
 //・残り時間・距離・仲間の人数・持っているアイテム・アイテムモードを、下の関数で渡すと画面に出る
 //・ゲームの中身(時間を減らす、アイテムを拾う・投げる など)はここでは決めない。ゲーム側から呼ぶ
 public class GameHud : MonoBehaviour
@@ -13,7 +13,7 @@ public class GameHud : MonoBehaviour
     [SerializeField] CanvasGroup ticket;
     [Tooltip("アイテムモード中の整理券の濃さ")]
     [SerializeField, Range(0f, 1f)] float ticketAlphaInItemMode = 0.55f;
-    [Tooltip("残り時間の数字(4つの欄: 数・数・点・数)")]
+    [Tooltip("残り時間の数字(5つの欄: 百・十・一・点・十分の一)")]
     [SerializeField] HudDigits timeDigits;
     [Tooltip("距離の数字(4つの欄)")]
     [SerializeField] HudDigits distanceDigits;
@@ -50,6 +50,8 @@ public class GameHud : MonoBehaviour
     [SerializeField] GameObject modeFrame;
     [Tooltip("上の真ん中の「アイテムモード」の札(ModeTag)")]
     [SerializeField] RectTransform modeTag;
+    [Tooltip("大きい枠の左の「ホイールで切り替え」(SwitchHint)。アイテムモード中、2つ以上持っているときだけ出す")]
+    [SerializeField] GameObject switchHint;
     [Tooltip("アイテムモード中に、大きい枠と説明の札を浮かせる量(px)")]
     [SerializeField] float liftInItemMode = 15f;
 
@@ -87,10 +89,10 @@ public class GameHud : MonoBehaviour
 
     // ---------- 整理券 ----------
 
-    //残り時間(秒)。小数1けたで出す(99.9 まで)
+    //残り時間(秒)。小数1けたで出す(999.9 まで)
     public void SetTime(float seconds)
     {
-        float s = Mathf.Clamp(seconds, 0f, 99.9f);
+        float s = Mathf.Clamp(seconds, 0f, 999.9f);
         if (timeDigits)
         {
             timeDigits.SetText(s.ToString("0.0"));
@@ -137,7 +139,7 @@ public class GameHud : MonoBehaviour
         return true;
     }
 
-    //投げたとき。次に投げるものを取り出す
+    //投げたとき。次に投げるもの(大きい枠)を取り出す。持っていなければ null
     public HudItemData TakeItem()
     {
         Init();
@@ -149,7 +151,7 @@ public class GameHud : MonoBehaviour
         return first;
     }
 
-    //持ち物をまとめて入れ替える
+    //持ち物をまとめて入れ替える(ステージ開始時など)
     public void SetItems(IList<HudItemData> list)
     {
         Init();
@@ -160,6 +162,13 @@ public class GameHud : MonoBehaviour
         RefreshItems();
     }
 
+    //次に投げるアイテムを切り替えたとき。並びを入れ替えて、大きい枠と説明の札を弾ませる
+    public void SwitchItems(IList<HudItemData> list)
+    {
+        SetItems(list);
+        Punch(slots.Length > 0 ? slots[0] : null, 0.15f);
+        Punch(card, 0.06f);
+    }
     //アイテムが無いときに使おうとしたら、欄を揺らして知らせる
     public void ShakeEmpty()
     {
@@ -183,6 +192,7 @@ public class GameHud : MonoBehaviour
             if (has) icon.preserveAspect = true;
         }
         if (emptyLabel) emptyLabel.SetActive(items.Count == 0);
+        RefreshSwitchHint();
 
         //説明の札は、次に投げるものの名前と説明。持っていなければ札ごと隠す
         bool show = items.Count > 0;
@@ -214,12 +224,19 @@ public class GameHud : MonoBehaviour
 
     public void SetItemMode(bool on) => ApplyItemMode(on, true);
 
+    //切り替えの案内は、アイテムモード中で切り替える相手がいる(2つ以上)ときだけ
+    void RefreshSwitchHint()
+    {
+        if (switchHint) switchHint.SetActive(itemMode && items.Count >= 2);
+    }
+
     void ApplyItemMode(bool on, bool animate)
     {
         itemMode = on;
         if (modeFrame) modeFrame.SetActive(on);
         if (hintNormal) hintNormal.SetActive(!on);
         if (hintItemMode) hintItemMode.SetActive(on);
+        RefreshSwitchHint();
 
         if (ticket)
         {

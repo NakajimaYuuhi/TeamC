@@ -9,6 +9,8 @@
 /// 2026/10/21 佐藤蒼也：横歩き中は常に進行方向の左を向くよう変更→RotateToward関数
 /// 2026/10/21 佐藤蒼也：NPCを押す処理を追加→PushNPC関数
 /// 2026/10/22 佐藤蒼也：サイドステップを追加→CheckStepInput・StartStep・UpdateStep・EndStep関数
+/// 2026/10/28 中島雄飛：隊形に入力の向きを渡す処理を追加→Move・UpdateStep関数(FormationLeader.SetIntendedDirection)
+/// 2026/10/28 中島雄飛：クリティカルステップ成功時に前方へ流れを書いて道を開ける処理を追加→StartStep関数(FlowEmitter.Burst)
 /// 
 /////////////////////////////////////////
 
@@ -64,10 +66,12 @@ public class PlayerMove : MonoBehaviour
 
     // フィールドに追加
     [SerializeField] FormationLeader formationLeader;   // 同じプレイヤーに付いてるもの
+    [SerializeField] FlowEmitter flowEmitter;           // 同じプレイヤーに付いてるもの(回避成功で道を開ける)
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        if (flowEmitter == null) flowEmitter = GetComponent<FlowEmitter>();
     }
 
     void Start()
@@ -280,6 +284,9 @@ public class PlayerMove : MonoBehaviour
         {
             if(crtStep.GetCanStepPosition(transform.position,playerSize,direction))
             {
+                //クリティカルステップ成功：すり抜けた先から、進みたい前の方向へ道を開ける
+                Vector3 burstForward = formationLeader != null ? formationLeader.Forward : cameraController.FlatForward;
+                if (flowEmitter != null) flowEmitter.Burst(burstForward);
                 return;
             }
 

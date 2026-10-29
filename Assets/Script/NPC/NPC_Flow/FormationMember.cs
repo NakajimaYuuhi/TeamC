@@ -33,12 +33,26 @@ public class FormationMember : MonoBehaviour
     [Tooltip("向きが合っていない状態が何秒続いたら外れるか(一瞬の方向転換では外れないように)")]
     [SerializeField, Min(0f)] float leaveTime = 0.5f;
 
+    [Header("遅れたら跡をたどる")]
+    [Tooltip("席からこの距離(m)以上遅れたら、席に直進せずにプレイヤーが通った跡をたどる")]
+    [SerializeField, Min(0f)] float trailFollowDistance = 1.5f;
+    [Tooltip("跡のどれくらい先(m)を目指すか")]
+    [SerializeField, Min(0.1f)] float trailLookAhead = 2f;
+    [Tooltip("離れていても、この速さ(m/s)以上で席に近づいていれば「はぐれた」とみなさない")]
+    [SerializeField, Min(0f)] float closingSpeed = 0.2f;
+
+    [Header("はぐれた人が追いかける")]
+    [Tooltip("はぐれてから何秒間、跡をたどって追いかけるか(その間はリーダーの rejoinRadius 内なら戻れる)")]
+    [SerializeField, Min(0f)] float chaseTime = 4f;
+
     [Header("Debug")]
     [SerializeField] bool showDebug = false;
 
     int slot = -1;
     float farTimer;
     float misalignTimer;
+    float chaseTimer;
+    float prevSlotDist = -1f;
     float cooldown;
     float checkTimer;
     Vector3 prevPos;
@@ -46,6 +60,10 @@ public class FormationMember : MonoBehaviour
     NPC_FlowLocomotion locomotion;   // 付いていれば「行きたい向き」で参加を判定する
 
     public bool HasSlot => slot >= 0;
+    /// <summary>はぐれて追いかけている途中か</summary>
+    public bool IsChasing => !HasSlot && chaseTimer > 0f;
+    /// <summary>DesiredVelocity で動くべきか(席にいる or 追いかけ中)</summary>
+    public bool IsControlling => HasSlot || IsChasing;
     /// <summary>席に入っているときの目標速度</summary>
     public Vector3 DesiredVelocity { get; private set; }
 
@@ -75,6 +93,45 @@ public class FormationMember : MonoBehaviour
 
         cooldown -= dt;
 
+        // ---- はぐれて追いかけ中:跡をたどって、近づいたら席に戻る ----
+        if (IsChasing)
+        {
+            chaseTimer -= dt;
+
+            // 隊形と行きたい向きが合わなくなったら(プレイヤーが曲がった・振り返った)あきらめる
+            Vector2 intendedC = IntendedDir();
+            Vector2 fC = new Vector2(leader.Forward.x, leader.Forward.z);
+            if (intendedC == Vector2.zero || Vector2.Dot(intendedC, fC.normalized) < leaveAlign)
+            {
+                chaseTimer = 0f;
+            }
+            else
+            {
+                checkTimer -= dt;
+                if (checkTimer <= 0f)
+                {
+                    checkTimer = joinCheckInterval;
+                    if (leader.CanRejoin(transform.position, intendedC))
+                    {
+                        slot = leader.RequestSlot(this);
+                        if (HasSlot)
+                        {
+                            chaseTimer = 0f;
+                            prevSlotDist = -1f;
+                            return;
+                        }
+                    }
+                }
+
+                Vector3 target = leader.GetTrailTarget(transform.position, trailLookAhead);
+                Vector3 to = target - transform.position;
+                to.y = 0f;
+                float speed = leader.Velocity.magnitude + maxCatchUpSpeed;
+                DesiredVelocity = to.sqrMagnitude > 1e-4f ? to.normalized * speed : leader.Velocity;
+                return;
+            }
+        }
+
         // ---- 席がない:参加できるか確認 ----
         if (!HasSlot)
         {
@@ -92,14 +149,20 @@ public class FormationMember : MonoBehaviour
         // ---- 席がある:席を追う ----
         Vector3 toSlot = leader.GetSlotPosition(slot) - transform.position;
         toSlot.y = 0f;
+        float dist = toSlot.magnitude;
 
-        // 離れすぎた状態が続いたら外れる
-        if (toSlot.magnitude > breakDistance) farTimer += dt;
-        else farTimer = 0f;
+        // 離れすぎた状態が続いたら外れる。
+        // ただし席に近づいている(追いついてきている)間は数えない
+        bool closing = prevSlotDist >= 0f && dist <= prevSlotDist - closingSpeed * dt;
+        prevSlotDist = dist;
+        if (dist <= breakDistance) farTimer = 0f;
+        else if (!closing) farTimer += dt;
 
         if (farTimer > breakTime)
         {
+            // はぐれた → 少しの間、跡をたどって追いかける
             Leave(rejoinCooldown);
+            chaseTimer = chaseTime;
             return;
         }
 
@@ -114,6 +177,18 @@ public class FormationMember : MonoBehaviour
         if (misalignTimer > leaveTime)
         {
             Leave(rejoinCooldown);
+            return;
+        }
+
+        // 席より後ろに遅れている → 席に直進せず、プレイヤーが通った跡をたどる
+        // (直線上の人混みに突っ込まず、プレイヤーが開けた道を通って戻ってくる)
+        if (dist > trailFollowDistance && Vector3.Dot(toSlot, leader.Forward) > 0f)
+        {
+            Vector3 target = leader.GetTrailTarget(transform.position, trailLookAhead);
+            Vector3 to = target - transform.position;
+            to.y = 0f;
+            float speed = leader.Velocity.magnitude + Mathf.Min(dist * spring, maxCatchUpSpeed);
+            DesiredVelocity = to.sqrMagnitude > 1e-4f ? to.normalized * speed : leader.Velocity;
             return;
         }
 
@@ -138,6 +213,8 @@ public class FormationMember : MonoBehaviour
         slot = -1;
         farTimer = 0f;
         misalignTimer = 0f;
+        chaseTimer = 0f;
+        prevSlotDist = -1f;
         cooldown = cooldownSec;
     }
 
@@ -146,6 +223,9 @@ public class FormationMember : MonoBehaviour
     {
         slot = newSlot;
         farTimer = 0f;
+        prevSlotDist = -1f;
+        // 席が人混みや壁で使えなくなって、空きもなかった → 跡をたどって追いかける
+        if (newSlot < 0) chaseTimer = chaseTime;
     }
 
     void OnDrawGizmos()

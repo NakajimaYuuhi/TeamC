@@ -181,7 +181,7 @@ public class NPC_FlowLocomotion : MonoBehaviour
         // 速度を直接上書きせず「目標速度との差」を力として加える
         // → 他のNPCやプレイヤーに押された分が自然に残る
         Vector3 targetVel;
-        if (member != null && member.HasSlot)
+        if (member != null && member.IsControlling)
         {
             // 隊形の席に入っている → リーダーの速度 + 席へのバネ
             // (速度ボーナスはリーダー側にかかっているので、ここでは掛けない)

@@ -215,7 +215,8 @@ public class GameFlowManager : MonoBehaviour
             // プレイヤーを追跡状態にする
         }
 
-        if (_failedTime != 0.0f && _uiTimer.RemainingTime > _failedTime)
+        //残り時間が 0 になったら時間切れ
+        if (_failedTime != 0.0f && _uiTimer.RemainingTime <= 0.0f)
         {
             ToResult(false);
         }
@@ -233,7 +234,8 @@ public class GameFlowManager : MonoBehaviour
             _flowState = FlowState.Execution;
         }
 
-        if (_failedTime != 0.0f && _uiTimer.RemainingTime > _failedTime)
+        //残り時間が 0 になったら時間切れ
+        if (_failedTime != 0.0f && _uiTimer.RemainingTime <= 0.0f)
         {
             ToResult(false);
         }
@@ -309,6 +311,15 @@ public class GameFlowManager : MonoBehaviour
         data.IsClear = clear;
         data.pastTime = _resultTime;
         _gameData.ApplyResult(data);
+        //リザルトに流れに乗った人数を渡す
+        ResultScreen.LastFollowers = GetFollowerCount();
+        //ゲームオーバーにゴールまでの距離を渡す
+        if (_playerBody != null)
+        {
+            Vector3 d = _purposeData.DestinationPosition - _playerBody.position;
+            d.y = 0.0f;
+            GameOverScreen.LastDistance = d.magnitude;
+        }
         StartCoroutine(presentation.Play());
     }
 
