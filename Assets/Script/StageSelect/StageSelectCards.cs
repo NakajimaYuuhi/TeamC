@@ -138,7 +138,9 @@ public class StageSelectCards : MonoBehaviour
 
     public void Quit()
     {
-        //‰æ–ÊØ‚è‘Ö‚¦‚ªƒV[ƒ“‚É‚È‚¢‚Æ‚«‚Í‚»‚Ì‚Ü‚Ü“Ç‚İ‚Ş
+        if (busy) return;
+        busy = true;
+        SceneAudioController.Instance?.PlayBack();
         if (UIChaosGatherTransition.Instance != null) UIChaosGatherTransition.Instance.LoadScene("Title");
         else SceneManager.LoadScene("Title");
     }
@@ -150,6 +152,7 @@ public class StageSelectCards : MonoBehaviour
         index = Mathf.Clamp(index, 0, cards.Count - 1);
         if (index == selected) return;
         selected = index;
+        SceneAudioController.Instance?.PlayStageSelection();
         Layout(true);
         onSelectionChanged.Invoke(selected);
     }
@@ -166,6 +169,7 @@ public class StageSelectCards : MonoBehaviour
             return;
         }
         busy = true;
+        SceneAudioController.Instance?.PlayConfirm();
         card.rect.DOComplete(); // ˆÚ“®’†‚È‚çæ‚É’èˆÊ’u‚Ö
         DOTween.Complete(card.group);
         card.rect.DOPunchScale(Vector3.one * decidePunch, 0.2f, 6, 1f)

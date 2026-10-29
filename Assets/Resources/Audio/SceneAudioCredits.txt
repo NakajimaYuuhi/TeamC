@@ -1,0 +1,35 @@
+画面別BGM・UI選択音の出典
+取得日: 2026-10-29
+
+BGM
+作者: Juhani Junkala / SubspaceAudio
+素材集: 5 Chiptunes (Action)
+配布ページ: https://opengameart.org/content/5-chiptunes-action
+ライセンス: CC0
+同梱説明: JuhaniJunkalaMusicInfo.txt
+原本WAVをOgg Vorbisへ変換（曲の長さ・ピッチ・速度は変更なし）。
+BGM_Title.ogg: Juhani Junkala [Retro Game Music Pack] Title Screen.wav
+BGM_StageSelect.ogg: Juhani Junkala [Retro Game Music Pack] Level 2.wav
+BGM_InGame.ogg: Juhani Junkala [Retro Game Music Pack] Level 1.wav
+BGM_Result.ogg: Juhani Junkala [Retro Game Music Pack] Ending.wav
+
+UI効果音
+作者: Kenney
+素材集: Interface Sounds 1.0
+配布ページ: https://kenney.nl/assets/interface-sounds
+ライセンス: CC0
+同梱ライセンス: KenneyInterfaceSoundsLicense.txt
+UI_TitleSelect.ogg: click_001.ogg（未加工）
+UI_StageSelect.ogg: switch_001.ogg（未加工）
+UI_Confirm.ogg: confirmation_001.ogg（未加工）
+UI_Back.ogg: back_001.ogg（未加工）
+リザルトの選択音は UI_TitleSelect.ogg を共用。
+
+ステージクリア音
+作者: celestialghost8
+曲名: Victory（2A03 Victory fanfare）
+配布ページ: https://opengameart.org/content/victory
+ライセンス: CC0
+StageClear.ogg: Victory.wav を Ogg Vorbis に変換（長さ・ピッチ・速度は変更なし）。
+
+CC0: https://creativecommons.org/publicdomain/zero/1.0/

@@ -120,6 +120,7 @@ public abstract class ResultScreenBase : MonoBehaviour, IResultButtonOwner
 
     void Select(int i)
     {
+        if (inputReady && selected != i) SceneAudioController.Instance?.PlayResultSelection();
         selected = i;
         for (int j = 0; j < buttons.Length; j++) buttons[j].SetSelected(j == i);
     }
@@ -127,6 +128,7 @@ public abstract class ResultScreenBase : MonoBehaviour, IResultButtonOwner
     void Press(int i)
     {
         pressed = true;
+        SceneAudioController.Instance?.PlayConfirm();
         buttons[i].PlayPress();
         DOVirtual.DelayedCall(0.15f, () =>
         {
