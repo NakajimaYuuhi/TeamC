@@ -20,6 +20,10 @@ public class NPCLimbSwing : MonoBehaviour
     [SerializeField] float stepsPerMeter = 1.4f;
     [Tooltip("êUÇÍïùÇ™ïœÇÌÇÈë¨Ç≥ÅBëÂÇ´Ç¢ÇŸÇ«Ç∑ÇÆé~Ç‹ÇÈ")]
     [SerializeField] float settle = 8f;
+    [Tooltip("âüÇ∑Ç∆Ç´Ç…óºòrÇëOÇ÷èoÇ∑äpìxÅBìx")]
+    [SerializeField] float pushAngle = 80f;
+    [Tooltip("âüÇ∑ìÆÇ´ÇÃí∑Ç≥ÅBïb")]
+    [SerializeField] float pushTime = 0.35f;
 
     class Part
     {
@@ -33,11 +37,18 @@ public class NPCLimbSwing : MonoBehaviour
 
     //ÉeÉXÉgópÅB0 ÇÊÇËëÂÇ´Ç¢Ç∆ÅAé~Ç‹Ç¡ÇƒÇ¢ÇƒÇ‡Ç±ÇÃë¨Ç≥Ç≈êUÇÈ
     public float PreviewSpeed { get; set; }
-    float phase, amount;
+    float phase, amount, pushTimer;
+    bool posed;
 
     public void SetBody(Rigidbody rb)
     {
         if (rb != null) body = rb;
+    }
+
+    //óºòrÇÇ∑ÇŒÇ‚Ç≠ëOÇ÷ìÀÇ´èoÇµÇƒñﬂÇ∑
+    public void Push()
+    {
+        pushTimer = pushTime;
     }
 
     void Awake()
@@ -87,18 +98,29 @@ public class NPCLimbSwing : MonoBehaviour
         }
         if (PreviewSpeed > 0f) speed = Mathf.Max(speed, PreviewSpeed);
         float target = Mathf.Clamp01((speed - minSpeed) / Mathf.Max(0.01f, fullSpeed - minSpeed));
-        //é~Ç‹Ç¡ÇƒêUÇËÇ‡Ç®Ç≥Ç‹Ç¡ÇΩÇÁÅAâΩÇ‡ÇµÇ»Ç¢
-        if (target <= 0f && amount < 0.001f)
+
+        //âüÇ∑ìÆÇ´ÇÕç≈èâÇÃ4ï™ÇÃ1Ç≈ìÀÇ´èoÇµÅAécÇËÇ≈ñﬂÇ∑
+        float push = 0f;
+        if (pushTimer > 0f)
         {
-            if (amount > 0f) { amount = 0f; ResetPose(); }
+            pushTimer -= Time.deltaTime;
+            float t = 1f - Mathf.Max(0f, pushTimer) / Mathf.Max(0.01f, pushTime);
+            push = Mathf.SmoothStep(0f, 1f, t < 0.25f ? t / 0.25f : 1f - (t - 0.25f) / 0.75f);
+        }
+
+        //é~Ç‹Ç¡ÇƒêUÇËÇ‡Ç®Ç≥Ç‹Ç¡ÇΩÇÁÅAâΩÇ‡ÇµÇ»Ç¢
+        if (target <= 0f && amount < 0.001f && push <= 0f)
+        {
+            if (posed) { amount = 0f; posed = false; ResetPose(); }
             return;
         }
+        posed = true;
         amount = Mathf.Lerp(amount, target, 1f - Mathf.Exp(-settle * Time.deltaTime));
         phase += Mathf.Max(speed, minSpeed) * stepsPerMeter * Mathf.PI * Time.deltaTime;
 
         float s = Mathf.Sin(phase) * amount;
-        Swing(armL, s * armAngle);
-        Swing(armR, -s * armAngle);
+        Swing(armL, Mathf.Lerp(s * armAngle, -pushAngle, push));
+        Swing(armR, Mathf.Lerp(-s * armAngle, -pushAngle, push));
         Swing(legL, -s * legAngle);
         Swing(legR, s * legAngle);
         if (head != null) head.t.localRotation = Quaternion.AngleAxis(s * headAngle, head.swayAxis) * head.baseRotation;
