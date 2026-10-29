@@ -22,7 +22,7 @@ public class FanDeploy : MonoBehaviour
     [SerializeField] float landSpeed = 0.5f;
     [Tooltip("止まったまま、この秒数たったら設置する")]
     [SerializeField] float landWait = 0.1f;
-    [Tooltip("設置したら拾えないように Item タグを外す")]
+    [Tooltip("設置したら拾えないようにタグを外す")]
     [SerializeField] bool lockAfterDeploy = true;
 
     [Header("羽")]
@@ -95,7 +95,6 @@ public class FanDeploy : MonoBehaviour
     {
         if (IsDeployed) return;
         IsDeployed = true;
-        SceneAudioController.Instance?.PlayPutItem();
 
         Transform root = body != null ? body.transform : transform;
         if (body != null)
