@@ -30,6 +30,10 @@ public sealed class SceneAudioController : MonoBehaviour
     private AudioClip confirmSound;
     [SerializeField, InspectorName("戻る音")]
     private AudioClip backSound;
+    [SerializeField, InspectorName("ロック時効果音")]
+    private AudioClip lockedSound;
+    [SerializeField, InspectorName("アンロック時効果音")]
+    private AudioClip unlockedSound;
 
     [Header("音量")]
     [SerializeField, Range(0f, 1f), InspectorName("BGM音量")]
@@ -78,6 +82,10 @@ public sealed class SceneAudioController : MonoBehaviour
         selectionSource.playOnAwake = false;
         selectionSource.spatialBlend = 0f;
         selectionSource.volume = selectionVolume;
+
+        if (lockedSound == null) lockedSound = Resources.Load<AudioClip>("Audio/SE/locked");
+        if (unlockedSound == null) unlockedSound = Resources.Load<AudioClip>("Audio/SE/unlocked");
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -126,6 +134,18 @@ public sealed class SceneAudioController : MonoBehaviour
     public void PlayBack()
     {
         if (backSound != null) selectionSource.PlayOneShot(backSound);
+    }
+
+    public void PlayLocked()
+    {
+        if (lockedSound == null) lockedSound = Resources.Load<AudioClip>("Audio/SE/locked");
+        if (lockedSound != null) selectionSource.PlayOneShot(lockedSound);
+    }
+
+    public void PlayUnlocked()
+    {
+        if (unlockedSound == null) unlockedSound = Resources.Load<AudioClip>("Audio/SE/unlocked");
+        if (unlockedSound != null) selectionSource.PlayOneShot(unlockedSound);
     }
 
     public void PlayStep(AudioClip clip, float volume)
