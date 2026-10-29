@@ -3,8 +3,9 @@
  * 内容：ステージの情報をまとめているSOData
  * 作成者：寺田
  */
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Video;
 
 [CreateAssetMenu(fileName = "StageData", menuName = "Scriptable Objects/StageData")]
 public class StageData : ScriptableObject
@@ -63,6 +64,16 @@ public class StageData : ScriptableObject
 
     [SerializeField, Tooltip("回数ごとに人が増える倍率")]
     [Min(0.0f)] public float PhaseMulti = 0.0f;
+
+    [Header("===== セレクトシーンで使用する情報 =====")]
+    [SerializeField]
+    public StageSelectBackGround.BackGroundType BackGroundType = StageSelectBackGround.BackGroundType.Movie;
+
+    [SerializeField]
+    public List<Sprite> Textures = new List<Sprite>();
+
+    [SerializeField]
+    public VideoClip MovieClip;
 
     public GameData.ResultData SaveData;
     

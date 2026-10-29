@@ -97,6 +97,10 @@ public class ObjectEffect : MonoBehaviour
         emitter.speed = speed;
         if (effect != null) emitter.gameObject.name = "[FX] " + effect.name;
     }
+    public void SetScale(float newScale)
+    {
+        scale = newScale;
+    }
 
 #if UNITY_EDITOR
     // コンポーネントを付けた時点でエミッターを作る
@@ -106,10 +110,6 @@ public class ObjectEffect : MonoBehaviour
         Apply();
     }
 
-    public void SetScale(float newScale)
-    {
-        scale = newScale;
-    }
 
 
     // Inspector で値を変えたらすぐ反映する(OnValidate 中はオブジェクトを作れないので遅らせる)
