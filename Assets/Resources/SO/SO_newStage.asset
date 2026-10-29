@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8665c5fc24fbdd045b463237a9836604, type: 3}
   m_Name: SO_newStage
   m_EditorClassIdentifier: Assembly-CSharp::StageData
-  MapData: {fileID: 11400000, guid: e5a1bdf6d8a8fee4488403c49a49a0e5, type: 2}
+  MapData: {fileID: 11400000, guid: 7286ab96e98ad4e479a1f5b7d21c90c9, type: 2}
   PlayerData: {fileID: 11400000, guid: 0534ebcec49cbc24db206ad53128db68, type: 2}
   EnemyDetas:
   - {fileID: 0}
