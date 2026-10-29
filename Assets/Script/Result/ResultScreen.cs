@@ -90,7 +90,12 @@ public class ResultScreen : ResultScreenBase
 
     void Start()
     {
-        if (gameData != null) Show(gameData.SelectStageNo, gameData.Result.pastTime, LastFollowers);
+        if (gameData != null)
+        {
+            //ステージセレクトで次のステージを解放するため、クリアを記録する
+            StageProgress.MarkCleared(gameData.SelectStageNo);
+            Show(gameData.SelectStageNo, gameData.Result.pastTime, LastFollowers);
+        }
         else Show(testStage, testTime, testFlow);
     }
 
