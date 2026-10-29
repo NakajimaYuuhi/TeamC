@@ -2,10 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(RectTransform))]
 public class UIChaosGatherTransition : MonoBehaviour
 {
+    public static UIChaosGatherTransition Instance { get; private set; }
+
     public enum GatherDirection
     {
         Left,
@@ -114,6 +117,15 @@ public class UIChaosGatherTransition : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
         rootRect = GetComponent<RectTransform>();
 
         Generate();
@@ -123,15 +135,15 @@ public class UIChaosGatherTransition : MonoBehaviour
 
     private void Update()
     {
-        //if (enableDebugKey &&
-        //    Keyboard.current != null &&
-        //    Keyboard.current[debugKey].wasPressedThisFrame)
-        //{
-        //    if (isGathered)
-        //        PlayScatter();
-        //    else
-        //        PlayGather();
-        //}
+        if (enableDebugKey &&
+            Keyboard.current != null &&
+            Keyboard.current[debugKey].wasPressedThisFrame)
+        {
+            if (isGathered)
+                PlayScatter();
+            else
+                PlayGather();
+        }
 
         if (!isAnimating)
             return;
@@ -154,6 +166,51 @@ public class UIChaosGatherTransition : MonoBehaviour
         {
             isAnimating = false;
         }
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        StartCoroutine(LoadSceneCoroutine(sceneName));
+    }
+
+    public System.Collections.IEnumerator LoadSceneCoroutine(string sceneName)
+    {
+        PlayGather();
+        yield return StartCoroutine(UpdateAnimation());
+
+        var result = SceneManager.LoadSceneAsync(sceneName);
+        yield return result;
+
+        PlayScatter();
+    }
+
+    private System.Collections.IEnumerator UpdateAnimation()
+    {
+        if (!isAnimating)
+            yield break;
+
+        float t = 0.0f;
+
+        while(t < 1f)
+        {
+            t = Mathf.Clamp01(
+                animationElapsed / animationDuration
+            );
+            animationElapsed += Time.unscaledDeltaTime;
+
+            float progress = Mathf.Lerp(
+                animationStartProgress,
+                animationTargetProgress,
+                t
+            );
+
+            SetProgress(progress);
+
+            isAnimating = false;
+        
+            yield return null;
+        }
+
     }
 
     public void PlayGather()

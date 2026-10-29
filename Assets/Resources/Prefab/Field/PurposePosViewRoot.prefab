@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4309165480619553536}
   - component: {fileID: 3099781365456310045}
   - component: {fileID: 6025904565220230401}
+  - component: {fileID: 4764792412678040353}
   m_Layer: 0
   m_Name: ViewObject
   m_TagString: Untagged
@@ -90,6 +91,99 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4764792412678040353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547270826217785399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ac2e0e13fb60a4bb9f4745914544fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SplatZoneFrameEffect
+  frameMaterial: {fileID: 2100000, guid: 7aaba5bf473a08a4cbfef36325ec27e9, type: 2}
+  frameCount: 10
+  frameWidth: 1
+  frameDepth: 1
+  frameThickness: 0.1
+  frameColor: {r: 1, g: 0.2567639, b: 0, a: 1}
+  startHeight: 0.05
+  riseHeight: 2
+  cycleDuration: 2
+  loop: 1
+  heightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  alphaCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.35
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.75
+      value: 0.4
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  generateGrid: 1
+  gridCount: 1
+  gridGap: 0.04
+  gridHeight: 0.01
+  gridColor: {r: 0.6415094, g: 0.09351253, b: 0, a: 0.7}
 --- !u!1 &5893641079708652875
 GameObject:
   m_ObjectHideFlags: 0
