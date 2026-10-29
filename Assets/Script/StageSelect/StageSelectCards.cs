@@ -113,7 +113,9 @@ public class StageSelectCards : MonoBehaviour
     void Start()
     {
         CollectCards();
-        selected = Mathf.Clamp(startIndex, 0, Mathf.Max(0, cards.Count - 1));
+        //ステージから戻ってきたときは、遊んでいたステージを選んでおく
+        int first = _gameData != null ? _gameData.SelectStageNo : startIndex;
+        selected = Mathf.Clamp(first, 0, Mathf.Max(0, cards.Count - 1));
         Layout(false);
     }
 
@@ -139,7 +141,8 @@ public class StageSelectCards : MonoBehaviour
         if (busy) return;
         busy = true;
         SceneAudioController.Instance?.PlayBack();
-        UIChaosGatherTransition.Instance.LoadScene("Title");
+        if (UIChaosGatherTransition.Instance != null) UIChaosGatherTransition.Instance.LoadScene("Title");
+        else SceneManager.LoadScene("Title");
     }
 
     //番号を指定して選ぶ
@@ -159,6 +162,12 @@ public class StageSelectCards : MonoBehaviour
     {
         if (busy || cards.Count == 0) return;
         var card = cards[selected];
+        //ロック中のステージには入れない。南京錠を揺らして知らせる
+        if (card.rect.TryGetComponent(out StageLock stageLock) && stageLock.IsLocked)
+        {
+            stageLock.Rattle();
+            return;
+        }
         busy = true;
         SceneAudioController.Instance?.PlayConfirm();
         card.rect.DOComplete(); // 移動中なら先に定位置へ
@@ -172,7 +181,8 @@ public class StageSelectCards : MonoBehaviour
                 onDecided.Invoke(selected);
             });
 
-        UIChaosGatherTransition.Instance.LoadScene("PlayTest");
+        if (UIChaosGatherTransition.Instance != null) UIChaosGatherTransition.Instance.LoadScene("PlayTest");
+        else SceneManager.LoadScene("PlayTest");
     }
 
     public void Back()
@@ -180,6 +190,8 @@ public class StageSelectCards : MonoBehaviour
         if (busy) return;
         Debug.Log("[ステージセレクト] もどる");
         onBack.Invoke();
+        //Esc でタイトルへ戻る
+        Quit();
     }
 
     // ---------- カードの並び ----------

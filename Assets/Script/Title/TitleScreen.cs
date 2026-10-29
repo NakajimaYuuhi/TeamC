@@ -441,4 +441,15 @@ public class TitleScreen : MonoBehaviour
             }
         }
     }
+
+    public void GameStart()
+    {
+        UIChaosGatherTransition.Instance?.LoadScene("StageSelect");
+    }
+
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
+
 }

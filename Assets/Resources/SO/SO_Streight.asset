@@ -23,8 +23,8 @@ MonoBehaviour:
   FailedTime: 1000
   _securityCount: 3
   IsTimerFailed: 1
-  IsSpawnerBase: 0
+  IsSpawnerBase: 1
   ClearCount: 1
-  EnemyCount: 200
+  EnemyCount: 100
   DiffMulti: 1
   PhaseMulti: 0
