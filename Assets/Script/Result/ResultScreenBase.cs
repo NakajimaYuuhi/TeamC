@@ -143,7 +143,7 @@ public abstract class ResultScreenBase : MonoBehaviour, IResultButtonOwner
             return;
         }
         //ƒ`[ƒ€‚Ì‰æ–ÊØ‚è‘Ö‚¦‚ª‚ ‚ê‚Îg‚¤
-        if (CrowdSceneTransition.Instance != null) CrowdSceneTransition.Instance.LoadScene(scene);
+        if(UIChaosGatherTransition.Instance != null)UIChaosGatherTransition.Instance.LoadScene(scene);
         else SceneManager.LoadScene(scene);
     }
 }
