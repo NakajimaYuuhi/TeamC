@@ -117,6 +117,8 @@ public class StageSelectCards : MonoBehaviour
         int first = _gameData != null ? _gameData.SelectStageNo : startIndex;
         selected = Mathf.Clamp(first, 0, Mathf.Max(0, cards.Count - 1));
         Layout(false);
+        var bg = GetComponent<StageSelectBackGround>();
+        bg.Stop(); bg.Play();
     }
 
     void Update()
@@ -234,7 +236,9 @@ public class StageSelectCards : MonoBehaviour
             return;
         }
         Select(next);
-        _gameData.ChangeSelectNo(dir);
+        _gameData.ChangeSelectNo(dir); 
+        var bg = GetComponent<StageSelectBackGround>();
+        bg.Stop();bg.Play();
     }
 
     //ステージ。選択中を中央に、前後を左右へ並べる

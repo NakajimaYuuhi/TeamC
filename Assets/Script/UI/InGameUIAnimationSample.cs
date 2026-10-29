@@ -5,7 +5,6 @@
  * 　　　　　
  * auther : Takitani Shohei
  */
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
