@@ -183,8 +183,8 @@ public class StageSelectCards : MonoBehaviour
                 onDecided.Invoke(selected);
             });
 
-        if (UIChaosGatherTransition.Instance != null) UIChaosGatherTransition.Instance.LoadScene("PlayTest");
-        else SceneManager.LoadScene("PlayTest");
+        if (UIChaosGatherTransition.Instance != null) UIChaosGatherTransition.Instance.LoadScene("Game");
+        else SceneManager.LoadScene("Game");
     }
 
     public void Back()

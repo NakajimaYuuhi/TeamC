@@ -53,6 +53,14 @@ public class CameraController : MonoBehaviour
     [SerializeField, Tooltip("見下ろす限界")] 
     private float fpsMaxPitch = 80f;  //見下ろす限界
 
+    [Header("===== 演出 =====")]
+    [SerializeField]
+    private AnimationCurve _purposeViewAnimCurve = AnimationCurve.EaseInOut(0, 1, 1, 0);
+    [SerializeField]
+    private float _animTime = 1.5f;
+    [SerializeField]
+    private float _animScale = 10.0f;
+    private bool _isAnimation = false;
 
     private float currentZoomDistance; //現在のズーム距離
     private Transform target; //追従先
@@ -125,7 +133,7 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         if (target == null) return;
-
+        if (_isAnimation) return;
         
         if (FPSMode != appliedFPSMode)
         {
@@ -268,5 +276,40 @@ public class CameraController : MonoBehaviour
         {
             cameraModeAction.performed -= OnCameraModeChange;
         }
+    }
+
+
+    /// <summary>
+    /// カメラを目的地の方向に向かせる
+    /// </summary>
+    /// <param name="position"></param>
+    public void FocusPurpose(Vector3 position)
+    {
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        Vector3 dir = (playerObj.transform.position - position).normalized;
+        yaw = Mathf.Atan2(-dir.x, -dir.z) * Mathf.Rad2Deg;
+        pitch = Mathf.Asin(dir.y) * Mathf.Rad2Deg;
+    }
+
+    public IEnumerator PurposeViewCoroutine(Vector3 purpose)
+    {
+        _isAnimation = true;
+        float rate = 0.0f;
+        transform.position = purpose;
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        Vector3 target = playerObj.transform.position;
+        while (rate < _animTime)
+        {
+            rate = Time.deltaTime;
+            float t = rate / _animTime;
+            Vector3 newPosition = Vector3.Lerp(transform.position, target, t);
+
+            newPosition.y += _purposeViewAnimCurve.Evaluate(t) * _animScale;
+
+            transform.position = newPosition;
+
+            yield return null;
+        }
+        _isAnimation = false;
     }
 }
