@@ -184,7 +184,8 @@ public class GameFlowManager : MonoBehaviour
                 float posX = Random.Range(SpawnCenter.x - (SpawnBoxSize.x * 0.5f), SpawnCenter.x + (SpawnBoxSize.x * 0.5f));
                 float posZ = Random.Range(SpawnCenter.z - (SpawnBoxSize.z * 0.5f), SpawnCenter.z + (SpawnBoxSize.z * 0.5f));
 
-                Vector3 SpawnPos = new Vector3(posX, 1.2f, posZ);
+                //範囲の高さに出す。階が縦に重なったステージのため
+                Vector3 SpawnPos = new Vector3(posX, SpawnCenter.y + 1.2f, posZ);
 
                 Quaternion rot = Random.rotation;
                 rot.x = rot.z = 0.0f;
@@ -326,6 +327,14 @@ public class GameFlowManager : MonoBehaviour
     {
         _flowState = FlowState.ResultView;
         _isClear = clear;
+        //ゴールしたら足元の矢印を消す
+        var arrow = _player != null ? _player.GetComponentInChildren<GoalArrow>() : null;
+        if (arrow != null)
+        {
+            arrow.enabled = false;
+            var r = arrow.GetComponent<Renderer>();
+            if (r != null) r.enabled = false;
+        }
         GameData.ResultData data = new GameData.ResultData();
         data.IsClear = clear;
         data.pastTime = _resultTime;

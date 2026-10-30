@@ -69,7 +69,8 @@ public class ItemSpawner : MonoBehaviour
         SpawnPos.x = Random.Range(
             transform.position.x - halfSize.x, 
             transform.position.x + halfSize.x);
-        SpawnPos.y = 1.0f;
+        //置いた高さから出す。階が縦に重なったステージのため
+        SpawnPos.y = transform.position.y + 1.0f;
         SpawnPos.z = Random.Range(
             transform.position.z - halfSize.z,
             transform.position.z + halfSize.z);

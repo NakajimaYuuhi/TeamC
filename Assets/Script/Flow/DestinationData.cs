@@ -31,6 +31,10 @@ public class DestinationData : ScriptableObject
     [Tooltip("XZ平面上で目的地へ到達したとみなす長方形のZ方向の全幅です。")]
     private float achievementSizeZ;
 
+    [SerializeField, Min(0f), InspectorName("達成範囲 Y")]
+    [Tooltip("高さの全幅です。0 なら高さは見ません。階が重なったステージで使います。")]
+    private float achievementSizeY;
+
     public string DestinationName => destinationName;
     public Vector3 DestinationPosition => destinationPosition;
     public float AchievementCenterOffsetX => achievementCenterOffsetX;
@@ -40,11 +44,13 @@ public class DestinationData : ScriptableObject
     public float TargetTime => targetTime;
     public float AchievementSizeX => achievementSizeX;
     public float AchievementSizeZ => achievementSizeZ;
+    public float AchievementSizeY => achievementSizeY;
 
     public bool IsWithinAchievementRange(Vector3 position)
     {
         var offset = position - AchievementCenterPosition;
         return Mathf.Abs(offset.x) <= achievementSizeX * 0.5f
-            && Mathf.Abs(offset.z) <= achievementSizeZ * 0.5f;
+            && Mathf.Abs(offset.z) <= achievementSizeZ * 0.5f
+            && (achievementSizeY <= 0f || Mathf.Abs(offset.y) <= achievementSizeY * 0.5f);
     }
 }

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: SO_ResultRank
   m_EditorClassIdentifier: Assembly-CSharp::ResultRankTable
   stages:
-  - s: 60
-    a: 80
-    b: 100
   - s: 50
     a: 65
     b: 80
+  - s: 60
+    a: 80
+    b: 100
   - s: 25
     a: 35
     b: 50

@@ -436,9 +436,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   playerData: {fileID: 11400000, guid: 0534ebcec49cbc24db206ad53128db68, type: 2}
   sideStepSpeedRate: 0.5
-  stepDistance: 2
+  stepDistance: 1.5
   stepDuration: 0.2
-  stepCooldown: 0.3
+  stepCooldown: 0.7
   formationLeader: {fileID: 0}
   flowEmitter: {fileID: 0}
 --- !u!54 &8297245870149234614
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98b6c72561b48fdb53f5deaa86d5ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStepFeedback
-  stepSound: {fileID: 8300000, guid: b8c74282030a4c49ad9b21761ebdc590, type: 3}
+  stepSound: {fileID: 8300000, guid: b069bc49c352a08f284fe3216560eb11, type: 3}
   stepVolume: 0.95
   dustMaterial: {fileID: 2100000, guid: 9a4fc93d9a2a49f5b6a1f7f35047a7fd, type: 2}
 --- !u!114 &3975189098548417205
@@ -677,6 +677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fc32198ad762172bcaab9deb7eaf4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPushPose
+  pushSound: {fileID: 8300000, guid: d189b101cf0dc5872cd615a26b88f703, type: 3}
+  pushVolume: 0.9
 --- !u!1 &7508110826259941913
 GameObject:
   m_ObjectHideFlags: 0

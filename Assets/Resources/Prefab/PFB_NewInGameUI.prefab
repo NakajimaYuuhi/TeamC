@@ -110,7 +110,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 36, y: 42}
-  m_SizeDelta: {x: 1044, y: 82}
+  m_SizeDelta: {x: 911, y: 82}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6686057516621997491
 CanvasRenderer:
@@ -568,6 +568,7 @@ RectTransform:
   m_Children:
   - {fileID: 3074775695410987325}
   - {fileID: 372384460323867052}
+  - {fileID: 7960738667075675722}
   - {fileID: 7379862904275483139}
   - {fileID: 3946019646897189429}
   - {fileID: 2752890673099745558}
@@ -3015,3 +3016,99 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dad5c52a98141fc8adc2243c8221c5eb, type: 3}
   - {fileID: 21300000, guid: e486a20424865bd59d0060e17277a075, type: 3}
   - {fileID: 21300000, guid: eaf6d9fbcb86d82276a809d5875b6d7b, type: 3}
+--- !u!1 &3932127381107403493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7960738667075675722}
+  - component: {fileID: 8095587078137113046}
+  - component: {fileID: 5751956410585801032}
+  - component: {fileID: 6716954237419293015}
+  m_Layer: 5
+  m_Name: FloorBadge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7960738667075675722
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3932127381107403493}
+  m_LocalRotation: {x: 0, y: 0, z: -0.026177, w: 0.999657}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4942611968664079708}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 533, y: -122}
+  m_SizeDelta: {x: 141, y: 138}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8095587078137113046
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3932127381107403493}
+  m_CullTransparentMesh: 1
+--- !u!114 &5751956410585801032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3932127381107403493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 922e48ed4078a7261b390b81f27aa0b2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6716954237419293015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3932127381107403493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e26a8cfe9a7ae7c3113d8117c08bd4e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::HudFloor
+  badge: {fileID: 5751956410585801032}
+  floorSprites:
+  - {fileID: 21300000, guid: 508174e84fdb93192a94e11191ce8a12, type: 3}
+  - {fileID: 21300000, guid: 5d5da149d17f02f3445ea4a41fddbd89, type: 3}
+  - {fileID: 21300000, guid: a6d7509b5d3998e56e5bbe163a135f78, type: 3}
+  - {fileID: 21300000, guid: 922e48ed4078a7261b390b81f27aa0b2, type: 3}
+  popScale: 1.25
+  popTime: 0.35

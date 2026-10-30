@@ -18,6 +18,8 @@ public class StageLock : MonoBehaviour
     [SerializeField] RectTransform lockPlate;
     [Tooltip("あそぶボタン")]
     [SerializeField] GameObject playButton;
+    [Tooltip("ステージの絵。ロック中は消す。となりのカードが薄く出るとき、シャッターごしに透けて見えないように")]
+    [SerializeField] GameObject preview;
 
     [Header("解放の演出")]
     [Tooltip("ステージセレクトを開いてから演出を始めるまでの秒数")]
@@ -62,6 +64,7 @@ public class StageLock : MonoBehaviour
         padlock.gameObject.SetActive(locked);
         lockPlate.gameObject.SetActive(locked);
         if (playButton != null) playButton.SetActive(!locked);
+        if (preview != null) preview.SetActive(!locked);
         shutter.anchoredPosition = shutterPos;
         padlock.anchoredPosition = padlockPos;
         padlock.localEulerAngles = Vector3.zero;
@@ -93,7 +96,8 @@ public class StageLock : MonoBehaviour
         seq.Append(DOTween.To(() => padlock.anchoredPosition, v => padlock.anchoredPosition = v, padlockPos + new Vector2(0f, -620f), 0.6f).SetEase(Ease.InQuad));
         seq.Join(padlock.DOLocalRotate(new Vector3(0f, 0f, -40f), 0.6f).SetEase(Ease.InQuad));
         seq.Join(DOTween.To(() => lockGroup.alpha, v => lockGroup.alpha = v, 0f, 0.6f).SetEase(Ease.InQuad));
-        //シャッターが上がる
+        //シャッターが上がる。上がり始めたら絵を出す
+        seq.InsertCallback(delay + 0.62f, () => { if (preview != null) preview.SetActive(true); });
         seq.Insert(delay + 0.62f, DOTween.To(() => shutter.anchoredPosition, v => shutter.anchoredPosition = v, shutterPos + new Vector2(0f, h + 12f), shutterTime).SetEase(Ease.InOutCubic));
         //札が消えて、あそぶボタンが出る
         float t = delay + 0.62f + shutterTime;

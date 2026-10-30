@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SO_Densha_Door
   m_EditorClassIdentifier: Assembly-CSharp::DestinationData
   destinationName: Densha_Door
-  destinationPosition: {x: -20.5, y: 0, z: 5.6}
+  destinationPosition: {x: -12.5, y: 0, z: 2.9}
   achievementCenterOffsetX: 0
   achievementCenterOffsetZ: 0
   targetTime: 60
-  achievementSizeX: 41
-  achievementSizeZ: 8
+  achievementSizeX: 2.6
+  achievementSizeZ: 2.6

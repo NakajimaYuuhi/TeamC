@@ -94,6 +94,9 @@ public class ResultScreen : ResultScreenBase
         {
             //ステージセレクトで次のステージを解放するため、クリアを記録する
             StageProgress.MarkCleared(gameData.SelectStageNo);
+            //ステージセレクトに出す、いちばんいい記録を残す
+            float t = gameData.Result.pastTime;
+            StageProgress.SaveBest(gameData.SelectStageNo, t, rankTable.GetRank(gameData.SelectStageNo, t));
             Show(gameData.SelectStageNo, gameData.Result.pastTime, LastFollowers);
         }
         else Show(testStage, testTime, testFlow);

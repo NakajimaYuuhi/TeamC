@@ -19,6 +19,8 @@ public class TrainDoors : MonoBehaviour
     bool opened;
 
     public bool IsOpen => opened;
+    //ŠJ‚­‚Ü‚Å‚Ì•b”
+    public float OpenAfter => openAfter;
 
     void Start()
     {
