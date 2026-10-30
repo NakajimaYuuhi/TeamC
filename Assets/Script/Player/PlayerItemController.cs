@@ -350,6 +350,7 @@ public class PlayerItemController : MonoBehaviour
 
         //6.アイテム側に投げられたことを通知
         item.SendMessage("OnThrown", launchVelocity, SendMessageOptions.DontRequireReceiver);
+        SceneAudioController.Instance?.PlayThrowItem();
         foreach (var t in item.GetComponents<IThrowableItem>()) t.OnThrown(gameObject, launchVelocity);
 
         //7.所持数の変化を通知して通常モードに戻る

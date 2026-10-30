@@ -1,6 +1,4 @@
-using TMPro.EditorUtilities;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
 public class CrowdWalker : MonoBehaviour
 {

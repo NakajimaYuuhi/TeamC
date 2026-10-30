@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 372384460323867052}
   - component: {fileID: 2531608738975796893}
+  - component: {fileID: 6532188685071332948}
   m_Layer: 5
   m_Name: TicketRoot
   m_TagString: Untagged
@@ -2980,3 +2981,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6532188685071332948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353058810588452427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc353b267d5473d6164e696c849c5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HudStageTicket
+  gameData: {fileID: 11400000, guid: 0364facd7094dde478ead4e0ae9f3736, type: 2}
+  stageLabel: {fileID: 3635540159278849889}
+  stageSprites:
+  - {fileID: 21300000, guid: 2d185ef1edd188d4fb5c34b7c080e984, type: 3}
+  - {fileID: 21300000, guid: 78857a8c87afc4a4e810cf0baa7c93cc, type: 3}
+  - {fileID: 21300000, guid: ab0e012a572e6e543b66212619dff62d, type: 3}
+  - {fileID: 21300000, guid: 167c00e2953ebf14d80350a71d0c6992, type: 3}
+  - {fileID: 21300000, guid: d364b42c74fe57546ba8aaa26679820f, type: 3}
+  stageName: {fileID: 5561578015384684979}
+  nameSprites:
+  - {fileID: 21300000, guid: b9e41355f78148547879bae414f76524, type: 3}
+  - {fileID: 21300000, guid: 10d7eefdc1ff91b46b3867226763c2ad, type: 3}
+  - {fileID: 21300000, guid: 1aad533f9560744479e910c8a15b1b47, type: 3}
+  - {fileID: 21300000, guid: 044d1ca44c4b00c458802041dc42ae84, type: 3}
+  - {fileID: 21300000, guid: e3d90570bdfe0cc4fb5926cba11346b8, type: 3}
+  goal: {fileID: 7002759989826445735}
+  goalSprites:
+  - {fileID: 21300000, guid: 77b7a8e1d1531cc4c9ec311a97f2b029, type: 3}
+  - {fileID: 21300000, guid: 1efd505a181fc48ba93352e3a389fdc7, type: 3}
+  - {fileID: 21300000, guid: dad5c52a98141fc8adc2243c8221c5eb, type: 3}
+  - {fileID: 21300000, guid: e486a20424865bd59d0060e17277a075, type: 3}
+  - {fileID: 21300000, guid: eaf6d9fbcb86d82276a809d5875b6d7b, type: 3}

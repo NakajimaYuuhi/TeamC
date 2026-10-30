@@ -39,6 +39,7 @@ public class FanWind : MonoBehaviour, IThrowableItem
     Vector3 windDir;
     float windLeft;
     GameObject effect;
+    AudioSource loopAudio;
     readonly HashSet<Rigidbody> pushed = new HashSet<Rigidbody>();
     readonly Collider[] hits = new Collider[64];
 
@@ -50,6 +51,7 @@ public class FanWind : MonoBehaviour, IThrowableItem
 
     void OnDestroy()
     {
+        if (loopAudio != null) { loopAudio.Stop(); Destroy(loopAudio); }
         if (deploy != null) deploy.Deployed -= StartWind;
     }
 
@@ -64,6 +66,7 @@ public class FanWind : MonoBehaviour, IThrowableItem
     {
         windDir = reverse ? -dir : dir;
         windLeft = windTime;
+        loopAudio = SceneAudioController.Instance?.PlayItemLoop(gameObject);
         if (windEffect != null)
             effect = Instantiate(windEffect, transform.position, Quaternion.LookRotation(windDir, Vector3.up), transform);
     }
@@ -101,6 +104,7 @@ public class FanWind : MonoBehaviour, IThrowableItem
 
     void EndWind()
     {
+        if (loopAudio != null) { loopAudio.Stop(); Destroy(loopAudio); loopAudio = null; }
         if (effect != null) Destroy(effect);
         if (deploy != null) deploy.StopSpin(stopTime);
         if (!removeAfterWind) return;

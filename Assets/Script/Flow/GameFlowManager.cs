@@ -6,9 +6,6 @@
  * 作成者:寺田
  */
 using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 [RequireComponent(typeof(NpcPhysicsLodManager))]
 public class GameFlowManager : MonoBehaviour
@@ -46,7 +43,14 @@ public class GameFlowManager : MonoBehaviour
 
     [Header("===== フロー管理変数 =====")]
     [SerializeField, Tooltip("目的地の名前を表示する時間")]
-    private float _purposeViewTime;
+    private float _purposeViewTime = 1.0f;
+    private float _currentViewTime;
+
+    [SerializeField, Range(0.0f, 1.0f)]
+    private float _startZoomValue = 0.6f;
+
+    [SerializeField]
+    private AnimationCurve _zoomOutCurve = AnimationCurve.EaseInOut(1, 1, 0, 0);
 
     [SerializeField, Tooltip("迷惑率が減少する速度")]
     private float _annoyanceDecrease = 3.0f;
@@ -82,6 +86,8 @@ public class GameFlowManager : MonoBehaviour
     private float _resultTime; // 最終結果時間
     private bool _isClear; // クリアしたかの情報受け渡し用
 
+    private float _cameraStartDistance;
+
     void Awake()
     {
         Initialize(_gameData.GetSelectStageData());
@@ -90,7 +96,6 @@ public class GameFlowManager : MonoBehaviour
 
     void Update()
     {
-        _uiTimer.RemainingTime -= Time.deltaTime;
 
         switch (_flowState)
         {
@@ -98,9 +103,11 @@ public class GameFlowManager : MonoBehaviour
                 PurposeView();
                 break;
             case FlowState.Execution:
+                _uiTimer.RemainingTime -= Time.deltaTime;
                 Execution();
                 break;
             case FlowState.Track:
+                _uiTimer.RemainingTime -= Time.deltaTime;
                 Track();
                 break;
             case FlowState.ResultView:
@@ -131,10 +138,6 @@ public class GameFlowManager : MonoBehaviour
 
         _hud = _ui ? _ui.GetComponentInChildren<GameHud>(true) : null;
         if (_hud == null) Debug.LogWarning("[GameFlowManager] UIプレハブの中に GameHud が見つかりません");
-
-        // プレイヤーにデータ配布
-        // auto playerComp = _player?.GetComponent<>();
-        // playerComp?.Initialize(data.PlayerData);
 
         _purposeTimes = data.ClearCount;
         _currentPurposeTimes = 0;
@@ -198,10 +201,24 @@ public class GameFlowManager : MonoBehaviour
 
     private void PurposeView()
     {
-        if (_uiTimer.RemainingTime > _purposeViewTime)
+        _currentViewTime = Mathf.Clamp01(_currentViewTime - Time.deltaTime);
+
+        var camCtrl = Camera.main.GetComponent<CameraController>();
+        if(_cameraStartDistance == 0.0f)
+        {
+            _cameraStartDistance = camCtrl.CurrentZoomDistance;
+        }
+        camCtrl.FocusPurpose(_purposeData.DestinationPosition);
+
+        float rate = _currentViewTime / _purposeViewTime;
+        camCtrl.SetZoomDistance(_cameraStartDistance - 
+            (_startZoomValue * _zoomOutCurve.Evaluate(rate) * _cameraStartDistance));
+
+        if (_currentViewTime <= 0.0f)
         {
             _flowState = FlowState.Execution;
-            _uiTimer.RemainingTime = _failedTime;
+            camCtrl.SetZoomDistance(_cameraStartDistance);
+            _cameraStartDistance = 0.0f;
         }
     }
 
@@ -264,10 +281,12 @@ public class GameFlowManager : MonoBehaviour
 
     public void SetPurpose()
     {
+        _flowState = FlowState.PurposeView;
         _purposeData = _stageData.PurposePick();
 
         _failedTime = _stageData.FailedTime;
-        _uiTimer.RemainingTime = _failedTime;
+        _uiTimer.RemainingTime = _stageData.FailedTime;
+        _currentViewTime = _purposeViewTime;
 
         _purposeView = Instantiate(_purposeViewPrefab, _purposeData.DestinationPosition, Quaternion.identity);
         _purposeView.transform.localScale = new Vector3(_purposeData.AchievementSizeX, 20.0f, _purposeData.AchievementSizeZ);
@@ -286,7 +305,6 @@ public class GameFlowManager : MonoBehaviour
         }
         else
         {
-            _flowState = FlowState.PurposeView;
             SetPurpose();
         }
 
