@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8665c5fc24fbdd045b463237a9836604, type: 3}
+  m_Name: SO_newStage
+  m_EditorClassIdentifier: Assembly-CSharp::StageData
+  MapData: {fileID: 11400000, guid: 7286ab96e98ad4e479a1f5b7d21c90c9, type: 2}
+  PlayerData: {fileID: 11400000, guid: 0534ebcec49cbc24db206ad53128db68, type: 2}
+  EnemyDetas:
+  - {fileID: 0}
+  PurposeDatas:
+  - {fileID: 11400000, guid: 2f729662fc8a28044927ec76cf8495f3, type: 2}
+  PlayerInitPos: {x: 45, y: 2, z: 0}
+  Type: 0
+  FailedTime: 1000
+  _securityCount: 3
+  IsTimerFailed: 1
+  IsSpawnerBase: 1
+  ClearCount: 1
+  EnemyCount: 100
+  DiffMulti: 1
+  PhaseMulti: 0
