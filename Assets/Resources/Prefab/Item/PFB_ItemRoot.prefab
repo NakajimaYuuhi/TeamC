@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f20f888f72ee843a3f7164c34482c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSkill
-  _skillType: 2
+  _skillType: 0
 --- !u!1 &8902309748527221679
 GameObject:
   m_ObjectHideFlags: 0

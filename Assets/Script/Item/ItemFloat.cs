@@ -34,7 +34,7 @@ public class ItemFloat : MonoBehaviour
         _currentRotation = 0.0f;
         _currentLifeTime = 0.0f;
         _basePos = transform.position;
-        _effectObj = Instantiate(effect, transform);
+        if (effect != null) _effectObj = Instantiate(effect, transform);
     }
 
     // Update is called once per frame

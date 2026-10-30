@@ -52,14 +52,18 @@ MonoBehaviour:
   - Type: 0
     model: {fileID: 3789874330538851295, guid: c9ad81fdcf48c88488283f46a3888bcc, type: 3}
     effect: {fileID: 5344813511865819279, guid: b978b6f185619ac42bc2204fc2151482, type: 3}
+    idleEffect: {fileID: 442243080782473271, guid: 236d0d988ddd02242814095456e94ade, type: 3}
   - Type: 1
     model: {fileID: 8202472994690737945, guid: 72057a45934faf04c8fb1af5476a89ce, type: 3}
     effect: {fileID: 5344813511865819279, guid: b978b6f185619ac42bc2204fc2151482, type: 3}
+    idleEffect: {fileID: 3669247839255817599, guid: 65779c68ba8870f418a4d87c043890f3, type: 3}
   - Type: 2
     model: {fileID: 2208420576313365728, guid: 435b5d6bb4578ad4ab410e296e4a15d1, type: 3}
     effect: {fileID: 5344813511865819279, guid: b978b6f185619ac42bc2204fc2151482, type: 3}
+    idleEffect: {fileID: 2228979942023945461, guid: 3d8ac40e10b9194498bd3fd5133e7c50, type: 3}
   - Type: 2
     model: {fileID: 2208420576313365728, guid: 435b5d6bb4578ad4ab410e296e4a15d1, type: 3}
     effect: {fileID: 5344813511865819279, guid: b978b6f185619ac42bc2204fc2151482, type: 3}
+    idleEffect: {fileID: 2228979942023945461, guid: 3d8ac40e10b9194498bd3fd5133e7c50, type: 3}
   _isTypeRandom: 1
   _type: 0

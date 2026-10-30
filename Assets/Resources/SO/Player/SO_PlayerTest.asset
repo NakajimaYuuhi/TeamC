@@ -16,7 +16,7 @@ MonoBehaviour:
   VoiceVolume: 1
   PlayerPushPower: 30
   PlayerNuisance: 0
-  MoveSpeed: 2.6
+  MoveSpeed: 3.2
   TurnSpeed: 2
   FacingMinSpeedRate: 0.2
   FacingSpeedCurve: 2

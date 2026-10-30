@@ -30,6 +30,10 @@ public class TitleScreen : MonoBehaviour
     [Header("ロゴ")]
     [SerializeField] TitleLogo logo;
 
+    [Header("プレイヤー")]
+    [Tooltip("右に出すプレイヤー。ロゴと同時に登場する")]
+    [SerializeField] TitleHero hero;
+
     [Header("メニュー")]
     [Tooltip("各項目。子に Bg / Flash / Label / Arrow を置く")]
     [SerializeField] RectTransform[] items;
@@ -185,6 +189,7 @@ public class TitleScreen : MonoBehaviour
         flow = DOTween.Sequence().SetLink(gameObject);
         if (background) flow.Insert(0f, T.Run(0.4f, Ease.OutQuad, t => background.alpha = t));
         if (logo) logo.PlayIntro();
+        if (hero) hero.PlayIntro();
         //「参る！」の着地で画面がゆれる
         if (shaker) flow.Insert(0.68f, T.Run(0.22f, Ease.Linear, Shake));
         //メニューが上から順に左から出る
@@ -372,6 +377,7 @@ public class TitleScreen : MonoBehaviour
             }));
         }
         if (logo) flow.InsertCallback(go, () => logo.PlayExit(0.18f));
+        if (hero) flow.InsertCallback(go, () => hero.PlayExit(0.18f));
         //幕が覆う
         if (wipeLabel && wipeSprites != null && index < wipeSprites.Length && wipeSprites[index])
         {

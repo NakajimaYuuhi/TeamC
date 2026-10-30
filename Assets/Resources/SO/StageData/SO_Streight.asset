@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2f729662fc8a28044927ec76cf8495f3, type: 2}
   PlayerInitPos: {x: 45, y: 2, z: 0}
   Type: 0
-  FailedTime: 1000
+  FailedTime: 120
   _securityCount: 3
   IsTimerFailed: 1
   IsSpawnerBase: 1
@@ -28,3 +28,6 @@ MonoBehaviour:
   EnemyCount: 100
   DiffMulti: 1
   PhaseMulti: 0
+  BackGroundType: 1
+  Textures: []
+  MovieClip: {fileID: 0}
