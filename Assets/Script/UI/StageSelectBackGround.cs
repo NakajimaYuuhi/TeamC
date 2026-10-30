@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
-using UnityEditor;
 
 public class StageSelectBackGround : MonoBehaviour
 {
@@ -35,6 +34,7 @@ public class StageSelectBackGround : MonoBehaviour
     private float _currentTime;
 
     private GameObject _playerObject;
+    private VideoPlayer _moviePlayer;
     private bool _isSlidePlaying;
     private bool _isSlideAnim;
 
@@ -129,11 +129,33 @@ public class StageSelectBackGround : MonoBehaviour
 
     private void PlayMovie()
     {
-        _playerObject = Instantiate(_moviePrefab);
-        var moviePlayer = _playerObject.GetComponentInChildren<VideoPlayer>();
-        moviePlayer.gameObject.SetActive(true);
-        moviePlayer.clip = _gamedata.GetSelectStageData().MovieClip;
+        var clip = _gamedata.GetSelectStageData().MovieClip;
+        if (_moviePrefab == null || clip == null) return;
 
+        _playerObject = Instantiate(_moviePrefab);
+        _moviePlayer = _playerObject.GetComponentInChildren<VideoPlayer>(true);
+        if (_moviePlayer == null)
+        {
+            Stop();
+            return;
+        }
+        _moviePlayer.gameObject.SetActive(true);
+        _moviePlayer.playOnAwake = false;
+        _moviePlayer.source = VideoSource.VideoClip;
+        _moviePlayer.clip = clip;
+        _moviePlayer.isLooping = true;
+        _moviePlayer.audioOutputMode = VideoAudioOutputMode.None;
+        _moviePlayer.waitForFirstFrame = true;
+        if (_renderTexture != null) _moviePlayer.targetTexture = _renderTexture;
+        _moviePlayer.prepareCompleted += OnMoviePrepared;
+        _moviePlayer.Prepare();
+    }
+
+    private void OnMoviePrepared(VideoPlayer player)
+    {
+        if (player != _moviePlayer) return;
+        player.prepareCompleted -= OnMoviePrepared;
+        player.Play();
     }
 
     private void PlayPrefab()
@@ -145,7 +167,19 @@ public class StageSelectBackGround : MonoBehaviour
     {
         _isPrefabPlaying = false;
         _isSlidePlaying = false;
+        if (_moviePlayer != null)
+        {
+            _moviePlayer.prepareCompleted -= OnMoviePrepared;
+            _moviePlayer.Stop();
+            _moviePlayer = null;
+        }
+        if (_playerObject != null) _playerObject.SetActive(false);
         Destroy(_playerObject);
+        _playerObject = null;
 
+    }
+    private void OnDestroy()
+    {
+        Stop();
     }
 }

@@ -58,6 +58,12 @@ public class CrowdAgent : MonoBehaviour
     }
 
     //“_‚ğ‡‚É‚½‚Ç‚éBÅŒã‚É’…‚¢‚½‚ç RouteEnded ‚ğŒÄ‚Ô
+    // Reuse patrol wrapping for a continuous route through several points.
+    public void Loop(Vector3[] path, float moveSpeed)
+    {
+        mode = Mode.Patrol; points = path; index = 0; speed = moveSpeed;
+    }
+
     public void Route(Vector3[] path, float moveSpeed)
     {
         mode = Mode.Route; points = path; index = 0; speed = moveSpeed;

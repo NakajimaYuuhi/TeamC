@@ -30,4 +30,4 @@ MonoBehaviour:
   PhaseMulti: 0
   BackGroundType: 1
   Textures: []
-  MovieClip: {fileID: 0}
+  MovieClip: {fileID: 32900000, guid: 87f1685265e7488bb35942693e514093, type: 3}

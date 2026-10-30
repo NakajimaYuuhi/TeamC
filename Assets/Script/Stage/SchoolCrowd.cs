@@ -36,6 +36,8 @@ public class SchoolCrowd : MonoBehaviour
         public bool toNextFloor;
         [Tooltip("下りてきた人を合わせて、この階のこの流れにいてよい人数。人数の何倍か")]
         public float capRate = 2f;
+        [Tooltip("Maximum random offset from each route point.")]
+        [Min(0f)] public float routeSpread = 0.6f;
     }
 
     [Serializable]
@@ -60,6 +62,20 @@ public class SchoolCrowd : MonoBehaviour
         [Tooltip("プレイヤーと逆向きに進む流れ")]
         public Stream counter;
     }
+
+    [Serializable]
+    public class Classroom
+    {
+        public string name;
+        [Tooltip("Clockwise or counterclockwise loop inside the classroom.")]
+        public Vector3[] flowPoints;
+        [Min(0)] public int crowd = 6;
+        public Vector2 speed = new Vector2(1.8f, 2.6f);
+        public Vector3[] standSpots;
+        [Min(0)] public int standGroup = 2;
+    }
+
+    [SerializeField] Classroom[] classrooms = Array.Empty<Classroom>();
 
     [Header("参照")]
     [Tooltip("出す人のプレハブ")]
@@ -86,6 +102,11 @@ public class SchoolCrowd : MonoBehaviour
     [Tooltip("流れの人が次に進み出すまでの秒数")]
     [SerializeField] Vector2 respawnDelay = new Vector2(0.5f, 3f);
 
+    [Tooltip("Seconds between customers leaving the shop, while this floor is active.")]
+    [SerializeField] Vector2 shopLeaveInterval = new Vector2(3.5f, 6.5f);
+
+    float shopLeaveTimer;
+    readonly Dictionary<CrowdAgent, int> shopSlots = new Dictionary<CrowdAgent, int>();
     NpcPhysicsLodManager lod;
     readonly Queue<CrowdAgent> shopQueue = new Queue<CrowdAgent>();
     readonly List<(CrowdAgent agent, Stream stream, float at)> waiting = new List<(CrowdAgent, Stream, float)>();
@@ -101,6 +122,32 @@ public class SchoolCrowd : MonoBehaviour
             if (floors[i].rush != null) floorOf[floors[i].rush] = i;
             SpawnFloor(floors[i]);
         }
+        foreach (var room in classrooms) SpawnClassroom(room);
+    }
+
+    void SpawnClassroom(Classroom room)
+    {
+        var loop = room.flowPoints;
+        if (loop == null || loop.Length < 2) return;
+        // Start along the whole loop so that a room is already busy on entry.
+        for (int i = 0; i < room.crowd; i++)
+        {
+            float along = (i + 0.5f) * loop.Length / room.crowd;
+            int segment = Mathf.FloorToInt(along);
+            int next = (segment + 1) % loop.Length;
+            Vector3 pos = Vector3.Lerp(loop[segment], loop[next], along - segment);
+            var path = new Vector3[loop.Length];
+            for (int j = 0; j < path.Length; j++) path[j] = loop[(next + j) % loop.Length];
+            Spawn(pos, loop[next] - pos, true).Loop(path, Rand(room.speed));
+        }
+        if (room.standSpots == null) return;
+        foreach (var spot in room.standSpots)
+            for (int i = 0; i < room.standGroup; i++)
+            {
+                float angle = i * Mathf.PI * 2f / room.standGroup;
+                Vector3 pos = spot + new Vector3(Mathf.Cos(angle), 0f, Mathf.Sin(angle)) * 0.55f;
+                Spawn(pos, spot - pos, true).Hold(pos, spot - pos, standPull * 0.5f);
+            }
     }
 
     static float Rand(Vector2 r) => UnityEngine.Random.Range(r.x, r.y);
@@ -182,7 +229,7 @@ public class SchoolCrowd : MonoBehaviour
         if (midway && start > 0) a.Warp(Vector3.Lerp(best.points[start - 1], best.points[start], UnityEngine.Random.value) + Vector3.up * 0.2f);
         var rest = new Vector3[best.points.Length - start];
         Array.Copy(best.points, start, rest, 0, rest.Length);
-        for (int i = 0; i < rest.Length; i++) rest[i] += new Vector3(UnityEngine.Random.Range(-0.6f, 0.6f), 0f, UnityEngine.Random.Range(-0.6f, 0.6f));
+        for (int i = 0; i < rest.Length; i++) rest[i] += new Vector3(UnityEngine.Random.Range(-s.routeSpread, s.routeSpread), 0f, UnityEngine.Random.Range(-s.routeSpread, s.routeSpread));
         a.Route(rest, Rand(s.speed));
     }
 
@@ -192,16 +239,17 @@ public class SchoolCrowd : MonoBehaviour
         if (s.toShop && !leaving.Remove(a))
         {
             //購買の前に並ぶ。多すぎたら、前の人から帰る
-            Vector3 spot = shopCenter + new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f) * shopSize.x, 0f, UnityEngine.Random.Range(-0.5f, 0.5f) * shopSize.z);
-            a.Hold(spot, shopCenter - spot, standPull);
+            // Reserve separate positions along the counter, leaving a passing lane.
+            int capacity = Mathf.Max(1, shopMax);
+            while (shopQueue.Count >= capacity) ReleaseShopCustomer();
+            int slot = 0;
+            while (shopSlots.ContainsValue(slot)) slot++;
+            shopSlots[a] = slot;
+            float x = ((slot + 0.5f) / capacity - 0.5f) * shopSize.x;
+            Vector3 spot = shopCenter + new Vector3(x, 0f, 0f);
+            a.Hold(spot, Vector3.forward, standPull * 0.5f);
+            if (shopQueue.Count == 0) shopLeaveTimer = Rand(shopLeaveInterval);
             shopQueue.Enqueue(a);
-            while (shopQueue.Count > shopMax)
-            {
-                var done = shopQueue.Dequeue();
-                if (done == null) continue;
-                leaving.Add(done);
-                done.Route(new[] { shopExit }, Rand(walkSpeed) + 0.5f);
-            }
             return;
         }
         //階段に着いたら下の階へ下りて、下の階の流れを続ける。この階には教室から新しい人を出す
@@ -210,7 +258,7 @@ public class SchoolCrowd : MonoBehaviour
             var next = floors[fi + 1].rush;
             if (CountIn(next) < next.count * next.capRate)
             {
-                Vector3 arrive = Nearest(next.spawns, a.transform.position) + new Vector3(UnityEngine.Random.Range(-1.5f, 1.5f), 0f, UnityEngine.Random.Range(-0.7f, 0.7f));
+                Vector3 arrive = Nearest(next.spawns, a.transform.position) + new Vector3(UnityEngine.Random.Range(-0.45f, 0.45f), 0f, UnityEngine.Random.Range(-0.25f, 0.25f));
                 a.Warp(arrive + Vector3.up * 0.2f);
                 streamOf[a] = next;
                 StartRoute(a, next, false);
@@ -224,6 +272,18 @@ public class SchoolCrowd : MonoBehaviour
         a.Warp(p + Vector3.up * 0.2f);
         a.Hold(p, Vector3.forward, standPull);
         waiting.Add((a, s, NextStart(s)));
+    }
+
+    void ReleaseShopCustomer()
+    {
+        var done = shopQueue.Dequeue();
+        shopSlots.Remove(done);
+        if (done != null)
+        {
+            leaving.Add(done);
+            done.Route(new[] { shopExit }, Rand(walkSpeed) + 0.5f);
+        }
+        shopLeaveTimer = Rand(shopLeaveInterval);
     }
 
     int CountIn(Stream s)
@@ -255,6 +315,14 @@ public class SchoolCrowd : MonoBehaviour
 
     void Update()
     {
+        // Do not empty another floor while its NPCs are inactive.
+        while (shopQueue.Count > 0 && shopQueue.Peek() == null) ReleaseShopCustomer();
+        if (shopQueue.Count > 0 && shopQueue.Peek().gameObject.activeInHierarchy)
+        {
+            shopLeaveTimer -= Time.deltaTime;
+            if (shopLeaveTimer <= 0f) ReleaseShopCustomer();
+        }
+
         for (int i = waiting.Count - 1; i >= 0; i--)
         {
             var (a, s, at) = waiting[i];
