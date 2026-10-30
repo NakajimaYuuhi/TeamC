@@ -14,27 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcSpawnAreaData
   MapPrefab: {fileID: 1142515212018087177, guid: d0cc71a6bca334210d176acf75783534, type: 3}
   areas:
-  - center: {x: -33.5, y: 0, z: -31.5}
+  - center: {x: -33.5, y: 12, z: -31.5}
     size: {x: 41, y: 1, z: 2.2}
     tag: 1
-  - center: {x: -3.5, y: 0, z: -31.5}
+  - center: {x: -3.5, y: 12, z: -31.5}
     size: {x: 5, y: 1, z: 2.2}
     tag: 1
-  - center: {x: -110, y: 0, z: -31.5}
+  - center: {x: -30, y: 8, z: -31.5}
     size: {x: 48, y: 1, z: 2.2}
     tag: 1
-  - center: {x: -110, y: 0, z: -20}
+  - center: {x: -30, y: 8, z: -20}
     size: {x: 5, y: 1, z: 19}
     tag: 0
-  - center: {x: -110, y: 0, z: -8.5}
+  - center: {x: -30, y: 8, z: -8.5}
     size: {x: 48, y: 1, z: 2.2}
     tag: 1
-  - center: {x: -202, y: 0, z: -8.5}
+  - center: {x: -42, y: 4, z: -8.5}
     size: {x: 22, y: 1, z: 2.2}
     tag: 1
-  - center: {x: -279, y: 0, z: -8.5}
+  - center: {x: -39, y: 0, z: -8.5}
     size: {x: 28, y: 1, z: 2.2}
     tag: 1
-  - center: {x: -261, y: 0, z: -8.5}
+  - center: {x: -21, y: 0, z: -8.5}
     size: {x: 6, y: 1, z: 2.2}
     tag: 2

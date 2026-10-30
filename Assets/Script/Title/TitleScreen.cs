@@ -80,6 +80,10 @@ public class TitleScreen : MonoBehaviour
 
     public IndexEvent OnDecided => onDecided;
     public int SelectedIndex => selected;
+    //登場や決定の演出中
+    public bool IsBusy => busy;
+    //オンのあいだはメニューの入力を受けない。リセットの確認を出しているときに使う
+    public bool Locked { get; set; }
 
     class Item
     {
@@ -159,7 +163,7 @@ public class TitleScreen : MonoBehaviour
 
     void Update()
     {
-        if (busy) return;
+        if (busy || Locked) return;
         ReadInput(out int move, out bool ok);
         if (move != 0) Move(move);
         if (ok) Decide();

@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60c1450cac852645a5d293845d61429, type: 3}
   m_Name: SO_Kobai_Shop
   m_EditorClassIdentifier: Assembly-CSharp::DestinationData
-  destinationName: Kobai_Shop
-  destinationPosition: {x: -261, y: 0, z: -8.5}
+  destinationName: 1階の購買
+  destinationPosition: {x: -21, y: 1, z: -8.5}
   achievementCenterOffsetX: 0
   achievementCenterOffsetZ: 0
   targetTime: 150
   achievementSizeX: 6
   achievementSizeZ: 3
+  achievementSizeY: 3
+  achievementSizeY: 3
+  achievementSizeY: 3
+  achievementSizeY: 3
