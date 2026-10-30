@@ -102,13 +102,13 @@ public sealed class SceneAudioController : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "PlayTest") stageClearPlayed = false;
+        if (scene.name == "Game") stageClearPlayed = false;
         AudioClip clip;
         switch (scene.name)
         {
             case "Title": clip = titleBgm; break;
             case "StageSelect": clip = stageSelectBgm; break;
-            case "PlayTest": clip = inGameBgm; break;
+            case "Game": clip = inGameBgm; break;
             case "Result": clip = resultBgm; break;
             default:
                 if (mode == LoadSceneMode.Additive) return;
