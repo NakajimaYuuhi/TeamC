@@ -26,3 +26,5 @@ MonoBehaviour:
   EnemyCount: 0
   DiffMulti: 1
   PhaseMulti: 0
+  BackGroundType: 1
+  MovieClip: {fileID: 32900000, guid: 91848965315b4cbd99f38833b194a264, type: 3}
