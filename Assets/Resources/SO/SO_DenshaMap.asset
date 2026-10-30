@@ -12,8 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a4b7af1e8c472f90e2a8f26d2f7b38, type: 3}
   m_Name: SO_DenshaMap
   m_EditorClassIdentifier: Assembly-CSharp::NpcSpawnAreaData
-  MapPrefab: {fileID: 8367020148254381688, guid: e4cdefa4af790eec8ec528484f2c7c89, type: 3}
+  MapPrefab: {fileID: 2507427200552909639, guid: 09c2684fec6448861aae65ea5ff357e6, type: 3}
   areas:
-  - center: {x: 0, y: 0, z: 0}
-    size: {x: 40, y: 1, z: 4}
+  - center: {x: -5.5, y: 0, z: 0}
+    size: {x: 4, y: 1, z: 1.7}
+    tag: 1
+  - center: {x: -9.5, y: 0, z: 0}
+    size: {x: 4, y: 1, z: 1.7}
+    tag: 1
+  - center: {x: -13.5, y: 0, z: 0}
+    size: {x: 4, y: 1, z: 1.7}
+    tag: 1
+  - center: {x: -17.5, y: 0, z: 0}
+    size: {x: 4, y: 1, z: 1.7}
+    tag: 1
+  - center: {x: -24.3, y: 0, z: 0}
+    size: {x: 4.6, y: 1, z: 1.7}
+    tag: 1
+  - center: {x: -28.9, y: 0, z: 0}
+    size: {x: 4.6, y: 1, z: 1.7}
+    tag: 1
+  - center: {x: -33.5, y: 0, z: 0}
+    size: {x: 4.6, y: 1, z: 1.7}
+    tag: 1
+  - center: {x: -38.1, y: 0, z: 0}
+    size: {x: 4.6, y: 1, z: 1.7}
+    tag: 1
+  - center: {x: -31, y: 0, z: 5.75}
+    size: {x: 18, y: 1, z: 5.5}
     tag: 1

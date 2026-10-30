@@ -66,6 +66,9 @@ public class GameFlowManager : MonoBehaviour
     private Transform _playerBody;
     private FormationLeader _formationLeader;
     public GameHud Hud => _hud;
+    //今の目的地。双眼鏡のアイテムが使う
+    public bool HasPurpose => _purposeData != null;
+    public Vector3 PurposePosition => _purposeData != null ? _purposeData.DestinationPosition : Vector3.zero;
 
     // 迷惑度
     private float _annoyanceLevel;

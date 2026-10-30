@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 873225471913916739}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 7}
+  m_LocalPosition: {x: 0, y: 0, z: 5.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -211,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 1047945313645566056}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -7}
+  m_LocalPosition: {x: 0, y: 0, z: -5.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2932,8 +2932,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
       propertyPath: _isTypeRandom
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[0].model
+      value: 
+      objectReference: {fileID: 1021596249203009648, guid: 8a82f48931aa42e4bbf2cf304968f329, type: 3}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[2].model
+      value: 
+      objectReference: {fileID: 5138243431289793536, guid: dc490db9aaa844c68a69dd19f6e1bcf4, type: 3}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[0].hudData
+      value: 
+      objectReference: {fileID: 11400000, guid: aa8b179b3155fa00ffd532e432ff3cc6, type: 2}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[1].hudData
+      value: 
+      objectReference: {fileID: 11400000, guid: a939267088eefa64198d3b544286a6df, type: 2}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[2].hudData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ce7e0ebc92f7fd2751d4aaad8eb30d6, type: 2}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[0].Range
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[0].modelScale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[2].modelScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[0].effect
+      value: 
+      objectReference: {fileID: 5344813511865819279, guid: c2ba4e65be48a2ca4d58cfee6458fc37, type: 3}
+    - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
+      propertyPath: _skills.Array.data[2].effect
+      value: 
+      objectReference: {fileID: 5344813511865819279, guid: 3f2906c7caca6f6f22e7f815be1c087d, type: 3}
     - target: {fileID: 6063933275968947452, guid: 0a29554d9a9a5aa4aa6322179dc6c705, type: 3}
       propertyPath: _skills.Array.size
       value: 3

@@ -18,11 +18,11 @@ MonoBehaviour:
   - {fileID: 0}
   PurposeDatas:
   - {fileID: 11400000, guid: d29b50163708847def170d67b3adbb9d, type: 2}
-  PlayerInitPos: {x: -20, y: 1, z: 0}
+  PlayerInitPos: {x: -2.4, y: 1, z: 0}
   Type: 1
   FailedTime: 60
   _securityCount: 3
   ClearCount: 1
-  EnemyCount: 150
+  EnemyCount: 120
   DiffMulti: 1
   PhaseMulti: 0

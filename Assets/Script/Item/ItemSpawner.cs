@@ -7,6 +7,12 @@ public struct ItemData
     public ItemSkill.SkillType Type;
     public GameObject model;
     public GameObject effect;
+    [Tooltip("落ちているときに足元に出すエフェクト。空なら PFB_ItemRoot のものを使う")]
+    public GameObject idleEffect;
+    [Tooltip("HUD に出す見た目。空なら PFB_ItemRoot のものを使う")]
+    public HudItemData hudData;
+    [Tooltip("落ちているときのモデルの大きさの倍率。0 なら1倍")]
+    public float modelScale;
 
     public float Power;
     public float Range;

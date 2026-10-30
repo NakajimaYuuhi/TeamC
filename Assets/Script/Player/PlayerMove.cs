@@ -246,29 +246,18 @@ public class PlayerMove : MonoBehaviour
     //----------------------------------------------------------------------------------------
     //サイドステップ
 
-    //Shift + A/D が押された瞬間に実行される
+    //Shift が押された瞬間に、今の移動の入力の向きへステップする
     private void CheckStepInput()
     {
         if (Keyboard.current == null) return;
         if (isStepping || stepRequested || stepCooldownTimer > 0f) return;
+        if (!Keyboard.current.leftShiftKey.wasPressedThisFrame) return;
 
-        bool isShift = Keyboard.current.leftShiftKey.isPressed;
-        bool isStepKeyPressed = Keyboard.current.aKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame;
+        //入力がないときはステップしない
+        if (moveInput.sqrMagnitude <= 0.01f) return;
 
-        if (isShift && isStepKeyPressed)
-        {
-            //押されているキーからステップの向きを決める
-            float x = 0f;
-            float y = 0f;
-            if (Keyboard.current.dKey.isPressed) x += 1f;
-            if (Keyboard.current.aKey.isPressed) x -= 1f;
-            if (Keyboard.current.wKey.isPressed) y += 1f;
-            if (Keyboard.current.sKey.isPressed) y -= 1f;
-            if (Mathf.Approximately(x, 0f)) return;
-
-            stepInput = new Vector2(x, y);
-            stepRequested = true;
-        }
+        stepInput = moveInput;
+        stepRequested = true;
     }
 
     //ステップ開始

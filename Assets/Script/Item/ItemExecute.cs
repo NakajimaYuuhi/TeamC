@@ -32,6 +32,11 @@ public class ItemExecute : MonoBehaviour
 
     private Vector3 _exeCutePosition;
 
+    [SerializeField, Tooltip("落ちているときのエフェクトの大きさ")]
+    private float _idleEffectScale = 2.5f;
+
+    private GameObject _idleEffectObj;
+
     private void Start()
     {
         _executeRangeObj?.SetActive(false);
@@ -59,13 +64,43 @@ public class ItemExecute : MonoBehaviour
     {
         _type = data.Type;
         _groundEffect = data.effect;
-        var itemFloat = Instantiate(data.model, transform).AddComponent<ItemFloat>();
-        itemFloat.Initialize(_popEffect);
+        //種類ごとの範囲があれば使う
+        if (data.Range > 0f) _executeSize = data.Range;
+        //拾ったときに HUD に出す見た目を、アイテムの種類に合わせる
+        if (data.hudData != null && TryGetComponent(out ItemHudInfo hudInfo)) hudInfo.data = data.hudData;
+        var model = Instantiate(data.model, transform);
+        if (data.modelScale > 0f) model.transform.localScale *= data.modelScale;
+        var itemFloat = model.AddComponent<ItemFloat>();
+        //種類ごとのエフェクトがあれば、浮いているモデルではなく足元の地面に置く
+        if (data.idleEffect != null)
+        {
+            _idleEffectObj = Instantiate(data.idleEffect, transform);
+            _idleEffectObj.transform.position = GroundPoint();
+            _idleEffectObj.transform.rotation = Quaternion.identity;
+            _idleEffectObj.transform.localScale = Vector3.one * _idleEffectScale;
+            itemFloat.Initialize(null);
+        }
+        else itemFloat.Initialize(_popEffect);
+    }
+
+    //真下の地面の位置。投げたときと同じく Ground タグの物を地面とみなす。見つからなければ 1m 下
+    private Vector3 GroundPoint()
+    {
+        Vector3 from = transform.position + Vector3.up * 0.1f;
+        float best = float.MaxValue;
+        Vector3 point = transform.position + Vector3.down;
+        foreach (var hit in Physics.RaycastAll(from, Vector3.down, 5.0f))
+        {
+            if (!hit.collider.CompareTag("Ground")) continue;
+            if (hit.distance < best) { best = hit.distance; point = hit.point; }
+        }
+        return point + Vector3.up * 0.02f;
     }
 
     public void OnThrown()
     {
         _isThrow = true;
+        if (_idleEffectObj != null) Destroy(_idleEffectObj);
         if (_throwEffect != null)
             _currentEffect = Instantiate(_throwEffect, transform);
         var itemFloat = GetComponentInChildren<ItemFloat>();
